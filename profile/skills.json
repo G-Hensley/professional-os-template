@@ -3,6 +3,7 @@
   {
     "none": "I have no experience or knowledge of this skill.",
     "novice": "I have a basic understanding of this skill and can perform simple tasks with guidance.",
+    "apprentice": "I have a moderate understanding of this skill and can perform tasks with some supervision.",
     "adept": "I have a good understanding of this skill and can perform tasks independently.",
     "expert": "I have an advanced understanding of this skill and can perform complex tasks and mentor others.",
     "master": "I have a comprehensive and authoritative understanding of this skill and am recognized as an expert in the field."
@@ -20,6 +21,7 @@
     "C": "adept"
   },
   "frameworks & libraries": {
+    "Angular": "novice",
     "React": "expert",
     "Next.js": "expert",
     "Node.js": "adept",
@@ -55,7 +57,14 @@
     "CI/CD": "adept"
   },
   "testing & monitoring": {
-    "Vitest": "adept"
+    "Vitest": "adept",
+    "Jest": "adept",
+    "Postman": "adept",
+    "Lighthouse": "adept",
+    "Google Analytics": "adept",
+    "Burp Suite": "adept",
+    "Cypress": "novice",
+    "Storybook": "novice"
   },
   "tools": {
     "Git": "adept",
@@ -84,5 +93,24 @@
     "Chatbot Development": "novice",
     "AI Model Training": "none",
     "AI Ethics": "adept"
+  },
+  "other":
+  {
+    "Design Driven Development": "adept",
+    "Agile Methodologies": "adept",
+    "Project Management": "adept",
+    "UI/UX Principles": "expert",
+    "Accessibility Standards": "expert",
+    "SEO Best Practices": "adept",
+    "GEO Targeting": "apprentice",
+    "Performance Optimization": "adept",
+    "Security Best Practices": "expert",
+    "Technical Writing": "adept",
+    "Client Communication": "expert",
+    "Team Collaboration": "expert",
+    "Time Management": "expert",
+    "Problem-Solving": "expert",
+    "Critical Thinking": "expert",
+    "Adaptability": "expert"
   }
 }
