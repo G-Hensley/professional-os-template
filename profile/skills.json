@@ -1,0 +1,62 @@
+{
+  "skill levels":
+  {
+    "none": "I have no experience or knowledge of this skill.",
+    "novice": "I have a basic understanding of this skill and can perform simple tasks with guidance.",
+    "adept": "I have a good understanding of this skill and can perform tasks independently.",
+    "expert": "I have an advanced understanding of this skill and can perform complex tasks and mentor others.",
+    "master": "I have a comprehensive and authoritative understanding of this skill and am recognized as an expert in the field."
+  },
+  "programming languages": {
+    "JavaScript": "expert",
+    "TypeScript": "expert",
+    "Python": "adept",
+    "HTML": "expert",
+    "CSS": "expert",
+    "SQL": "adept"
+  },
+  "frameworks & libraries": {
+    "React": "expert",
+    "Next.js": "expert",
+    "Node.js": "adept",
+    "Express": "adept",
+    "Tailwind CSS": "expert",
+    "Redux": "adept",
+    "Prisma": "novice"
+  },
+  "apis & protocols": {
+    "REST APIs": "expert",
+    "GraphQL": "adept",
+    "WebSockets": "adept",
+    "OAuth 2.0": "adept"
+  },
+  "databases": {
+    "PostgreSQL": "adept",
+    "MySQL": "adept",
+    "MongoDB": "adept",
+    "Supabase": "adept"
+  },
+  "cloud & devops": {
+    "AWS": "novice",
+    "Vercel": "expert",
+    "Heroku": "novice",
+    "Docker": "adept",
+    "GitHub Actions": "adept",
+    "CI/CD": "adept"
+  },
+  "testing & monitoring": {
+    "Vitest": "adept"
+  },
+  "tools": {
+    "Git": "adept",
+    "Turborepo": "novice",
+    "Notion": "expert",
+    "ClickUp": "adept",
+    "Trello": "expert",
+    "VS Code": "expert",
+    "Figma": "adept",
+    "Asana": "adept",
+    "HubSpot": "adept",
+    "Jira": "adept"
+}
+}
