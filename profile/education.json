@@ -1,0 +1,108 @@
+{
+  "high_school_diploma": {
+    "institution": "Chapmanville Regional High School",
+    "location": "Chapmanville, WV",
+    "degree": "High School Diploma",
+    "field_of_study": "General Education",
+    "graduation_year": "2016",
+    "areas_of_study": [
+      "Mathematics",
+      "Science",
+      "English Language Arts",
+      "Social Studies",
+      "Physical Education",
+      "Arts and Humanities",
+      "Physics",
+      "Calculus",
+      "Chemistry",
+      "Anatomy and Physiology"
+    ]
+  },
+  "bachelor_of_science_in_software_engineering": {
+    "institution": "Western Governors University",
+    "location": "Online",
+    "degree": "Bachelor of Science",
+    "field_of_study": "Software Engineering",
+    "graduation_year": "2025",
+    "areas_of_study": [
+      "Data Structures and Algorithms",
+      "Object-Oriented Programming",
+      "Web Development",
+      "Database Management",
+      "Software Testing and Quality Assurance",
+      "Agile Software Development",
+      "Cloud Computing",
+      "DevOps Practices",
+      "Software Design Patterns",
+      "Mobile Application Development"
+    ]
+  },
+  "self_taught_learning": {
+    "description": "In addition to formal education, I have pursued extensive self-directed learning in various areas of software development and related technologies. This includes exploring new programming languages, frameworks, tools, and best practices through online courses, tutorials, documentation, and hands-on projects.",
+    "areas_of_study": [
+      "Full-Stack Web Development",
+      "API Development and Integration",
+      "AI and Machine Learning",
+      "Cloud Services and Deployment",
+      "DevOps and CI/CD Pipelines",
+      "Cybersecurity Fundamentals",
+      "UI/UX Design Principles",
+      "Version Control with Git",
+      "Project Management Tools and Techniques"
+    ]
+  },
+  "certifications": [
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "date_obtained": "April 2025",
+      "issuing_organization": "Amazon Web Services (AWS)",
+      "credential_id": "6f43df732c0d4d49aad6011c12195541"
+    },
+    {
+      "name": "Responsive Web Design",
+      "date_obtained": "October 2024",
+      "issuing_organization": "freeCodeCamp",
+      "credential_id": "fcc29373a36-b091-435f-b359-a9b07ba6ce58-rwd"
+    },
+    {
+      "name": "JavaScript Algorithms and Data Structures",
+      "date_obtained": "October 2024",
+      "issuing_organization": "freeCodeCamp",
+      "credential_id": "fcc29373a36-b091-435f-b359-a9b07ba6ce58-jaads"
+    },
+    {
+      "name": "Back End Development and APIs",
+      "date_obtained": "December 2024",
+      "issuing_organization": "freeCodeCamp",
+      "credential_id": "fcc29373a36-b091-435f-b359-a9b07ba6ce58-bedaa"
+    },
+    {
+      "name": "WGU Front End Developer",
+      "date_obtained": "March 2025",
+      "issuing_organization": "Western Governors University",
+      "credential_id": "67d8786408dc8251b82c9940"
+    },
+    {
+      "name": "ITIL v4 Foundation",
+      "date_obtained": "May 2025",
+      "issuing_organization": "AXELOS",
+      "credential_id": "GR671775952GH"
+    },
+    {
+      "name": "CompTIA Project+",
+      "date_obtained": "May 2025",
+      "issuing_organization": "CompTIA",
+      "credential_id": "COMP001022806815"
+    },
+    {
+      "name": "WGU Backend Developer",
+      "date_obtained": "June 2025",
+      "issuing_organization": "Western Governors University",
+      "credential_id": "68508d078e3067467f8a9aac"
+    }
+  ],
+  "certificates": [
+    "API Security Fundamentals Certificate - APIsec",
+    "MCP Security Fundamentals - APIsec"
+  ]
+}

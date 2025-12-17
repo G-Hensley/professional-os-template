@@ -1,0 +1,64 @@
+{
+  "APIsec":
+  {
+    "role": "Product Engineer / Customer Success Engineer / Deployment Engineer",
+    "start_date": "2025-10-13",
+    "end_date": "Present",
+    "location": "Remote",
+    "job_type": "Full-time",
+    "responsibilities": [
+      "Develop custom scripts and integrations for clients to utilize APIsec's API Security Platform effectively.",
+      "Assist clients in deploying and configuring APIsec's platform within their environments, ensuring seamless integration with existing systems.",
+      "Provide technical support and troubleshooting assistance to clients, addressing any issues related to deployment and usage of the platform.",
+      "Collaborate with the product and engineering teams to relay client feedback, suggestions, and feature requests for continuous improvement of the platform.",
+      "Create and maintain technical documentation and guides to assist clients in understanding and utilizing the platform's features.",
+      "Conduct training sessions and webinars for clients to educate them on best practices for API security and effective use of the platform.",
+      "Create demo videos and sample projects to showcase the capabilities of APIsec's platform to potential and existing clients.",
+      "Stay updated with the latest trends and advancements in API security to provide informed recommendations to clients.",
+      "Participate in client meetings and calls to understand their requirements and provide tailored solutions using APIsec's platform.",
+      "Work closely with the sales and marketing teams to support client acquisition and retention efforts through technical expertise.",
+      "Utilize tools such as Git, Asana, HubSpot, and Notion to manage projects, track client interactions, and document processes.",
+      "Create Asana tasks and Notion documentation to streamline internal workflows and enhance team collaboration.",
+      "Build Asana templates for recurring processes to improve efficiency and consistency across projects.",
+      "Leverage AI tools like ChatGPT, Claude, Claude Code, HubSpot Breeze, and GitHub Copilot to enhance productivity and deliver high-quality solutions to clients.",
+      "Script custom authentication flows for customers utilizing Postman and Burp Suite to test and validate API security configurations.",
+      "Provide guidance to entire company of customer issue patterns and resolutions based on direct customer interactions."
+    ],
+    "performance_metrics": [
+      "Handle 77% of all customer support tickets.",
+      "Achieve on average a <1 day turn around time for customer tenant requests.",
+      "Created 15+ custom reports for clients to provide insights and track API security metrics."
+    ]
+  },
+  "Codaissance":
+  {
+    "role": "Founder / Full-Stack Software Engineer",
+    "start_date": "2025-08-01",
+    "end_date": "Present",
+    "location": "Remote",
+    "job_type": "self-employed",
+    "responsibilities": [
+      "Build SaaS applications from scratch using modern web technologies such as React, Next.js, Node.js, Express, Tailwind CSS, and PostgreSQL.",
+      "Design and implement RESTful APIs to support front-end functionality and ensure seamless data flow between client and server.",
+      "Utilize cloud platforms like Vercel and AWS for deploying and hosting applications, ensuring scalability and reliability.",
+      "Implement user authentication and authorization mechanisms using OAuth 2.0 and JWT to secure application data and user sessions.",
+      "Optimize application performance through efficient database design and query optimization in PostgreSQL.",
+      "Incorporate AI technologies such as ChatGPT, GitHub Copilot, and OpenAI API to enhance application features and improve user experience.",
+      "Manage version control and collaboration using Git and GitHub, following best practices for code management.",
+      "Create comprehensive documentation and user guides to facilitate application usage and maintenance.",
+      "Continuously research and experiment with new technologies and frameworks to stay updated with industry trends and improve development processes."
+    ],
+    "performance_metrics": [
+      ""
+    ]
+  },
+  "TamperTantrum Labs": {
+    "role": "Co-Founder / Full-Stack Software Engineer"
+  },
+  "BuiltInPublic": {
+    "role": "Full-Stack Software Engineer"
+  },
+  "Concentrix": {
+    "role": "Senior Software Support Engineer"
+  }
+}

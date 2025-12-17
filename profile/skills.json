@@ -13,7 +13,11 @@
     "Python": "adept",
     "HTML": "expert",
     "CSS": "expert",
-    "SQL": "adept"
+    "SQL": "adept",
+    "Bash": "adept",
+    "Java": "adept",
+    "C#": "novice",
+    "C": "adept"
   },
   "frameworks & libraries": {
     "React": "expert",
@@ -22,13 +26,19 @@
     "Express": "adept",
     "Tailwind CSS": "expert",
     "Redux": "adept",
-    "Prisma": "novice"
+    "Prisma": "novice",
+    "Spring Boot": "novice",
+    "Django": "none",
+    "FastAPI": "none"
   },
   "apis & protocols": {
     "REST APIs": "expert",
     "GraphQL": "adept",
     "WebSockets": "adept",
-    "OAuth 2.0": "adept"
+    "OAuth 2.0": "adept",
+    "JWT": "adept",
+    "Bcrypt": "adept",
+    "OWASP Security Practices": "expert"
   },
   "databases": {
     "PostgreSQL": "adept",
@@ -58,5 +68,21 @@
     "Asana": "adept",
     "HubSpot": "adept",
     "Jira": "adept"
-}
+  },
+  "AI": {
+    "ChatGPT": "expert",
+    "GitHub Copilot": "expert",
+    "Claude": "expert",
+    "Claude Code": "adept",
+    "Codex": "adept",
+    "OpenAI API": "adept",
+    "Groq API": "novice",
+    "Hugging Face": "none",
+    "TensorFlow": "none",
+    "PyTorch": "none",
+    "LangChain": "none",
+    "Chatbot Development": "novice",
+    "AI Model Training": "none",
+    "AI Ethics": "adept"
+  }
 }
