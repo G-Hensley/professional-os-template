@@ -9,17 +9,18 @@ It also serves as a knowledge base for AI systems (Claude Code, Codex, Gemini CL
 **Gavin Hensley** - Full-Stack Software Engineer
 - B.S. in Software Engineering (Western Governors University, 2025)
 - Primary stack: React, Next.js, TypeScript, Node.js, Tailwind CSS, PostgreSQL/Supabase
-- Currently working at APIsec as Product Engineer / Customer Success Engineer
+- Currently working at APIsec as Product Engineer / Customer Success Engineer ($70k/year)
 - Building SaaS products through Codaissance
-- Supporting TamperTantrum Labs (wife's business) with marketing and tech
+- Supporting TamperTantrum Labs (wife's AppSec consulting business) with marketing and tech
+- Location: Portsmouth, OH (remote work required)
 
 ## Businesses
 
 ### Codaissance
-Software/SaaS business focused on building developer tools and applications. Products in various stages from ideation to active development.
+Software/SaaS business focused on building developer tools and applications. Products in various stages from ideation to active development. Long-term goal is to build enough revenue to replace employment income.
 
 ### TamperTantrum Labs
-Wife's business where Gavin provides marketing strategy, web development, and planning support.
+Wife's application security consulting business. Gavin provides marketing strategy, web development, and planning support.
 
 # Repository Structure
 
@@ -42,6 +43,9 @@ Wife's business where Gavin provides marketing strategy, web development, and pl
 - `/github/` - GitHub profile README to keep in sync
 - `/linkedin/` - Profile info, content ideas, and metrics (personal + business accounts)
 
+## Automation
+- `/automation/` - Automation ideas, GitHub Actions workflows, and helper scripts
+
 ## Root Files
 - `CLAUDE.md` - Instructions for Claude Code
 - `CONTEXT.md` - This file; explains the repo to humans and AI
@@ -62,7 +66,9 @@ Defined in `/profile/skills.json`:
 - Use `"Present"` for ongoing positions/projects
 
 ## Project Schema
-Projects should include: name, repo_url, type, description, technologies, monetization_strategy, status, problem, solution, target_audience, mission_statement
+**Required fields:** name, repo_url, type, description, technologies, monetization_strategy, status, problem, solution, target_audience, mission_statement
+
+**Optional fields:** priority, due_date, success_milestone, tagline, blocked_by
 
 ## File Naming
 - Assessments: `YYYY-MM-DD-assessment.md` or `YYYY-MM-DD-{area}-assessment.md`
@@ -96,6 +102,7 @@ AI tools with access to this repo can:
 - Draft marketing content aligned with business strategy
 - Provide data-driven assessments and recommendations
 - Help maintain consistency across LinkedIn, GitHub, and portfolio
+- Generate LinkedIn post drafts based on projects and activity
 
 # Maintenance Cadence
 
