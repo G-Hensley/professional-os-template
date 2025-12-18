@@ -1,10 +1,60 @@
 {
-  "learning preferences": {
-    "learning style": "Hands-on",
-    "preferred resources": [
+  "learning": {
+    "style": "Hands-on",
+    "preferred_resources": [
       "Projects I build myself without tutorials",
       "Official documentation",
       "Building small apps to experiment with new technologies"
+    ],
+    "avoids": [
+      "Video tutorials",
+      "Step-by-step guided courses"
     ]
+  },
+  "work_environment": {
+    "communication": {
+      "preferred": "Async",
+      "channels": ["Discord", "Slack", "PRs", "Email"],
+      "avoids": ["Frequent meetings", "Phone calls"]
+    },
+    "meetings": {
+      "preference": "Minimal to none",
+      "acceptable": ["Sprint planning", "Architecture discussions", "As-needed syncs"]
+    },
+    "collaboration_style": "Independent",
+    "management_style": {
+      "check_ins": "As-needed",
+      "feedback_format": "Written",
+      "autonomy": "High"
+    }
+  },
+  "schedule": {
+    "timezone": "EST",
+    "location": "Portsmouth, OH",
+    "typical_hours": "8-9 AM to 7 PM",
+    "flexibility": "Flexible with breaks throughout day",
+    "remote_required": true
+  },
+  "coding_style": {
+    "paradigm": "OOP preferred",
+    "comments": "Few but detailed",
+    "formatting": {
+      "indentation": "2 spaces",
+      "semicolons": true,
+      "quotes": "single"
+    },
+    "principles": [
+      "Clean architecture",
+      "DRY",
+      "SOLID",
+      "Readable over clever"
+    ]
+  },
+  "tools": {
+    "editor": "VS Code",
+    "terminal": "iTerm2 / native",
+    "ai_assistants": ["Claude Code", "GitHub Copilot", "ChatGPT"],
+    "project_management": ["Notion", "Trello", "Asana"],
+    "design": "Figma"
   }
 }

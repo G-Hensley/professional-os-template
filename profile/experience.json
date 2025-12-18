@@ -82,7 +82,7 @@
     "location": "Remote",
     "job_type": "freelance",
     "responsibilities": [
-      " Collaborate with a cross-functional team to develop and enhance BuiltInPublic, a platform for developers to share their coding journey publicly.",
+      "Collaborate with a cross-functional team to develop and enhance BuiltInPublic, a platform for developers to share their coding journey publicly.",
       "Design and implement front-end components using React, TypeScript, and TailwindCSS to create a responsive and user-friendly interface.",
       "Develop backend functionality and manage database interactions using Supabase, ensuring data integrity and security.",
       "Implement data fetching and state management using React Query to optimize application performance.",
