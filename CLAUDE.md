@@ -33,9 +33,25 @@ The repository is designed to be consumed by AI tools to assist with generating 
   - `planning/` - Project planning templates and docs
 
 - **business/** - Business-specific data
-  - `BUSINESS_GOALS.md` - High-level business objectives
-  - `codaissance/` - Codaissance SaaS business (strategy, marketing, financials, goals, roadmap)
-  - `tampertantrum-labs/` - TamperTantrum Labs AppSec consulting (strategy, marketing, financials, goals, roadmap)
+  - `BUSINESS_GOALS.md` - High-level business objectives across both businesses
+  - `codaissance/` - Codaissance product studio
+    - `strategy.json` - Business model, positioning, mission, competitive landscape
+    - `personas.json` - Target audience personas (Daniel, Mia, Alex, Patricia) + anti-personas
+    - `brand.json` - Voice, tone, key messages, trust-building sequence
+    - `design-system.json` - Colors, typography, image generation specs, website design tokens
+    - `marketing.json` - Content pillars, channels, persona-targeted content
+    - `goals.md` - SMART goals for revenue, products, audience, brand
+    - `financials.json` - Revenue/expense tracking with milestones
+    - `assets/` - Logo files and brand assets
+  - `tampertantrum-labs/` - TamperTantrum Labs AppSec consulting
+    - `strategy.json` - Mission, vision, values, brand story, services, SaaS product ideas
+    - `personas.json` - 7 target personas (Solo Sam, Scaling Sara, etc.)
+    - `competitors.json` - Competitive analysis with differentiation
+    - `design-system.json` - Full color palette (Tamper Red, etc.), typography, tone of voice
+    - `marketing.json` - Content pillars, content ideas, lead generation
+    - `goals.md` - SMART goals (short-term, medium-term), financial targets
+    - `financials.json` - Consulting financials tracking
+    - `assets/` - Logo files and brand assets
 
 - **job-applications/** - Career tracking
   - `JOB_SEARCH.md` - Target roles, salary requirements, preferences, dealbreakers

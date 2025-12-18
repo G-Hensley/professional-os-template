@@ -31,7 +31,24 @@ Wife's application security consulting business. Gavin provides marketing strate
 ## Core Data
 - `/profile/` - Skills (with proficiency levels), experience, education, certifications, preferences, contact info, and resumes
 - `/projects/` - Active, planned, and completed projects with specs and planning docs
-- `/business/` - Separate directories for Codaissance and TamperTantrum Labs (strategy, marketing, financials, roadmaps, goals)
+- `/business/` - Business documentation and brand assets
+  - `BUSINESS_GOALS.md` - High-level objectives across both businesses
+  - `/codaissance/` - Product studio files:
+    - `strategy.json` - Business model, positioning, mission
+    - `personas.json` - 4 target personas + anti-personas
+    - `brand.json` - Voice, tone, key messages
+    - `design-system.json` - Colors, typography, image generation specs
+    - `marketing.json` - Content pillars and channels
+    - `goals.md` - SMART goals
+    - `financials.json` - Revenue/expense tracking
+  - `/tampertantrum-labs/` - AppSec consulting files:
+    - `strategy.json` - Mission, vision, values, services, SaaS ideas
+    - `personas.json` - 7 target personas
+    - `competitors.json` - Competitive analysis
+    - `design-system.json` - Full color palette (Tamper Red, etc.), typography
+    - `marketing.json` - Content pillars and ideas
+    - `goals.md` - SMART goals with financial targets
+    - `financials.json` - Consulting financials
 - `/ideas/` - Project ideas organized by personal/, business/codaissance/, and business/tampertantrum-labs/
 
 ## Tracking & Growth
