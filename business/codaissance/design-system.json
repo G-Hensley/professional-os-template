@@ -106,17 +106,23 @@
   },
   "typography": {
     "font_families": {
-      "headings": {
-        "name": "",
+      "brand": {
+        "name": "Oxanium",
         "fallback": "system-ui, -apple-system, sans-serif",
-        "source": "",
-        "notes": "Add your heading font here"
+        "source": "Google Fonts",
+        "usage": "Brand name 'Codaissance', logos, wordmarks"
+      },
+      "headings": {
+        "name": "Cinzel",
+        "fallback": "Georgia, serif",
+        "source": "Google Fonts",
+        "usage": "Subheadings, section titles, emphasis text"
       },
       "body": {
-        "name": "",
+        "name": "Source Sans 3",
         "fallback": "system-ui, -apple-system, sans-serif",
-        "source": "",
-        "notes": "Add your body font here"
+        "source": "Google Fonts",
+        "usage": "Body text, paragraphs, UI elements"
       },
       "code": {
         "name": "JetBrains Mono",
