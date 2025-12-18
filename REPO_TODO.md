@@ -31,14 +31,16 @@ Tasks to complete before this knowledge base is fully operational. Separate from
 
 ### Data Completeness
 
-- [ ] **Fill in Codaissance design-system.json**
-  - Colors (primary, secondary, accent) - currently empty
-  - Typography (fonts) - currently empty
-  - TTL has full color palette; Codaissance needs same
+- [x] **Fill in Codaissance design-system.json** ✅
+  - Added primary orange (#F37221) and gold (#FED700) from logo
+  - Added accent blues: Spark Blue (#449DD6) and Deep Blue (#3B56A6)
+  - Defined backgrounds, gradients, animations, shadows
+  - Typography fonts left empty (user to specify)
 
-- [ ] **Sync projects with strategy files**
-  - Verify `projects/active.json` matches `business/codaissance/strategy.json` products list
-  - Ensure project statuses are current
+- [x] **Sync projects with strategy files** ✅
+  - Verified `projects/active.json` matches strategy (Dev Genesis, TemperedUI, MindTrace)
+  - Verified `projects/planned.json` matches strategy (Vibiom, DevGauntlet, ScopeCreep, OpenOrbit, InstAPI)
+  - Project statuses are current with proper blocked_by dependencies
 
 ---
 
@@ -222,6 +224,8 @@ Tasks to complete before this knowledge base is fully operational. Separate from
 - [x] Create Gemini CLI commands (`/research-company`, `/competitive-analysis`, `/market-research`, `/salary-research`)
 - [x] Create Codex CLI commands (moved to `~/.codex/prompts/` with proper frontmatter)
 - [x] Expand automation/IDEAS.md with n8n workflows and event-driven automations
+- [x] Fill in Codaissance design-system.json with brand colors
+- [x] Sync projects with strategy files
 
 ---
 
