@@ -14,23 +14,20 @@ Tasks to complete before this knowledge base is fully operational. Separate from
 
 ### AI Tool Configuration
 
-- [ ] **Create Gemini CLI configuration** (`/.gemini/` or `GEMINI.md`)
+- [x] **Create Gemini CLI configuration** (`/.gemini/GEMINI.md`) ✅
   - Gemini excels at research, summarization, and web search
-  - Create instructions file explaining repo structure
-  - Define what Gemini should be used for vs Claude/Codex
-  - Consider: research tasks, competitive analysis, market research, summarizing long docs
+  - Created instructions file explaining repo structure
+  - Defined what Gemini should be used for vs Claude/Codex
 
 - [ ] **Review Codex configuration** (`/.codex/`)
   - Verify commands work properly (assessment, job-application)
   - Ensure Codex has proper context about repo structure
   - Consider: What tasks is Codex best suited for?
 
-- [ ] **Define AI tool responsibilities**
-  - Create `AI_TOOLS.md` documenting when to use each tool:
-    - **Claude Code**: Complex edits, multi-file changes, code generation, assessments
-    - **Codex**: Quick tasks, specific prompts, code review
-    - **Gemini CLI**: Research, web search, summarization, competitive analysis
-  - Include example prompts for each tool
+- [x] **Define AI tool responsibilities** (`AI_TOOLS.md`) ✅
+  - Created comprehensive guide with quick reference table
+  - Decision flowchart for choosing the right tool
+  - Tool combination workflows for complex tasks
 
 ### Data Completeness
 
@@ -189,9 +186,6 @@ Tasks to complete before this knowledge base is fully operational. Separate from
 ## Folder/File Creation Needed
 
 ```
-/.gemini/                    # Gemini CLI configuration
-  instructions.md            # How Gemini should use this repo
-
 /logs/                       # Automation output
   github-activity/           # GitHub activity logs
 
@@ -206,8 +200,6 @@ Tasks to complete before this knowledge base is fully operational. Separate from
 
 /projects/planning/
   PROJECT_TEMPLATE.md        # Standard project spec template
-
-AI_TOOLS.md                  # When to use each AI tool
 ```
 
 ---
@@ -224,6 +216,8 @@ AI_TOOLS.md                  # When to use each AI tool
 - [x] Create log-application command
 - [x] Create README.md
 - [x] Update CLAUDE.md and CONTEXT.md
+- [x] Create Gemini CLI configuration (`.gemini/GEMINI.md`)
+- [x] Create AI_TOOLS.md with tool responsibilities and decision flowchart
 
 ---
 
