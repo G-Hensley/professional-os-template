@@ -1,40 +1,9 @@
 {
-  "dev-genesis": {
-    "name": "Dev Genesis",
-    "repo_url": "https://github.com/G-Hensley/dev-genesis",
-    "type": "GitHub Template",
-    "description": "A comprehensive starter template that helps devs plan their project by setting up GitHub issues, actions, and AI tools.",
-    "technologies": [
-      "GitHub Actions",
-      "GitHub Issues",
-      "Codex",
-      "Claude Code",
-      "Cursor",
-      "Windsurf",
-      "GitHub Copilot",
-      "Bash",
-      "GitHub Probot"
-    ],
-    "monetization_strategy": "Free",
-    "status": "In Development",
-    "problem": "Starting a new software project wastes hours on repetitive setup tasks—configuring Git, setting up issue templates, configuring AI assistants, establishing workflows, and implementing quality tooling. Developers spend entire afternoons on boilerplate configuration instead of writing code. By the time the repository is properly structured, momentum and excitement have already faded.",
-    "solution": "Dev Genesis is a GitHub template repository that handles all project setup automatically. In under 30 minutes, it generates a fully-configured repository with AI planning prompts that create importable GitHub issues, pre-configured support for Claude Code, Cursor, Copilot, and Windsurf, automated security scanning, and professional workflows. Developers go from rough idea to organized, production-ready project structure instantly—then start coding immediately.",
-    "target_audience": [
-      "Solo Developers wanting to launch projects quickly without tedious setup",
-      "Tech lead at a startup needing to bootstrap new repositories for rapid prototyping",
-      "Freelance developers juggling multiple projects who need to save time on setup",
-      "Open-source maintainers looking to standardize project structures across repositories",
-      "Development agencies aiming to streamline project kickoffs for client work",
-      "Hobbyist programmers eager to turn ideas into code without friction"
-    ],
-    "mission_statement": "Dev Genesis exists to eliminate the friction between inspiration and implementation. Every hour spent on repository setup is an hour stolen from actual building. Our mission is to give developers back their time and momentum by automating the tedious configuration work that stands between great ideas and great code, making it possible to go from concept to coding in minutes instead of days."
-  },
   "vibiom": {
     "name": "Vibiom",
     "repo_url": "https://github.com/G-Hensley/vibiom",
-    "mvp_type": "CLI Tool",
-    "post_mvp_type": "Desktop Application and Web Dashboard / SaaS",
-    "description": "Vibiom is an autonomous AI development platform that transforms software specifications into production-ready applications through coordinated multi-agent orchestration. The full platform features 15-20 specialized base agents (product management, architecture, security, frontend, backend, testing, DevOps, etc.), with users able to generate custom agents on-the-fly for specific project needs. A built-in agent marketplace allows users to share and monetize specialized agents they've created. Vibiom includes an intelligent task board that AI agents control autonomously while remaining transparent and interactive for human oversight, plus real-time dashboards showing test pass rates, development velocity, and project health metrics. Rather than replacing developers, Vibiom acts as an autonomous engineering team—handling implementation while developers focus on strategy, architecture decisions, and quality oversight. Solo developers gain the output of an entire engineering organization; small teams scale like enterprises.",
+    "type": "CLI Tool → Desktop Application → SaaS",
+    "description": "Vibiom is an autonomous AI development platform that transforms software specifications into production-ready applications through coordinated multi-agent orchestration. The full platform features 15-20 specialized base agents (product management, architecture, security, frontend, backend, testing, DevOps, etc.), with users able to generate custom agents on-the-fly for specific project needs. A built-in agent marketplace allows users to share and monetize specialized agents they've created.",
     "mvp_technologies": [
       "TypeScript",
       "Node.js",
@@ -72,9 +41,12 @@
       "D3.js or VisX"
     ],
     "monetization_strategy": "SaaS Subscription with Tiered Plans and Agent Marketplace",
-    "status": "Planned",
-    "problem": "Solo developers and small teams want to build ambitious products but can't afford full engineering organizations. Existing AI coding tools (Cursor, Claude Code) help write code faster, but they're single-agent assistants - you still do all the architecture, security review, testing, and coordination yourself. More autonomous tools like Devin and Replit handle simple tasks but fail at complex, production-grade development because they lack specialized expertise. No tool gives solo developers the coordinated capabilities of an entire engineering team - where a product manager breaks down requirements, a backend engineer implements, a security engineer reviews, and a QA engineer validates, all working together autonomously.",
-    "solution": "Vibiom is an AI orchestrator that coordinates specialized agents to build production-grade software - and it's being built to eventually improve itself. Starting as a CLI tool with three agents (Product → Backend → Security), it proves that multi-agent coordination produces better code than single-agent systems. Each agent specializes in one domain, validates previous work, and hands off to the next agent through structured workflows. As the system matures and proves reliable, Vibiom will dogfood itself - using its own multi-agent coordination to add features, expand capabilities, and refine its orchestration. The endgame: an AI engineering team that grows its own capabilities, starting with secure REST APIs and eventually handling complete application development.",
+    "status": "Blocked",
+    "blocked_by": "Dev Genesis",
+    "priority": 9,
+    "due_date": "2025-12-26",
+    "problem": "Solo developers and small teams want to build ambitious products but can't afford full engineering organizations. Existing AI coding tools (Cursor, Claude Code) help write code faster, but they're single-agent assistants—you still do all the architecture, security review, testing, and coordination yourself. More autonomous tools like Devin and Replit handle simple tasks but fail at complex, production-grade development because they lack specialized expertise. No tool gives solo developers the coordinated capabilities of an entire engineering team.",
+    "solution": "Vibiom is an AI orchestrator that coordinates specialized agents to build production-grade software—and it's being built to eventually improve itself. Starting as a CLI tool with three agents (Product → Backend → Security), it proves that multi-agent coordination produces better code than single-agent systems. Each agent specializes in one domain, validates previous work, and hands off to the next agent through structured workflows. As the system matures and proves reliable, Vibiom will dogfood itself—using its own multi-agent coordination to add features, expand capabilities, and refine its orchestration.",
     "target_audience": [
       "Solo developers wanting to build complex products without a full engineering team",
       "Small startups needing to rapidly prototype and iterate on software ideas",
@@ -82,61 +54,130 @@
       "Tech-savvy entrepreneurs aiming to launch software products with minimal coding",
       "Development agencies seeking to augment their teams with autonomous AI agents"
     ],
-    "mission_statement": "Vibiom exists to prove that coordinated AI specialists can build better software than single AI generalists - and to build itself using that same coordination. Solo developers shouldn't choose between autocomplete tools that make them faster coders and autonomous agents that produce mediocre code. Our mission is to demonstrate that specialized AI agents, each expert in their domain and working through peer review, produce production-grade code that single-agent systems can't match. We're starting small - three agents building secure APIs - because the foundation must be excellent before we scale. By dogfooding Vibiom to build Vibiom, we'll create an AI engineering organization that improves itself, giving solo developers the coordinated expertise of an entire team without the cost or complexity of hiring one."
+    "mission_statement": "Vibiom exists to prove that coordinated AI specialists can build better software than single AI generalists—and to build itself using that same coordination. Solo developers shouldn't choose between autocomplete tools that make them faster coders and autonomous agents that produce mediocre code. Our mission is to demonstrate that specialized AI agents, each expert in their domain and working through peer review, produce production-grade code that single-agent systems can't match.",
+    "success_milestone": "Vibiom successfully orchestrates 5-8 core agents to build a complete backend API (authentication, CRUD operations, database schema) from a written specification with minimal human intervention, completing the project in under 24 hours",
+    "tagline": "Multi-agent development that actually works. Built by using itself."
   },
-  "tempered_ui": {
-    "name": "TemperedUI",
+  "devgauntlet": {
+    "name": "DevGauntlet",
     "repo_url": "",
-    "type": "Design System / Component Library",
-    "description": "TemperedUI is a security-first React component library that makes secure development effortless and fast. It provides beautiful, accessible components with built-in protection against XSS, CSRF, and injection attacks. Features include auto-sanitizing inputs, secure forms with automatic token management, and safe links that prevent tabnabbing—all styled with Tailwind CSS. Built by an application security professional, TemperedUI eliminates the need to write security code manually for common UI patterns. Developers can ship secure, production-ready applications faster with components that protect by default while maintaining modern design standards and accessibility compliance.",
-    "mvp_technologies": [
-      "Vite",
-      "React",
+    "type": "SaaS Web Application",
+    "description": "DevGauntlet is a comprehensive professional software engineering training platform where developers build real projects by completing Jira-style tickets—no tutorials, just requirements and automated testing. Starting with backend development (authentication, APIs, databases), DevGauntlet expands across the entire engineering stack: frontend frameworks, mobile development, DevOps practices, AI engineering, desktop applications, and CLI tools.",
+    "technologies": [
+      "Next.js",
       "TypeScript",
+      "React",
       "Tailwind CSS",
-      "PNPM",
-      "DOMPurify",
-      "CSRF Token Handling",
-      "ESLint",
-      "Prettier",
-      "Vitest",
-      "React Testing Library",
-      "Storybook"
-    ],
-    "post_mvp_technologies": [
-      "Next.js Integration",
-      "React Native Support",
-      "Theming System",
-      "Dark Mode",
-      "Advanced Form Components",
-      "Date Pickers",
-      "File Uploads",
-      "Charts and Graphs",
-      "CI/CD with GitHub Actions",
-      "Automated Security Scanning",
-      "Stripe API for Paid Plans",
-      "JWT",
       "Supabase",
-      "tsup",
-      "Changesets",
-      "Zustand",
-      "chroma.js or culori",
-      "Monaco Editor for Playground",
-      "IndexedDB for Local Storage",
-      "Recharts or Chart.js",
-      "Custom secure wrappers around chart libraries"
+      "Vitest",
+      "GitHub Actions"
     ],
-    "monetization_strategy": "Freemium with Paid Plans for Advanced Components and Enterprise Features",
-    "status": "In Development",
-    "problem": "Building secure web applications requires developers to manually implement protection against XSS, CSRF, injection attacks, and other vulnerabilities for every input, form, and link. Security code is repetitive, easy to forget, and constantly needs updating as new attack vectors emerge. Most component libraries prioritize aesthetics over security, leaving developers to bolt on protection themselves—often incorrectly.",
-    "solution": "TemperedUI is a React component library where security is built into every component by default. Inputs auto-sanitize, forms include CSRF token management, links prevent tabnabbing, and all components are designed by an application security professional. Developers get beautiful, accessible, Tailwind-styled components that protect against common vulnerabilities automatically—no manual security code required.",
+    "monetization_strategy": "Freemium",
+    "status": "Not Started",
+    "priority": 8,
+    "due_date": "2026-01-01",
+    "problem": "Most developer education focuses on tutorials that hold your hand through every step, leaving developers unprepared for real work where you get a ticket, research solutions, and ship tested code. Bootcamps teach syntax but not professional workflows. Junior developers struggle to prove they can work independently because they've never practiced taking requirements and delivering working software.",
+    "solution": "DevGauntlet teaches professional development by having you do professional development. You receive Jira-style tickets with requirements and acceptance criteria. You research, implement, and test your solution. Automated testing validates your work. Your completed projects prove you can work professionally from day one. Learn TDD, BDD/DDD, Docker, Kubernetes, CI/CD, and Agile workflows by doing what professional engineers do.",
     "target_audience": [
-      "Full-stack developers building web applications who want secure components out-of-the-box",
-      "Frontend developers needing accessible, well-designed UI components with built-in security",
-      "Startups and small teams looking to ship secure applications faster without dedicated security experts",
-      "Freelance developers wanting to ensure their applications are secure without extra effort",
-      "Development agencies aiming to deliver secure, production-ready applications to clients quickly"
+      "Self-taught developers wanting to learn professional workflows",
+      "Bootcamp graduates needing to prove they can work independently",
+      "Junior developers preparing for their first engineering role",
+      "Career changers building a portfolio of real project work",
+      "Developers wanting to expand into new domains (backend, DevOps, AI)"
     ],
-    "mission_statement": "TemperedUI exists because security should never be an afterthought developers bolt on manually. Our mission is to make secure development the default path by building React components where protection is built into the foundation—not a feature you remember to add. We believe beautiful, accessible interfaces and robust security aren't competing priorities; they're inseparable standards that every application deserves."
+    "mission_statement": "DevGauntlet exists because tutorials don't prepare you for real work. Our mission is to train developers the way they'll actually work—by taking tickets, researching solutions, writing tested code, and shipping. No hand-holding, no step-by-step guides, just the challenge and the tools to figure it out.",
+    "success_milestone": "15 developers sign up and complete at least one full backend project challenge (MVP phase)",
+    "tagline": "No tutorials. Just challenges. Build like a professional developer, not a student."
+  },
+  "scopecreep": {
+    "name": "ScopeCreep",
+    "repo_url": "",
+    "type": "SaaS Web Application",
+    "description": "ScopeCreep is an automated testing platform for PostgreSQL Row-Level Security (RLS) policies. Similar to APIsec's approach for API security testing, ScopeCreep continuously validates that database access controls work as intended by testing RLS policies against realistic user scenarios. It identifies misconfigurations, permission escalations, and data leaks before they reach production.",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Supabase",
+      "TemperedUI"
+    ],
+    "monetization_strategy": "Freemium",
+    "status": "Blocked",
+    "blocked_by": "TemperedUI, DevGauntlet",
+    "priority": 5,
+    "due_date": "2026-01-31",
+    "problem": "Row-Level Security in PostgreSQL is powerful but notoriously difficult to test correctly. Developers define RLS policies assuming they work, but misconfigurations often go undetected until a data breach occurs. Manual testing is tedious and incomplete. There's no automated way to validate that RLS policies actually enforce the access patterns you intended.",
+    "solution": "ScopeCreep automates RLS policy testing. Developers define expected access patterns (user A should see their own data, admin B should see everything, user C should see nothing), and ScopeCreep automatically generates test cases, runs them against your database, and alerts on violations. Continuous testing catches regressions when policies change.",
+    "target_audience": [
+      "Backend developers using PostgreSQL RLS for multi-tenant applications",
+      "Security engineers auditing database access controls",
+      "Startups using Supabase who rely heavily on RLS",
+      "Development teams needing to validate access controls in CI/CD",
+      "Compliance-focused organizations requiring proof of access control testing"
+    ],
+    "mission_statement": "ScopeCreep exists because database authorization is too critical to test manually. Our mission is to bring the same rigor of API security testing to row-level security—automatically validating that your database access controls actually work before misconfigurations become breaches.",
+    "success_milestone": "3 companies pilot ScopeCreep and identify at least one RLS misconfiguration they weren't aware of",
+    "tagline": "Automated RLS testing for databases. Catch authorization bugs before they reach production."
+  },
+  "openorbit": {
+    "name": "OpenOrbit",
+    "repo_url": "",
+    "type": "SaaS Web Application / Social Platform",
+    "description": "OpenOrbit is a project-focused social platform for tech professionals to build, design, and learn in public. Unlike LinkedIn's resume-centric approach, OpenOrbit centers on active projects—developers, designers, security professionals, and other tech creators share their works-in-progress with status updates, images, videos, and documentation.",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+      "Supabase",
+      "TemperedUI",
+      "ScopeCreep"
+    ],
+    "monetization_strategy": "Freemium",
+    "status": "Blocked",
+    "blocked_by": "TemperedUI, ScopeCreep",
+    "priority": 3,
+    "due_date": "2026-02-28",
+    "problem": "LinkedIn is resume-focused—your profile is about where you worked, not what you're building. Twitter/X is noisy and not structured for project updates. There's no dedicated platform for tech professionals to share their building journey in a structured way that connects them with collaborators and builds reputation through work, not credentials.",
+    "solution": "OpenOrbit makes 'building in public' the core social experience. Users create project profiles with milestones, get feedback from the community, find collaborators, and showcase their building process. Projects can be shared externally, building reputation through transparent progress rather than polished portfolios. Connect with people through what you're creating rather than where you work.",
+    "target_audience": [
+      "Indie hackers and solo developers building in public",
+      "Designers sharing their design process and getting feedback",
+      "Security researchers documenting their work",
+      "Open-source maintainers engaging with their community",
+      "Tech creators who want to be known for what they build, not where they work"
+    ],
+    "mission_statement": "OpenOrbit exists because your best work isn't a resume bullet—it's what you're building right now. Our mission is to create a social platform where tech professionals connect through active projects, not past credentials. We believe reputation should come from transparent progress and real work, not polished portfolios and job titles.",
+    "success_milestone": "100 users create accounts and post at least 3 project updates each, with measurable engagement (comments/feedback) on their posts",
+    "tagline": "Build in public, together. A social platform for tech creators sharing projects, not resumes."
+  },
+  "instapi": {
+    "name": "InstAPI",
+    "repo_url": "",
+    "type": "SaaS Web Application / Developer Tool",
+    "description": "InstAPI is a rapid API prototyping tool that lets developers spin up mock REST APIs instantly for frontend development and testing. Define your endpoints and response shapes, and InstAPI generates a working API you can hit immediately—no backend code required.",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+      "Supabase"
+    ],
+    "monetization_strategy": "Freemium",
+    "status": "Not Started",
+    "priority": 5,
+    "problem": "Frontend developers often block on backend APIs that aren't ready yet. Setting up mock servers is tedious. Existing tools like JSON Server require local setup. There's friction between needing an API to build against and waiting for the real backend to be ready.",
+    "solution": "InstAPI lets you define API endpoints and response schemas in a web UI, then instantly generates a hosted mock API you can call from your frontend. No local setup, no code, just define and use. Great for prototyping, demos, and unblocking frontend development.",
+    "target_audience": [
+      "Frontend developers needing mock APIs for development",
+      "Full-stack developers prototyping before building real backends",
+      "Teams with frontend and backend working in parallel",
+      "Developers building demos or proof-of-concepts quickly"
+    ],
+    "mission_statement": "InstAPI exists to unblock frontend development. Our mission is to eliminate the wait for backend APIs by letting developers instantly create the mock APIs they need to keep building.",
+    "success_milestone": "50 developers use InstAPI to create mock APIs for their projects",
+    "tagline": "Mock APIs in seconds. Stop waiting for backend, start building frontend."
   }
 }
