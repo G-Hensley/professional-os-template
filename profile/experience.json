@@ -76,9 +76,75 @@
     ]
   },
   "BuiltInPublic": {
-    "role": "Full-Stack Software Engineer"
+    "role": "Full-Stack Software Engineer",
+    "start_date": "2025-04-13",
+    "end_date": "2025-11-28",
+    "location": "Remote",
+    "job_type": "freelance",
+    "responsibilities": [
+      " Collaborate with a cross-functional team to develop and enhance BuiltInPublic, a platform for developers to share their coding journey publicly.",
+      "Design and implement front-end components using React, TypeScript, and TailwindCSS to create a responsive and user-friendly interface.",
+      "Develop backend functionality and manage database interactions using Supabase, ensuring data integrity and security.",
+      "Implement data fetching and state management using React Query to optimize application performance.",
+      "Participate in architecture discussions and technical planning to contribute to the overall development strategy.",
+      "Work closely with UI/UX designers to ensure a cohesive and visually appealing user experience.",
+      "Review code contributions and provide feedback to maintain high code quality standards.",
+      "Maintain and update GitHub documentation, including the README and internal wiki, to support developer onboarding and collaboration.",
+      "Contribute to CI/CD pipelines to streamline the development and deployment process.",
+      "Offer suggestions to enhance usability and user experience based on user feedback and design principles.",
+      "Engage in various aspects of the application, including front-end, back-end, database, authentication, and DevOps, to ensure a well-rounded development approach."
+    ],
+   "technologies": [
+      "React",
+      "TypeScript",
+      "TailwindCSS",
+      "Tanstack Query",
+      "Supabase",
+      "React Query",
+      "GitHub",
+      "Docker",
+      "CI/CD"
+    ],
+    "performance_metrics": [
+      "Successfully launched the BuiltInPublic platform, enabling developers to share their coding journeys and projects publicly.",
+      "Improved application performance by optimizing data fetching and state management using React Query, resulting in a smoother user experience.",
+      "Enhanced code quality through active participation in code reviews and adherence to best practices, leading to a more maintainable codebase.",
+      "Contributed to the development of key features and functionalities that increased user engagement and satisfaction on the platform."
+    ],
+    "project_url": "https://builtinpublic.tech",
+    "salary": 0,
+    "salary_currency": "USD"
   },
   "Concentrix": {
-    "role": "Senior Software Support Engineer"
+    "role": "Senior Software Support Engineer",
+    "first_start_date": "2021-09-10",
+    "first_end_date": "2022-04-15",
+    "second_start_date": "2023-07-19",
+    "second_end_date": "2024-10-01",
+    "location": "Remote",
+    "job_type": "Full-time",
+    "responsibilities": [
+      "Provided high-level support for Apple’s SaaS services and hardware ecosystem, working closely with engineering teams to report, reproduce, and escalate software issues.",
+      "Diagnosed and documented software bugs in iOS/macOS platforms and SaaS tools like iCloud and Apple ID, improving case resolution and engineering turnaround time.",
+      "Conducted device testing, system reinstalls, and error validation across iPads, Macs, and iPhones.",
+      "Managed 1,000+ end-user cases end-to-end, maintaining a 95%+ satisfaction rate via personalized email and phone follow-ups."
+    ],
+    "performance_metrics": [
+      "Progressed from Tier 1 to Tier 2 Support"
+    ],
+    "skills": [
+      "iOS",
+      "Software as a Service (SaaS)",
+      "Technical Support",
+      "Bug Tracking",
+      "Hardware Diagnostics",
+      "macOS",
+      "iOS/macOS Troubleshooting",
+      "Customer Support",
+      "Issue Escalation",
+      "Device Testing"
+    ],
+    "salary": 40000,
+    "salary_currency": "USD"
   }
 }
