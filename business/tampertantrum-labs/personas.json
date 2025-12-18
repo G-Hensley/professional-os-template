@@ -1,0 +1,228 @@
+{
+  "note": "Target audience personas for TamperTantrum Labs. These represent the developers and teams we serve.",
+  "personas": [
+    {
+      "id": "solo-sam",
+      "name": "Sam Chen",
+      "title": "Indie App Dev",
+      "emoji": "🧑‍💻",
+      "demographics": {
+        "age": 27,
+        "gender": "Male",
+        "income": "$40K–$70K",
+        "occupation": "Full-stack developer, indie hacker",
+        "location": "Remote (Austin, TX or similar)",
+        "education": "Self-taught or bootcamp grad",
+        "marital_status": "Single",
+        "family_size": 1,
+        "tech_literacy": "High"
+      },
+      "personality_and_values": [
+        "Curious, self-reliant, hates gatekeeping",
+        "Values fast feedback and clear takeaways",
+        "Cares about UX and clean code"
+      ],
+      "goals": [
+        "Launch secure SaaS apps with minimal tech debt",
+        "Automate security checks in GitHub Actions",
+        "Build user trust before monetization"
+      ],
+      "pain_points": [
+        "Doesn't know what security he's missing",
+        "Overwhelmed by security tools and jargon",
+        "Wants to use things like Semgrep but doesn't know where to start",
+        "Can't afford traditional consultants"
+      ]
+    },
+    {
+      "id": "scaling-sara",
+      "name": "Sara Malik",
+      "title": "Startup CTO",
+      "emoji": "🤝",
+      "demographics": {
+        "age": 35,
+        "gender": "Female",
+        "income": "$110K+",
+        "occupation": "CTO of a seed-funded startup",
+        "location": "SF Bay Area",
+        "education": "CS BS/MS",
+        "marital_status": "Married",
+        "family_size": 3,
+        "tech_literacy": "Very High"
+      },
+      "personality_and_values": [
+        "Strategic thinker, velocity-focused",
+        "Practical and risk-aware",
+        "Wants security without friction for her devs"
+      ],
+      "goals": [
+        "Prep for SOC 2 / compliance milestones",
+        "Harden auth flows, APIs, and CI/CD pipelines",
+        "Impress investors with AppSec maturity"
+      ],
+      "pain_points": [
+        "No internal AppSec lead yet",
+        "Devs see security as blockers",
+        "Concerned about 'unknown unknowns' in the stack"
+      ]
+    },
+    {
+      "id": "builder-ben",
+      "name": "Ben Okafor",
+      "title": "Open Source Maintainer",
+      "emoji": "🌟",
+      "demographics": {
+        "age": 32,
+        "gender": "Male",
+        "income": "<$50K",
+        "occupation": "OSS project maintainer",
+        "location": "Global (e.g. Nigeria)",
+        "education": "BS in Software Engineering",
+        "marital_status": "Single",
+        "family_size": 2,
+        "tech_literacy": "High"
+      },
+      "personality_and_values": [
+        "Collaborative, values community trust",
+        "Invested in good governance",
+        "Wants clean, repeatable security systems"
+      ],
+      "goals": [
+        "Make the project safer for contributors",
+        "Automate checks on pull requests",
+        "Set a security standard for their community"
+      ],
+      "pain_points": [
+        "Doesn't know which policies or tools to adopt",
+        "No budget for external AppSec help",
+        "Nervous about handling user data responsibly"
+      ]
+    },
+    {
+      "id": "project-paige",
+      "name": "Paige Rios",
+      "title": "Freelance Dev Team Lead",
+      "emoji": "💼",
+      "demographics": {
+        "age": 29,
+        "gender": "Female",
+        "income": "$60K",
+        "occupation": "Freelancer / small team lead",
+        "location": "Remote (Canada)",
+        "education": "Bootcamp + 5 yrs client work",
+        "marital_status": "Partnered",
+        "family_size": 2,
+        "tech_literacy": "High"
+      },
+      "personality_and_values": [
+        "Client-focused, likes being dependable",
+        "Wants to add security as a 'bonus feature'",
+        "Appreciates expert guidance she can trust"
+      ],
+      "goals": [
+        "Deliver secure apps that boost client trust",
+        "Use security as a value-add in proposals",
+        "Learn enough to confidently implement safe defaults"
+      ],
+      "pain_points": [
+        "Doesn't know how to 'sell' security to clients",
+        "Worried about breaking things with changes",
+        "Needs just-in-time help, not full-time support"
+      ]
+    },
+    {
+      "id": "visionary-victor",
+      "name": "Victor Reyes",
+      "title": "Founder / Product Manager",
+      "emoji": "📅",
+      "demographics": {
+        "age": 42,
+        "gender": "Male",
+        "income": "$150K",
+        "occupation": "Startup founder / PM",
+        "location": "New York, NY",
+        "education": "MBA + undergrad CS",
+        "marital_status": "Married",
+        "family_size": 4,
+        "tech_literacy": "Medium"
+      },
+      "personality_and_values": [
+        "Business-savvy, mission-driven",
+        "Values ROI, speed, and user trust",
+        "Delegates tech but wants clarity"
+      ],
+      "goals": [
+        "Launch secure MVPs fast",
+        "'Check off' security for partners/investors",
+        "Get simple dashboards or summaries he can forward"
+      ],
+      "pain_points": [
+        "Doesn't speak dev fluently",
+        "Overwhelmed by AppSec acronyms",
+        "Needs to justify AppSec spend with real outcomes"
+      ]
+    },
+    {
+      "id": "connector-casey",
+      "name": "Casey Nguyen",
+      "title": "DevRel / Platform Engineer",
+      "emoji": "🔗",
+      "demographics": {
+        "age": 30,
+        "gender": "Nonbinary",
+        "income": "$100K–$140K",
+        "occupation": "DevRel or internal platform engineer",
+        "location": "Remote / hybrid (Seattle or similar)",
+        "education": "CS degree or equivalent experience",
+        "marital_status": "Single",
+        "tech_literacy": "Very High"
+      },
+      "personality_and_values": [
+        "Loves improving DX and creating systems that scale",
+        "Advocates for good tooling, not top-down mandates",
+        "Big on open source and automation"
+      ],
+      "goals": [
+        "Standardize lightweight security across projects",
+        "Equip devs with tools that don't interrupt flow",
+        "Keep security out of Jira hell"
+      ],
+      "pain_points": [
+        "Devs ignore tools they don't trust",
+        "Doesn't have time to coach every team on AppSec",
+        "Needs GitHub-native, CI/CD-friendly solutions"
+      ]
+    },
+    {
+      "id": "curious-chris",
+      "name": "Chris Park",
+      "title": "Aspiring Security Learner",
+      "emoji": "🧪",
+      "demographics": {
+        "age": 22,
+        "gender": "Any",
+        "income": "<$35K",
+        "occupation": "Cybersecurity student or early-career analyst",
+        "location": "Global / remote",
+        "education": "Self-taught, certs, or in school",
+        "marital_status": "Single",
+        "tech_literacy": "Medium-High"
+      },
+      "personality_and_values": [
+        "Eager to learn and break into the field",
+        "Loves hands-on practice and labs",
+        "Looking for mentors and community"
+      ],
+      "goals": [
+        "Build a strong AppSec portfolio",
+        "Learn to find & fix real-world vulnerabilities",
+        "Use beginner-friendly tooling with guided feedback"
+      ],
+      "pain_points": [
+        "Overwhelmed by complex tools (e.g. Burp, ZAP)",
+        "Doesn't know what 'real' AppSec workflows look like",
+        "Has limited budget and wants approachable on-ramps"
+      ]
+    }
+  ]
+}

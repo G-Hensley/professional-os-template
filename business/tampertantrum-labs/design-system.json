@@ -2,65 +2,100 @@
   "note": "Design system and style guide for TamperTantrum Labs. Use for generated images, website design, marketing materials, and brand consistency.",
   "colors": {
     "primary": {
-      "hex": "",
-      "rgb": "",
-      "usage": "Main brand color, CTAs, primary buttons, links"
+      "name": "Tamper Red",
+      "hex": "#D32E20",
+      "rgb": "211, 46, 32",
+      "tailwind": "red-700 or red-800",
+      "tailwind_class": "text-red-700, bg-red-800",
+      "usage": "Hero color — buttons, icons, key accents"
     },
     "secondary": {
-      "hex": "",
-      "rgb": "",
-      "usage": "Supporting elements, secondary buttons, borders"
+      "name": "Midnight Navy",
+      "hex": "#1E2A38",
+      "rgb": "30, 42, 56",
+      "tailwind": "slate-900 or blue-gray-900",
+      "tailwind_class": "bg-slate-900, text-slate-900",
+      "usage": "Cards, nav bars, footer contrast"
     },
-    "accent": {
-      "hex": "",
-      "rgb": "",
-      "usage": "Highlights, notifications, special callouts"
+    "accent_1": {
+      "name": "Trust Teal",
+      "hex": "#2E8B8B",
+      "rgb": "46, 139, 139",
+      "tailwind": "teal-600 or cyan-700",
+      "tailwind_class": "bg-teal-600, text-cyan-700",
+      "usage": "Calming complement to red — buttons, links, tags"
+    },
+    "accent_2": {
+      "name": "Slate Gray",
+      "hex": "#6C757D",
+      "rgb": "108, 117, 125",
+      "tailwind": "slate-500 or gray-500",
+      "tailwind_class": "text-slate-500, border-gray-500",
+      "usage": "Secondary UI, muted text, card outlines"
     },
     "background": {
-      "light": "",
-      "dark": "",
-      "usage": "Page backgrounds, card backgrounds"
+      "name": "Deep Charcoal",
+      "hex": "#121212",
+      "rgb": "18, 18, 18",
+      "tailwind": "zinc-950 or gray-900",
+      "tailwind_class": "bg-zinc-950, bg-gray-900",
+      "usage": "Main page background — pure dark but not pitch black"
     },
-    "text": {
-      "primary": "",
-      "secondary": "",
-      "muted": "",
-      "inverse": ""
+    "foreground": {
+      "name": "Soft White",
+      "hex": "#F2F2F2",
+      "rgb": "242, 242, 242",
+      "tailwind": "zinc-100 or gray-100",
+      "tailwind_class": "text-zinc-100, text-gray-100",
+      "usage": "Main text color — readable against deep background"
+    },
+    "link_success": {
+      "name": "Cyber Blue",
+      "hex": "#3A8DFF",
+      "rgb": "58, 141, 255",
+      "tailwind": "blue-500 or sky-500",
+      "tailwind_class": "text-blue-500, hover:text-sky-400",
+      "usage": "For links or safe actions, balances red"
     },
     "semantic": {
-      "success": "",
-      "warning": "",
-      "error": "",
-      "info": ""
+      "success": "#3A8DFF",
+      "warning": "#F59E0B",
+      "error": "#D32E20",
+      "info": "#2E8B8B"
     },
     "gradients": []
   },
   "typography": {
     "font_families": {
       "headings": {
-        "name": "",
+        "name": "JetBrains Mono",
+        "fallback": "monospace",
+        "source": "Google Fonts"
+      },
+      "subheadings": {
+        "name": "Space Grotesk",
         "fallback": "system-ui, sans-serif",
-        "source": ""
+        "source": "Google Fonts"
       },
       "body": {
-        "name": "",
+        "name": "Inter",
         "fallback": "system-ui, sans-serif",
-        "source": ""
+        "source": "Google Fonts"
       },
       "code": {
-        "name": "",
+        "name": "JetBrains Mono",
         "fallback": "monospace",
-        "source": ""
+        "source": "Google Fonts"
       }
     },
     "scale": {
-      "h1": { "size": "", "weight": "", "line_height": "" },
-      "h2": { "size": "", "weight": "", "line_height": "" },
-      "h3": { "size": "", "weight": "", "line_height": "" },
-      "h4": { "size": "", "weight": "", "line_height": "" },
-      "body": { "size": "", "weight": "", "line_height": "" },
-      "small": { "size": "", "weight": "", "line_height": "" },
-      "caption": { "size": "", "weight": "", "line_height": "" }
+      "h1": { "size": "", "weight": "700", "line_height": "", "font": "JetBrains Mono" },
+      "h2": { "size": "", "weight": "700", "line_height": "", "font": "JetBrains Mono" },
+      "h3": { "size": "", "weight": "600", "line_height": "", "font": "Space Grotesk" },
+      "h4": { "size": "", "weight": "600", "line_height": "", "font": "Space Grotesk" },
+      "body": { "size": "", "weight": "400", "line_height": "", "font": "Inter" },
+      "small": { "size": "", "weight": "400", "line_height": "", "font": "Inter" },
+      "caption": { "size": "", "weight": "400", "line_height": "", "font": "Inter" }
     }
   },
   "spacing": {
@@ -78,9 +113,9 @@
   "borders": {
     "radius": {
       "none": "0",
-      "sm": "",
-      "md": "",
-      "lg": "",
+      "sm": "0.25rem",
+      "md": "0.5rem",
+      "lg": "0.75rem",
       "full": "9999px"
     },
     "width": {
@@ -98,11 +133,11 @@
   "logos": {
     "primary": {
       "path": "assets/logo.png",
-      "usage": "Default logo for light backgrounds"
+      "usage": "Default logo for dark backgrounds"
     },
-    "dark": {
-      "path": "assets/logo-dark.png",
-      "usage": "Logo for dark backgrounds"
+    "light": {
+      "path": "assets/logo-light.png",
+      "usage": "Logo for light backgrounds"
     },
     "icon": {
       "path": "assets/icon.png",
@@ -115,12 +150,37 @@
     "clear_space": "Minimum padding around logo",
     "minimum_size": "24px height for icon, 100px width for full logo"
   },
+  "tone_of_voice": {
+    "principles": [
+      "Friendly, Not Fluffy",
+      "Confident, Not Cocky",
+      "Clear, Not Corporate",
+      "Empowering, Not Condescending",
+      "Honest, Not Fear-Driven"
+    ],
+    "examples": {
+      "good": [
+        "Let's walk through how this vulnerability works — and how to shut it down fast.",
+        "I found a critical issue in your auth flow — here's what it means, and how to fix it.",
+        "Your login endpoint doesn't rate-limit attempts — which makes brute force attacks way easier.",
+        "Here's how this could be exploited — and here's a better way to build it.",
+        "There's a real risk here, but it's fixable. Let's walk through the steps."
+      ],
+      "bad": [
+        "Our security expertise ensures a best-in-class mitigation strategy for your digital surface.",
+        "Wow, I can't believe this is still vulnerable. Who built this?",
+        "The authentication interface lacks sufficient preventative logic to deter malicious enumeration.",
+        "This is a basic security issue you really should've known.",
+        "Hackers are already targeting flaws like this. You could lose everything."
+      ]
+    }
+  },
   "image_generation": {
     "social_posts": {
       "linkedin": {
         "dimensions": "1200x627",
         "safe_zone": "Keep text within center 80%",
-        "style_notes": "Professional, security-focused, trustworthy"
+        "style_notes": "Professional, security-focused, trustworthy, use dark background with Tamper Red accents"
       },
       "twitter": {
         "dimensions": "1200x675",
@@ -142,12 +202,13 @@
         "Matrix-style green text",
         "Scary/threatening security imagery",
         "Overly technical screenshots",
-        "Stock photos"
+        "Stock photos",
+        "Fear-mongering visuals"
       ]
     },
     "text_on_images": {
       "max_words": "7-10 words for social images",
-      "font_usage": "Use heading font for titles",
+      "font_usage": "Use JetBrains Mono for titles, Space Grotesk for subtitles",
       "contrast": "Ensure WCAG AA contrast ratio minimum",
       "placement": "Left-aligned or centered, avoid edges"
     }
@@ -161,18 +222,18 @@
     },
     "components": {
       "buttons": {
-        "primary": "Solid fill with primary color",
-        "secondary": "Outline style",
+        "primary": "Solid fill with Tamper Red (#D32E20)",
+        "secondary": "Outline with Trust Teal (#2E8B8B)",
         "ghost": "Text only with hover effect"
       },
-      "cards": "Clean, professional service cards",
+      "cards": "Dark background (Midnight Navy) with subtle borders",
       "inputs": "Clear labels, validation states",
       "navigation": "Simple, conversion-focused"
     },
     "dark_mode": {
-      "supported": false,
-      "default": "light",
-      "notes": "Professional consulting site, light mode preferred"
+      "supported": true,
+      "default": "dark",
+      "notes": "Dark theme is primary - Deep Charcoal background with Soft White text"
     }
   },
   "content_templates": {
@@ -198,12 +259,13 @@
     "keywords": [
       "Trustworthy",
       "Approachable",
-      "Professional",
-      "Security-focused",
       "Developer-friendly",
-      "Not intimidating"
+      "Professional",
+      "Not intimidating",
+      "Empowering",
+      "Practical"
     ],
-    "mood": "Security expertise that's accessible, not scary. Like a knowledgeable friend who happens to be a security expert.",
+    "mood": "Security expertise that's accessible, not scary. Like a knowledgeable friend who happens to be a security expert. Confident without being cocky.",
     "inspiration": []
   }
 }

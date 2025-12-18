@@ -1,42 +1,77 @@
 {
+  "objectives": [
+    "Build brand visibility and trust through consistent content and presence",
+    "Position Brenda as a developer-first security expert via posts and talks",
+    "Drive inbound leads from content (LinkedIn, site, referrals)",
+    "Support SaaS product validation and awareness through storytelling",
+    "Build community ties with indie devs and OSS maintainers"
+  ],
   "content_strategy": {
     "pillars": [
       {
-        "name": "Security Education",
-        "description": "Help developers understand security without intimidation",
-        "content_types": ["Tips", "Common mistakes", "Best practices", "Explainers"]
+        "name": "Technical How-Tos",
+        "description": "Practical security guidance developers can implement immediately",
+        "content_types": ["How to threat model a REST API", "CI pipeline security basics", "Intro to static vs dynamic testing"]
       },
       {
-        "name": "Accessible Security",
-        "description": "Show that AppSec doesn't have to be enterprise-only",
-        "content_types": ["Case studies", "Pricing transparency", "Process explanations"]
+        "name": "AppSec Wins/Stories",
+        "description": "Real-world examples and breakdowns that demonstrate expertise",
+        "content_types": ["I found this bug in auth logic", "Fixing a real issue in open source", "Breaking down OWASP Top 10 with examples"]
       },
       {
-        "name": "Practical Advice",
-        "description": "Actionable security guidance developers can use immediately",
-        "content_types": ["How-tos", "Checklists", "Quick wins"]
+        "name": "Dev-Friendly Tools",
+        "description": "Showcase and recommend tools that fit developer workflows",
+        "content_types": ["Favorite GitHub Actions for AppSec", "Lightweight tools vs. enterprise bloat", "Tools I'm testing or building"]
+      },
+      {
+        "name": "Startup/Dev Pain Points",
+        "description": "Address common challenges and show empathy for the audience",
+        "content_types": ["Why CI/CD security gets skipped", "How I help devs ship safer, faster", "What devs miss about auth flows"]
+      },
+      {
+        "name": "Personal Journey/Transparency",
+        "description": "Build trust through authentic sharing of the business journey",
+        "content_types": ["Lessons from starting my own consultancy", "What it's like building tools while consulting", "How I broke into AppSec after rejection"]
       }
+    ],
+    "content_ideas": [
+      "Security isn't about fear. It's about confidence.",
+      "Before vs. after: how one tweak fixed an auth flaw.",
+      "Why I built a GitHub Action for X",
+      "Common security myths indie devs believe",
+      "One thing your CI pipeline probably isn't checking (but should)",
+      "What I learned building a security tool from scratch",
+      "Office Hours Round-Up: 3 questions I keep getting from solo devs",
+      "How to think like a hacker when you're short on time"
     ]
   },
   "channels": [
     {
       "platform": "LinkedIn (TamperTantrum Labs)",
       "purpose": "Business presence, thought leadership, client acquisition",
-      "content_focus": ["Security tips", "Service announcements", "Client success stories"],
-      "posting_frequency": "",
+      "content_focus": ["Security tips", "Service announcements", "Client success stories", "Build in public updates"],
+      "posting_frequency": "3x per week",
       "profile_url": "https://linkedin.com/company/tampertantrum-labs",
-      "current_followers": 119
+      "current_followers": 119,
+      "target_followers": 500
     },
     {
       "platform": "Website",
-      "purpose": "Service information, lead generation, credibility",
+      "purpose": "Service information, lead generation, credibility, contact flow",
       "status": "Not launched",
-      "url": ""
+      "url": "",
+      "requirements": ["Contact form", "Service list", "CTA", "Case studies"]
     }
   ],
   "campaigns": [],
   "lead_generation": {
-    "strategies": [],
+    "strategies": [
+      "LinkedIn content marketing",
+      "Website contact form",
+      "Free/discounted engagements for referrals",
+      "Office hours for quick consultations",
+      "Workshops and speaking engagements"
+    ],
     "referral_sources": []
   },
   "metrics_to_track": [
@@ -44,6 +79,7 @@
     "Website traffic",
     "Inbound inquiries",
     "Conversion rate (inquiry → client)",
-    "Client retention"
+    "Client retention",
+    "Content performance (views, shares, comments)"
   ]
 }
