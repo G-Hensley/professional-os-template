@@ -1,0 +1,17 @@
+{
+  "name": "Gavin Hensley",
+  "phone": "606-939-6944",
+  "email": "gavinhensley@protonmail.com",
+  "location": {
+    "city": "Portsmouth",
+    "state": "OH",
+    "timezone": "EST",
+    "remote_only": true
+  },
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/g-hensley/",
+    "github": "https://www.github.com/G-Hensley",
+    "portfolio": "https://gavinhensley.dev",
+    "credly": "https://www.credly.com/users/gavin-hensley.ce8f7773"
+  }
+}
