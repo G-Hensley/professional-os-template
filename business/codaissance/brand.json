@@ -108,18 +108,5 @@
       "primary_persona": "All"
     }
   ],
-  "visual_identity": {
-    "logo": "assets/logo.png",
-    "logo_dark": "assets/logo-dark.png",
-    "colors": {
-      "primary": "",
-      "secondary": "",
-      "accent": ""
-    },
-    "typography": {
-      "headings": "",
-      "body": "",
-      "code": ""
-    }
-  }
+  "design_system": "See design-system.json for colors, typography, and visual guidelines"
 }

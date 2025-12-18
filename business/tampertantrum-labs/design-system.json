@@ -1,0 +1,209 @@
+{
+  "note": "Design system and style guide for TamperTantrum Labs. Use for generated images, website design, marketing materials, and brand consistency.",
+  "colors": {
+    "primary": {
+      "hex": "",
+      "rgb": "",
+      "usage": "Main brand color, CTAs, primary buttons, links"
+    },
+    "secondary": {
+      "hex": "",
+      "rgb": "",
+      "usage": "Supporting elements, secondary buttons, borders"
+    },
+    "accent": {
+      "hex": "",
+      "rgb": "",
+      "usage": "Highlights, notifications, special callouts"
+    },
+    "background": {
+      "light": "",
+      "dark": "",
+      "usage": "Page backgrounds, card backgrounds"
+    },
+    "text": {
+      "primary": "",
+      "secondary": "",
+      "muted": "",
+      "inverse": ""
+    },
+    "semantic": {
+      "success": "",
+      "warning": "",
+      "error": "",
+      "info": ""
+    },
+    "gradients": []
+  },
+  "typography": {
+    "font_families": {
+      "headings": {
+        "name": "",
+        "fallback": "system-ui, sans-serif",
+        "source": ""
+      },
+      "body": {
+        "name": "",
+        "fallback": "system-ui, sans-serif",
+        "source": ""
+      },
+      "code": {
+        "name": "",
+        "fallback": "monospace",
+        "source": ""
+      }
+    },
+    "scale": {
+      "h1": { "size": "", "weight": "", "line_height": "" },
+      "h2": { "size": "", "weight": "", "line_height": "" },
+      "h3": { "size": "", "weight": "", "line_height": "" },
+      "h4": { "size": "", "weight": "", "line_height": "" },
+      "body": { "size": "", "weight": "", "line_height": "" },
+      "small": { "size": "", "weight": "", "line_height": "" },
+      "caption": { "size": "", "weight": "", "line_height": "" }
+    }
+  },
+  "spacing": {
+    "unit": "rem",
+    "scale": {
+      "xs": "0.25rem",
+      "sm": "0.5rem",
+      "md": "1rem",
+      "lg": "1.5rem",
+      "xl": "2rem",
+      "2xl": "3rem",
+      "3xl": "4rem"
+    }
+  },
+  "borders": {
+    "radius": {
+      "none": "0",
+      "sm": "",
+      "md": "",
+      "lg": "",
+      "full": "9999px"
+    },
+    "width": {
+      "thin": "1px",
+      "medium": "2px",
+      "thick": "4px"
+    }
+  },
+  "shadows": {
+    "sm": "",
+    "md": "",
+    "lg": "",
+    "xl": ""
+  },
+  "logos": {
+    "primary": {
+      "path": "assets/logo.png",
+      "usage": "Default logo for light backgrounds"
+    },
+    "dark": {
+      "path": "assets/logo-dark.png",
+      "usage": "Logo for dark backgrounds"
+    },
+    "icon": {
+      "path": "assets/icon.png",
+      "usage": "Favicon, app icons, small spaces"
+    },
+    "wordmark": {
+      "path": "assets/wordmark.png",
+      "usage": "Text-only logo variant"
+    },
+    "clear_space": "Minimum padding around logo",
+    "minimum_size": "24px height for icon, 100px width for full logo"
+  },
+  "image_generation": {
+    "social_posts": {
+      "linkedin": {
+        "dimensions": "1200x627",
+        "safe_zone": "Keep text within center 80%",
+        "style_notes": "Professional, security-focused, trustworthy"
+      },
+      "twitter": {
+        "dimensions": "1200x675",
+        "safe_zone": "Keep text within center 80%",
+        "style_notes": "Developer-friendly, approachable security"
+      },
+      "og_image": {
+        "dimensions": "1200x630",
+        "style_notes": "Clear title, brand colors, logo placement bottom-right"
+      }
+    },
+    "style_guidelines": {
+      "photography": "Minimal, abstract, security-themed when appropriate",
+      "illustrations": "Clean, professional, security iconography",
+      "icons": "Shield motifs, lock icons, security symbols",
+      "patterns": [],
+      "avoid": [
+        "Hooded hacker imagery",
+        "Matrix-style green text",
+        "Scary/threatening security imagery",
+        "Overly technical screenshots",
+        "Stock photos"
+      ]
+    },
+    "text_on_images": {
+      "max_words": "7-10 words for social images",
+      "font_usage": "Use heading font for titles",
+      "contrast": "Ensure WCAG AA contrast ratio minimum",
+      "placement": "Left-aligned or centered, avoid edges"
+    }
+  },
+  "website_design": {
+    "layout": {
+      "max_width": "1200px",
+      "content_width": "720px",
+      "grid_columns": 12,
+      "gutter": "1.5rem"
+    },
+    "components": {
+      "buttons": {
+        "primary": "Solid fill with primary color",
+        "secondary": "Outline style",
+        "ghost": "Text only with hover effect"
+      },
+      "cards": "Clean, professional service cards",
+      "inputs": "Clear labels, validation states",
+      "navigation": "Simple, conversion-focused"
+    },
+    "dark_mode": {
+      "supported": false,
+      "default": "light",
+      "notes": "Professional consulting site, light mode preferred"
+    }
+  },
+  "content_templates": {
+    "service_card": {
+      "description": "Service offering cards",
+      "elements": ["Service name", "Brief description", "Icon"]
+    },
+    "blog_header": {
+      "description": "Security tip or article headers",
+      "dimensions": "1200x630",
+      "elements": ["Title", "Category", "Logo"]
+    },
+    "testimonial": {
+      "description": "Client testimonials",
+      "elements": ["Quote", "Client name/company", "Logo"]
+    },
+    "social_tip": {
+      "description": "Security tips for social media",
+      "elements": ["Tip headline", "Brief explanation", "Branding"]
+    }
+  },
+  "brand_personality_in_design": {
+    "keywords": [
+      "Trustworthy",
+      "Approachable",
+      "Professional",
+      "Security-focused",
+      "Developer-friendly",
+      "Not intimidating"
+    ],
+    "mood": "Security expertise that's accessible, not scary. Like a knowledgeable friend who happens to be a security expert.",
+    "inspiration": []
+  }
+}
