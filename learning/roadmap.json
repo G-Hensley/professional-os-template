@@ -1,0 +1,18 @@
+{
+  "current_focus": [],
+  "queue": [
+    {
+      "skill": "",
+      "category": "language|framework|tool|concept",
+      "priority": 1,
+      "why": "",
+      "resources": [],
+      "target_level": "novice|apprentice|adept|expert",
+      "current_level": "none|novice|apprentice|adept",
+      "blocked_by": null,
+      "notes": ""
+    }
+  ],
+  "backlog": [],
+  "on_hold": []
+}

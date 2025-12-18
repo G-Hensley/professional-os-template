@@ -1,0 +1,14 @@
+{
+  "entries": [
+    {
+      "name": "",
+      "type": "course|book|tutorial|project|certification",
+      "category": "language|framework|tool|concept",
+      "source": "",
+      "url": "",
+      "completed_date": "YYYY-MM-DD",
+      "skills_gained": [],
+      "notes": ""
+    }
+  ]
+}
