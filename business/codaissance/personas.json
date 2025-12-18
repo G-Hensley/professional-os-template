@@ -1,0 +1,182 @@
+{
+  "note": "These are BRAND personas - people who follow Codaissance as a studio. Individual products have their own specific personas.",
+  "primary": {
+    "name": "Daniel",
+    "title": "The Quality-Conscious Developer",
+    "demographics": {
+      "age_range": "30-45",
+      "experience": "8-15 years development",
+      "level": "Senior, Staff, or Principal",
+      "context": "Works at a company but has strong opinions about tools, may have side projects or contribute to open source"
+    },
+    "psychographics": {
+      "beliefs": [
+        "Most software is mediocre because incentives are wrong",
+        "Respects independent builders over VC-funded startups",
+        "Values transparency, honesty, and craftsmanship"
+      ],
+      "behaviors": [
+        "Evaluates tools on merit, not marketing hype",
+        "Reads source code, checks dependencies, reviews security",
+        "Would rather use fewer, better tools than many mediocre ones"
+      ]
+    },
+    "pain_points": [
+      "Good tools get acquired and ruined by new owners",
+      "'Free' tools harvest data or push premium aggressively",
+      "Enterprise software is bloated, slow, and overpriced",
+      "Hard to find tools built by people who actually use them",
+      "Security is usually an afterthought, not a foundation"
+    ],
+    "trust_builders": [
+      "Transparent development process (building in public)",
+      "Security-first approach they can verify",
+      "No dark patterns or manipulative pricing",
+      "Products that solve real problems elegantly",
+      "Founder who clearly uses their own tools"
+    ],
+    "messaging": [
+      "Built by someone who actually uses it",
+      "Security and quality aren't features—they're foundations",
+      "No bloat, no dark patterns, no compromises"
+    ]
+  },
+  "secondary": {
+    "name": "Mia",
+    "title": "The Independent Builder / Solopreneur",
+    "demographics": {
+      "age_range": "26-40",
+      "background": "Technical (developer, designer, or technical PM)",
+      "context": "Building own products or running small software business, 2-10 years into indie journey"
+    },
+    "psychographics": {
+      "beliefs": [
+        "Independent builders can compete with big companies",
+        "Values the journey as much as the destination",
+        "Community-minded, supports other indie builders"
+      ],
+      "behaviors": [
+        "Follows build-in-public content",
+        "Studies how other indie builders operate",
+        "Budget-conscious but willing to pay for quality"
+      ]
+    },
+    "pain_points": [
+      "Hard to find role models building diverse product portfolios",
+      "Most indie hacker content focuses on one product or quick wins",
+      "Wants to see sustainable, quality-focused building approaches",
+      "Looking for inspiration beyond 'grow fast, exit fast'"
+    ],
+    "trust_builders": [
+      "Transparent sharing of process, decisions, and learnings",
+      "Sustainable approach (not growth-at-all-costs)",
+      "Quality products that prove the model works",
+      "Willingness to share both successes and failures"
+    ],
+    "messaging": [
+      "Building the tools we wish existed",
+      "Proving independent builders can deliver professional quality",
+      "No venture pressure, no compromises"
+    ]
+  },
+  "tertiary": {
+    "name": "Alex",
+    "title": "The Security-Aware Professional",
+    "demographics": {
+      "age_range": "28-45",
+      "role": "Works in or adjacent to security (AppSec, DevSecOps, security-conscious dev)",
+      "context": "May work at security-focused company or regulated industry"
+    },
+    "psychographics": {
+      "beliefs": [
+        "Security isn't a checkbox—it's a mindset",
+        "Most tools are built by people who don't understand threats",
+        "Values demonstrated security competence over claims"
+      ]
+    },
+    "pain_points": [
+      "Most tools treat security as an afterthought",
+      "Hard to find tools built by actual security professionals",
+      "'Security features' often poorly implemented"
+    ],
+    "trust_builders": [
+      "Founder's legitimate security background (APIsec)",
+      "Security built into architecture, not bolted on",
+      "Transparent about security approach and decisions"
+    ],
+    "messaging": [
+      "Built by an application security professional",
+      "Security isn't a feature—it's the foundation",
+      "Tools designed by someone who thinks like an attacker"
+    ]
+  },
+  "quaternary": {
+    "name": "Patricia",
+    "title": "The Discerning Professional User",
+    "demographics": {
+      "age_range": "30-55",
+      "role": "Professional in any field (educator, consultant, knowledge worker)",
+      "technical_level": "Not necessarily technical but appreciates well-made tools"
+    },
+    "psychographics": {
+      "beliefs": [
+        "Most software is designed for the company, not the user",
+        "Values time and attention highly",
+        "Willing to pay premium for tools that respect them"
+      ]
+    },
+    "pain_points": [
+      "Software that's 'free' but wastes time with upsells and friction",
+      "Tools designed by people who don't use them",
+      "Features nobody asked for instead of fixing basic problems"
+    ],
+    "trust_builders": [
+      "Products that just work without fighting them",
+      "No manipulative patterns or hidden costs",
+      "Feeling like a valued customer, not a data source"
+    ],
+    "messaging": [
+      "Tools that respect your time and intelligence",
+      "Built to solve real problems, not create new ones",
+      "No dark patterns, no compromises"
+    ]
+  },
+  "anti_personas": [
+    {
+      "name": "The Feature Counter",
+      "description": "Wants the most features, not the best features. Compares tools by checkbox lists.",
+      "why_not": "Codaissance builds focused tools, not Swiss Army knives"
+    },
+    {
+      "name": "The Free-Only User",
+      "description": "Refuses to pay for software regardless of value. Complains about any monetization.",
+      "why_not": "Sustainable products require sustainable revenue"
+    },
+    {
+      "name": "The Hype Follower",
+      "description": "Adopts tools based on Twitter buzz, not quality. Switches tools constantly.",
+      "why_not": "Codaissance builds for long-term use, not hype cycles"
+    },
+    {
+      "name": "The Enterprise Bureaucrat",
+      "description": "Needs 50-page security questionnaires, SOC 2, ISO 27001, and committee approval.",
+      "why_not": "Codaissance is indie—enterprise sales cycles don't fit the model"
+    }
+  ],
+  "shared_values": {
+    "they_believe": [
+      "Quality matters more than features",
+      "Security should be default, not optional",
+      "Independent builders can compete with big companies",
+      "Software should respect users, not exploit them",
+      "The person building the tool should actually use it"
+    ],
+    "they_respond_to": [
+      "Transparent building process",
+      "Demonstrated competence over marketing claims",
+      "Honest communication about tradeoffs",
+      "Products that solve real problems elegantly",
+      "Founders who eat their own cooking"
+    ]
+  }
+}

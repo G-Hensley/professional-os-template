@@ -1,0 +1,44 @@
+{
+  "business_type": "AppSec Consulting",
+  "founded": "",
+  "status": "Active - Building client base",
+  "website": "",
+  "team": {
+    "brenda": {
+      "role": "Founder & Operations Lead",
+      "responsibilities": ["Client relations", "Project management", "Operations"]
+    },
+    "gavin": {
+      "role": "Co-Founder, Marketing & Tech Support",
+      "responsibilities": ["Marketing strategy", "Technical support", "LinkedIn presence"]
+    }
+  },
+  "problem_statement": "Small development teams and solo developers need application security expertise but can't afford enterprise consultancies or don't know where to start.",
+  "solution_statement": "TamperTantrum Labs provides accessible application security consulting to solo devs and small teams without enterprise gatekeeping or intimidating processes.",
+  "mission_statement": "Make application security accessible to solo devs and small teams without enterprise gatekeeping.",
+  "positioning": {
+    "what_we_are": "Approachable AppSec consulting for developers and small teams",
+    "what_we_are_not": [
+      "Enterprise security firm",
+      "Penetration testing factory",
+      "Checkbox compliance shop"
+    ],
+    "differentiators": [
+      "Accessible pricing for small teams",
+      "Developer-friendly communication",
+      "No enterprise gatekeeping",
+      "Focus on practical, actionable security"
+    ]
+  },
+  "services": [],
+  "target_clients": [
+    "Solo developers with commercial products",
+    "Small development teams (2-10 people)",
+    "Startups without dedicated security",
+    "Indie hackers with security concerns"
+  ],
+  "competitive_landscape": {
+    "direct_competitors": "Enterprise security consultancies",
+    "competitive_advantage": "Accessible, developer-friendly approach without enterprise overhead"
+  }
+}

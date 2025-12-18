@@ -1,0 +1,101 @@
+{
+  "content_strategy": {
+    "pillars": [
+      {
+        "name": "Build in Public",
+        "description": "Transparent sharing of process, decisions, and learnings across all products",
+        "target_personas": ["Mia", "Daniel"],
+        "content_types": ["Progress updates", "Revenue sharing", "Decision breakdowns", "Failures and lessons"]
+      },
+      {
+        "name": "Technical Deep Dives",
+        "description": "Architecture decisions, code quality, testing philosophy, security approaches",
+        "target_personas": ["Daniel", "Alex"],
+        "content_types": ["Blog posts", "Code walkthroughs", "Security explanations", "Why we built it this way"]
+      },
+      {
+        "name": "Security-First",
+        "description": "Demonstrating security competence through content, not just claims",
+        "target_personas": ["Alex"],
+        "content_types": ["Threat modeling", "Vulnerability prevention", "Security architecture", "AppSec background content"]
+      },
+      {
+        "name": "Product Value",
+        "description": "Clear, jargon-free communication about what products do and why they help",
+        "target_personas": ["Patricia"],
+        "content_types": ["User success stories", "Feature announcements", "How-to guides", "Problem-solution content"]
+      }
+    ],
+    "content_by_persona": {
+      "Daniel": [
+        "Technical deep-dives on architecture decisions",
+        "Security approaches and tradeoffs",
+        "Code quality and testing philosophy",
+        "'Why we built it this way' content"
+      ],
+      "Mia": [
+        "Build-in-public updates across products",
+        "Business model and sustainability discussions",
+        "Decision-making frameworks for product portfolio",
+        "Honest revenue and growth sharing"
+      ],
+      "Alex": [
+        "Security architecture explanations",
+        "Threat modeling approaches",
+        "'How we prevent X vulnerability' content",
+        "Security credentials and background"
+      ],
+      "Patricia": [
+        "Clear product value propositions",
+        "User success stories",
+        "'What's new and why it helps you' updates",
+        "Straightforward, jargon-free communication"
+      ]
+    }
+  },
+  "channels": [
+    {
+      "platform": "LinkedIn (Personal)",
+      "purpose": "Professional network, build-in-public, security expertise",
+      "content_focus": ["Build-in-public updates", "Security insights", "Product launches"],
+      "posting_frequency": "",
+      "profile_url": "https://linkedin.com/in/gavinhensley"
+    },
+    {
+      "platform": "LinkedIn (Codaissance)",
+      "purpose": "Company brand presence, product announcements",
+      "content_focus": ["Product updates", "Company news", "Portfolio showcase"],
+      "posting_frequency": "",
+      "profile_url": "https://linkedin.com/company/codaissance"
+    },
+    {
+      "platform": "Twitter/X",
+      "purpose": "Developer community, indie maker community",
+      "content_focus": ["Build-in-public", "Quick updates", "Community engagement"],
+      "posting_frequency": "",
+      "handle": ""
+    },
+    {
+      "platform": "Blog (codaissance.com)",
+      "purpose": "Long-form content, SEO, technical deep dives",
+      "content_focus": ["Technical posts", "Security content", "Product updates"],
+      "posting_frequency": ""
+    },
+    {
+      "platform": "GitHub",
+      "purpose": "Open source presence, developer credibility",
+      "content_focus": ["Open source projects", "Code examples", "Documentation"],
+      "profile_url": ""
+    }
+  ],
+  "campaigns": [],
+  "metrics_to_track": [
+    "Website traffic (unique visitors, page views)",
+    "Social followers and engagement",
+    "Email list subscribers",
+    "Product signups",
+    "Conversion rates (visitor → trial → paid)",
+    "Content performance (views, shares, comments)",
+    "Referral sources"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "content_strategy": {
+    "pillars": [
+      {
+        "name": "Security Education",
+        "description": "Help developers understand security without intimidation",
+        "content_types": ["Tips", "Common mistakes", "Best practices", "Explainers"]
+      },
+      {
+        "name": "Accessible Security",
+        "description": "Show that AppSec doesn't have to be enterprise-only",
+        "content_types": ["Case studies", "Pricing transparency", "Process explanations"]
+      },
+      {
+        "name": "Practical Advice",
+        "description": "Actionable security guidance developers can use immediately",
+        "content_types": ["How-tos", "Checklists", "Quick wins"]
+      }
+    ]
+  },
+  "channels": [
+    {
+      "platform": "LinkedIn (TamperTantrum Labs)",
+      "purpose": "Business presence, thought leadership, client acquisition",
+      "content_focus": ["Security tips", "Service announcements", "Client success stories"],
+      "posting_frequency": "",
+      "profile_url": "https://linkedin.com/company/tampertantrum-labs",
+      "current_followers": 119
+    },
+    {
+      "platform": "Website",
+      "purpose": "Service information, lead generation, credibility",
+      "status": "Not launched",
+      "url": ""
+    }
+  ],
+  "campaigns": [],
+  "lead_generation": {
+    "strategies": [],
+    "referral_sources": []
+  },
+  "metrics_to_track": [
+    "LinkedIn followers and engagement",
+    "Website traffic",
+    "Inbound inquiries",
+    "Conversion rate (inquiry → client)",
+    "Client retention"
+  ]
+}

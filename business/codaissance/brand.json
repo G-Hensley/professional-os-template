@@ -1,0 +1,125 @@
+{
+  "voice": {
+    "tone": [
+      "Direct and honest",
+      "Technical when warranted, accessible when not",
+      "Confident without being arrogant",
+      "Transparent about tradeoffs",
+      "Quality-focused, not hype-driven"
+    ],
+    "personality_traits": [
+      "Craftsman",
+      "Security-minded",
+      "Independent",
+      "User-respecting",
+      "Long-term thinker"
+    ],
+    "avoid": [
+      "Marketing buzzwords",
+      "Vague claims ('best-in-class', 'innovative')",
+      "Growth-hacking language",
+      "Artificial urgency",
+      "Feature bragging without substance"
+    ]
+  },
+  "positioning": {
+    "hybrid_approach": {
+      "description": "Use personal brand (I/Gavin) for authenticity and company brand (We/Codaissance) for professional contexts",
+      "use_personal_brand": [
+        "Social media presence (Twitter, LinkedIn, building in public)",
+        "Blog posts and content marketing",
+        "Direct user interactions (support, feedback, community)",
+        "Early-stage product marketing",
+        "Building in public content"
+      ],
+      "use_company_brand": [
+        "Website copy (codaissance.com)",
+        "Enterprise sales contexts",
+        "Professional contexts (conferences, press)",
+        "When contractors/partners are involved",
+        "Formal business communications"
+      ]
+    },
+    "what_we_are": "A product studio that ships tools solving real problems with security and quality built-in from day one",
+    "what_we_are_not": [
+      "Software development agency",
+      "Consulting firm",
+      "VC-backed startup",
+      "Stealth mode company"
+    ]
+  },
+  "key_messages": {
+    "primary": "Built by someone who actually uses it",
+    "security": "Security isn't a feature—it's the foundation",
+    "quality": "No bloat, no dark patterns, no compromises",
+    "independence": "No venture pressure, no compromises"
+  },
+  "trust_building_sequence": [
+    {
+      "stage": 1,
+      "action": "Product excellence",
+      "outcome": "User discovers and loves a product"
+    },
+    {
+      "stage": 2,
+      "action": "Transparent building",
+      "outcome": "Followers engage with the journey"
+    },
+    {
+      "stage": 3,
+      "action": "Security credibility",
+      "outcome": "Security-conscious users validate and advocate"
+    },
+    {
+      "stage": 4,
+      "action": "Portfolio awareness",
+      "outcome": "Users discover other products"
+    },
+    {
+      "stage": 5,
+      "action": "Brand loyalty",
+      "outcome": "'I use Codaissance products' becomes identity"
+    }
+  ],
+  "brand_touchpoints": [
+    {
+      "touchpoint": "Product websites",
+      "purpose": "Convert users",
+      "primary_persona": "Patricia (and product-specific personas)"
+    },
+    {
+      "touchpoint": "Build-in-public content",
+      "purpose": "Build trust and following",
+      "primary_persona": "Mia, Daniel"
+    },
+    {
+      "touchpoint": "Technical blog",
+      "purpose": "Demonstrate expertise",
+      "primary_persona": "Daniel, Alex"
+    },
+    {
+      "touchpoint": "Security documentation",
+      "purpose": "Prove security-first approach",
+      "primary_persona": "Alex"
+    },
+    {
+      "touchpoint": "Studio website (codaissance.com)",
+      "purpose": "Unite portfolio, establish brand",
+      "primary_persona": "All"
+    }
+  ],
+  "visual_identity": {
+    "logo": "assets/logo.png",
+    "logo_dark": "assets/logo-dark.png",
+    "colors": {
+      "primary": "",
+      "secondary": "",
+      "accent": ""
+    },
+    "typography": {
+      "headings": "",
+      "body": "",
+      "code": ""
+    }
+  }
+}
