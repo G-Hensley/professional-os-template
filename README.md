@@ -14,9 +14,13 @@ A structured data repository designed to be consumed by AI tools (Claude Code, C
 
 ## Quick Start for AI Tools
 
-**For Claude Code:** The `CLAUDE.md` file contains detailed instructions and conventions.
+| Tool | Config File | Best For |
+|------|-------------|----------|
+| Claude Code | `CLAUDE.md` | Code editing, file changes, slash commands |
+| Gemini CLI | `.gemini/GEMINI.md` | Research, web search, summarization |
+| Codex | `.codex/commands/` | Quick tasks, focused prompts |
 
-**For Codex/Other LLMs:** The `CONTEXT.md` file explains the repository structure and data formats.
+**See [`AI_TOOLS.md`](AI_TOOLS.md) for detailed guidance on when to use each tool.**
 
 ## Available Commands
 
