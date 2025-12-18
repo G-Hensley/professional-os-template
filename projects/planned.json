@@ -1,0 +1,44 @@
+{
+  "dev-genesis": {
+    "name": "Dev Genesis",
+    "repo_url": "https://github.com/G-Hensley/dev-genesis",
+    "type": "GitHub Template",
+    "description": "A comprehensive starter template that helps devs plan their project by setting up GitHub issues, actions, and AI tools.",
+    "technologies": [
+      "GitHub Actions",
+      "GitHub Issues",
+      "Codex",
+      "Claude Code",
+      "Cursor",
+      "Windsurf",
+      "GitHub Copilot",
+      "Bash",
+      "GitHub Probot"
+    ],
+    "monetization_strategy": "Free",
+    "status": "In Development",
+    "problem": "",
+    "solution": "",
+    "target_audience": "",
+    "mission_statement": ""
+  },
+  "vibiom": {
+    "name": "Vibiom",
+    "repo_url": "https://github.com/G-Hensley/vibiom",
+    "mvp_type": "CLI Tool",
+    "post_mvp_type": "Desktop Application",
+    "description": "",
+    "mvp_technologies": [
+
+    ],
+    "post_mvp_technologies": [
+
+    ],
+    "monetization_strategy": "",
+    "status": "Planned",
+    "problem": "",
+    "solution": "",
+    "target_audience": "",
+    "mission_statement": ""
+  }
+}
