@@ -49,11 +49,29 @@
       "Continuously research and experiment with new technologies and frameworks to stay updated with industry trends and improve development processes."
     ],
     "performance_metrics": [
-      ""
+      "n/a"
     ]
   },
   "TamperTantrum Labs": {
-    "role": "Co-Founder / Full-Stack Software Engineer"
+    "role": "Co-Founder / Full-Stack Software Engineer",
+    "start_date": "2025-07-12",
+    "end_date": "Present",
+    "location": "Remote",
+    "job_type": "contract",
+    "responsibilities": [
+      "Collaborate with the founder to conceptualize and develop innovative software products that address market needs.",
+      "Design and implement full-stack solutions using technologies such as React, Next.js, Node.js, Express, Tailwind CSS, and PostgreSQL.",
+      "Create and maintain RESTful APIs to facilitate communication between front-end and back-end components.",
+      "Leverage cloud services like Vercel and AWS for application deployment, ensuring high availability and performance.",
+      "Implement robust user authentication and authorization systems using OAuth 2.0 and JWT standards.",
+      "Optimize database schemas and queries in PostgreSQL to enhance application efficiency and responsiveness.",
+      "Integrate AI tools such as ChatGPT, GitHub Copilot, and OpenAI API to add intelligent features and improve user engagement.",
+      "Utilize Git and GitHub for version control and collaborative development, adhering to best practices for code quality and management.",
+      "Develop comprehensive documentation and user manuals to support application usage and future development."
+    ],
+    "performance_metrics": [
+      "n/a"
+    ]
   },
   "BuiltInPublic": {
     "role": "Full-Stack Software Engineer"
