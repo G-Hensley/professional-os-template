@@ -1,0 +1,42 @@
+{
+  "personal": {
+    "url": "https://www.linkedin.com/in/g-hensley/",
+    "headline": "Founder @ Codaissance | Full-Stack Software Engineer | Next.js, React, Node.js, Express, TypeScript, JavaScript, MongoDB, AWS, SQL",
+    "bio": "I`m a Full-Stack Software Engineer and founder of Codaissance, where I design and build secure, scalable, and visually engaging web applications for startups, small businesses, and creators. With 3+ years of programming experience and a B.S. in Software Engineering from WGU, I bring a balance of front-end design finesse and back-end engineering depth to every project. I work with React, Next.js, Node.js, Express, TypeScript, and MongoDB, pairing them with tools like Tailwind CSS, GraphQL, Docker, AWS, and GitHub Actions to ship modern, reliable applications. My projects range from SaaS products I’m building in public to client work like portfolios, e-commerce sites, authentication systems, and admin dashboards. I care deeply about accessibility, performance, and security, which means my solutions do more than just look good. They scale, perform, and protect users. Beyond the code, I’m someone who works hard, collaborates openly, and enjoys creating with others. I thrive in teams where people share ideas freely and push each other to grow. I bring a mix of curiosity, creativity, and discipline, which makes working together both productive and fun. I’m open to full-time roles as a front-end, back-end, or full-stack engineer, and also to client projects through Codaissance. If you’re hiring, looking for a developer to build your next product, or want to collaborate on solving tough problems, let’s connect.",
+    "location": "Portsmouth, OH",
+    "followers": 2209,
+    "connections": 1897,
+    "recommendations_received": 3,
+    "recommendations_given": 2,
+    "profile_views_last_90_days": 347,
+    "search_appearances_last_week": 42,
+    "post_impressions_last_7_days": 189,
+    "open_to_work": true,
+    "creator_mode": false,
+    "last_updated": "2025-12-18"
+  },
+  "codaissance": {
+    "url": "https://www.linkedin.com/company/codaissance/",
+    "page_type": "company",
+    "tagline": "The Renaissance of Software & Design 🎨",
+    "description": "",
+    "followers": null,
+    "employees": 1,
+    "posts_last_30_days": null,
+    "impressions_last_30_days": null,
+    "engagement_rate": null,
+    "last_updated": null
+  },
+  "tampertantrum_labs": {
+    "url": "https://www.linkedin.com/company/tampertantrum-labs/",
+    "page_type": "company",
+    "tagline": " Disrupting Auth Flows and Naptime Schedules. 🔥",
+    "description": "I help solo devs and small teams secure their apps without the gatekeeping, jargon, or enterprise fluff that plagues cybersecurity. I started TamperTantrum Labs after hitting wall after wall trying to break into the security industry. Despite certifications, a cybersecurity degree, and endless networking, the job market wouldn't budge. So I stopped waiting for permission and created my own path. Now I work with developers who care about security but don't know where to start; combining real testing, security tools, and practical education to help you ship safely. What I believe in: ✅ Developer-first security (no jargon) ✅ Honest findings & realistic timelines  ✅ Collaborative partnership, not fear-mongering ✅ Making AppSec accessible to everyone ✅ Creating tools to enhance security ✅ Investing efforts in open-source communities ✅ Taking ownership of engagements & tracking real outcomes Whether you're a solo founder, startup CTO, or open-source maintainer—if you're building something important, you deserve to protect it properly.",
+    "followers": 119,
+    "employees": 2,
+    "posts_last_30_days": 0,
+    "impressions_last_7_days": 0,
+    "engagement_rate": 0,
+    "last_updated": "2025-12-18"
+  }
+}

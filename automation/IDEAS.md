@@ -98,6 +98,48 @@ Flag projects that haven't had activity in a while.
 
 ## 🟡 Medium Priority
 
+### LinkedIn Metrics Scraping
+**Status**: Not Started
+**Complexity**: Medium
+**Value**: High
+
+Automatically capture LinkedIn analytics for all three accounts.
+
+**Implementation Options**:
+
+1. **Browser Extension** (Recommended)
+   - Build custom extension to export analytics page data
+   - Runs on-demand when viewing LinkedIn analytics
+   - Writes to clipboard or downloads JSON
+   - No API approval needed, no scraping risk
+
+2. **Puppeteer/Playwright Script**
+   - Headless browser automation
+   - Login with credentials (store securely)
+   - Navigate to analytics pages, extract data
+   - Run weekly via GitHub Action with secrets
+   - Risk: LinkedIn may detect and block
+
+3. **Third-Party Tools**
+   - Phantom Buster, Dux-Soup, etc.
+   - Paid services, ToS gray area
+   - May break with LinkedIn updates
+
+**Data to Capture**:
+- Profile views, search appearances (personal)
+- Post impressions, engagement rates (all)
+- Follower growth over time (all)
+- SSI score (personal)
+
+**Output**:
+- Append to `/linkedin/*-metrics.json`
+- Update `last_updated` in `profile.json`
+- Generate weekly trends summary
+
+**See Also**: `/linkedin/METRICS.md` for schema and manual tracking guide
+
+---
+
 ### Resume Generation Pipeline
 **Status**: Not Started
 **Complexity**: Medium
@@ -249,7 +291,7 @@ Push notifications to messaging apps.
 Add new automation ideas here as they come up:
 
 - [ ] Auto-update GitHub profile README from this repo
-- [ ] Track LinkedIn post performance and log metrics
+- [x] Track LinkedIn post performance and log metrics (see LinkedIn Metrics Scraping)
 - [ ] Generate weekly "building in public" summary
 - [ ] Auto-create project planning docs from idea templates
 - [ ] Sync certifications to LinkedIn when added to education.json
