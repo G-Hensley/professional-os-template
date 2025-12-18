@@ -1,0 +1,43 @@
+description = "Analyze competitors for a product or market"
+
+prompt = """
+Perform a competitive analysis for: {{args}}
+
+Use web search to research and provide:
+
+## Direct Competitors (5-8)
+For each competitor:
+- Company name and website
+- Product description
+- Target audience
+- Pricing model and tiers
+- Key features
+- Strengths and weaknesses
+- Market position (leader, challenger, niche)
+
+## Indirect Competitors
+- Adjacent solutions people use instead
+- DIY alternatives
+- Status quo (what people do without a solution)
+
+## Market Analysis
+- Market size estimates (with source)
+- Growth trends
+- Key market drivers
+- Barriers to entry
+
+## Competitive Matrix
+Create a feature comparison table.
+
+## Differentiation Opportunities
+Based on analysis:
+- Underserved segments
+- Feature gaps across competitors
+- Pricing opportunities
+- Positioning angles not being used
+
+## Recommendations
+Strategic suggestions based on analysis.
+
+Format as markdown. Cite sources for all statistics and claims.
+"""

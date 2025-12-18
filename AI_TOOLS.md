@@ -64,7 +64,7 @@ This document defines when to use each AI tool with this repository. Each tool h
 
 **Role**: Research and analysis specialist — web search, summarization, market research
 
-**Configuration**: `/.gemini/GEMINI.md` + `/.gemini/commands/`
+**Configuration**: `/.gemini/GEMINI.md` + `/.gemini/commands/*.toml`
 
 ### Best For
 - Web searches for current information

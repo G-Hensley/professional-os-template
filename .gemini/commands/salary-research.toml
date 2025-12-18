@@ -1,0 +1,49 @@
+description = "Research salary ranges for a specific role"
+
+prompt = """
+Research salary and compensation data for: {{args}}
+
+Use web search (levels.fyi, Glassdoor, LinkedIn, Blind) to provide:
+
+## Base Salary Ranges (Annual, USD)
+
+### By Experience Level
+| Level | 25th | Median | 75th | 90th |
+|-------|------|--------|------|------|
+| Junior (0-2 yrs) | | | | |
+| Mid (2-5 yrs) | | | | |
+| Senior (5-8 yrs) | | | | |
+| Staff (8+ yrs) | | | | |
+
+### By Company Type
+- FAANG/Big Tech: $X-$X
+- Well-funded Startup: $X-$X
+- Mid-size Company: $X-$X
+- Small Startup/Agency: $X-$X
+
+### Remote Adjustment
+- SF/NYC on-site: +X%
+- Remote (US): Base
+- Remote (LCOL areas): -X% to -X%
+
+## Total Compensation
+- Equity (RSUs/options): typical ranges
+- Bonuses: target percentages
+- Sign-on bonuses: typical ranges
+
+## Market Context
+- Current hiring demand
+- Salary trend direction
+- Hot skills commanding premiums
+
+## Your Target Assessment
+Based on:
+- 3+ years experience
+- React, TypeScript, Next.js, Node.js
+- Remote (Ohio-based)
+- Current: $70k
+
+Suggest target range and negotiation points.
+
+Format as markdown. Prioritize 2024-2025 data. Cite sources.
+"""

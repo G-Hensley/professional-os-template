@@ -1,0 +1,41 @@
+description = "Research a company for job application or interview preparation"
+
+prompt = """
+Research the company: {{args}}
+
+Use web search to gather current information and provide:
+
+## Company Overview
+- What the company does (products/services)
+- Company size and stage (startup, growth, enterprise)
+- Founding year and key milestones
+- Headquarters location and remote policy
+
+## Culture & Values
+- Stated mission and values
+- Glassdoor/Blind reviews summary
+- Work-life balance reputation
+
+## Tech Stack
+- Known technologies used
+- Engineering blog posts or talks
+- Open source contributions
+
+## Recent News (last 3-6 months)
+- Funding rounds or acquisitions
+- Product launches or pivots
+- Leadership changes
+
+## Interview Intel
+- Reported interview process
+- Common interview questions (from Glassdoor, Blind)
+- Red flags mentioned in reviews
+
+## Fit Assessment
+Compare findings against these preferences:
+- Remote work required
+- Target salary: $90k-$120k+
+- Tech stack: React, Next.js, TypeScript, Node.js
+
+Format as markdown with clear sections. Always cite sources for claims.
+"""

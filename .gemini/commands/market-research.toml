@@ -1,0 +1,46 @@
+description = "Research market trends and opportunities"
+
+prompt = """
+Research market trends and opportunities for: {{args}}
+
+Use web search to gather current information and provide:
+
+## Market Overview
+- Market definition and scope
+- Current market size (with source)
+- Growth rate and projections
+- Key segments
+
+## Current Trends (last 12-24 months)
+- Emerging trends with evidence
+- Technology shifts
+- Buyer behavior changes
+- Regulatory changes
+
+## Key Players
+- Market leaders and their share
+- Rising challengers
+- Recent entrants
+- Notable exits or failures
+
+## Opportunities
+- Underserved segments
+- Emerging needs
+- Technology gaps
+- Geographic expansion potential
+
+## Threats & Challenges
+- Market saturation concerns
+- Regulatory risks
+- Economic factors
+- Technological disruption
+
+## Relevance Assessment
+Assess fit for:
+- Codaissance (developer tools, SaaS)
+- TamperTantrum Labs (AppSec consulting)
+
+Recommend: Enter / Monitor / Ignore
+
+Format as markdown. Prioritize 2024-2025 data. Cite sources for all statistics.
+"""

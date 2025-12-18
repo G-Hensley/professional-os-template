@@ -161,11 +161,11 @@ myself/
 │
 ├── .gemini/                  # Gemini CLI config
 │   ├── GEMINI.md             # Gemini instructions
-│   └── commands/             # Gemini commands
-│       ├── research-company.md
-│       ├── competitive-analysis.md
-│       ├── market-research.md
-│       └── salary-research.md
+│   └── commands/             # Gemini commands (TOML format)
+│       ├── research-company.toml
+│       ├── competitive-analysis.toml
+│       ├── market-research.toml
+│       └── salary-research.toml
 │
 └── .codex/                   # Codex reference (prompts installed to ~/.codex/prompts/)
     └── commands/             # Local copies for reference
