@@ -6,6 +6,8 @@
     "end_date": "Present",
     "location": "Remote",
     "job_type": "Full-time",
+    "salary": 70000,
+    "salary_currency": "USD",
     "responsibilities": [
       "Develop custom scripts and integrations for clients to utilize APIsec's API Security Platform effectively.",
       "Assist clients in deploying and configuring APIsec's platform within their environments, ensuring seamless integration with existing systems.",
