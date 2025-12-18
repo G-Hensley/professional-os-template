@@ -31,12 +31,15 @@
     "Prisma": "novice",
     "Spring Boot": "novice",
     "Django": "none",
-    "FastAPI": "none"
+    "FastAPI": "none",
+    "Framer Motion": "adept",
+    "Electron": "none",
+    "React Native": "novice"
   },
   "apis & protocols": {
     "REST APIs": "expert",
-    "GraphQL": "adept",
-    "WebSockets": "adept",
+    "GraphQL": "apprentice",
+    "WebSockets": "apprentice",
     "OAuth 2.0": "adept",
     "JWT": "adept",
     "Bcrypt": "adept",
@@ -54,7 +57,8 @@
     "Heroku": "novice",
     "Docker": "adept",
     "GitHub Actions": "adept",
-    "CI/CD": "adept"
+    "CI/CD": "adept",
+    "Kubernetes": "none"
   },
   "testing & monitoring": {
     "Vitest": "adept",
@@ -64,7 +68,8 @@
     "Google Analytics": "adept",
     "Burp Suite": "adept",
     "Cypress": "novice",
-    "Storybook": "novice"
+    "Storybook": "novice",
+    "OWASP ZAP": "novice"
   },
   "tools": {
     "Git": "adept",
