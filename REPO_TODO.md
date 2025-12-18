@@ -75,17 +75,17 @@ Tasks to complete before this knowledge base is fully operational. Separate from
 
 ### Commands & Prompts
 
-- [ ] **Create `/generate-resume` command**
+- [x] **Create `/generate-resume` command** ✅
   - Takes job posting as input
   - Generates tailored resume from profile data
   - Outputs to `/job-applications/resumes/`
 
-- [ ] **Create `/generate-post` command**
+- [x] **Create `/generate-post` command** ✅
   - Takes topic/account as input
   - Uses brand voice, personas, content pillars
   - Generates draft post for review
 
-- [ ] **Create `/quick-check` command**
+- [x] **Create `/quick-check` command** ✅
   - Brief status check (vs full assessment)
   - Key metrics only, no deep analysis
   - Good for weekly reviews
@@ -171,12 +171,12 @@ Tasks to complete before this knowledge base is fully operational. Separate from
 
 ### Research Commands
 
-- [ ] **Create `/research-company` command** (Gemini)
+- [x] **Create `/research-company` command** (Gemini) ✅
   - Takes company name
   - Returns culture, tech stack, recent news
   - Useful for interview prep
 
-- [ ] **Create `/competitive-analysis` command** (Gemini)
+- [x] **Create `/competitive-analysis` command** (Gemini) ✅
   - Takes product idea
   - Returns competitor landscape
   - Feeds into idea validation
@@ -218,6 +218,10 @@ Tasks to complete before this knowledge base is fully operational. Separate from
 - [x] Update CLAUDE.md and CONTEXT.md
 - [x] Create Gemini CLI configuration (`.gemini/GEMINI.md`)
 - [x] Create AI_TOOLS.md with tool responsibilities and decision flowchart
+- [x] Create Claude Code commands (`/generate-resume`, `/generate-post`, `/update-project`, `/prep-interview`, `/quick-check`)
+- [x] Create Gemini CLI commands (`/research-company`, `/competitive-analysis`, `/market-research`, `/salary-research`)
+- [x] Create Codex CLI commands (`review-resume`, `summarize-project`)
+- [x] Expand automation/IDEAS.md with n8n workflows and event-driven automations
 
 ---
 
