@@ -2,65 +2,138 @@
   "note": "Design system and style guide for Codaissance. Use for generated images, website design, marketing materials, and brand consistency.",
   "colors": {
     "primary": {
-      "hex": "",
-      "rgb": "",
-      "usage": "Main brand color, CTAs, primary buttons, links"
+      "name": "Codaissance Orange",
+      "hex": "#F37221",
+      "rgb": "rgb(243, 114, 33)",
+      "tailwind": "orange-500",
+      "usage": "Main brand color, CTAs, primary buttons, links, accent borders"
     },
     "secondary": {
-      "hex": "",
-      "rgb": "",
-      "usage": "Supporting elements, secondary buttons, borders"
+      "name": "Codaissance Gold",
+      "hex": "#FED700",
+      "rgb": "rgb(254, 215, 0)",
+      "tailwind": "yellow-400",
+      "usage": "Secondary accent, highlights, gradient endpoints"
     },
-    "accent": {
-      "hex": "",
-      "rgb": "",
-      "usage": "Highlights, notifications, special callouts"
+    "accent_blue_light": {
+      "name": "Spark Blue",
+      "hex": "#449DD6",
+      "rgb": "rgb(68, 157, 214)",
+      "tailwind": "sky-500",
+      "usage": "Light blue accents, links on dark backgrounds, info elements"
+    },
+    "accent_blue_deep": {
+      "name": "Deep Blue",
+      "hex": "#3B56A6",
+      "rgb": "rgb(59, 86, 166)",
+      "tailwind": "blue-700",
+      "usage": "Deep blue accents, depth in logo, secondary info elements"
     },
     "background": {
-      "light": "",
-      "dark": "",
-      "usage": "Page backgrounds, card backgrounds"
+      "dark": {
+        "hex": "#030712",
+        "rgb": "rgb(3, 7, 18)",
+        "tailwind": "gray-950",
+        "usage": "Primary dark background"
+      },
+      "light": {
+        "hex": "#F8FAFC",
+        "rgb": "rgb(248, 250, 252)",
+        "tailwind": "slate-50",
+        "usage": "Light mode background"
+      },
+      "card_dark": {
+        "hex": "#0F172A",
+        "rgb": "rgb(15, 23, 42)",
+        "tailwind": "slate-900",
+        "usage": "Card backgrounds on dark theme"
+      }
     },
     "text": {
-      "primary": "",
-      "secondary": "",
-      "muted": "",
-      "inverse": ""
+      "primary": {
+        "hex": "#F1F5F9",
+        "tailwind": "slate-100",
+        "usage": "Primary text on dark backgrounds"
+      },
+      "secondary": {
+        "hex": "#94A3B8",
+        "tailwind": "slate-400",
+        "usage": "Secondary/muted text"
+      },
+      "gradient_blue": {
+        "css": "linear-gradient(180deg, rgb(177, 221, 248) 60%, #cbd5e1)",
+        "usage": "Card list text, subtle emphasis"
+      },
+      "inverse": {
+        "hex": "#1E293B",
+        "tailwind": "slate-800",
+        "usage": "Text on light backgrounds"
+      }
+    },
+    "stroke": {
+      "hex": "#231F20",
+      "rgb": "rgb(35, 31, 32)",
+      "usage": "Logo outlines, borders"
     },
     "semantic": {
-      "success": "",
-      "warning": "",
-      "error": "",
-      "info": ""
+      "success": "#22C55E",
+      "warning": "#F59E0B",
+      "error": "#EF4444",
+      "info": "#449DD6"
     },
-    "gradients": []
+    "gradients": [
+      {
+        "name": "Primary Gradient (Horizontal)",
+        "css": "linear-gradient(90deg, #F37221, #FED700)",
+        "usage": "Headlines, CTAs, primary accent text"
+      },
+      {
+        "name": "Primary Gradient (Vertical)",
+        "css": "linear-gradient(180deg, #F37221, #FED700)",
+        "usage": "Vertical elements, decorative"
+      },
+      {
+        "name": "Conic Glow",
+        "css": "conic-gradient(from var(--rotation-angle), transparent 80%, #F37221, #FED700)",
+        "usage": "Animated card borders, special effects"
+      },
+      {
+        "name": "Blue Text Gradient",
+        "css": "linear-gradient(180deg, rgb(177, 221, 248) 60%, #cbd5e1)",
+        "usage": "Subtle text emphasis, card list items"
+      }
+    ]
   },
   "typography": {
     "font_families": {
       "headings": {
         "name": "",
-        "fallback": "system-ui, sans-serif",
-        "source": ""
+        "fallback": "system-ui, -apple-system, sans-serif",
+        "source": "",
+        "notes": "Add your heading font here"
       },
       "body": {
         "name": "",
-        "fallback": "system-ui, sans-serif",
-        "source": ""
+        "fallback": "system-ui, -apple-system, sans-serif",
+        "source": "",
+        "notes": "Add your body font here"
       },
       "code": {
-        "name": "",
-        "fallback": "monospace",
-        "source": ""
+        "name": "JetBrains Mono",
+        "fallback": "Fira Code, Consolas, monospace",
+        "source": "Google Fonts",
+        "notes": "For code snippets and technical content"
       }
     },
     "scale": {
-      "h1": { "size": "", "weight": "", "line_height": "" },
-      "h2": { "size": "", "weight": "", "line_height": "" },
-      "h3": { "size": "", "weight": "", "line_height": "" },
-      "h4": { "size": "", "weight": "", "line_height": "" },
-      "body": { "size": "", "weight": "", "line_height": "" },
-      "small": { "size": "", "weight": "", "line_height": "" },
-      "caption": { "size": "", "weight": "", "line_height": "" }
+      "h1": { "size": "3rem", "weight": "700", "line_height": "1.1" },
+      "h2": { "size": "2.25rem", "weight": "600", "line_height": "1.2" },
+      "h3": { "size": "1.5rem", "weight": "600", "line_height": "1.3" },
+      "h4": { "size": "1.25rem", "weight": "600", "line_height": "1.4" },
+      "body": { "size": "1rem", "weight": "400", "line_height": "1.6" },
+      "body_lg": { "size": "1.125rem", "weight": "400", "line_height": "1.6" },
+      "small": { "size": "0.875rem", "weight": "400", "line_height": "1.5" },
+      "caption": { "size": "0.75rem", "weight": "400", "line_height": "1.4" }
     }
   },
   "spacing": {
@@ -78,39 +151,61 @@
   "borders": {
     "radius": {
       "none": "0",
-      "sm": "",
-      "md": "",
-      "lg": "",
+      "sm": "0.25rem",
+      "md": "0.5rem",
+      "lg": "1rem",
+      "xl": "1.5rem",
+      "2xl": "2rem",
+      "4xl": "2.5rem",
       "full": "9999px"
     },
     "width": {
       "thin": "1px",
       "medium": "2px",
       "thick": "4px"
+    },
+    "accent_border": {
+      "color": "rgba(243, 114, 33, 0.5)",
+      "tailwind": "border-orange-400/50",
+      "usage": "Section dividers, card accents"
     }
   },
   "shadows": {
-    "sm": "",
-    "md": "",
-    "lg": "",
-    "xl": ""
+    "sm": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+    "md": "0 4px 6px -1px rgb(0 0 0 / 0.1)",
+    "lg": "0 10px 15px -3px rgb(0 0 0 / 0.1)",
+    "xl": "0 20px 25px -5px rgb(0 0 0 / 0.1)",
+    "glow_orange": "0 0 20px rgba(243, 114, 33, 0.3)",
+    "glow_gold": "0 0 20px rgba(254, 215, 0, 0.3)"
+  },
+  "animations": {
+    "hover_float": {
+      "name": "slow-hover",
+      "duration": "5s",
+      "description": "Gentle floating animation for elements"
+    },
+    "border_rotate": {
+      "name": "rotate-angle",
+      "duration": "4s",
+      "description": "Rotating gradient border effect on cards"
+    },
+    "ticker_scroll": {
+      "name": "scroll-left",
+      "duration": "20s",
+      "description": "Horizontal scrolling ticker animation"
+    }
   },
   "logos": {
     "primary": {
-      "path": "assets/logo.png",
-      "usage": "Default logo for light backgrounds"
+      "path": "assets/Codaissance-logo-bare.svg",
+      "usage": "Default logo"
     },
-    "dark": {
-      "path": "assets/logo-dark.png",
-      "usage": "Logo for dark backgrounds"
-    },
-    "icon": {
-      "path": "assets/icon.png",
-      "usage": "Favicon, app icons, small spaces"
-    },
-    "wordmark": {
-      "path": "assets/wordmark.png",
-      "usage": "Text-only logo variant"
+    "colors_in_logo": {
+      "gold": "#FED700",
+      "orange": "#F37221",
+      "light_blue": "#449DD6",
+      "deep_blue": "#3B56A6",
+      "stroke": "#231F20"
     },
     "clear_space": "Minimum padding around logo equal to height of 'C' in wordmark",
     "minimum_size": "24px height for icon, 100px width for full logo"
@@ -120,34 +215,36 @@
       "linkedin": {
         "dimensions": "1200x627",
         "safe_zone": "Keep text within center 80%",
-        "style_notes": "Professional, clean, minimal text overlay"
+        "style_notes": "Use dark background (#030712), gradient text for headlines"
       },
       "twitter": {
         "dimensions": "1200x675",
         "safe_zone": "Keep text within center 80%",
-        "style_notes": "Eye-catching, can be more casual"
+        "style_notes": "Eye-catching, orange/gold gradient accents"
       },
       "og_image": {
         "dimensions": "1200x630",
-        "style_notes": "Clear title, brand colors, logo placement bottom-right"
+        "style_notes": "Clear title with gradient text, dark background, logo bottom-right"
       }
     },
     "style_guidelines": {
+      "color_usage": "Dark backgrounds with orange/gold gradient accents. Blue for informational elements.",
       "photography": "Minimal, abstract, tech-focused when needed",
       "illustrations": "Clean line art, geometric, developer-friendly",
       "icons": "Consistent stroke width, rounded corners",
-      "patterns": [],
+      "patterns": ["Geometric triangular patterns echoing logo", "Subtle gradient meshes"],
       "avoid": [
         "Stock photos of people at computers",
         "Overly corporate imagery",
         "Cluttered compositions",
         "Neon/cyberpunk aesthetics",
-        "AI-generated faces"
+        "AI-generated faces",
+        "Light/white backgrounds (prefer dark)"
       ]
     },
     "text_on_images": {
       "max_words": "7-10 words for social images",
-      "font_usage": "Use heading font for titles",
+      "font_usage": "Use heading font for titles, apply gradient-text-horizontal for emphasis",
       "contrast": "Ensure WCAG AA contrast ratio minimum",
       "placement": "Left-aligned or centered, avoid edges"
     }
@@ -159,53 +256,62 @@
       "grid_columns": 12,
       "gutter": "1.5rem"
     },
+    "section_container": {
+      "classes": "min-h-screen w-full px-4 rounded-4xl relative flex flex-col items-center gap-8 py-16 border-t border-b border-orange-400/50"
+    },
     "components": {
       "buttons": {
-        "primary": "Solid fill with primary color, white text",
-        "secondary": "Outline with primary color",
+        "primary": "Gradient background (orange to gold), white text, rounded-lg",
+        "secondary": "Outline with orange-400 border, transparent bg",
         "ghost": "Text only with hover underline"
       },
-      "cards": "Subtle shadow, rounded corners, white background",
-      "inputs": "Border on focus, clear labels, helpful error states",
-      "navigation": "Clean, minimal, sticky on scroll"
+      "cards": {
+        "style": "Dark background (slate-900), rounded-4xl, animated gradient border on hover",
+        "border_effect": "Rotating conic gradient border with orange/gold"
+      },
+      "inputs": "Dark background, border on focus with orange accent, clear labels",
+      "navigation": "Clean, minimal, sticky on scroll, dark background"
     },
     "dark_mode": {
       "supported": true,
-      "default": "system",
-      "notes": "Invert backgrounds, adjust colors for readability"
+      "default": "dark",
+      "notes": "Dark mode is the primary theme. Light mode inverts to light backgrounds with dark text."
     }
   },
   "content_templates": {
     "blog_header": {
       "description": "Featured image for blog posts",
       "dimensions": "1200x630",
-      "elements": ["Title text", "Category tag", "Logo watermark"]
+      "elements": ["Title with gradient text", "Category tag", "Logo watermark bottom-right"],
+      "background": "#030712"
     },
     "product_screenshot": {
       "description": "App screenshots for marketing",
-      "style": "Browser frame or device mockup, drop shadow",
-      "background": "Gradient or solid brand color"
+      "style": "Browser frame or device mockup, orange glow shadow",
+      "background": "Gradient or solid dark with gradient accents"
     },
     "social_announcement": {
       "description": "New feature or launch announcements",
-      "elements": ["Headline", "Key benefit", "Logo", "CTA if applicable"]
+      "elements": ["Headline with gradient", "Key benefit", "Logo", "Orange accent line"],
+      "background": "#030712"
     },
     "quote_card": {
       "description": "Testimonials or pull quotes",
-      "elements": ["Quote text", "Attribution", "Subtle branding"]
+      "elements": ["Quote text with blue gradient", "Attribution", "Subtle orange accent"],
+      "background": "#0F172A"
     }
   },
   "brand_personality_in_design": {
     "keywords": [
-      "Clean",
-      "Professional",
-      "Trustworthy",
-      "Developer-friendly",
-      "Minimal but not cold",
-      "Secure",
-      "Quality"
+      "Bold but refined",
+      "Developer-focused",
+      "Modern dark aesthetic",
+      "Warm accents (orange/gold) on dark",
+      "Technical precision",
+      "Innovative",
+      "Trustworthy"
     ],
-    "mood": "Confident and competent without being flashy. Like well-written code: elegant, efficient, purposeful.",
-    "inspiration": []
+    "mood": "Confident and cutting-edge. Dark, sophisticated backgrounds with vibrant orange/gold energy. Like a well-designed terminal: powerful, focused, purposeful.",
+    "inspiration": ["Modern dev tools", "Terminal aesthetics", "Warm sunset gradients on dark"]
   }
 }
