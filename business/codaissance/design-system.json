@@ -131,40 +131,53 @@
         "notes": "For code snippets and technical content"
       }
     },
+    "scale_system": {
+      "ratio": 1.618,
+      "note": "Golden ratio (φ) - divide by 1.618 to get next size down, multiply to get next size up"
+    },
     "scale": {
-      "h1": { "size": "3rem", "weight": "700", "line_height": "1.1" },
-      "h2": { "size": "2.25rem", "weight": "600", "line_height": "1.2" },
-      "h3": { "size": "1.5rem", "weight": "600", "line_height": "1.3" },
-      "h4": { "size": "1.25rem", "weight": "600", "line_height": "1.4" },
-      "body": { "size": "1rem", "weight": "400", "line_height": "1.6" },
-      "body_lg": { "size": "1.125rem", "weight": "400", "line_height": "1.6" },
-      "small": { "size": "0.875rem", "weight": "400", "line_height": "1.5" },
-      "caption": { "size": "0.75rem", "weight": "400", "line_height": "1.4" }
+      "display": { "size": "4.236rem", "weight": "700", "line_height": "1.1", "font": "Cinzel", "note": "Hero headlines (68px at base 16)" },
+      "h1": { "size": "2.618rem", "weight": "700", "line_height": "1.1", "font": "Cinzel", "note": "Page titles (42px)" },
+      "h2": { "size": "1.618rem", "weight": "600", "line_height": "1.2", "font": "Cinzel", "note": "Section headings (26px)" },
+      "h3": { "size": "1.25rem", "weight": "600", "line_height": "1.3", "font": "Cinzel", "note": "Subsection headings (20px)" },
+      "h4": { "size": "1.125rem", "weight": "600", "line_height": "1.4", "font": "Source Sans 3", "note": "Card titles (18px)" },
+      "body_lg": { "size": "1.125rem", "weight": "400", "line_height": "1.618", "font": "Source Sans 3", "note": "Lead paragraphs (18px)" },
+      "body": { "size": "1rem", "weight": "400", "line_height": "1.618", "font": "Source Sans 3", "note": "Body text (16px base)" },
+      "small": { "size": "0.875rem", "weight": "400", "line_height": "1.5", "font": "Source Sans 3", "note": "Supporting text (14px)" },
+      "caption": { "size": "0.618rem", "weight": "400", "line_height": "1.4", "font": "Source Sans 3", "note": "Captions, labels (10px)" }
     }
   },
   "spacing": {
     "unit": "rem",
+    "note": "Golden ratio based spacing scale",
     "scale": {
-      "xs": "0.25rem",
+      "3xs": "0.236rem",
+      "2xs": "0.382rem",
+      "xs": "0.618rem",
+      "sm": "1rem",
+      "md": "1.618rem",
+      "lg": "2.618rem",
+      "xl": "4.236rem",
+      "2xl": "6.854rem",
+      "3xl": "11.09rem"
+    }
+  },
+  "borders": {
+    "note": "Generous rounding for soft, approachable feel",
+    "radius": {
+      "none": "0",
       "sm": "0.5rem",
       "md": "1rem",
       "lg": "1.5rem",
       "xl": "2rem",
-      "2xl": "3rem",
-      "3xl": "4rem"
-    }
-  },
-  "borders": {
-    "radius": {
-      "none": "0",
-      "sm": "0.25rem",
-      "md": "0.5rem",
-      "lg": "1rem",
-      "xl": "1.5rem",
-      "2xl": "2rem",
-      "4xl": "2.5rem",
+      "2xl": "2.5rem",
+      "3xl": "3rem",
       "full": "9999px"
     },
+    "default_radius": "1rem",
+    "button_radius": "0.5rem",
+    "card_radius": "1.5rem",
+    "modal_radius": "2rem",
     "width": {
       "thin": "1px",
       "medium": "2px",
@@ -174,6 +187,10 @@
       "color": "rgba(243, 114, 33, 0.5)",
       "tailwind": "border-orange-400/50",
       "usage": "Section dividers, card accents"
+    },
+    "glass_border": {
+      "color": "rgba(255, 255, 255, 0.1)",
+      "usage": "Glassmorphism card borders"
     }
   },
   "shadows": {
@@ -182,7 +199,42 @@
     "lg": "0 10px 15px -3px rgb(0 0 0 / 0.1)",
     "xl": "0 20px 25px -5px rgb(0 0 0 / 0.1)",
     "glow_orange": "0 0 20px rgba(243, 114, 33, 0.3)",
-    "glow_gold": "0 0 20px rgba(254, 215, 0, 0.3)"
+    "glow_gold": "0 0 20px rgba(254, 215, 0, 0.3)",
+    "glow_blue": "0 0 20px rgba(68, 157, 214, 0.3)",
+    "glass": "0 8px 32px 0 rgba(0, 0, 0, 0.37)"
+  },
+  "glassmorphism": {
+    "note": "Frosted glass effect for cards, modals, and overlays. Core design language.",
+    "card": {
+      "background": "rgba(15, 23, 42, 0.6)",
+      "backdrop_filter": "blur(16px)",
+      "border": "1px solid rgba(255, 255, 255, 0.1)",
+      "border_radius": "1.5rem",
+      "shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
+      "css": "background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1.5rem;"
+    },
+    "card_hover": {
+      "background": "rgba(15, 23, 42, 0.75)",
+      "border": "1px solid rgba(243, 114, 33, 0.3)",
+      "note": "Subtle orange border glow on hover"
+    },
+    "modal": {
+      "background": "rgba(15, 23, 42, 0.8)",
+      "backdrop_filter": "blur(24px)",
+      "border": "1px solid rgba(255, 255, 255, 0.15)",
+      "border_radius": "2rem"
+    },
+    "nav": {
+      "background": "rgba(3, 7, 18, 0.8)",
+      "backdrop_filter": "blur(12px)",
+      "border_bottom": "1px solid rgba(255, 255, 255, 0.05)"
+    },
+    "button_secondary": {
+      "background": "rgba(255, 255, 255, 0.05)",
+      "backdrop_filter": "blur(8px)",
+      "border": "1px solid rgba(255, 255, 255, 0.1)",
+      "border_radius": "0.5rem"
+    }
   },
   "animations": {
     "hover_float": {
@@ -234,18 +286,25 @@
       }
     },
     "style_guidelines": {
-      "color_usage": "Dark backgrounds with orange/gold gradient accents. Blue for informational elements.",
-      "photography": "Minimal, abstract, tech-focused when needed",
-      "illustrations": "Clean line art, geometric, developer-friendly",
-      "icons": "Consistent stroke width, rounded corners",
-      "patterns": ["Geometric triangular patterns echoing logo", "Subtle gradient meshes"],
+      "color_usage": "Deep space backgrounds (#030712) with warm orange/gold celestial accents. Blue for depth and secondary elements.",
+      "photography": "Abstract space imagery, nebulae, star fields when needed",
+      "illustrations": "Sacred geometry, geometric florals, mandala-inspired patterns",
+      "icons": "Consistent stroke width, rounded corners, orange/gold gradient fills for emphasis",
+      "patterns": [
+        "Geometric floral/mandala patterns (like hero section decorations)",
+        "Star field backgrounds",
+        "Orbital line decorations",
+        "Subtle gradient meshes suggesting nebulae"
+      ],
       "avoid": [
         "Stock photos of people at computers",
         "Overly corporate imagery",
         "Cluttered compositions",
-        "Neon/cyberpunk aesthetics",
+        "Harsh neon/cyberpunk aesthetics",
         "AI-generated faces",
-        "Light/white backgrounds (prefer dark)"
+        "Light/white backgrounds (dark space is core)",
+        "Sharp corners (prefer rounded)",
+        "Flat, solid surfaces (prefer glassmorphism)"
       ]
     },
     "text_on_images": {
@@ -267,16 +326,31 @@
     },
     "components": {
       "buttons": {
-        "primary": "Gradient background (orange to gold), white text, rounded-lg",
-        "secondary": "Outline with orange-400 border, transparent bg",
-        "ghost": "Text only with hover underline"
+        "primary": {
+          "style": "Gradient background (orange to gold), dark text, rounded-md (0.5rem)",
+          "css": "background: linear-gradient(90deg, #F37221, #FED700); color: #030712; border-radius: 0.5rem; font-weight: 600;"
+        },
+        "secondary": {
+          "style": "Glassmorphism with subtle border, light text",
+          "css": "background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 0.5rem;"
+        },
+        "ghost": "Text only with hover underline, orange accent on hover"
       },
       "cards": {
-        "style": "Dark background (slate-900), rounded-4xl, animated gradient border on hover",
-        "border_effect": "Rotating conic gradient border with orange/gold"
+        "style": "Glassmorphism with generous rounding",
+        "css": "background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1.5rem;",
+        "hover": "border-color: rgba(243, 114, 33, 0.3); background: rgba(15, 23, 42, 0.75);",
+        "border_effect": "Optional: Rotating conic gradient border with orange/gold for featured cards"
       },
-      "inputs": "Dark background, border on focus with orange accent, clear labels",
-      "navigation": "Clean, minimal, sticky on scroll, dark background"
+      "inputs": {
+        "style": "Glassmorphism input fields",
+        "css": "background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 0.5rem;",
+        "focus": "border-color: #F37221; box-shadow: 0 0 0 2px rgba(243, 114, 33, 0.2);"
+      },
+      "navigation": {
+        "style": "Glassmorphism sticky nav",
+        "css": "background: rgba(3, 7, 18, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05);"
+      }
     },
     "dark_mode": {
       "supported": true,
@@ -307,17 +381,41 @@
       "background": "#0F172A"
     }
   },
+  "design_theme": {
+    "name": "Cosmic Renaissance",
+    "concept": "Space meets classical elegance. Deep cosmic darkness with warm celestial accents—like stars and nebulae glowing against the void.",
+    "core_principles": [
+      "Glassmorphism as primary surface treatment",
+      "Golden ratio proportions throughout",
+      "Generous border radius for soft, inviting feel",
+      "Deep space backgrounds with warm orange/gold celestial accents",
+      "Elegant serif headings (Cinzel) contrast modern UI"
+    ]
+  },
   "brand_personality_in_design": {
     "keywords": [
-      "Bold but refined",
-      "Developer-focused",
-      "Modern dark aesthetic",
-      "Warm accents (orange/gold) on dark",
-      "Technical precision",
-      "Innovative",
-      "Trustworthy"
+      "Cosmic elegance",
+      "Renaissance craftsmanship",
+      "Space-age sophistication",
+      "Warm celestial glow",
+      "Artisan precision",
+      "Timeless yet futuristic",
+      "Developer-focused luxury"
     ],
-    "mood": "Confident and cutting-edge. Dark, sophisticated backgrounds with vibrant orange/gold energy. Like a well-designed terminal: powerful, focused, purposeful.",
-    "inspiration": ["Modern dev tools", "Terminal aesthetics", "Warm sunset gradients on dark"]
+    "mood": "The soul of an artist, the mind of an engineer. Deep cosmic backgrounds evoke infinite possibility. Warm orange and gold accents feel like distant stars and nebulae. Glassmorphism creates depth and dimension, like looking through spacecraft windows. Classical typography (Cinzel) grounds the futuristic aesthetic in timeless craftsmanship.",
+    "inspiration": [
+      "Deep space imagery and nebulae",
+      "Renaissance art and golden ratio",
+      "Spacecraft cockpit interfaces",
+      "Luxury watchmaking",
+      "Modern observatory architecture",
+      "Sacred geometry patterns"
+    ],
+    "patterns": {
+      "geometric_florals": "Geometric flower/mandala patterns (like on website) evoke sacred geometry and cosmic order",
+      "star_fields": "Subtle animated star backgrounds for depth",
+      "orbital_lines": "Thin curved lines suggesting planetary orbits",
+      "gradient_meshes": "Soft color transitions suggesting nebulae"
+    }
   }
 }
