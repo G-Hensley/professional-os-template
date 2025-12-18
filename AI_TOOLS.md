@@ -102,11 +102,11 @@ This document defines when to use each AI tool with this repository. Each tool h
 
 ---
 
-## Codex
+## Codex CLI
 
 **Role**: Quick tasks and prompt-based workflows
 
-**Configuration**: `/.codex/commands/`
+**Configuration**: `~/.codex/prompts/` (global) + `~/.codex/config.toml`
 
 ### Best For
 - Quick, focused code reviews
@@ -118,19 +118,24 @@ This document defines when to use each AI tool with this repository. Each tool h
 ### Available Commands
 | Command | Description |
 |---------|-------------|
-| `assessment` | Assessment prompt template |
-| `job-application` | Job application logging prompt |
-| `review-resume` | Quick resume review and feedback |
-| `summarize-project` | Generate project summary or pitch |
+| `/prompts:assessment` | Run a self-assessment |
+| `/prompts:job-application` | Log and analyze a job application |
+| `/prompts:review-resume` | Quick resume review and feedback |
+| `/prompts:summarize-project` | Generate project summary or pitch |
 
 ### Example Tasks
 ```
-"review-resume [paste resume] against [paste job posting]"
-"summarize-project Dev Genesis elevator pitch"
-"summarize-project TemperedUI linkedin"
-"Review this function for security issues"
-"Explain what this code does"
+/prompts:review-resume JOB="[paste job posting]"
+/prompts:summarize-project PROJECT="Dev Genesis" TYPE="elevator"
+/prompts:summarize-project PROJECT="TemperedUI" TYPE="linkedin"
+/prompts:assessment FOCUS="technical"
+/prompts:job-application SOURCE="linkedin"
 ```
+
+### Notes
+- Codex prompts are installed globally to `~/.codex/prompts/`
+- Local `.codex/commands/` folder contains reference copies
+- Type `/` in Codex to see available slash commands
 
 ---
 
@@ -185,7 +190,7 @@ Some tasks work best with multiple tools:
 
 ### Content Creation Workflow
 1. **Claude Code**: `/generate-post [account] [topic]` - Draft post
-2. **Codex**: `summarize-project [project] linkedin` - Quick project pitch
+2. **Codex**: `/prompts:summarize-project PROJECT="[name]" TYPE="linkedin"` - Quick project pitch
 3. Manual: Review, edit, and post
 
 ---

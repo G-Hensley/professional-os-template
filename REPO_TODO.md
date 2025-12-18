@@ -19,10 +19,10 @@ Tasks to complete before this knowledge base is fully operational. Separate from
   - Created instructions file explaining repo structure
   - Defined what Gemini should be used for vs Claude/Codex
 
-- [ ] **Review Codex configuration** (`/.codex/`)
-  - Verify commands work properly (assessment, job-application)
-  - Ensure Codex has proper context about repo structure
-  - Consider: What tasks is Codex best suited for?
+- [x] **Review Codex configuration** ✅
+  - Moved prompts to correct global location (`~/.codex/prompts/`)
+  - Added YAML frontmatter with descriptions and argument hints
+  - Commands: `/prompts:assessment`, `/prompts:job-application`, `/prompts:review-resume`, `/prompts:summarize-project`
 
 - [x] **Define AI tool responsibilities** (`AI_TOOLS.md`) ✅
   - Created comprehensive guide with quick reference table
@@ -220,7 +220,7 @@ Tasks to complete before this knowledge base is fully operational. Separate from
 - [x] Create AI_TOOLS.md with tool responsibilities and decision flowchart
 - [x] Create Claude Code commands (`/generate-resume`, `/generate-post`, `/update-project`, `/prep-interview`, `/quick-check`)
 - [x] Create Gemini CLI commands (`/research-company`, `/competitive-analysis`, `/market-research`, `/salary-research`)
-- [x] Create Codex CLI commands (`review-resume`, `summarize-project`)
+- [x] Create Codex CLI commands (moved to `~/.codex/prompts/` with proper frontmatter)
 - [x] Expand automation/IDEAS.md with n8n workflows and event-driven automations
 
 ---

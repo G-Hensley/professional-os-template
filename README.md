@@ -45,14 +45,14 @@ A structured data repository designed to be consumed by AI tools (Claude Code, C
 | `/market-research` | Research market trends and opportunities |
 | `/salary-research` | Research salary ranges for a role |
 
-### Codex CLI (`/.codex/commands/`)
+### Codex CLI (`~/.codex/prompts/`)
 
 | Command | Description |
 |---------|-------------|
-| `assessment` | Assessment prompt template |
-| `job-application` | Job application logging prompt |
-| `review-resume` | Quick resume review and feedback |
-| `summarize-project` | Generate project summary or pitch |
+| `/prompts:assessment` | Run a self-assessment |
+| `/prompts:job-application` | Log and analyze a job application |
+| `/prompts:review-resume` | Quick resume review and feedback |
+| `/prompts:summarize-project` | Generate project summary or pitch |
 
 ## Key Files
 
@@ -167,11 +167,12 @@ myself/
 │       ├── market-research.md
 │       └── salary-research.md
 │
-└── .codex/commands/          # Codex prompts
-    ├── assessment.md
-    ├── job-application.md
-    ├── review-resume.md
-    └── summarize-project.md
+└── .codex/                   # Codex reference (prompts installed to ~/.codex/prompts/)
+    └── commands/             # Local copies for reference
+        ├── assessment.md
+        ├── job-application.md
+        ├── review-resume.md
+        └── summarize-project.md
 ```
 
 </details>
