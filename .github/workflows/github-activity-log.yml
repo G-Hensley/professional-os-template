@@ -1,0 +1,289 @@
+name: GitHub Activity Logging
+
+on:
+  schedule:
+    # Daily at 6 AM UTC (1 AM EST / 2 AM EDT)
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Log mode'
+        required: false
+        default: 'daily'
+        type: choice
+        options:
+          - daily
+          - weekly
+          - backfill
+
+permissions:
+  contents: write
+
+jobs:
+  log-activity:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Get activity and update logs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ github.actor }}
+        run: |
+          # Configuration
+          USERNAME="G-Hensley"
+          TODAY=$(date -u +%Y-%m-%d)
+          MONTH=$(date -u +%Y-%m)
+          LOG_FILE="logs/github-activity/${MONTH}.json"
+
+          # Determine date range based on mode
+          MODE="${{ github.event.inputs.mode || 'daily' }}"
+
+          if [ "$MODE" = "weekly" ]; then
+            SINCE=$(date -u -d "7 days ago" +%Y-%m-%dT00:00:00Z)
+          elif [ "$MODE" = "backfill" ]; then
+            SINCE=$(date -u -d "30 days ago" +%Y-%m-%dT00:00:00Z)
+          else
+            SINCE=$(date -u -d "1 day ago" +%Y-%m-%dT00:00:00Z)
+          fi
+
+          echo "Fetching activity since: $SINCE"
+          echo "Mode: $MODE"
+
+          # Ensure log directory exists
+          mkdir -p logs/github-activity
+
+          # Initialize log file if it doesn't exist
+          if [ ! -f "$LOG_FILE" ]; then
+            echo '{
+              "month": "'"$MONTH"'",
+              "generated_at": "'"$(date -u +%Y-%m-%dT%H:%M:%SZ)"'",
+              "entries": []
+            }' > "$LOG_FILE"
+          fi
+
+          # Fetch commits across all repos
+          echo "Fetching commits..."
+          COMMITS=$(gh api graphql -f query='
+            query($username: String!, $since: DateTime!) {
+              user(login: $username) {
+                contributionsCollection(from: $since) {
+                  commitContributionsByRepository {
+                    repository {
+                      name
+                      owner { login }
+                      url
+                    }
+                    contributions(first: 100) {
+                      nodes {
+                        occurredAt
+                        commitCount
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ' -f username="$USERNAME" -f since="$SINCE" 2>/dev/null || echo '{"data":{"user":{"contributionsCollection":{"commitContributionsByRepository":[]}}}}')
+
+          # Fetch PRs
+          echo "Fetching pull requests..."
+          PRS=$(gh api graphql -f query='
+            query($username: String!, $since: DateTime!) {
+              user(login: $username) {
+                pullRequests(first: 50, orderBy: {field: CREATED_AT, direction: DESC}) {
+                  nodes {
+                    title
+                    url
+                    state
+                    createdAt
+                    mergedAt
+                    repository {
+                      name
+                      owner { login }
+                    }
+                  }
+                }
+              }
+            }
+          ' -f username="$USERNAME" -f since="$SINCE" 2>/dev/null || echo '{"data":{"user":{"pullRequests":{"nodes":[]}}}}')
+
+          # Fetch Issues
+          echo "Fetching issues..."
+          ISSUES=$(gh api graphql -f query='
+            query($username: String!) {
+              user(login: $username) {
+                issues(first: 50, orderBy: {field: CREATED_AT, direction: DESC}) {
+                  nodes {
+                    title
+                    url
+                    state
+                    createdAt
+                    closedAt
+                    repository {
+                      name
+                      owner { login }
+                    }
+                  }
+                }
+              }
+            }
+          ' -f username="$USERNAME" 2>/dev/null || echo '{"data":{"user":{"issues":{"nodes":[]}}}}')
+
+          # Create today's entry
+          echo "Creating log entry..."
+
+          # Use Node.js to process and merge the data
+          node << 'NODEJS_SCRIPT'
+          const fs = require('fs');
+
+          const today = process.env.TODAY || new Date().toISOString().split('T')[0];
+          const logFile = process.env.LOG_FILE || `logs/github-activity/${today.slice(0,7)}.json`;
+          const mode = process.env.MODE || 'daily';
+
+          // Parse API responses from environment or use defaults
+          let commits, prs, issues;
+
+          try {
+            commits = JSON.parse(process.env.COMMITS || '{"data":{"user":{"contributionsCollection":{"commitContributionsByRepository":[]}}}}');
+          } catch (e) {
+            commits = {"data":{"user":{"contributionsCollection":{"commitContributionsByRepository":[]}}}};
+          }
+
+          try {
+            prs = JSON.parse(process.env.PRS || '{"data":{"user":{"pullRequests":{"nodes":[]}}}}');
+          } catch (e) {
+            prs = {"data":{"user":{"pullRequests":{"nodes":[]}}}};
+          }
+
+          try {
+            issues = JSON.parse(process.env.ISSUES || '{"data":{"user":{"issues":{"nodes":[]}}}}');
+          } catch (e) {
+            issues = {"data":{"user":{"issues":{"nodes":[]}}}};
+          }
+
+          // Process commits
+          const commitData = commits.data?.user?.contributionsCollection?.commitContributionsByRepository || [];
+          const processedCommits = commitData.map(repo => ({
+            repository: `${repo.repository?.owner?.login}/${repo.repository?.name}`,
+            url: repo.repository?.url,
+            total_commits: repo.contributions?.nodes?.reduce((sum, c) => sum + (c.commitCount || 0), 0) || 0,
+            dates: repo.contributions?.nodes?.map(c => c.occurredAt) || []
+          })).filter(r => r.total_commits > 0);
+
+          // Process PRs (filter to recent)
+          const sinceDate = new Date();
+          sinceDate.setDate(sinceDate.getDate() - (mode === 'weekly' ? 7 : mode === 'backfill' ? 30 : 1));
+
+          const prData = prs.data?.user?.pullRequests?.nodes || [];
+          const processedPRs = prData
+            .filter(pr => new Date(pr.createdAt) >= sinceDate)
+            .map(pr => ({
+              title: pr.title,
+              url: pr.url,
+              state: pr.state,
+              repository: `${pr.repository?.owner?.login}/${pr.repository?.name}`,
+              created_at: pr.createdAt,
+              merged_at: pr.mergedAt
+            }));
+
+          // Process Issues (filter to recent)
+          const issueData = issues.data?.user?.issues?.nodes || [];
+          const processedIssues = issueData
+            .filter(issue => new Date(issue.createdAt) >= sinceDate)
+            .map(issue => ({
+              title: issue.title,
+              url: issue.url,
+              state: issue.state,
+              repository: `${issue.repository?.owner?.login}/${issue.repository?.name}`,
+              created_at: issue.createdAt,
+              closed_at: issue.closedAt
+            }));
+
+          // Create entry
+          const entry = {
+            date: today,
+            logged_at: new Date().toISOString(),
+            mode: mode,
+            summary: {
+              total_commits: processedCommits.reduce((sum, r) => sum + r.total_commits, 0),
+              repos_with_commits: processedCommits.length,
+              pull_requests_created: processedPRs.length,
+              pull_requests_merged: processedPRs.filter(pr => pr.state === 'MERGED').length,
+              issues_created: processedIssues.length,
+              issues_closed: processedIssues.filter(i => i.state === 'CLOSED').length
+            },
+            commits: processedCommits,
+            pull_requests: processedPRs,
+            issues: processedIssues
+          };
+
+          // Read existing log
+          let log;
+          try {
+            log = JSON.parse(fs.readFileSync(logFile, 'utf8'));
+          } catch (e) {
+            log = {
+              month: today.slice(0, 7),
+              generated_at: new Date().toISOString(),
+              entries: []
+            };
+          }
+
+          // Remove existing entry for today if exists (allow re-runs)
+          log.entries = log.entries.filter(e => e.date !== today);
+
+          // Add new entry
+          log.entries.push(entry);
+
+          // Sort entries by date
+          log.entries.sort((a, b) => a.date.localeCompare(b.date));
+
+          // Update generated_at
+          log.generated_at = new Date().toISOString();
+
+          // Calculate monthly summary
+          log.monthly_summary = {
+            total_commits: log.entries.reduce((sum, e) => sum + (e.summary?.total_commits || 0), 0),
+            total_prs_created: log.entries.reduce((sum, e) => sum + (e.summary?.pull_requests_created || 0), 0),
+            total_prs_merged: log.entries.reduce((sum, e) => sum + (e.summary?.pull_requests_merged || 0), 0),
+            total_issues_created: log.entries.reduce((sum, e) => sum + (e.summary?.issues_created || 0), 0),
+            total_issues_closed: log.entries.reduce((sum, e) => sum + (e.summary?.issues_closed || 0), 0),
+            active_days: log.entries.filter(e => (e.summary?.total_commits || 0) > 0).length,
+            entries_count: log.entries.length
+          };
+
+          // Write updated log
+          fs.writeFileSync(logFile, JSON.stringify(log, null, 2));
+
+          console.log('Log entry created:');
+          console.log(JSON.stringify(entry.summary, null, 2));
+          NODEJS_SCRIPT
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          git add logs/github-activity/
+
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update GitHub activity log for $(date -u +%Y-%m-%d)
+
+            Automated daily activity logging.
+
+            🤖 Generated by GitHub Actions"
+            git push
+          fi

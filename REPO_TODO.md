@@ -48,10 +48,11 @@ Tasks to complete before this knowledge base is fully operational. Separate from
 
 ### Automation Foundation
 
-- [ ] **Create GitHub Activity Logging action** (from automation/IDEAS.md)
-  - Daily/weekly GitHub API pull for commits, PRs, issues
-  - Write to `/logs/github-activity/YYYY-MM.json`
-  - Foundation for content generation and assessments
+- [x] **Create GitHub Activity Logging action** ✅
+  - Daily runs at 6 AM UTC via GitHub Actions
+  - Pulls commits, PRs, issues via GraphQL API
+  - Writes to `/logs/github-activity/YYYY-MM.json`
+  - Supports manual trigger with daily/weekly/backfill modes
 
 - [ ] **Create Weekly Task Reminder action**
   - GitHub Action runs Monday morning
@@ -226,6 +227,7 @@ Tasks to complete before this knowledge base is fully operational. Separate from
 - [x] Expand automation/IDEAS.md with n8n workflows and event-driven automations
 - [x] Fill in Codaissance design-system.json with brand colors
 - [x] Sync projects with strategy files
+- [x] Create GitHub Activity Logging action
 
 ---
 
