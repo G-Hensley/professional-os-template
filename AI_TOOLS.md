@@ -33,7 +33,7 @@ This document defines when to use each AI tool with this repository. Each tool h
 - Multi-file refactoring
 - Running shell commands
 - Complex multi-step tasks
-- Using slash commands (`/assessment`, `/log-application`)
+- Using slash commands for structured workflows
 - Project planning and documentation
 - Generating content from repo data
 
@@ -42,14 +42,20 @@ This document defines when to use each AI tool with this repository. Each tool h
 |---------|-------------|
 | `/assessment` | Comprehensive self-assessment across all areas |
 | `/log-application` | Log a new job application |
+| `/generate-resume` | Create a tailored resume from a job posting |
+| `/generate-post` | Create a LinkedIn post draft for any account |
+| `/update-project` | Update project status, details, or move between files |
+| `/prep-interview` | Generate interview preparation notes |
+| `/quick-check` | Brief status check on key metrics (weekly) |
 
 ### Example Tasks
 ```
 "Update my skills.json to mark TypeScript as expert level"
-"Generate a resume tailored for this job posting: [paste posting]"
-"Run an assessment focused on my business strategy"
-"Create a new project planning doc for [idea]"
-"Update the project status for MindTrace to reflect current progress"
+"/generate-resume [paste job posting]"
+"/assessment focused on my business strategy"
+"/update-project MindTrace - move to completed"
+"/quick-check"
+"/generate-post codaissance - just shipped Dev Genesis v1"
 ```
 
 ---
@@ -58,7 +64,7 @@ This document defines when to use each AI tool with this repository. Each tool h
 
 **Role**: Research and analysis specialist — web search, summarization, market research
 
-**Configuration**: `/.gemini/GEMINI.md`
+**Configuration**: `/.gemini/GEMINI.md` + `/.gemini/commands/`
 
 ### Best For
 - Web searches for current information
@@ -68,14 +74,23 @@ This document defines when to use each AI tool with this repository. Each tool h
 - Summarizing long documents or URLs
 - Interview preparation research
 - Finding pricing/feature comparisons
+- Salary and compensation research
+
+### Available Commands
+| Command | Description |
+|---------|-------------|
+| `/research-company` | Research a company for job applications |
+| `/competitive-analysis` | Analyze competitors for a product |
+| `/market-research` | Research market trends and opportunities |
+| `/salary-research` | Research salary ranges for a role |
 
 ### Example Tasks
 ```
-"Research Stripe's engineering culture and recent tech blog posts"
-"Find competitors for MindTrace and compare their pricing"
-"What are the current trends in developer tools for 2025?"
+"/research-company Stripe"
+"/competitive-analysis MindTrace"
+"/market-research developer tools 2025"
+"/salary-research Senior Frontend Engineer"
 "Summarize this article: [URL]"
-"Research what questions to expect in a senior frontend interview"
 "Find recent news about APIsec from the last 3 months"
 ```
 
@@ -98,18 +113,23 @@ This document defines when to use each AI tool with this repository. Each tool h
 - Specific prompt-based tasks
 - When you want a fresh context (no conversation history)
 - Running predefined prompts
+- Backup when Claude Code tokens run out
 
 ### Available Commands
 | Command | Description |
 |---------|-------------|
 | `assessment` | Assessment prompt template |
 | `job-application` | Job application logging prompt |
+| `review-resume` | Quick resume review and feedback |
+| `summarize-project` | Generate project summary or pitch |
 
 ### Example Tasks
 ```
+"review-resume [paste resume] against [paste job posting]"
+"summarize-project Dev Genesis elevator pitch"
+"summarize-project TemperedUI linkedin"
 "Review this function for security issues"
 "Explain what this code does"
-"Suggest improvements for this component"
 ```
 
 ---
@@ -148,19 +168,25 @@ What do you need to do?
 Some tasks work best with multiple tools:
 
 ### Job Application Workflow
-1. **Gemini**: Research the company (culture, tech stack, recent news)
-2. **Claude Code**: Generate tailored resume with `/generate-resume` (when created)
-3. **Claude Code**: Log application with `/log-application`
+1. **Gemini**: `/research-company [company]` - Get company intel
+2. **Gemini**: `/salary-research [role]` - Know your worth
+3. **Claude Code**: `/generate-resume [paste posting]` - Tailored resume
+4. **Claude Code**: `/log-application` - Track it
 
 ### Competitive Analysis Workflow
-1. **Gemini**: Research competitors, pricing, features
+1. **Gemini**: `/competitive-analysis [product]` - Research competitors
 2. **Claude Code**: Update `competitors.json` with findings
 3. **Claude Code**: Adjust strategy based on analysis
 
 ### Interview Prep Workflow
-1. **Gemini**: Research company and role
-2. **Gemini**: Find common interview questions for the role
-3. **Claude Code**: Update `interviews.json` with prep notes
+1. **Gemini**: `/research-company [company]` - Deep dive on company
+2. **Claude Code**: `/prep-interview` - Generate full prep doc
+3. **Claude Code**: Update `interviews.json` with notes
+
+### Content Creation Workflow
+1. **Claude Code**: `/generate-post [account] [topic]` - Draft post
+2. **Codex**: `summarize-project [project] linkedin` - Quick project pitch
+3. Manual: Review, edit, and post
 
 ---
 

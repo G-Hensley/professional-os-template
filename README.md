@@ -30,13 +30,29 @@ A structured data repository designed to be consumed by AI tools (Claude Code, C
 |---------|-------------|
 | `/assessment` | Run a comprehensive self-assessment across all areas |
 | `/log-application` | Log a new job application |
+| `/generate-resume` | Create a tailored resume from a job posting |
+| `/generate-post` | Create a LinkedIn post draft |
+| `/update-project` | Update project status or details |
+| `/prep-interview` | Generate interview preparation notes |
+| `/quick-check` | Brief status check on key metrics |
 
-### Codex (`/.codex/commands/`)
+### Gemini CLI (`/.gemini/commands/`)
+
+| Command | Description |
+|---------|-------------|
+| `/research-company` | Research a company for job application |
+| `/competitive-analysis` | Analyze competitors for a product |
+| `/market-research` | Research market trends and opportunities |
+| `/salary-research` | Research salary ranges for a role |
+
+### Codex CLI (`/.codex/commands/`)
 
 | Command | Description |
 |---------|-------------|
 | `assessment` | Assessment prompt template |
 | `job-application` | Job application logging prompt |
+| `review-resume` | Quick resume review and feedback |
+| `summarize-project` | Generate project summary or pitch |
 
 ## Key Files
 
@@ -136,11 +152,26 @@ myself/
 │
 ├── .claude/commands/         # Claude Code commands
 │   ├── assessment.md
-│   └── log-application.md
+│   ├── log-application.md
+│   ├── generate-resume.md
+│   ├── generate-post.md
+│   ├── update-project.md
+│   ├── prep-interview.md
+│   └── quick-check.md
+│
+├── .gemini/                  # Gemini CLI config
+│   ├── GEMINI.md             # Gemini instructions
+│   └── commands/             # Gemini commands
+│       ├── research-company.md
+│       ├── competitive-analysis.md
+│       ├── market-research.md
+│       └── salary-research.md
 │
 └── .codex/commands/          # Codex prompts
     ├── assessment.md
-    └── job-application.md
+    ├── job-application.md
+    ├── review-resume.md
+    └── summarize-project.md
 ```
 
 </details>
