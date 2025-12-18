@@ -10,6 +10,8 @@
       "target_level": "novice|apprentice|adept|expert",
       "current_level": "none|novice|apprentice|adept",
       "blocked_by": null,
+      "parallel_with": [],
+      "estimated_time_commitment": "",
       "notes": ""
     }
   ],

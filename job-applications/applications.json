@@ -1,0 +1,30 @@
+{
+  "applications": [
+    {
+      "id": "",
+      "company": "",
+      "role": "",
+      "url": "",
+      "source": "linkedin|wellfound|hn|direct|referral|other",
+      "date_applied": "YYYY-MM-DD",
+      "status": "applied|screening|interviewing|offer|rejected|withdrawn|ghosted",
+      "salary_range": {
+        "min": null,
+        "max": null,
+        "currency": "USD"
+      },
+      "location": "remote|hybrid|onsite",
+      "job_description_summary": "",
+      "why_interested": "",
+      "skills_match": [],
+      "skills_gap": [],
+      "resume_version": "",
+      "cover_letter": false,
+      "referral": null,
+      "notes": "",
+      "follow_up_date": null,
+      "last_updated": "YYYY-MM-DD",
+      "outcome": null
+    }
+  ]
+}

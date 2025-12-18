@@ -1,0 +1,30 @@
+{
+  "interviews": [
+    {
+      "id": "",
+      "application_id": "",
+      "company": "",
+      "role": "",
+      "round": 1,
+      "type": "phone_screen|technical|behavioral|system_design|panel|final|other",
+      "date": "YYYY-MM-DD",
+      "time": "HH:MM",
+      "duration_minutes": null,
+      "interviewer": "",
+      "interviewer_role": "",
+      "format": "video|phone|onsite",
+      "platform": "zoom|google_meet|teams|phone|other",
+      "prep_notes": "",
+      "questions_asked": [],
+      "my_questions": [],
+      "granola_notes": "",
+      "went_well": [],
+      "could_improve": [],
+      "follow_up_sent": false,
+      "outcome": "passed|rejected|pending|unknown",
+      "feedback_received": "",
+      "next_steps": "",
+      "notes": ""
+    }
+  ]
+}
