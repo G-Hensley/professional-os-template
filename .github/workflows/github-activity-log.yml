@@ -73,7 +73,7 @@ jobs:
 
           # Fetch commits across all repos
           echo "Fetching commits..."
-          COMMITS=$(gh api graphql -f query='
+          gh api graphql -f query='
             query($username: String!, $since: DateTime!) {
               user(login: $username) {
                 contributionsCollection(from: $since) {
@@ -93,12 +93,12 @@ jobs:
                 }
               }
             }
-          ' -f username="$USERNAME" -f since="$SINCE" 2>/dev/null || echo '{"data":{"user":{"contributionsCollection":{"commitContributionsByRepository":[]}}}}')
+          ' -f username="$USERNAME" -f since="$SINCE" > /tmp/commits.json 2>/dev/null || echo '{"data":{"user":{"contributionsCollection":{"commitContributionsByRepository":[]}}}}' > /tmp/commits.json
 
           # Fetch PRs
           echo "Fetching pull requests..."
-          PRS=$(gh api graphql -f query='
-            query($username: String!, $since: DateTime!) {
+          gh api graphql -f query='
+            query($username: String!) {
               user(login: $username) {
                 pullRequests(first: 50, orderBy: {field: CREATED_AT, direction: DESC}) {
                   nodes {
@@ -115,11 +115,11 @@ jobs:
                 }
               }
             }
-          ' -f username="$USERNAME" -f since="$SINCE" 2>/dev/null || echo '{"data":{"user":{"pullRequests":{"nodes":[]}}}}')
+          ' -f username="$USERNAME" > /tmp/prs.json 2>/dev/null || echo '{"data":{"user":{"pullRequests":{"nodes":[]}}}}' > /tmp/prs.json
 
           # Fetch Issues
           echo "Fetching issues..."
-          ISSUES=$(gh api graphql -f query='
+          gh api graphql -f query='
             query($username: String!) {
               user(login: $username) {
                 issues(first: 50, orderBy: {field: CREATED_AT, direction: DESC}) {
@@ -137,44 +137,57 @@ jobs:
                 }
               }
             }
-          ' -f username="$USERNAME" 2>/dev/null || echo '{"data":{"user":{"issues":{"nodes":[]}}}}')
+          ' -f username="$USERNAME" > /tmp/issues.json 2>/dev/null || echo '{"data":{"user":{"issues":{"nodes":[]}}}}' > /tmp/issues.json
+
+          # Debug: show what we got
+          echo "Commits response:"
+          cat /tmp/commits.json | head -c 500
+          echo ""
+          echo "PRs response:"
+          cat /tmp/prs.json | head -c 500
+          echo ""
 
           # Create today's entry
           echo "Creating log entry..."
 
           # Use Node.js to process and merge the data
-          node << 'NODEJS_SCRIPT'
+          node -e "
           const fs = require('fs');
 
-          const today = process.env.TODAY || new Date().toISOString().split('T')[0];
-          const logFile = process.env.LOG_FILE || `logs/github-activity/${today.slice(0,7)}.json`;
-          const mode = process.env.MODE || 'daily';
+          const today = '$TODAY';
+          const logFile = '$LOG_FILE';
+          const mode = '$MODE';
 
-          // Parse API responses from environment or use defaults
+          // Read API responses from temp files
           let commits, prs, issues;
 
           try {
-            commits = JSON.parse(process.env.COMMITS || '{"data":{"user":{"contributionsCollection":{"commitContributionsByRepository":[]}}}}');
+            commits = JSON.parse(fs.readFileSync('/tmp/commits.json', 'utf8'));
           } catch (e) {
-            commits = {"data":{"user":{"contributionsCollection":{"commitContributionsByRepository":[]}}}};
+            console.error('Error reading commits:', e.message);
+            commits = {data:{user:{contributionsCollection:{commitContributionsByRepository:[]}}}};
           }
 
           try {
-            prs = JSON.parse(process.env.PRS || '{"data":{"user":{"pullRequests":{"nodes":[]}}}}');
+            prs = JSON.parse(fs.readFileSync('/tmp/prs.json', 'utf8'));
           } catch (e) {
-            prs = {"data":{"user":{"pullRequests":{"nodes":[]}}}};
+            console.error('Error reading prs:', e.message);
+            prs = {data:{user:{pullRequests:{nodes:[]}}}};
           }
 
           try {
-            issues = JSON.parse(process.env.ISSUES || '{"data":{"user":{"issues":{"nodes":[]}}}}');
+            issues = JSON.parse(fs.readFileSync('/tmp/issues.json', 'utf8'));
           } catch (e) {
-            issues = {"data":{"user":{"issues":{"nodes":[]}}}};
+            console.error('Error reading issues:', e.message);
+            issues = {data:{user:{issues:{nodes:[]}}}};
           }
 
           // Process commits
           const commitData = commits.data?.user?.contributionsCollection?.commitContributionsByRepository || [];
+          console.log('Found', commitData.length, 'repos with commits');
+
           const processedCommits = commitData.map(repo => ({
-            repository: `${repo.repository?.owner?.login}/${repo.repository?.name}`,
+            repository: \`\${repo.repository?.owner?.login}/\${repo.repository?.name}\`,
             url: repo.repository?.url,
             total_commits: repo.contributions?.nodes?.reduce((sum, c) => sum + (c.commitCount || 0), 0) || 0,
             dates: repo.contributions?.nodes?.map(c => c.occurredAt) || []
@@ -185,26 +198,30 @@ jobs:
           sinceDate.setDate(sinceDate.getDate() - (mode === 'weekly' ? 7 : mode === 'backfill' ? 30 : 1));
 
           const prData = prs.data?.user?.pullRequests?.nodes || [];
+          console.log('Found', prData.length, 'total PRs,', prData.filter(pr => new Date(pr.createdAt) >= sinceDate).length, 'in date range');
+
           const processedPRs = prData
             .filter(pr => new Date(pr.createdAt) >= sinceDate)
             .map(pr => ({
               title: pr.title,
               url: pr.url,
               state: pr.state,
-              repository: `${pr.repository?.owner?.login}/${pr.repository?.name}`,
+              repository: \`\${pr.repository?.owner?.login}/\${pr.repository?.name}\`,
               created_at: pr.createdAt,
               merged_at: pr.mergedAt
             }));
 
           // Process Issues (filter to recent)
           const issueData = issues.data?.user?.issues?.nodes || [];
+          console.log('Found', issueData.length, 'total issues,', issueData.filter(i => new Date(i.createdAt) >= sinceDate).length, 'in date range');
+
           const processedIssues = issueData
             .filter(issue => new Date(issue.createdAt) >= sinceDate)
             .map(issue => ({
               title: issue.title,
               url: issue.url,
               state: issue.state,
-              repository: `${issue.repository?.owner?.login}/${issue.repository?.name}`,
+              repository: \`\${issue.repository?.owner?.login}/\${issue.repository?.name}\`,
               created_at: issue.createdAt,
               closed_at: issue.closedAt
             }));
@@ -267,7 +284,7 @@ jobs:
 
           console.log('Log entry created:');
           console.log(JSON.stringify(entry.summary, null, 2));
-          NODEJS_SCRIPT
+          "
 
       - name: Commit and push changes
         run: |
