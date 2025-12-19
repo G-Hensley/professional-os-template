@@ -2,6 +2,10 @@
 
 Tasks to complete before this knowledge base is fully operational. Separate from business roadmaps and project TODOs.
 
+## Philosophy: Automation First
+
+**If it can be automated, it should be automated.** Manual "reminder" tasks are anti-patterns. Instead of reminders to do things, we build pipelines that actually do the work.
+
 ## Priority Legend
 - 🔴 **P0** - Blocking. Must complete before using the repo effectively
 - 🟠 **P1** - High value. Complete soon for major benefits
@@ -10,187 +14,224 @@ Tasks to complete before this knowledge base is fully operational. Separate from
 
 ---
 
-## 🔴 P0: Blocking Tasks
+## Automation Pipeline Overview
 
-### AI Tool Configuration
-
-- [x] **Create Gemini CLI configuration** (`/.gemini/GEMINI.md`) ✅
-  - Gemini excels at research, summarization, and web search
-  - Created instructions file explaining repo structure
-  - Defined what Gemini should be used for vs Claude/Codex
-
-- [x] **Review Codex configuration** ✅
-  - Moved prompts to correct global location (`~/.codex/prompts/`)
-  - Added YAML frontmatter with descriptions and argument hints
-  - Commands: `/prompts:assessment`, `/prompts:job-application`, `/prompts:review-resume`, `/prompts:summarize-project`
-
-- [x] **Define AI tool responsibilities** (`AI_TOOLS.md`) ✅
-  - Created comprehensive guide with quick reference table
-  - Decision flowchart for choosing the right tool
-  - Tool combination workflows for complex tasks
-
-### Data Completeness
-
-- [x] **Fill in Codaissance design-system.json** ✅
-  - Added primary orange (#F37221) and gold (#FED700) from logo
-  - Added accent blues: Spark Blue (#449DD6) and Deep Blue (#3B56A6)
-  - Defined backgrounds, gradients, animations, shadows
-  - Typography fonts left empty (user to specify)
-
-- [x] **Sync projects with strategy files** ✅
-  - Verified `projects/active.json` matches strategy (Dev Genesis, TemperedUI, MindTrace)
-  - Verified `projects/planned.json` matches strategy (Vibiom, DevGauntlet, ScopeCreep, OpenOrbit, InstAPI)
-  - Project statuses are current with proper blocked_by dependencies
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                         DATA COLLECTION                              │
+│  GitHub Activity Log (Daily) ──────────────────────────────────────▶│
+│  LinkedIn Metrics (Manual/Extension) ─────────────────────────────▶│
+│  Job Posting Monitor (TBD) ───────────────────────────────────────▶│
+└─────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                         ANALYSIS & UPDATES                           │
+│  ┌─────────────────────┐  ┌─────────────────────┐                   │
+│  │ Skill Analysis      │  │ Project Status      │                   │
+│  │ (Weekly)            │  │ Management (Weekly) │                   │
+│  │ - Parse commits     │  │ - Stale detection   │                   │
+│  │ - Update skills.json│  │ - Auto-move status  │                   │
+│  │ - Create PR         │  │ - Create PR         │                   │
+│  └─────────────────────┘  └─────────────────────┘                   │
+└─────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                         CONTENT GENERATION                           │
+│  ┌─────────────────────┐  ┌─────────────────────┐                   │
+│  │ LinkedIn Draft Gen  │  │ Monthly Assessment  │                   │
+│  │ (Weekly)            │  │ (1st of month)      │                   │
+│  │ - Parse activity    │  │ - Aggregate data    │                   │
+│  │ - Apply pillars     │  │ - Generate report   │                   │
+│  │ - Write drafts      │  │ - Create PR         │                   │
+│  └─────────────────────┘  └─────────────────────┘                   │
+└─────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                         WEEKLY SUMMARY                               │
+│  (Replaces "Task Reminder" - reports what automations DID)          │
+│  - Skills updated this week                                         │
+│  - Projects status changes                                          │
+│  - Content drafts generated                                         │
+│  - Action items that REQUIRE human input                            │
+└─────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
-## 🟠 P1: High Value Tasks
+## 🔴 P0: Blocking Tasks - COMPLETE
 
-### Automation Foundation
+All P0 tasks have been completed. AI tools configured, data complete.
 
-- [x] **Create GitHub Activity Logging action** ✅
-  - Daily runs at 6 AM UTC via GitHub Actions
+<details>
+<summary>View completed P0 tasks</summary>
+
+### AI Tool Configuration
+- [x] Create Gemini CLI configuration (`/.gemini/GEMINI.md`)
+- [x] Review Codex configuration (moved to `~/.codex/prompts/`)
+- [x] Define AI tool responsibilities (`AI_TOOLS.md`)
+
+### Data Completeness
+- [x] Fill in Codaissance design-system.json (colors, typography, golden ratio, glassmorphism)
+- [x] Sync projects with strategy files
+
+</details>
+
+---
+
+## 🟠 P1: Automation Pipelines
+
+### Phase 1: Data Collection - COMPLETE
+
+- [x] **GitHub Activity Logging**
+  - Daily runs at 6 AM UTC
   - Pulls commits, PRs, issues via GraphQL API
   - Writes to `/logs/github-activity/YYYY-MM.json`
   - Supports manual trigger with daily/weekly/backfill modes
 
-- [ ] **Create Weekly Task Reminder action**
-  - GitHub Action runs Monday morning
-  - Creates Issue with maintenance checklist
-  - Auto-closes after 7 days
+### Phase 2: Analysis & Auto-Updates
 
-- [ ] **Create LinkedIn Draft Generation script**
-  - Read from projects, activity logs, marketing files
-  - Generate 3 drafts (personal, Codaissance, TTL)
-  - Write to `/linkedin/drafts/YYYY-MM-DD-{account}.md`
+- [x] **Skill Analysis Pipeline** - COMPLETE
+  - Weekly runs Monday at 7 AM UTC
+  - Detects skills from file extensions, package.json, requirements.txt, config folders
+  - Detection rules embedded in action (not skills.json) for clean separation
+  - Writes analysis to `/logs/skill-analysis/latest-analysis.json`
+  - Creates PR with skill decay warnings and usage suggestions
+  - **Human Action**: Review and merge PR
 
-### Content & Planning
+- [ ] **Project Status Automation** - HIGH VALUE
+  - **Trigger**: Weekly
+  - **Input**: `projects/active.json`, GitHub API for each repo
+  - **Process**:
+    - Check last commit date for each active project
+    - 14+ days stale → add `stale: true` flag
+    - 30+ days stale → suggest move to `planned.json`
+    - Detect completion signals: v1.0 tag, "shipped" in README, all issues closed
+    - `[SHIP]` in commit message → trigger completion flow
+  - **Output**: PR moving projects between status files
+  - **Human Action**: Review and merge PR
 
-- [ ] **Create content calendar structure**
-  - `/linkedin/content-calendar.json` - scheduled topics by week
-  - Map content pillars to specific dates
-  - Include posting frequency targets from marketing.json
+### Phase 3: Content Generation
 
-- [ ] **Create project planning templates**
-  - `/projects/planning/PROJECT_TEMPLATE.md`
-  - Standard structure for new project specs
-  - Include AI prompts for generating specs from ideas
+- [ ] **LinkedIn Post Generation Pipeline**
+  - **Trigger**: Weekly (Monday, after activity log)
+  - **Input**:
+    - `/logs/github-activity/*.json` (what you built)
+    - `/business/*/marketing.json` (brand voice, content pillars)
+    - `/projects/active.json` (project context)
+  - **Process**:
+    - Identify post-worthy activity (shipped features, learning, milestones)
+    - Match to content pillars
+    - Generate 2-3 drafts per account using AI
+  - **Output**: `/linkedin/drafts/YYYY-MM-DD-{account}-{topic}.md`
+  - **Human Action**: Edit and post manually
 
-### Commands & Prompts
+- [ ] **Monthly Assessment Generation**
+  - **Trigger**: 1st of each month
+  - **Input**: All logs, project status, skills changes
+  - **Process**: Aggregate and analyze month's data
+  - **Output**: PR with `/assessments/YYYY-MM-assessment.md`
+  - **Human Action**: Review and merge PR
 
-- [x] **Create `/generate-resume` command** ✅
-  - Takes job posting as input
-  - Generates tailored resume from profile data
-  - Outputs to `/job-applications/resumes/`
+### Phase 4: Weekly Summary (NOT a reminder)
 
-- [x] **Create `/generate-post` command** ✅
-  - Takes topic/account as input
-  - Uses brand voice, personas, content pillars
-  - Generates draft post for review
-
-- [x] **Create `/quick-check` command** ✅
-  - Brief status check (vs full assessment)
-  - Key metrics only, no deep analysis
-  - Good for weekly reviews
-
----
-
-## 🟡 P2: Medium Priority
-
-### Automation Expansion
-
-- [ ] **Create Stale Project Detection action**
-  - Check repos in active.json for recent commits
-  - Alert if no activity in 14+ days
-  - Suggest moving to planned.json after 30 days
-
-- [ ] **Create Monthly Assessment Automation**
-  - Runs on 1st of each month
-  - Gathers data from all sources
-  - Generates `/assessments/YYYY-MM-assessment.md`
-
-- [ ] **Create Resume Generation Pipeline**
-  - Save job postings to `/job-applications/postings/`
-  - Generate tailored resume + cover letter
-  - Track which resume version sent to which company
-
-### Data Enhancement
-
-- [ ] **Add learning resources to skill categories**
-  - Link courses, docs, tutorials to skills in skills.json
-  - Makes skill improvement actionable
-
-- [ ] **Create interview question bank**
-  - `/job-applications/questions/` by category
-  - Technical, behavioral, system design
-  - Include answers/frameworks
-
-- [ ] **Add project dependency visualization**
-  - Generate Mermaid diagram from `blocked_by` fields
-  - Show critical path to shipping
-
-### Commands
-
-- [ ] **Create `/idea-to-project` command**
-  - Takes idea from ideas.json
-  - Runs through validation framework
-  - Generates project planning doc if validated
-
-- [ ] **Create `/update-metrics` command**
-  - Prompts for LinkedIn metrics
-  - Updates appropriate metrics file
-  - Calculates growth since last update
+- [ ] **Weekly Automation Summary**
+  - **Trigger**: Sunday evening
+  - **Purpose**: Report what automations accomplished, not remind you to do things
+  - **Content**:
+    - Skills analysis results (if any changes proposed)
+    - Project status changes detected
+    - Content drafts generated and awaiting review
+    - PRs awaiting merge
+    - Items that genuinely require human input (e.g., LinkedIn metrics entry)
+  - **Output**: GitHub Issue (auto-closes after 7 days)
 
 ---
 
-## 🟢 P3: Nice to Have
+## 🟡 P2: Job Search & Context Automation
 
-### Advanced Automation
+- [ ] **Context Snapshot Generator**
+  - **Trigger**: Daily or on-demand before AI sessions
+  - **Output**: `/logs/context-snapshot.json`
+  - **Contents**:
+    - Current folder structure (auto-generated tree)
+    - All projects with statuses from `active.json`, `planned.json`, `completed.json`
+    - GitHub Actions workflows and schedules
+    - Skills summary (count by level)
+    - Last modified dates for key files
+    - Stale flags or warnings
+  - **Use Cases**:
+    - Prepend to AI context for accurate repo awareness
+    - Auto-update README.md structure section
+    - Feed into Monthly Assessment generation
+    - Diff against previous snapshot to track changes
 
-- [ ] **LinkedIn Metrics Scraping** (browser extension approach)
-  - Build extension to export analytics
-  - Write to appropriate metrics files
-  - See automation/IDEAS.md for details
+- [ ] **Job Posting Monitor**
+  - Scrape/monitor target company career pages
+  - Filter against criteria in `JOB_SEARCH.md`
+  - Write matches to `/job-applications/opportunities.json`
+  - Notify on high-match roles
 
-- [ ] **Skill Tracking from Activity**
-  - Parse GitHub commits for technologies used
-  - Suggest skill level updates
-  - Flag unused skills
+- [ ] **Interview Prep Auto-Generator**
+  - Trigger: Calendar event with "interview" created
+  - Research company (Gemini API)
+  - Generate prep doc from profile data
+  - Write to `/job-applications/prep/YYYY-MM-DD-company.md`
 
-- [ ] **Portfolio site auto-deploy**
-  - Trigger deploy when profile data changes
-  - Keep portfolio in sync with this repo
+- [ ] **Application Response Tracker**
+  - Monitor email for responses from applied companies
+  - Auto-update application status in `applications.json`
+  - Trigger interview prep when interview scheduled
 
-### Integration
+---
 
-- [ ] **GitHub README sync**
-  - Auto-update GitHub profile README from `/github/README.md`
-  - Trigger on changes to that file
+## 🟢 P3: Integrations & Sync
 
-- [ ] **Certification sync**
-  - When education.json updated with new cert
+- [ ] **GitHub Profile README Sync**
+  - Trigger: Changes to `/github/README.md`
+  - Auto-push to GitHub profile repo
+
+- [ ] **Portfolio Site Auto-Deploy**
+  - Trigger: Changes to profile data
+  - Rebuild and deploy portfolio site
+
+- [ ] **Certification Announcement Flow**
+  - Trigger: New cert added to `education.json`
   - Generate LinkedIn post draft
   - Update portfolio
+  - Create PR for GitHub profile README
 
-### Research Commands
-
-- [x] **Create `/research-company` command** (Gemini) ✅
-  - Takes company name
-  - Returns culture, tech stack, recent news
-  - Useful for interview prep
-
-- [x] **Create `/competitive-analysis` command** (Gemini) ✅
-  - Takes product idea
-  - Returns competitor landscape
-  - Feeds into idea validation
+- [ ] **LinkedIn Metrics Capture** (Browser Extension)
+  - Build extension to export analytics
+  - Write to `/linkedin/*-metrics.json`
+  - Only manual step in the pipeline (LinkedIn has no API)
 
 ---
 
-## Folder/File Creation Needed
+## Data & Content (Non-Automation)
+
+- [ ] **Content Calendar Structure**
+  - `/linkedin/content-calendar.json`
+  - Map content pillars to weeks
+  - Feeds into post generation pipeline
+
+- [ ] **Project Planning Template**
+  - `/projects/planning/PROJECT_TEMPLATE.md`
+  - Standard structure for new project specs
+
+- [ ] **Interview Question Bank**
+  - `/job-applications/questions/` by category
+  - Technical, behavioral, system design
+
+---
+
+## Folder Structure Needed
 
 ```
-/logs/                       # Automation output
-  github-activity/           # GitHub activity logs
+/logs/
+  github-activity/           # Created
 
 /linkedin/
   drafts/                    # Generated post drafts
@@ -199,10 +240,16 @@ Tasks to complete before this knowledge base is fully operational. Separate from
 /job-applications/
   postings/                  # Saved job postings
   resumes/                   # Generated tailored resumes
+  prep/                      # Interview prep docs
   questions/                 # Interview question bank
+  opportunities.json         # Auto-discovered jobs
+
+/assessments/
+  YYYY-MM-assessment.md      # Monthly assessments
+  weekly/                    # Weekly summaries
 
 /projects/planning/
-  PROJECT_TEMPLATE.md        # Standard project spec template
+  PROJECT_TEMPLATE.md        # Standard project spec
 ```
 
 ---
@@ -219,21 +266,22 @@ Tasks to complete before this knowledge base is fully operational. Separate from
 - [x] Create log-application command
 - [x] Create README.md
 - [x] Update CLAUDE.md and CONTEXT.md
-- [x] Create Gemini CLI configuration (`.gemini/GEMINI.md`)
-- [x] Create AI_TOOLS.md with tool responsibilities and decision flowchart
+- [x] Create Gemini CLI configuration
+- [x] Create AI_TOOLS.md with tool responsibilities
 - [x] Create Claude Code commands (`/generate-resume`, `/generate-post`, `/update-project`, `/prep-interview`, `/quick-check`)
 - [x] Create Gemini CLI commands (`/research-company`, `/competitive-analysis`, `/market-research`, `/salary-research`)
-- [x] Create Codex CLI commands (moved to `~/.codex/prompts/` with proper frontmatter)
-- [x] Expand automation/IDEAS.md with n8n workflows and event-driven automations
-- [x] Fill in Codaissance design-system.json with brand colors
+- [x] Create Codex CLI commands
+- [x] Expand automation/IDEAS.md
+- [x] Fill in Codaissance design-system.json (including golden ratio, glassmorphism, Cosmic Renaissance theme)
 - [x] Sync projects with strategy files
-- [x] Create GitHub Activity Logging action
+- [x] **Create GitHub Activity Logging action**
 
 ---
 
 ## Notes
 
-- Focus on P0 tasks first - they're blocking effective use of the repo
-- Automation tasks can be done incrementally
-- Commands should be created as needs arise
-- Review this list monthly and reprioritize
+- **Automation first**: If you're doing something repeatedly, automate it
+- **PRs over direct commits**: Automations should create PRs for review, not commit directly
+- **Fail gracefully**: All automations should handle errors without breaking the repo
+- **Idempotent**: Safe to re-run any automation
+- See `automation/IDEAS.md` for detailed implementation notes

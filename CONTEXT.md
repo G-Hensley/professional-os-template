@@ -121,20 +121,29 @@ AI tools with access to this repo can:
 - Help maintain consistency across LinkedIn, GitHub, and portfolio
 - Generate LinkedIn post drafts based on projects and activity
 
-# Maintenance Cadence
+# Automation Philosophy
 
-## Weekly
-- Log any job applications submitted
-- Update LinkedIn metrics if tracking
-- Capture new ideas as they come
+**If it can be automated, it should be automated.** This repo uses GitHub Actions to handle routine tasks automatically.
 
-## Monthly
-- Run a self-assessment
-- Update skill levels if improved
-- Review and update project statuses
-- Check business goals progress
+## Active Automations
 
-## Per Event
+| Pipeline | Schedule | What it Does |
+|----------|----------|--------------|
+| GitHub Activity Log | Daily 6 AM UTC | Pulls commits, PRs, issues → `/logs/github-activity/` |
+| Skill Analysis | Weekly (planned) | Suggests skill level updates from activity |
+| Project Status | Weekly (planned) | Detects stale/completed projects |
+| LinkedIn Drafts | Weekly (planned) | Generates post drafts from activity |
+| Weekly Summary | Sunday (planned) | Reports what automations accomplished |
+
+## Human Actions (Cannot Be Automated)
+
+- **LinkedIn metrics**: No API access; use browser extension or manual entry
+- **Job applications**: Log when you apply (automation can't know when you apply)
+- **PR review**: Automations create PRs; you review and merge
+- **Content posting**: Drafts are generated; you edit and post
+
+## Per Event (Manual Triggers)
+
 - Update `/profile/experience.json` when changing jobs
-- Update `/projects/` when starting/completing projects
+- Update `/projects/` when starting/completing projects (or use `[SHIP]` in commit message)
 - Update `/profile/education.json` when earning certifications

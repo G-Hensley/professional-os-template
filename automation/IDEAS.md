@@ -2,6 +2,10 @@
 
 This file tracks automation ideas for this repository. The goal is to reduce manual effort and make maintaining this knowledge base as effortless as possible.
 
+## Philosophy: Automation First
+
+**If it can be automated, it should be automated.** Manual "reminder" tasks are anti-patterns. Instead of reminders to do things, we build pipelines that actually do the work and report what they accomplished.
+
 ## Priority Legend
 - 🟢 **High** - High value, relatively easy to implement
 - 🟡 **Medium** - Valuable but more complex
@@ -15,29 +19,31 @@ This file tracks automation ideas for this repository. The goal is to reduce man
 
 ---
 
-## 🟢 High Priority
+## COMPLETED
 
 ### GitHub Activity Logging
-**Status**: Not Started
-**Complexity**: Low
-**Value**: High
+**Status**: COMPLETE
 **Type**: GitHub Action
+**File**: `.github/workflows/github-activity-log.yml`
 
 Automatically log GitHub activity across all repos to build a historical record.
 
-**Implementation**:
-- GitHub Action runs daily/weekly
-- Uses GitHub API to pull commits, PRs, issues for user `G-Hensley`
+**What it does**:
+- Runs daily at 6 AM UTC
+- Uses GitHub GraphQL API to pull commits, PRs, issues for user `G-Hensley`
 - Writes to `/logs/github-activity/YYYY-MM.json`
-- Summarizes by repo, technology, and activity type
+- Supports manual trigger with daily/weekly/backfill modes
+- Calculates monthly summary aggregations
 
-**Use Cases**:
-- Feed for LinkedIn content generation
-- Data for monthly assessments
-- Resume/portfolio updates
-- Track coding streaks and productivity patterns
+**Feeds into**:
+- Skill Analysis Pipeline (tech detection from commits)
+- LinkedIn Post Generation (activity-based content)
+- Monthly Assessment Generation
+- Weekly Summary
 
 ---
+
+## 🟢 High Priority
 
 ### LinkedIn Content Draft Generation
 **Status**: Not Started
@@ -65,45 +71,53 @@ Generate weekly LinkedIn post drafts for all three accounts.
 
 ---
 
-### Weekly Task Reminders
+### Weekly Automation Summary
 **Status**: Not Started
-**Complexity**: Low
-**Value**: Medium
+**Complexity**: Medium
+**Value**: High
 **Type**: GitHub Action
 
-Automated reminders for weekly maintenance tasks.
+**NOT a task reminder** - this reports what the automations accomplished that week.
 
 **Implementation**:
-- GitHub Action runs every Monday morning
-- Creates a GitHub Issue with checklist:
-  - [ ] Log any job applications
-  - [ ] Update LinkedIn metrics
-  - [ ] Capture new ideas
-  - [ ] Review project statuses
-- Issue auto-closes after 7 days or when completed
+- GitHub Action runs Sunday evening (after all weekly automations complete)
+- Creates a GitHub Issue summarizing:
+  - Skills analysis results (proposed changes, if any)
+  - Project status changes detected (stale, shipped, etc.)
+  - LinkedIn drafts generated and awaiting review
+  - PRs awaiting merge from automated pipelines
+  - Items that genuinely require human input (e.g., LinkedIn metrics if extension not built)
+- Issue auto-closes after 7 days
 
-**Alternative**: Write to `/reminders/YYYY-WW.md` instead of Issues
+**Key Principle**: This summarizes automation OUTPUT, not tasks for humans to do manually.
 
 ---
 
-### Stale Project Detection
+### Project Status Automation
 **Status**: Not Started
-**Complexity**: Low
-**Value**: Medium
+**Complexity**: Medium
+**Value**: HIGH - Core automation pipeline
 **Type**: GitHub Action
 
-Flag projects that haven't had activity in a while.
+Automatically manage project lifecycle based on GitHub activity.
 
 **Implementation**:
 - GitHub Action runs weekly
-- Checks repos listed in `/projects/active.json`
-- If no commits in 14+ days, creates alert
-- Could update `status` field or create Issue
+- Reads `/projects/active.json` and checks each repo via GitHub API
+- **Stale Detection**:
+  - 14+ days no commits → add `stale: true` flag
+  - 30+ days no commits → create PR to move to `planned.json`
+- **Completion Detection**:
+  - `[SHIP]` in commit message → trigger completion flow
+  - v1.0/v1 tag pushed → suggest move to `completed.json`
+  - All issues closed + recent activity → flag for review
+- Creates PR with proposed changes (never commits directly)
+- Human reviews and merges
 
 **Thresholds**:
-- 14 days: Warning
-- 30 days: Suggest moving to planned.json
-- 60 days: Flag for review
+- 14 days: Add stale flag
+- 30 days: Suggest move to planned.json
+- Completion signals: tag, commit keyword, issue closure
 
 ---
 
@@ -329,23 +343,31 @@ Weekly check on goal progress with recommendations.
 
 ---
 
-### Skill Tracking from Activity
-**Status**: Not Started
-**Complexity**: High
-**Value**: Medium
-**Type**: GitHub Action + Claude API
+### Skill Analysis Pipeline
+**Status**: COMPLETE
+**Type**: GitHub Action
+**File**: `.github/workflows/skill-analysis.yml`
 
-Infer skill usage from GitHub commits.
+Automatically analyze repository to detect and track skills.
 
-**Implementation**:
-- Parse commit diffs for technologies used
-- Track which languages/frameworks appear in recent work
-- Suggest skill level updates based on activity volume
-- Flag skills that haven't been used in 6+ months
+**What it does**:
+- Runs weekly on Monday at 7 AM UTC
+- Detects skills from:
+  - File extensions (.ts, .py, .js, etc.)
+  - package.json dependencies
+  - requirements.txt (Python)
+  - Config folders (.claude/, .codex/, .github/copilot)
+- Detection rules embedded in action (keeps skills.json clean)
+- Writes analysis to `/logs/skill-analysis/latest-analysis.json`
+- Creates PR with:
+  - Skill decay warnings (skills not detected)
+  - Usage suggestions (heavily used skills)
+- Human reviews and merges PR
 
-**Challenges**:
-- Requires parsing code, not just commit messages
-- Hard to infer "leveling up" vs just "using"
+**Skills NOT Detected** (manual only):
+- External tools: Postman, Notion, Figma, Jira, etc.
+- Soft skills: Communication, Time Management
+- Methodologies: Agile, Project Management
 
 ---
 
@@ -473,31 +495,32 @@ Find learning resources for skills in your roadmap.
 
 ## Implementation Roadmap
 
-### Phase 1: GitHub Actions Foundation
-1. GitHub Activity Logging
-2. Weekly Task Reminders
-3. Stale Project Detection
-4. Profile README Sync
+### Phase 1: Data Collection (COMPLETE)
+1. [x] GitHub Activity Logging - Daily data collection
 
-### Phase 2: n8n Core Workflows
-5. Monthly Assessment Automation
-6. LinkedIn Content Draft Generation
-7. Daily Digest Agent
+### Phase 2: Analysis & Auto-Updates (IN PROGRESS)
+2. [x] Skill Analysis Pipeline - Weekly skill detection and tracking
+3. [ ] Project Status Automation - Stale detection, completion flows (NEXT)
 
-### Phase 3: Job Search Automation
-8. Job Posting Monitor
-9. Interview Prep Auto-Generator
-10. Application Response Tracker
+### Phase 3: Content Generation
+4. [ ] LinkedIn Post Generation - Activity → content drafts
+5. [ ] Monthly Assessment Generation - Aggregate monthly reports
+6. [ ] Weekly Automation Summary - Report what pipelines accomplished
 
-### Phase 4: Business Intelligence
-11. Competitor Watch
-12. Goal Progress Tracker
-13. LinkedIn Metrics (browser extension)
+### Phase 4: Job Search Automation
+7. [ ] Job Posting Monitor - Scrape and filter opportunities
+8. [ ] Interview Prep Auto-Generator - Calendar trigger → prep doc
+9. [ ] Application Response Tracker - Email → status updates
 
-### Phase 5: Advanced
-14. Skill Tracking from Activity
-15. Project Dependency Visualization
-16. Learning Resource Finder
+### Phase 5: Integrations
+10. [ ] GitHub Profile README Sync
+11. [ ] Portfolio Site Auto-Deploy
+12. [ ] LinkedIn Metrics Browser Extension
+
+### Phase 6: Advanced
+13. [ ] Goal Progress Tracker
+14. [ ] Competitor Watch
+15. [ ] Project Dependency Visualization
 
 ---
 

@@ -11,6 +11,19 @@ A structured data repository designed to be consumed by AI tools (Claude Code, C
 - **Project planning** — Specs and roadmaps from structured templates
 - **Self-assessment** — Periodic evaluations across technical, business, and career areas
 - **Content creation** — LinkedIn posts, website copy from design systems and brand voice
+- **Automation** — GitHub Actions pipelines that do the work, not just remind you
+
+## Automation Philosophy
+
+**If it can be automated, it should be automated.** See [`REPO_TODO.md`](REPO_TODO.md) for the full automation pipeline.
+
+| Pipeline | Status | Schedule |
+|----------|--------|----------|
+| GitHub Activity Log | Active | Daily 6 AM UTC |
+| Skill Analysis | Planned | Weekly |
+| Project Status | Planned | Weekly |
+| LinkedIn Drafts | Planned | Weekly |
+| Weekly Summary | Planned | Sunday |
 
 ## Quick Start for AI Tools
 
@@ -145,10 +158,14 @@ myself/
 │
 ├── assessments/              # Self-assessments
 │
-├── automation/               # Scripts and workflows
-│   ├── IDEAS.md              # Automation roadmap
-│   ├── github-actions/
-│   └── scripts/
+├── logs/                     # Automation output
+│   └── github-activity/      # Daily activity logs (YYYY-MM.json)
+│
+├── automation/               # Automation documentation
+│   └── IDEAS.md              # Automation roadmap and ideas
+│
+├── .github/workflows/        # GitHub Actions
+│   └── github-activity-log.yml  # Daily activity logging
 │
 ├── .claude/commands/         # Claude Code commands
 │   ├── assessment.md
