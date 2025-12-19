@@ -1,154 +1,333 @@
 {
-  "note": "Design system and style guide for TamperTantrum Labs. Use for generated images, website design, marketing materials, and brand consistency.",
+  "note": "Design system and style guide for TamperTantrum Labs. Use for generated images, website design, marketing materials, and brand consistency. Based on golden ratio (1.618) for typography and spacing scales.",
+  "design_philosophy": {
+    "ratio": 1.618,
+    "ratio_name": "Golden Ratio",
+    "concept": "Glassmorphism with Neumorphic accents",
+    "description": "Dark, frosted glass surfaces with subtle depth. Cards and panels use translucent backgrounds with blur effects. Buttons and interactive elements have soft, extruded shadows for tactile feedback. The overall feel is modern, premium, and approachable."
+  },
   "colors": {
     "primary": {
       "name": "Tamper Red",
       "hex": "#D32E20",
       "rgb": "211, 46, 32",
-      "tailwind": "red-700 or red-800",
-      "tailwind_class": "text-red-700, bg-red-800",
-      "usage": "Hero color — buttons, icons, key accents"
+      "hsl": "4, 74%, 48%",
+      "tailwind": "red-700",
+      "tailwind_custom": "tamper-red",
+      "usage": "Logo, key accents, error states, critical alerts"
     },
     "secondary": {
       "name": "Midnight Navy",
       "hex": "#1E2A38",
       "rgb": "30, 42, 56",
-      "tailwind": "slate-900 or blue-gray-900",
-      "tailwind_class": "bg-slate-900, text-slate-900",
-      "usage": "Cards, nav bars, footer contrast"
+      "hsl": "212, 30%, 17%",
+      "tailwind": "slate-900",
+      "tailwind_custom": "midnight",
+      "usage": "Cards, nav bars, elevated surfaces"
     },
     "accent_1": {
       "name": "Trust Teal",
       "hex": "#2E8B8B",
       "rgb": "46, 139, 139",
-      "tailwind": "teal-600 or cyan-700",
-      "tailwind_class": "bg-teal-600, text-cyan-700",
-      "usage": "Calming complement to red — buttons, links, tags"
+      "hsl": "180, 50%, 36%",
+      "tailwind": "teal-600",
+      "tailwind_custom": "trust-teal",
+      "usage": "Primary buttons, active states, links, success indicators"
     },
     "accent_2": {
       "name": "Slate Gray",
       "hex": "#6C757D",
       "rgb": "108, 117, 125",
-      "tailwind": "slate-500 or gray-500",
-      "tailwind_class": "text-slate-500, border-gray-500",
-      "usage": "Secondary UI, muted text, card outlines"
+      "hsl": "208, 7%, 46%",
+      "tailwind": "slate-500",
+      "tailwind_custom": "slate-muted",
+      "usage": "Secondary text, borders, disabled states"
     },
     "background": {
       "name": "Deep Charcoal",
       "hex": "#121212",
       "rgb": "18, 18, 18",
-      "tailwind": "zinc-950 or gray-900",
-      "tailwind_class": "bg-zinc-950, bg-gray-900",
-      "usage": "Main page background — pure dark but not pitch black"
+      "hsl": "0, 0%, 7%",
+      "tailwind": "zinc-950",
+      "tailwind_custom": "charcoal",
+      "usage": "Page background"
+    },
+    "surface": {
+      "name": "Elevated Surface",
+      "hex": "#1A1A1A",
+      "rgb": "26, 26, 26",
+      "hsl": "0, 0%, 10%",
+      "tailwind": "zinc-900",
+      "tailwind_custom": "surface",
+      "usage": "Card backgrounds, modals, dropdowns"
     },
     "foreground": {
       "name": "Soft White",
       "hex": "#F2F2F2",
       "rgb": "242, 242, 242",
-      "tailwind": "zinc-100 or gray-100",
-      "tailwind_class": "text-zinc-100, text-gray-100",
-      "usage": "Main text color — readable against deep background"
+      "hsl": "0, 0%, 95%",
+      "tailwind": "zinc-100",
+      "tailwind_custom": "soft-white",
+      "usage": "Primary text"
+    },
+    "foreground_muted": {
+      "name": "Muted White",
+      "hex": "#A3A3A3",
+      "rgb": "163, 163, 163",
+      "hsl": "0, 0%, 64%",
+      "tailwind": "zinc-400",
+      "tailwind_custom": "muted",
+      "usage": "Secondary text, descriptions"
     },
     "link_success": {
       "name": "Cyber Blue",
       "hex": "#3A8DFF",
       "rgb": "58, 141, 255",
-      "tailwind": "blue-500 or sky-500",
-      "tailwind_class": "text-blue-500, hover:text-sky-400",
-      "usage": "For links or safe actions, balances red"
+      "hsl": "215, 100%, 61%",
+      "tailwind": "blue-500",
+      "tailwind_custom": "cyber-blue",
+      "usage": "Links, info states"
     },
     "semantic": {
-      "success": "#3A8DFF",
+      "success": "#2E8B8B",
       "warning": "#F59E0B",
       "error": "#D32E20",
-      "info": "#2E8B8B"
+      "info": "#3A8DFF"
     },
-    "gradients": []
+    "glassmorphism": {
+      "glass_bg": "rgba(30, 42, 56, 0.6)",
+      "glass_border": "rgba(255, 255, 255, 0.08)",
+      "glass_blur": "12px",
+      "note": "Use backdrop-blur-md with semi-transparent backgrounds"
+    }
   },
   "typography": {
+    "base_size": "16px",
+    "ratio": 1.618,
     "font_families": {
       "headings": {
         "name": "JetBrains Mono",
-        "fallback": "monospace",
-        "source": "Google Fonts"
+        "fallback": "ui-monospace, SFMono-Regular, monospace",
+        "source": "Google Fonts",
+        "weights": [500, 600, 700]
       },
       "subheadings": {
         "name": "Space Grotesk",
-        "fallback": "system-ui, sans-serif",
-        "source": "Google Fonts"
+        "fallback": "system-ui, -apple-system, sans-serif",
+        "source": "Google Fonts",
+        "weights": [400, 500, 600]
       },
       "body": {
         "name": "Inter",
-        "fallback": "system-ui, sans-serif",
-        "source": "Google Fonts"
+        "fallback": "system-ui, -apple-system, sans-serif",
+        "source": "Google Fonts",
+        "weights": [400, 500, 600]
       },
       "code": {
         "name": "JetBrains Mono",
-        "fallback": "monospace",
-        "source": "Google Fonts"
+        "fallback": "ui-monospace, SFMono-Regular, monospace",
+        "source": "Google Fonts",
+        "weights": [400, 500]
       }
     },
     "scale": {
-      "h1": { "size": "", "weight": "700", "line_height": "", "font": "JetBrains Mono" },
-      "h2": { "size": "", "weight": "700", "line_height": "", "font": "JetBrains Mono" },
-      "h3": { "size": "", "weight": "600", "line_height": "", "font": "Space Grotesk" },
-      "h4": { "size": "", "weight": "600", "line_height": "", "font": "Space Grotesk" },
-      "body": { "size": "", "weight": "400", "line_height": "", "font": "Inter" },
-      "small": { "size": "", "weight": "400", "line_height": "", "font": "Inter" },
-      "caption": { "size": "", "weight": "400", "line_height": "", "font": "Inter" }
+      "display": {
+        "size": "67.77px",
+        "size_rem": "4.236rem",
+        "weight": "700",
+        "line_height": "1.1",
+        "letter_spacing": "-0.02em",
+        "font": "JetBrains Mono",
+        "usage": "Hero headlines"
+      },
+      "h1": {
+        "size": "41.89px",
+        "size_rem": "2.618rem",
+        "weight": "700",
+        "line_height": "1.2",
+        "letter_spacing": "-0.01em",
+        "font": "JetBrains Mono",
+        "usage": "Page titles"
+      },
+      "h2": {
+        "size": "25.89px",
+        "size_rem": "1.618rem",
+        "weight": "600",
+        "line_height": "1.3",
+        "letter_spacing": "0",
+        "font": "JetBrains Mono",
+        "usage": "Section headings"
+      },
+      "h3": {
+        "size": "20.00px",
+        "size_rem": "1.25rem",
+        "weight": "600",
+        "line_height": "1.4",
+        "letter_spacing": "0",
+        "font": "Space Grotesk",
+        "usage": "Card titles, subsections"
+      },
+      "h4": {
+        "size": "18.00px",
+        "size_rem": "1.125rem",
+        "weight": "600",
+        "line_height": "1.4",
+        "letter_spacing": "0",
+        "font": "Space Grotesk",
+        "usage": "Small headings"
+      },
+      "body": {
+        "size": "16.00px",
+        "size_rem": "1rem",
+        "weight": "400",
+        "line_height": "1.618",
+        "letter_spacing": "0",
+        "font": "Inter",
+        "usage": "Body text, descriptions"
+      },
+      "body_large": {
+        "size": "18.00px",
+        "size_rem": "1.125rem",
+        "weight": "400",
+        "line_height": "1.618",
+        "letter_spacing": "0",
+        "font": "Inter",
+        "usage": "Lead paragraphs"
+      },
+      "small": {
+        "size": "14.00px",
+        "size_rem": "0.875rem",
+        "weight": "400",
+        "line_height": "1.5",
+        "letter_spacing": "0",
+        "font": "Inter",
+        "usage": "Secondary text, metadata"
+      },
+      "caption": {
+        "size": "12.00px",
+        "size_rem": "0.75rem",
+        "weight": "400",
+        "line_height": "1.4",
+        "letter_spacing": "0.01em",
+        "font": "Inter",
+        "usage": "Captions, labels, fine print"
+      }
     }
   },
   "spacing": {
     "unit": "rem",
+    "base": "1rem",
+    "ratio": 1.618,
     "scale": {
-      "xs": "0.25rem",
-      "sm": "0.5rem",
-      "md": "1rem",
-      "lg": "1.5rem",
-      "xl": "2rem",
-      "2xl": "3rem",
-      "3xl": "4rem"
+      "3xs": { "rem": "0.146rem", "px": "2.34px", "tailwind": "0.5" },
+      "2xs": { "rem": "0.236rem", "px": "3.78px", "tailwind": "1" },
+      "xs": { "rem": "0.382rem", "px": "6.11px", "tailwind": "1.5" },
+      "sm": { "rem": "0.618rem", "px": "9.89px", "tailwind": "2.5" },
+      "md": { "rem": "1rem", "px": "16px", "tailwind": "4" },
+      "lg": { "rem": "1.618rem", "px": "25.89px", "tailwind": "6" },
+      "xl": { "rem": "2.618rem", "px": "41.89px", "tailwind": "10" },
+      "2xl": { "rem": "4.236rem", "px": "67.78px", "tailwind": "16" },
+      "3xl": { "rem": "6.854rem", "px": "109.66px", "tailwind": "28" }
     }
   },
   "borders": {
     "radius": {
       "none": "0",
-      "sm": "0.25rem",
-      "md": "0.5rem",
-      "lg": "0.75rem",
+      "sm": "0.382rem",
+      "md": "0.618rem",
+      "lg": "1rem",
+      "xl": "1.618rem",
       "full": "9999px"
     },
     "width": {
       "thin": "1px",
       "medium": "2px",
-      "thick": "4px"
+      "thick": "3px"
     }
   },
   "shadows": {
-    "sm": "",
-    "md": "",
-    "lg": "",
-    "xl": ""
+    "note": "Shadows use neumorphic principles - soft, diffused edges for depth without harsh contrast",
+    "sm": {
+      "css": "0 2px 4px rgba(0, 0, 0, 0.3)",
+      "usage": "Subtle elevation, small buttons"
+    },
+    "md": {
+      "css": "0 4px 12px rgba(0, 0, 0, 0.4)",
+      "usage": "Cards, dropdowns"
+    },
+    "lg": {
+      "css": "0 8px 24px rgba(0, 0, 0, 0.5)",
+      "usage": "Modals, popovers"
+    },
+    "xl": {
+      "css": "0 16px 48px rgba(0, 0, 0, 0.6)",
+      "usage": "Large overlays, hero elements"
+    },
+    "glow_teal": {
+      "css": "0 0 20px rgba(46, 139, 139, 0.4)",
+      "usage": "Active/focused teal buttons"
+    },
+    "glow_red": {
+      "css": "0 0 20px rgba(211, 46, 32, 0.4)",
+      "usage": "Warning/alert accents"
+    },
+    "inner": {
+      "css": "inset 0 2px 4px rgba(0, 0, 0, 0.3)",
+      "usage": "Pressed button states, input fields"
+    },
+    "neumorphic_raised": {
+      "css": "6px 6px 12px rgba(0, 0, 0, 0.5), -6px -6px 12px rgba(255, 255, 255, 0.03)",
+      "usage": "Raised neumorphic elements"
+    },
+    "neumorphic_pressed": {
+      "css": "inset 4px 4px 8px rgba(0, 0, 0, 0.5), inset -4px -4px 8px rgba(255, 255, 255, 0.03)",
+      "usage": "Pressed neumorphic elements"
+    }
+  },
+  "effects": {
+    "glassmorphism": {
+      "description": "Frosted glass effect for cards and panels",
+      "css": {
+        "background": "rgba(30, 42, 56, 0.6)",
+        "backdrop_filter": "blur(12px)",
+        "border": "1px solid rgba(255, 255, 255, 0.08)",
+        "border_radius": "1rem"
+      },
+      "tailwind": "bg-midnight/60 backdrop-blur-md border border-white/[0.08] rounded-lg"
+    },
+    "neumorphism": {
+      "description": "Soft, extruded UI elements",
+      "raised": {
+        "background": "#1A1A1A",
+        "box_shadow": "6px 6px 12px rgba(0, 0, 0, 0.5), -6px -6px 12px rgba(255, 255, 255, 0.03)"
+      },
+      "pressed": {
+        "background": "#1A1A1A",
+        "box_shadow": "inset 4px 4px 8px rgba(0, 0, 0, 0.5), inset -4px -4px 8px rgba(255, 255, 255, 0.03)"
+      }
+    },
+    "transitions": {
+      "fast": "150ms ease-out",
+      "normal": "250ms ease-out",
+      "slow": "400ms ease-out"
+    }
   },
   "logos": {
     "primary": {
-      "path": "assets/logo.png",
+      "path": "assets/tampertantrum-logo.png",
+      "description": "Angry face icon - line art in Tamper Red",
       "usage": "Default logo for dark backgrounds"
     },
-    "light": {
-      "path": "assets/logo-light.png",
-      "usage": "Logo for light backgrounds"
+    "style": {
+      "type": "Line art illustration",
+      "elements": "Angry face with steam clouds, X eyes, wavy mouth",
+      "color": "Tamper Red (#D32E20) on transparent or dark background"
     },
-    "icon": {
-      "path": "assets/icon.png",
-      "usage": "Favicon, app icons, small spaces"
-    },
-    "wordmark": {
-      "path": "assets/wordmark.png",
-      "usage": "Text-only logo variant"
-    },
-    "clear_space": "Minimum padding around logo",
-    "minimum_size": "24px height for icon, 100px width for full logo"
+    "clear_space": "Minimum 0.618rem padding around logo",
+    "minimum_size": {
+      "icon": "24px height",
+      "full": "100px width"
+    }
   },
   "tone_of_voice": {
     "principles": [
@@ -196,7 +375,7 @@
       "photography": "Minimal, abstract, security-themed when appropriate",
       "illustrations": "Clean, professional, security iconography",
       "icons": "Shield motifs, lock icons, security symbols",
-      "patterns": [],
+      "patterns": ["Subtle grid patterns", "Abstract circuit lines", "Geometric shapes"],
       "avoid": [
         "Hooded hacker imagery",
         "Matrix-style green text",
@@ -208,7 +387,7 @@
     },
     "text_on_images": {
       "max_words": "7-10 words for social images",
-      "font_usage": "Use JetBrains Mono for titles, Space Grotesk for subtitles",
+      "font_usage": "JetBrains Mono for titles, Space Grotesk for subtitles",
       "contrast": "Ensure WCAG AA contrast ratio minimum",
       "placement": "Left-aligned or centered, avoid edges"
     }
@@ -218,28 +397,73 @@
       "max_width": "1200px",
       "content_width": "720px",
       "grid_columns": 12,
-      "gutter": "1.5rem"
+      "gutter": "1.618rem"
     },
     "components": {
       "buttons": {
-        "primary": "Solid fill with Tamper Red (#D32E20)",
-        "secondary": "Outline with Trust Teal (#2E8B8B)",
-        "ghost": "Text only with hover effect"
+        "primary": {
+          "background": "#2E8B8B",
+          "text": "#F2F2F2",
+          "hover": "brightness-110 + glow",
+          "border_radius": "0.618rem",
+          "padding": "0.618rem 1.618rem"
+        },
+        "secondary": {
+          "background": "transparent",
+          "text": "#2E8B8B",
+          "border": "1px solid #2E8B8B",
+          "hover": "bg-teal/10"
+        },
+        "ghost": {
+          "background": "transparent",
+          "text": "#F2F2F2",
+          "hover": "bg-white/5"
+        }
       },
-      "cards": "Dark background (Midnight Navy) with subtle borders",
-      "inputs": "Clear labels, validation states",
-      "navigation": "Simple, conversion-focused"
+      "cards": {
+        "style": "Glassmorphism",
+        "background": "rgba(30, 42, 56, 0.6)",
+        "backdrop_blur": "12px",
+        "border": "1px solid rgba(255, 255, 255, 0.08)",
+        "border_radius": "1rem",
+        "padding": "1.618rem"
+      },
+      "navigation": {
+        "style": "Pill tabs",
+        "active_background": "#2E8B8B",
+        "inactive_text": "#A3A3A3",
+        "border_radius": "9999px"
+      },
+      "inputs": {
+        "background": "#1A1A1A",
+        "border": "1px solid #6C757D",
+        "focus_border": "#2E8B8B",
+        "border_radius": "0.618rem",
+        "padding": "0.618rem 1rem"
+      },
+      "pricing_cards": {
+        "note": "As seen on services page",
+        "header_icons": "Emoji accents for visual interest",
+        "price_highlight": "Large, bold price with $ prefix",
+        "cta_button": "Primary teal button"
+      }
     },
     "dark_mode": {
       "supported": true,
       "default": "dark",
-      "notes": "Dark theme is primary - Deep Charcoal background with Soft White text"
+      "notes": "Dark theme is primary - Deep Charcoal background with glassmorphic surfaces"
     }
   },
   "content_templates": {
     "service_card": {
-      "description": "Service offering cards",
-      "elements": ["Service name", "Brief description", "Icon"]
+      "description": "Service offering cards (as seen on homepage)",
+      "elements": ["Icon", "Service name", "Brief description"],
+      "style": "Dark card with subtle border"
+    },
+    "pricing_card": {
+      "description": "Pricing tier cards (as seen on services page)",
+      "elements": ["Emoji header", "Package name", "Feature list", "Price", "CTA button"],
+      "style": "Glassmorphic card with centered layout"
     },
     "blog_header": {
       "description": "Security tip or article headers",
@@ -266,6 +490,7 @@
       "Practical"
     ],
     "mood": "Security expertise that's accessible, not scary. Like a knowledgeable friend who happens to be a security expert. Confident without being cocky.",
-    "inspiration": []
+    "visual_mood": "Modern, premium dark UI with soft depth. Glass surfaces float above the background. Teal provides warmth against the dark palette. The angry face logo adds personality and approachability.",
+    "inspiration": ["Linear.app", "Raycast", "Vercel dashboard", "Arc browser"]
   }
 }
