@@ -101,16 +101,14 @@ All P0 tasks have been completed. AI tools configured, data complete.
   - Creates PR with skill decay warnings and usage suggestions
   - **Human Action**: Review and merge PR
 
-- [ ] **Project Status Automation** - HIGH VALUE
-  - **Trigger**: Weekly
-  - **Input**: `projects/active.json`, GitHub API for each repo
-  - **Process**:
-    - Check last commit date for each active project
-    - 14+ days stale → add `stale: true` flag
-    - 30+ days stale → suggest move to `planned.json`
-    - Detect completion signals: v1.0 tag, "shipped" in README, all issues closed
-    - `[SHIP]` in commit message → trigger completion flow
-  - **Output**: PR moving projects between status files
+- [x] **Project Status Automation** - COMPLETE
+  - Weekly runs Tuesday at 7 AM UTC
+  - Checks last commit date for each active project via GitHub API
+  - 14+ days no commits → marks as stale
+  - 30+ days no commits → suggests move to `planned.json`
+  - Detects completion signals: v1.0 tag, `[SHIP]` in commit, all issues closed
+  - Respects `blocked_by` field for planned projects
+  - Creates PR with proposed changes (never commits directly)
   - **Human Action**: Review and merge PR
 
 ### Phase 3: Content Generation
@@ -212,14 +210,19 @@ All P0 tasks have been completed. AI tools configured, data complete.
 
 ## Data & Content (Non-Automation)
 
-- [ ] **Content Calendar Structure**
-  - `/linkedin/content-calendar.json`
-  - Map content pillars to weeks
+- [x] **Content Calendar Structure** - COMPLETE
+  - `/linkedin/content-ideas.json` - Full content strategy
+  - Content pillars for all 3 accounts (personal, Codaissance, TamperTantrum)
+  - Weekly calendar mapping days to pillars
+  - Post structure rules (hook, body, CTA, hashtags)
+  - Style constraints (150 words, 3 emojis, no em dashes)
   - Feeds into post generation pipeline
 
-- [ ] **Project Planning Template**
-  - `/projects/planning/PROJECT_TEMPLATE.md`
-  - Standard structure for new project specs
+- [x] **Project Planning Template** - COMPLETE
+  - `/projects/planning/PROJECT_PLANNING.md` - Full template
+  - MVP and Post-MVP spec sections
+  - `/projects/specs/{project}/` folder structure
+  - Filled specs for dev-genesis, tempered-ui, mindtrace
 
 - [ ] **Interview Question Bank**
   - `/job-applications/questions/` by category
@@ -231,50 +234,73 @@ All P0 tasks have been completed. AI tools configured, data complete.
 
 ```
 /logs/
-  github-activity/           # Created
+  github-activity/           # ✅ Created - Daily activity logs
+  skill-analysis/            # ✅ Created - Weekly skill reports
+  project-status/            # ✅ Created - Weekly status reports
 
 /linkedin/
-  drafts/                    # Generated post drafts
-  content-calendar.json      # Scheduled content
+  content-ideas.json         # ✅ Created - Pillars, calendar, post rules
+  drafts/                    # Pending - Generated post drafts
 
 /job-applications/
-  postings/                  # Saved job postings
-  resumes/                   # Generated tailored resumes
-  prep/                      # Interview prep docs
-  questions/                 # Interview question bank
-  opportunities.json         # Auto-discovered jobs
+  postings/                  # Pending - Saved job postings
+  resumes/                   # Pending - Generated tailored resumes
+  prep/                      # Pending - Interview prep docs
+  questions/                 # Pending - Interview question bank
+  opportunities.json         # Pending - Auto-discovered jobs
 
 /assessments/
-  YYYY-MM-assessment.md      # Monthly assessments
-  weekly/                    # Weekly summaries
+  YYYY-MM-assessment.md      # Pending - Monthly assessments
+  weekly/                    # Pending - Weekly summaries
 
-/projects/planning/
-  PROJECT_TEMPLATE.md        # Standard project spec
+/projects/
+  planning/PROJECT_PLANNING.md  # ✅ Created - Planning template
+  specs/{project}/README.md     # ✅ Created - Per-project specs
+
+/tests/
+  skill-analysis/run.js      # ✅ Created - Local test runner
+  project-status/run.js      # ✅ Created - Local test runner
 ```
 
 ---
 
 ## Completed
 
+### Repository Setup
 - [x] Create repository structure
 - [x] Set up profile data (skills, experience, education, contact)
 - [x] Create business folders with full documentation
 - [x] Set up job-applications system
 - [x] Create ideas folder with validation framework
 - [x] Create linkedin folder with metrics tracking
-- [x] Create assessment command
-- [x] Create log-application command
 - [x] Create README.md
 - [x] Update CLAUDE.md and CONTEXT.md
+
+### AI Tool Configuration
 - [x] Create Gemini CLI configuration
 - [x] Create AI_TOOLS.md with tool responsibilities
 - [x] Create Claude Code commands (`/generate-resume`, `/generate-post`, `/update-project`, `/prep-interview`, `/quick-check`)
 - [x] Create Gemini CLI commands (`/research-company`, `/competitive-analysis`, `/market-research`, `/salary-research`)
 - [x] Create Codex CLI commands
-- [x] Expand automation/IDEAS.md
-- [x] Fill in Codaissance design-system.json (including golden ratio, glassmorphism, Cosmic Renaissance theme)
+- [x] Create assessment command
+- [x] Create log-application command
+
+### Design Systems
+- [x] Fill in Codaissance design-system.json (golden ratio, glassmorphism, Cosmic Renaissance theme)
+- [x] Update TamperTantrum Labs design-system.json (golden ratio, glassmorphism/neumorphism)
 - [x] Sync projects with strategy files
-- [x] **Create GitHub Activity Logging action**
+
+### Automation Pipelines (Dec 2025)
+- [x] **GitHub Activity Logging** - Daily at 6 AM UTC
+- [x] **Skill Analysis Pipeline** - Weekly Monday at 7 AM UTC, cross-repo scanning
+- [x] **Project Status Automation** - Weekly Tuesday at 7 AM UTC, stale/completion detection
+- [x] **Local test runners** - `tests/skill-analysis/run.js`, `tests/project-status/run.js`
+
+### Content & Planning (Dec 2025)
+- [x] **LinkedIn content strategy** - Pillars, calendar, post structure rules
+- [x] **Project planning template** - MVP/Post-MVP specs, folder structure
+- [x] **Project specs** - Filled specs for dev-genesis, tempered-ui, mindtrace
+- [x] Expand automation/IDEAS.md
 
 ---
 

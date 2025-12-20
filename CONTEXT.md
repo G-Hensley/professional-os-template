@@ -25,12 +25,15 @@ Wife's application security consulting business. Gavin provides marketing strate
 # Repository Structure
 
 ## AI Configuration
-- `/.claude/commands/` - Claude Code slash commands (assessment, log-application)
+- `/.claude/commands/` - Claude Code slash commands (assessment, log-application, generate-resume, etc.)
+- `/.gemini/` - Gemini CLI configuration and commands
 - `/.codex/prompts/` - Prompt templates for AI tools (assessment, job-application)
 
 ## Core Data
 - `/profile/` - Skills (with proficiency levels), experience, education, certifications, preferences, contact info, and resumes
-- `/projects/` - Active, planned, and completed projects with specs and planning docs
+- `/projects/` - Active, planned, and completed projects
+  - `planning/` - Project planning templates (MVP/Post-MVP specs)
+  - `specs/{project}/` - Per-project specifications
 - `/business/` - Business documentation and brand assets
   - `BUSINESS_GOALS.md` - High-level objectives across both businesses
   - `/codaissance/` - Product studio files:
@@ -58,10 +61,18 @@ Wife's application security consulting business. Gavin provides marketing strate
 
 ## Public Presence
 - `/github/` - GitHub profile README to keep in sync
-- `/linkedin/` - Profile info (3 accounts), content ideas, metrics tracking guide, and per-account metrics
+- `/linkedin/` - Profile info (3 accounts), content strategy, metrics tracking guide, and per-account metrics
+  - `content-ideas.json` - Content pillars, weekly calendar, post structure rules
 
 ## Automation
-- `/automation/` - Automation ideas, GitHub Actions workflows, and helper scripts
+- `/automation/` - Automation ideas and documentation
+- `/.github/workflows/` - GitHub Actions pipelines
+- `/.github/scripts/` - Automation scripts (skill-analysis.js, project-status.js)
+- `/logs/` - Automation output
+  - `github-activity/` - Daily activity logs (YYYY-MM.json)
+  - `skill-analysis/` - Weekly skill reports
+  - `project-status/` - Weekly project status reports
+- `/tests/` - Local test runners for automation scripts
 
 ## Root Files
 - `CLAUDE.md` - Instructions for Claude Code
@@ -130,8 +141,8 @@ AI tools with access to this repo can:
 | Pipeline | Schedule | What it Does |
 |----------|----------|--------------|
 | GitHub Activity Log | Daily 6 AM UTC | Pulls commits, PRs, issues → `/logs/github-activity/` |
-| Skill Analysis | Weekly (planned) | Suggests skill level updates from activity |
-| Project Status | Weekly (planned) | Detects stale/completed projects |
+| Skill Analysis | Weekly Mon 7 AM UTC | Detects skills from repos, suggests updates → creates PR |
+| Project Status | Weekly Tue 7 AM UTC | Detects stale/completed projects → creates PR |
 | LinkedIn Drafts | Weekly (planned) | Generates post drafts from activity |
 | Weekly Summary | Sunday (planned) | Reports what automations accomplished |
 

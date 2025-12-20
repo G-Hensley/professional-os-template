@@ -20,8 +20,8 @@ A structured data repository designed to be consumed by AI tools (Claude Code, C
 | Pipeline | Status | Schedule |
 |----------|--------|----------|
 | GitHub Activity Log | Active | Daily 6 AM UTC |
-| Skill Analysis | Planned | Weekly |
-| Project Status | Planned | Weekly |
+| Skill Analysis | Active | Weekly Mon 7 AM UTC |
+| Project Status | Active | Weekly Tue 7 AM UTC |
 | LinkedIn Drafts | Planned | Weekly |
 | Weekly Summary | Planned | Sunday |
 
