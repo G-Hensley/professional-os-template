@@ -1,0 +1,305 @@
+{
+  "generated_at": "2025-12-20T23:15:19.930Z",
+  "version": "2.0",
+  "profile": {
+    "name": "Gavin Hensley",
+    "location": {
+      "city": "Portsmouth",
+      "state": "OH",
+      "timezone": "EST",
+      "remote_only": true
+    },
+    "email": "gavinhensley@protonmail.com",
+    "current_role": "Product Engineer / Customer Success Engineer / Deployment Engineer at APIsec",
+    "salary": 70000,
+    "education": "Bachelor of Science in Software Engineering - Western Governors University (2025)"
+  },
+  "projects": {
+    "counts": {
+      "active": 3,
+      "planned": 5,
+      "completed": 0
+    },
+    "active": [
+      {
+        "key": "dev-genesis",
+        "name": "Dev Genesis",
+        "type": "GitHub Template",
+        "priority": 10,
+        "status": "In Progress",
+        "tagline": "From idea to coding in 30 minutes. Stop configuring, start building.",
+        "repo_url": "https://github.com/G-Hensley/dev-genesis",
+        "technologies": [
+          "GitHub Actions",
+          "GitHub Issues",
+          "Codex",
+          "Claude Code",
+          "Cursor",
+          "Windsurf"
+        ],
+        "due_date": "2025-12-10",
+        "success_milestone": "10 developers use Dev Genesis to bootstrap a project and report that setup time was reduced to under 30 minutes"
+      },
+      {
+        "key": "tempered-ui",
+        "name": "TemperedUI",
+        "type": "Design System / Component Library",
+        "priority": 8,
+        "status": "In Progress",
+        "tagline": "Beautiful components that protect by default. Ship secure apps without writing security code.",
+        "repo_url": null,
+        "technologies": [
+          "Vite",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "PNPM",
+          "DOMPurify"
+        ],
+        "due_date": "2026-01-16",
+        "success_milestone": "TemperedUI is used in 3 production projects (internal or external) and prevents at least one documented security vulnerability"
+      },
+      {
+        "key": "mindtrace",
+        "name": "MindTrace",
+        "type": "SaaS Web Application",
+        "priority": 7,
+        "status": "In Progress",
+        "tagline": "Log student behavior in 30 seconds. Simple, fast, and built for educators who don't have time to waste.",
+        "repo_url": null,
+        "technologies": [
+          "Next.js",
+          "TypeScript",
+          "React",
+          "Tailwind CSS",
+          "Supabase",
+          "Vitest"
+        ],
+        "due_date": "2026-02-01",
+        "success_milestone": "5 teachers or counselors use MindTrace for 30 days and report it saves them time compared to their previous system"
+      }
+    ],
+    "planned": [
+      {
+        "key": "vibiom",
+        "name": "Vibiom",
+        "type": "CLI Tool → Desktop Application → SaaS",
+        "priority": 9,
+        "status": "Blocked",
+        "blocked_by": "Dev Genesis",
+        "tagline": "Multi-agent development that actually works. Built by using itself."
+      },
+      {
+        "key": "devgauntlet",
+        "name": "DevGauntlet",
+        "type": "SaaS Web Application",
+        "priority": 8,
+        "status": "Not Started",
+        "tagline": "No tutorials. Just challenges. Build like a professional developer, not a student."
+      },
+      {
+        "key": "scopecreep",
+        "name": "ScopeCreep",
+        "type": "SaaS Web Application",
+        "priority": 5,
+        "status": "Blocked",
+        "blocked_by": "TemperedUI, DevGauntlet",
+        "tagline": "Automated RLS testing for databases. Catch authorization bugs before they reach production."
+      },
+      {
+        "key": "instapi",
+        "name": "InstAPI",
+        "type": "SaaS Web Application / Developer Tool",
+        "priority": 5,
+        "status": "Not Started",
+        "tagline": "Mock APIs in seconds. Stop waiting for backend, start building frontend."
+      },
+      {
+        "key": "openorbit",
+        "name": "OpenOrbit",
+        "type": "SaaS Web Application / Social Platform",
+        "priority": 3,
+        "status": "Blocked",
+        "blocked_by": "TemperedUI, ScopeCreep",
+        "tagline": "Build in public, together. A social platform for tech creators sharing projects, not resumes."
+      }
+    ],
+    "completed": []
+  },
+  "skills": {
+    "totals": {
+      "master": 0,
+      "expert": 25,
+      "adept": 41,
+      "apprentice": 3,
+      "novice": 13,
+      "none": 9
+    },
+    "top_expert": [
+      "JavaScript",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "REST APIs",
+      "OWASP Security Practices",
+      "Vercel"
+    ],
+    "top_adept": [
+      "Python",
+      "SQL",
+      "Bash",
+      "Java",
+      "C",
+      "Node.js",
+      "Express",
+      "Redux",
+      "Framer Motion",
+      "OAuth 2.0"
+    ]
+  },
+  "businesses": {
+    "codaissance": {
+      "type": "SaaS product studio",
+      "files": [
+        "brand.json",
+        "design-system.json",
+        "financials.json",
+        "goals.md",
+        "marketing.json",
+        "personas.json",
+        "strategy.json"
+      ]
+    },
+    "tampertantrum_labs": {
+      "tagline": "Disrupting Auth Flows and Naptime Schedules",
+      "type": "AppSec consulting",
+      "files": [
+        "competitors.json",
+        "design-system.json",
+        "financials.json",
+        "goals.md",
+        "marketing.json",
+        "personas.json",
+        "strategy.json"
+      ]
+    }
+  },
+  "job_search": {
+    "total_applications": 1,
+    "by_status": {
+      "unknown": 1
+    },
+    "recent_interviews": 0
+  },
+  "learning": {
+    "roadmap_items": 4,
+    "completed_items": 1
+  },
+  "automations": [
+    {
+      "name": "Context Snapshot",
+      "schedule": "Daily at 5:00 UTC"
+    },
+    {
+      "name": "GitHub Activity Logging",
+      "schedule": "Daily at 6:00 UTC"
+    },
+    {
+      "name": "Project Status Automation",
+      "schedule": "Tue at 7:00 UTC"
+    },
+    {
+      "name": "Skill Analysis Pipeline",
+      "schedule": "Mon at 7:00 UTC"
+    }
+  ],
+  "commands": {
+    "claude": [
+      "/assessment",
+      "/generate-post",
+      "/generate-resume",
+      "/log-application",
+      "/prep-interview",
+      "/quick-check",
+      "/update-project"
+    ],
+    "gemini": [
+      "/competitive-analysis",
+      "/market-research",
+      "/research-company",
+      "/salary-research"
+    ],
+    "codex": [
+      "/prompts:assessment",
+      "/prompts:job-application",
+      "/prompts:review-resume",
+      "/prompts:summarize-project"
+    ]
+  },
+  "key_files": [
+    {
+      "path": "profile/skills.json",
+      "desc": "Technical skills with proficiency levels",
+      "modified": "2025-12-18"
+    },
+    {
+      "path": "profile/experience.json",
+      "desc": "Work history",
+      "modified": "2025-12-18"
+    },
+    {
+      "path": "profile/resume.md",
+      "desc": "Current resume",
+      "modified": "2025-12-17"
+    },
+    {
+      "path": "projects/active.json",
+      "desc": "Active projects",
+      "modified": "2025-12-18"
+    },
+    {
+      "path": "projects/planned.json",
+      "desc": "Planned/blocked projects",
+      "modified": "2025-12-18"
+    },
+    {
+      "path": "projects/completed.json",
+      "desc": "Completed projects",
+      "modified": "2025-12-18"
+    },
+    {
+      "path": "business/BUSINESS_GOALS.md",
+      "desc": "High-level business objectives",
+      "modified": "2025-12-18"
+    },
+    {
+      "path": "job-applications/JOB_SEARCH.md",
+      "desc": "Job search criteria and preferences",
+      "modified": "2025-12-18"
+    },
+    {
+      "path": "job-applications/applications.json",
+      "desc": "Job applications submitted",
+      "modified": "2025-12-18"
+    },
+    {
+      "path": "linkedin/content-ideas.json",
+      "desc": "Content pillars and post strategy",
+      "modified": "2025-12-20"
+    },
+    {
+      "path": "learning/roadmap.json",
+      "desc": "Skills to learn",
+      "modified": "2025-12-18"
+    },
+    {
+      "path": "REPO_TODO.md",
+      "desc": "Repository automation roadmap",
+      "modified": "2025-12-20"
+    }
+  ],
+  "folder_tree": "myself/\n├── .claude/\n│   ├── commands/\n│   │   ├── assessment.md\n│   │   ├── generate-post.md\n│   │   ├── generate-resume.md\n│   │   ├── log-application.md\n│   │   ├── prep-interview.md\n│   │   ├── quick-check.md\n│   │   └── update-project.md\n│   └── settings.local.json\n├── .codex/\n│   └── commands/\n│       ├── assessment.md\n│       ├── job-application.md\n│       ├── review-resume.md\n│       └── summarize-project.md\n├── .gemini/\n│   ├── commands/\n│   │   ├── competitive-analysis.toml\n│   │   ├── market-research.toml\n│   │   ├── research-company.toml\n│   │   └── salary-research.toml\n│   └── GEMINI.md\n├── .github/\n│   └── workflows/\n│       ├── context-snapshot.yml\n│       ├── github-activity-log.yml\n│       ├── project-status.yml\n│       └── skill-analysis.yml\n├── assessments/\n├── automation/\n│   ├── github-actions/\n│   ├── scripts/\n│   │   ├── context-snapshot.js\n│   │   ├── project-status.js\n│   │   └── skill-analysis.js\n│   └── IDEAS.md\n├── business/\n│   ├── codaissance/\n│   │   ├── brand.json\n│   │   ├── design-system.json\n│   │   ├── financials.json\n│   │   ├── goals.md\n│   │   ├── marketing.json\n│   │   ├── personas.json\n│   │   ├── roadmap.mermaid\n│   │   └── strategy.json\n│   ├── tampertantrum-labs/\n│   │   ├── competitors.json\n│   │   ├── design-system.json\n│   │   ├── financials.json\n│   │   ├── goals.md\n│   │   ├── marketing.json\n│   │   ├── personas.json\n│   │   ├── roadmap.mermaid\n│   │   └── strategy.json\n│   └── BUSINESS_GOALS.md\n├── github/\n│   └── README.md\n├── ideas/\n│   ├── business/\n│   │   ├── codaissance/\n│   │   │   └── ideas.json\n│   │   └── tampertantrum-labs/\n│   │       └── ideas.json\n│   ├── personal/\n│   │   └── ideas.json\n│   └── IDEA_VALIDATION_REFINEMENT.md\n├── job-applications/\n│   ├── applications.json\n│   ├── interviews.json\n│   └── JOB_SEARCH.md\n├── learning/\n│   ├── completed.json\n│   └── roadmap.json\n├── linkedin/\n│   ├── codaissance-metrics.json\n│   ├── content-ideas.json\n│   ├── METRICS.md\n│   ├── personal-metrics.json\n│   ├── profile.json\n│   └── tampertantrum-metrics.json\n├── logs/\n│   ├── github-activity/\n│   │   ├── 2025-12.json\n│   │   └── README.md\n│   ├── project-status/\n│   │   └── test-analysis.json\n│   ├── skill-analysis/\n│   │   ├── latest-analysis.json\n│   │   ├── README.md\n│   │   └── test-analysis.json\n│   ├── context-snapshot-compact.json\n│   └── context-snapshot.json\n├── profile/\n│   ├── resumes/\n│   ├── contact.json\n│   ├── current-resume.pdf\n│   ├── education.json\n│   ├── experience.json\n│   ├── preferences.json\n│   ├── RESUME_GENERATION.md\n│   ├── resume.md\n│   └── skills.json\n├── projects/\n│   ├── planning/\n│   │   └── PROJECT_PLANNING.md\n│   ├── specs/\n│   │   ├── dev-genesis/\n│   │   │   └── README.md\n│   │   ├── mindtrace/\n│   │   │   └── README.md\n│   │   ├── tempered-ui/\n│   │   │   └── README.md\n│   │   └── README.md\n│   ├── active.json\n│   ├── completed.json\n│   └── planned.json\n├── tests/\n│   ├── context-snapshot/\n│   │   └── run.js\n│   ├── project-status/\n│   │   └── run.js\n│   ├── skill-analysis/\n│   │   └── run.js\n│   └── README.md\n├── AI_TOOLS.md\n├── CLAUDE.md\n├── CONTEXT.md\n├── README.md\n└── REPO_TODO.md"
+}

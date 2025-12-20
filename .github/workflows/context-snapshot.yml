@@ -41,12 +41,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Check if there are changes
-          if git diff --quiet logs/context-snapshot*.json 2>/dev/null; then
+          # Check if there are changes in the context directory
+          if git diff --quiet logs/context/ 2>/dev/null && [ -z "$(git ls-files --others --exclude-standard logs/context/)" ]; then
             echo "No changes to commit"
             exit 0
           fi
 
-          git add logs/context-snapshot*.json
+          git add logs/context/
           git commit -m "Update context snapshot [automated]"
           git push

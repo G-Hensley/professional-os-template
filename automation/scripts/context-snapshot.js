@@ -481,44 +481,65 @@ async function main() {
   console.log(`Automations: ${snapshot.automations.length} workflows`);
   console.log(`Commands: ${snapshot.commands.claude.length} Claude, ${snapshot.commands.gemini.length} Gemini`);
 
+  // Build compact version
+  const compact = {
+    generated_at: snapshot.generated_at,
+    profile: `${snapshot.profile.name} - ${snapshot.profile.current_role}`,
+    projects: {
+      active: snapshot.projects.active.map(p => `${p.name} (P${p.priority}): ${p.tagline}`),
+      planned: snapshot.projects.planned.map(p => `${p.name}${p.blocked_by ? ` [blocked by: ${p.blocked_by}]` : ''}`),
+    },
+    skills: {
+      expert: snapshot.skills?.top_expert || [],
+      adept: snapshot.skills?.top_adept || []
+    },
+    automations: snapshot.automations.map(a => `${a.name}: ${a.schedule}`),
+    commands: {
+      claude: snapshot.commands.claude,
+      gemini: snapshot.commands.gemini
+    }
+  };
+
   if (DRY_RUN) {
-    console.log('\n[DRY RUN] Would write snapshot to logs/context-snapshot.json');
+    console.log('\n[DRY RUN] Would write snapshots to logs/context/');
     console.log('\nSnapshot preview:');
     console.log(JSON.stringify(snapshot, null, 2));
   } else {
-    // Ensure logs directory exists
-    const logsDir = path.join(REPO_ROOT, 'logs');
-    if (!fs.existsSync(logsDir)) {
-      fs.mkdirSync(logsDir, { recursive: true });
+    // Ensure context directory exists
+    const contextDir = path.join(REPO_ROOT, 'logs/context');
+    if (!fs.existsSync(contextDir)) {
+      fs.mkdirSync(contextDir, { recursive: true });
     }
 
-    // Write full snapshot
-    const outputPath = path.join(logsDir, 'context-snapshot.json');
-    fs.writeFileSync(outputPath, JSON.stringify(snapshot, null, 2));
-    console.log(`\nSnapshot written to ${outputPath}`);
+    // Get date stamp for filename (YYYY-MM-DD)
+    const dateStamp = new Date().toISOString().split('T')[0];
 
-    // Compact version - just the essentials for quick context
-    const compact = {
-      generated_at: snapshot.generated_at,
-      profile: `${snapshot.profile.name} - ${snapshot.profile.current_role}`,
-      projects: {
-        active: snapshot.projects.active.map(p => `${p.name} (P${p.priority}): ${p.tagline}`),
-        planned: snapshot.projects.planned.map(p => `${p.name}${p.blocked_by ? ` [blocked by: ${p.blocked_by}]` : ''}`),
-      },
-      skills: {
-        expert: snapshot.skills?.top_expert || [],
-        adept: snapshot.skills?.top_adept || []
-      },
-      automations: snapshot.automations.map(a => `${a.name}: ${a.schedule}`),
-      commands: {
-        claude: snapshot.commands.claude,
-        gemini: snapshot.commands.gemini
-      }
-    };
+    // Write dated full snapshot
+    const datedPath = path.join(contextDir, `${dateStamp}.json`);
+    fs.writeFileSync(datedPath, JSON.stringify(snapshot, null, 2));
+    console.log(`\nSnapshot written to ${datedPath}`);
 
-    const compactPath = path.join(logsDir, 'context-snapshot-compact.json');
+    // Write latest.json (copy, not symlink for cross-platform compatibility)
+    const latestPath = path.join(contextDir, 'latest.json');
+    fs.writeFileSync(latestPath, JSON.stringify(snapshot, null, 2));
+    console.log(`Latest snapshot written to ${latestPath}`);
+
+    // Write compact version
+    const compactPath = path.join(contextDir, 'latest-compact.json');
     fs.writeFileSync(compactPath, JSON.stringify(compact, null, 2));
     console.log(`Compact snapshot written to ${compactPath}`);
+
+    // Clean up old root-level files if they exist (migration)
+    const oldFull = path.join(REPO_ROOT, 'logs/context-snapshot.json');
+    const oldCompact = path.join(REPO_ROOT, 'logs/context-snapshot-compact.json');
+    if (fs.existsSync(oldFull)) {
+      fs.unlinkSync(oldFull);
+      console.log('Removed old logs/context-snapshot.json');
+    }
+    if (fs.existsSync(oldCompact)) {
+      fs.unlinkSync(oldCompact);
+      console.log('Removed old logs/context-snapshot-compact.json');
+    }
   }
 }
 

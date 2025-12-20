@@ -69,6 +69,7 @@ Wife's application security consulting business. Gavin provides marketing strate
   - `scripts/` - Automation scripts (context-snapshot.js, skill-analysis.js, project-status.js)
 - `/.github/workflows/` - GitHub Actions pipelines
 - `/logs/` - Automation output
+  - `context/` - Daily context snapshots (YYYY-MM-DD.json) + latest.json
   - `github-activity/` - Daily activity logs (YYYY-MM.json)
   - `skill-analysis/` - Weekly skill reports
   - `project-status/` - Weekly project status reports
