@@ -5,13 +5,12 @@
  * Run daily or on-demand before AI sessions to reduce token usage.
  *
  * Usage:
- *   node .github/scripts/context-snapshot.js
- *   DRY_RUN=true node .github/scripts/context-snapshot.js
+ *   node automation/scripts/context-snapshot.js
+ *   DRY_RUN=true node automation/scripts/context-snapshot.js
  */
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
 
 const DRY_RUN = process.env.DRY_RUN === 'true';
 const REPO_ROOT = process.env.GITHUB_WORKSPACE || path.resolve(__dirname, '../..');
@@ -24,7 +23,7 @@ function readJSON(filePath) {
       return JSON.parse(fs.readFileSync(fullPath, 'utf-8'));
     }
   } catch (e) {
-    console.error(`Error reading ${filePath}:`, e.message);
+    // Silently fail
   }
   return null;
 }
@@ -43,46 +42,63 @@ function getModTime(filePath) {
   return null;
 }
 
-// Get folder structure (depth-limited tree)
-function getFolderStructure(maxDepth = 2) {
-  const structure = {};
-
-  function walkDir(dir, depth, obj) {
-    if (depth > maxDepth) return;
-
-    try {
-      const items = fs.readdirSync(path.join(REPO_ROOT, dir));
-
-      for (const item of items) {
-        // Skip hidden files (except .github, .claude, .gemini, .codex)
-        if (item.startsWith('.') &&
-            !['github', 'claude', 'gemini', 'codex'].includes(item.replace('.', ''))) {
-          continue;
-        }
-
-        // Skip node_modules, dist, etc.
-        if (['node_modules', 'dist', '.git', 'coverage'].includes(item)) {
-          continue;
-        }
-
-        const itemPath = path.join(dir, item);
-        const fullPath = path.join(REPO_ROOT, itemPath);
-        const stats = fs.statSync(fullPath);
-
-        if (stats.isDirectory()) {
-          obj[item] = {};
-          walkDir(itemPath, depth + 1, obj[item]);
-        } else if (depth < maxDepth) {
-          obj[item] = 'file';
-        }
-      }
-    } catch (e) {
-      // Directory not accessible
+// List files in a directory (non-recursive)
+function listFiles(dirPath) {
+  try {
+    const fullPath = path.join(REPO_ROOT, dirPath);
+    if (fs.existsSync(fullPath)) {
+      return fs.readdirSync(fullPath).filter(f => !f.startsWith('.'));
     }
+  } catch (e) {
+    // Ignore
+  }
+  return [];
+}
+
+// Get folder structure as a simple tree string (like `tree` command)
+function getFolderTree() {
+  const lines = [];
+  const skipDirs = new Set(['node_modules', 'dist', '.git', 'coverage', 'assets']);
+  const skipFiles = new Set(['.DS_Store']);
+
+  function walk(dir, prefix = '', isLast = true) {
+    const items = fs.readdirSync(path.join(REPO_ROOT, dir))
+      .filter(item => {
+        if (skipFiles.has(item)) return false;
+        if (item.startsWith('.') && !['github', 'claude', 'gemini', 'codex'].includes(item.replace('.', ''))) {
+          return false;
+        }
+        if (skipDirs.has(item)) return false;
+        return true;
+      })
+      .sort((a, b) => {
+        // Directories first
+        const aIsDir = fs.statSync(path.join(REPO_ROOT, dir, a)).isDirectory();
+        const bIsDir = fs.statSync(path.join(REPO_ROOT, dir, b)).isDirectory();
+        if (aIsDir && !bIsDir) return -1;
+        if (!aIsDir && bIsDir) return 1;
+        return a.localeCompare(b);
+      });
+
+    items.forEach((item, index) => {
+      const itemPath = path.join(dir, item);
+      const fullPath = path.join(REPO_ROOT, itemPath);
+      const isDirectory = fs.statSync(fullPath).isDirectory();
+      const isLastItem = index === items.length - 1;
+      const connector = isLastItem ? '└── ' : '├── ';
+      const newPrefix = prefix + (isLastItem ? '    ' : '│   ');
+
+      lines.push(prefix + connector + item + (isDirectory ? '/' : ''));
+
+      if (isDirectory) {
+        walk(itemPath, newPrefix, isLastItem);
+      }
+    });
   }
 
-  walkDir('', 0, structure);
-  return structure;
+  lines.push('myself/');
+  walk('', '');
+  return lines.join('\n');
 }
 
 // Count skills by level
@@ -90,23 +106,25 @@ function getSkillsSummary(skills) {
   if (!skills) return null;
 
   const levels = { master: 0, expert: 0, adept: 0, apprentice: 0, novice: 0, none: 0 };
-  const categories = {};
+  const topSkills = { expert: [], adept: [] };
 
   for (const [category, skillSet] of Object.entries(skills)) {
     if (category === 'skill levels') continue;
 
-    categories[category] = { total: 0, byLevel: {} };
-
     for (const [skill, level] of Object.entries(skillSet)) {
       if (levels.hasOwnProperty(level)) {
         levels[level]++;
-        categories[category].total++;
-        categories[category].byLevel[level] = (categories[category].byLevel[level] || 0) + 1;
+        if (level === 'expert' && topSkills.expert.length < 10) {
+          topSkills.expert.push(skill);
+        }
+        if (level === 'adept' && topSkills.adept.length < 10) {
+          topSkills.adept.push(skill);
+        }
       }
     }
   }
 
-  return { totals: levels, byCategory: categories };
+  return { totals: levels, top_expert: topSkills.expert, top_adept: topSkills.adept };
 }
 
 // Get project summary
@@ -126,22 +144,26 @@ function getProjectsSummary() {
     completed: []
   };
 
-  // Active projects
+  // Active projects - more detail
   for (const [key, proj] of Object.entries(active)) {
     summary.active.push({
+      key,
       name: proj.name,
       type: proj.type,
       priority: proj.priority,
       status: proj.status,
       tagline: proj.tagline,
-      technologies: proj.technologies?.slice(0, 5), // First 5 techs
-      due_date: proj.due_date
+      repo_url: proj.repo_url || null,
+      technologies: proj.technologies?.slice(0, 6),
+      due_date: proj.due_date,
+      success_milestone: proj.success_milestone
     });
   }
 
   // Planned projects
   for (const [key, proj] of Object.entries(planned)) {
     summary.planned.push({
+      key,
       name: proj.name,
       type: proj.type,
       priority: proj.priority,
@@ -154,12 +176,13 @@ function getProjectsSummary() {
   // Completed projects
   for (const [key, proj] of Object.entries(completed)) {
     summary.completed.push({
+      key,
       name: proj.name,
       type: proj.type
     });
   }
 
-  // Sort active by priority
+  // Sort by priority
   summary.active.sort((a, b) => (b.priority || 0) - (a.priority || 0));
   summary.planned.sort((a, b) => (b.priority || 0) - (a.priority || 0));
 
@@ -178,25 +201,27 @@ function getAutomationStatus() {
       try {
         const content = fs.readFileSync(path.join(workflowDir, file), 'utf-8');
 
-        // Extract name
         const nameMatch = content.match(/^name:\s*(.+)$/m);
         const name = nameMatch ? nameMatch[1].trim() : file.replace('.yml', '');
 
-        // Extract schedule
         const cronMatch = content.match(/cron:\s*['"](.+)['"]/);
         const schedule = cronMatch ? cronMatch[1] : null;
 
-        // Check if it has workflow_dispatch
-        const hasManualTrigger = content.includes('workflow_dispatch');
+        // Parse cron to human-readable
+        let scheduleDesc = null;
+        if (schedule) {
+          const [min, hour, dom, mon, dow] = schedule.split(' ');
+          const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+          if (dow === '*') {
+            scheduleDesc = `Daily at ${hour}:${min.padStart(2, '0')} UTC`;
+          } else {
+            scheduleDesc = `${days[parseInt(dow)]} at ${hour}:${min.padStart(2, '0')} UTC`;
+          }
+        }
 
-        workflows.push({
-          file,
-          name,
-          schedule,
-          manual_trigger: hasManualTrigger
-        });
+        workflows.push({ name, schedule: scheduleDesc || schedule });
       } catch (e) {
-        console.error(`Error parsing ${file}:`, e.message);
+        // Skip
       }
     }
   }
@@ -204,98 +229,204 @@ function getAutomationStatus() {
   return workflows;
 }
 
-// Get recent activity from logs
-function getRecentActivity() {
-  const activity = {
-    github: null,
-    skill_analysis: null,
-    project_status: null
+// Get available commands
+function getAvailableCommands() {
+  const commands = {
+    claude: [],
+    gemini: [],
+    codex: []
   };
 
-  // Most recent GitHub activity log
-  const now = new Date();
-  const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
-  const lastMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1);
-  const lastMonthStr = `${lastMonth.getFullYear()}-${String(lastMonth.getMonth() + 1).padStart(2, '0')}`;
-
-  let githubLog = readJSON(`logs/github-activity/${currentMonth}.json`);
-  if (!githubLog) {
-    githubLog = readJSON(`logs/github-activity/${lastMonthStr}.json`);
+  // Claude commands
+  const claudeDir = path.join(REPO_ROOT, '.claude/commands');
+  if (fs.existsSync(claudeDir)) {
+    commands.claude = fs.readdirSync(claudeDir)
+      .filter(f => f.endsWith('.md'))
+      .map(f => '/' + f.replace('.md', ''));
   }
 
-  if (githubLog) {
-    // Get last 7 days of activity
-    const entries = Object.entries(githubLog).sort((a, b) => b[0].localeCompare(a[0])).slice(0, 7);
-    activity.github = {
-      days_with_data: entries.length,
-      recent_commits: entries.reduce((sum, [_, data]) => sum + (data.commits?.length || 0), 0),
-      recent_prs: entries.reduce((sum, [_, data]) => sum + (data.pull_requests?.length || 0), 0)
-    };
+  // Gemini commands
+  const geminiDir = path.join(REPO_ROOT, '.gemini/commands');
+  if (fs.existsSync(geminiDir)) {
+    commands.gemini = fs.readdirSync(geminiDir)
+      .filter(f => f.endsWith('.toml'))
+      .map(f => '/' + f.replace('.toml', ''));
   }
 
-  // Skill analysis
-  const skillAnalysis = readJSON('logs/skill-analysis/latest-analysis.json');
-  if (skillAnalysis) {
-    activity.skill_analysis = {
-      date: skillAnalysis.generated_at,
-      repos_analyzed: skillAnalysis.repos_analyzed,
-      detected_skills_count: Object.keys(skillAnalysis.detected_skills || {}).length
-    };
+  // Codex commands
+  const codexDir = path.join(REPO_ROOT, '.codex/commands');
+  if (fs.existsSync(codexDir)) {
+    commands.codex = fs.readdirSync(codexDir)
+      .filter(f => f.endsWith('.md'))
+      .map(f => '/prompts:' + f.replace('.md', ''));
   }
 
-  // Project status
-  const projectStatus = readJSON('logs/project-status/latest-status.json');
-  if (projectStatus) {
-    activity.project_status = {
-      date: projectStatus.generated_at,
-      stale_projects: projectStatus.stale_projects?.length || 0,
-      completion_candidates: projectStatus.completion_candidates?.length || 0
-    };
-  }
-
-  return activity;
+  return commands;
 }
 
-// Get key file modification dates
-function getKeyFilesDates() {
-  const keyFiles = [
-    'profile/skills.json',
-    'profile/experience.json',
-    'profile/resume.md',
-    'projects/active.json',
-    'projects/planned.json',
-    'business/BUSINESS_GOALS.md',
-    'job-applications/JOB_SEARCH.md',
-    'job-applications/applications.json',
-    'linkedin/content-ideas.json',
-    'REPO_TODO.md'
-  ];
+// Get business summary with more detail
+function getBusinessSummary() {
+  const result = {};
 
-  const dates = {};
-  for (const file of keyFiles) {
-    const mod = getModTime(file);
-    if (mod) {
-      dates[file] = mod;
+  // Codaissance
+  const codStrat = readJSON('business/codaissance/strategy.json');
+  const codBrand = readJSON('business/codaissance/brand.json');
+  const codGoals = listFiles('business/codaissance');
+
+  if (codStrat || codBrand) {
+    result.codaissance = {
+      tagline: codStrat?.tagline || codBrand?.tagline,
+      type: 'SaaS product studio',
+      files: codGoals.filter(f => f.endsWith('.json') || f.endsWith('.md'))
+    };
+  }
+
+  // TamperTantrum Labs
+  const ttStrat = readJSON('business/tampertantrum-labs/strategy.json');
+  const ttGoals = listFiles('business/tampertantrum-labs');
+
+  if (ttStrat) {
+    result.tampertantrum_labs = {
+      tagline: ttStrat.tagline,
+      type: 'AppSec consulting',
+      files: ttGoals.filter(f => f.endsWith('.json') || f.endsWith('.md'))
+    };
+  }
+
+  return result;
+}
+
+// Get job search status
+function getJobSearchStatus() {
+  const applications = readJSON('job-applications/applications.json');
+  const interviews = readJSON('job-applications/interviews.json');
+
+  const status = {
+    total_applications: 0,
+    by_status: {},
+    recent_interviews: 0
+  };
+
+  if (applications) {
+    const apps = Array.isArray(applications) ? applications : Object.values(applications);
+    status.total_applications = apps.length;
+
+    for (const app of apps) {
+      const s = app.status || 'unknown';
+      status.by_status[s] = (status.by_status[s] || 0) + 1;
     }
   }
 
-  return dates;
+  if (interviews) {
+    const ints = Array.isArray(interviews) ? interviews : Object.values(interviews);
+    // Count interviews in last 30 days
+    const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
+    status.recent_interviews = ints.filter(i => new Date(i.date) >= thirtyDaysAgo).length;
+  }
+
+  return status;
 }
 
-// Get business summary
-function getBusinessSummary() {
-  const codaissance = readJSON('business/codaissance/strategy.json');
-  const tampertantrum = readJSON('business/tampertantrum-labs/strategy.json');
+// Get profile summary
+function getProfileSummary() {
+  const contact = readJSON('profile/contact.json');
+  const experience = readJSON('profile/experience.json');
+  const education = readJSON('profile/education.json');
+  const preferences = readJSON('profile/preferences.json');
+
+  const summary = {};
+
+  if (contact) {
+    summary.name = contact.name;
+    summary.location = contact.location;
+    summary.email = contact.email;
+  }
+
+  if (experience) {
+    // Handle both array format and object format (company as key)
+    let jobs = [];
+    if (Array.isArray(experience)) {
+      jobs = experience;
+    } else if (experience.jobs) {
+      jobs = experience.jobs;
+    } else {
+      // Object format: { "CompanyName": { role, start_date, end_date, ... } }
+      jobs = Object.entries(experience).map(([company, data]) => ({
+        company,
+        title: data.role || data.title,
+        end_date: data.end_date,
+        salary: data.salary,
+        current: data.end_date === 'Present'
+      }));
+    }
+    const current = jobs.find(j => j.end_date === 'Present' || j.current);
+    if (current) {
+      summary.current_role = `${current.title || current.role} at ${current.company}`;
+      summary.salary = current.salary;
+    }
+  }
+
+  if (education) {
+    // Handle both array format and object format
+    let degrees = [];
+    if (Array.isArray(education)) {
+      degrees = education;
+    } else if (education.degrees) {
+      degrees = education.degrees;
+    } else {
+      // Object format: { "degree_key": { degree, institution, graduation_year, ... } }
+      degrees = Object.values(education);
+    }
+    // Find most recent (highest graduation year)
+    const sorted = degrees.sort((a, b) =>
+      (parseInt(b.graduation_year) || 0) - (parseInt(a.graduation_year) || 0)
+    );
+    const recent = sorted[0];
+    if (recent) {
+      const school = recent.institution || recent.school;
+      const field = recent.field_of_study ? ` in ${recent.field_of_study}` : '';
+      summary.education = `${recent.degree}${field} - ${school} (${recent.graduation_year || recent.year})`;
+    }
+  }
+
+  if (preferences) {
+    summary.work_style = preferences.work_style || preferences.remote_preference;
+  }
+
+  return summary;
+}
+
+// Get key files with modification dates and descriptions
+function getKeyFiles() {
+  const files = [
+    { path: 'profile/skills.json', desc: 'Technical skills with proficiency levels' },
+    { path: 'profile/experience.json', desc: 'Work history' },
+    { path: 'profile/resume.md', desc: 'Current resume' },
+    { path: 'projects/active.json', desc: 'Active projects' },
+    { path: 'projects/planned.json', desc: 'Planned/blocked projects' },
+    { path: 'projects/completed.json', desc: 'Completed projects' },
+    { path: 'business/BUSINESS_GOALS.md', desc: 'High-level business objectives' },
+    { path: 'job-applications/JOB_SEARCH.md', desc: 'Job search criteria and preferences' },
+    { path: 'job-applications/applications.json', desc: 'Job applications submitted' },
+    { path: 'linkedin/content-ideas.json', desc: 'Content pillars and post strategy' },
+    { path: 'learning/roadmap.json', desc: 'Skills to learn' },
+    { path: 'REPO_TODO.md', desc: 'Repository automation roadmap' }
+  ];
+
+  return files.map(f => ({
+    ...f,
+    modified: getModTime(f.path)
+  })).filter(f => f.modified);
+}
+
+// Get learning summary
+function getLearningSummary() {
+  const roadmap = readJSON('learning/roadmap.json');
+  const completed = readJSON('learning/completed.json');
 
   return {
-    codaissance: codaissance ? {
-      tagline: codaissance.tagline,
-      products: codaissance.products?.length || 0
-    } : null,
-    tampertantrum: tampertantrum ? {
-      tagline: tampertantrum.tagline,
-      services: tampertantrum.services?.length || 0
-    } : null
+    roadmap_items: roadmap ? Object.keys(roadmap).length : 0,
+    completed_items: completed ? (Array.isArray(completed) ? completed.length : Object.keys(completed).length) : 0
   };
 }
 
@@ -308,46 +439,47 @@ async function main() {
 
   const snapshot = {
     generated_at: new Date().toISOString(),
-    version: '1.0',
+    version: '2.0',
 
-    // High-level summary
-    summary: {
-      owner: 'Gavin Hensley',
-      role: 'Full-Stack Software Engineer',
-      primary_stack: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Supabase'],
-      businesses: ['Codaissance (SaaS products)', 'TamperTantrum Labs (AppSec consulting)']
-    },
+    // Profile summary
+    profile: getProfileSummary(),
 
-    // Project counts and list
+    // Project counts and details
     projects: getProjectsSummary(),
 
-    // Skills by level
+    // Skills summary with top skills listed
     skills: getSkillsSummary(skills),
 
-    // Automation pipelines
-    automations: getAutomationStatus(),
-
-    // Recent automation output
-    recent_activity: getRecentActivity(),
-
-    // Business summary
+    // Business info
     businesses: getBusinessSummary(),
 
-    // Key file modification dates
-    key_files_modified: getKeyFilesDates(),
+    // Job search status
+    job_search: getJobSearchStatus(),
 
-    // Folder structure (2 levels deep)
-    folder_structure: getFolderStructure(2)
+    // Learning progress
+    learning: getLearningSummary(),
+
+    // Automation pipelines with human-readable schedules
+    automations: getAutomationStatus(),
+
+    // Available AI commands
+    commands: getAvailableCommands(),
+
+    // Key files with descriptions and modification dates
+    key_files: getKeyFiles(),
+
+    // Full folder tree
+    folder_tree: getFolderTree()
   };
 
+  // Console summary
   console.log('\n=== Context Snapshot Summary ===');
-  console.log(`Projects: ${snapshot.projects.counts.active} active, ${snapshot.projects.counts.planned} planned, ${snapshot.projects.counts.completed} completed`);
-  console.log(`Skills: ${snapshot.skills?.totals ? Object.entries(snapshot.skills.totals).filter(([k, v]) => v > 0).map(([k, v]) => `${v} ${k}`).join(', ') : 'N/A'}`);
+  console.log(`Profile: ${snapshot.profile.name || 'N/A'} - ${snapshot.profile.current_role || 'N/A'}`);
+  console.log(`Projects: ${snapshot.projects.counts.active} active, ${snapshot.projects.counts.planned} planned`);
+  console.log(`Skills: ${snapshot.skills?.totals?.expert || 0} expert, ${snapshot.skills?.totals?.adept || 0} adept`);
+  console.log(`Job Search: ${snapshot.job_search.total_applications} applications`);
   console.log(`Automations: ${snapshot.automations.length} workflows`);
-
-  if (snapshot.recent_activity.github) {
-    console.log(`Recent GitHub: ${snapshot.recent_activity.github.recent_commits} commits in last 7 days`);
-  }
+  console.log(`Commands: ${snapshot.commands.claude.length} Claude, ${snapshot.commands.gemini.length} Gemini`);
 
   if (DRY_RUN) {
     console.log('\n[DRY RUN] Would write snapshot to logs/context-snapshot.json');
@@ -360,22 +492,28 @@ async function main() {
       fs.mkdirSync(logsDir, { recursive: true });
     }
 
-    // Write snapshot
+    // Write full snapshot
     const outputPath = path.join(logsDir, 'context-snapshot.json');
     fs.writeFileSync(outputPath, JSON.stringify(snapshot, null, 2));
     console.log(`\nSnapshot written to ${outputPath}`);
 
-    // Also write a compact version for minimal context
+    // Compact version - just the essentials for quick context
     const compact = {
       generated_at: snapshot.generated_at,
+      profile: `${snapshot.profile.name} - ${snapshot.profile.current_role}`,
       projects: {
-        active: snapshot.projects.active.map(p => `${p.name} (${p.type})`),
-        planned_count: snapshot.projects.counts.planned,
-        completed_count: snapshot.projects.counts.completed
+        active: snapshot.projects.active.map(p => `${p.name} (P${p.priority}): ${p.tagline}`),
+        planned: snapshot.projects.planned.map(p => `${p.name}${p.blocked_by ? ` [blocked by: ${p.blocked_by}]` : ''}`),
       },
-      skills_summary: snapshot.skills?.totals,
-      automations: snapshot.automations.map(a => a.name),
-      key_files_modified: snapshot.key_files_modified
+      skills: {
+        expert: snapshot.skills?.top_expert || [],
+        adept: snapshot.skills?.top_adept || []
+      },
+      automations: snapshot.automations.map(a => `${a.name}: ${a.schedule}`),
+      commands: {
+        claude: snapshot.commands.claude,
+        gemini: snapshot.commands.gemini
+      }
     };
 
     const compactPath = path.join(logsDir, 'context-snapshot-compact.json');

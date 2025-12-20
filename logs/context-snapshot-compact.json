@@ -1,38 +1,67 @@
 {
-  "generated_at": "2025-12-20T23:01:33.291Z",
+  "generated_at": "2025-12-20T23:11:16.960Z",
+  "profile": "Gavin Hensley - Product Engineer / Customer Success Engineer / Deployment Engineer at APIsec",
   "projects": {
     "active": [
-      "Dev Genesis (GitHub Template)",
-      "TemperedUI (Design System / Component Library)",
-      "MindTrace (SaaS Web Application)"
+      "Dev Genesis (P10): From idea to coding in 30 minutes. Stop configuring, start building.",
+      "TemperedUI (P8): Beautiful components that protect by default. Ship secure apps without writing security code.",
+      "MindTrace (P7): Log student behavior in 30 seconds. Simple, fast, and built for educators who don't have time to waste."
     ],
-    "planned_count": 5,
-    "completed_count": 0
+    "planned": [
+      "Vibiom [blocked by: Dev Genesis]",
+      "DevGauntlet",
+      "ScopeCreep [blocked by: TemperedUI, DevGauntlet]",
+      "InstAPI",
+      "OpenOrbit [blocked by: TemperedUI, ScopeCreep]"
+    ]
   },
-  "skills_summary": {
-    "master": 0,
-    "expert": 25,
-    "adept": 41,
-    "apprentice": 3,
-    "novice": 13,
-    "none": 9
+  "skills": {
+    "expert": [
+      "JavaScript",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "REST APIs",
+      "OWASP Security Practices",
+      "Vercel"
+    ],
+    "adept": [
+      "Python",
+      "SQL",
+      "Bash",
+      "Java",
+      "C",
+      "Node.js",
+      "Express",
+      "Redux",
+      "Framer Motion",
+      "OAuth 2.0"
+    ]
   },
   "automations": [
-    "Context Snapshot",
-    "GitHub Activity Logging",
-    "Project Status Automation",
-    "Skill Analysis Pipeline"
+    "Context Snapshot: Daily at 5:00 UTC",
+    "GitHub Activity Logging: Daily at 6:00 UTC",
+    "Project Status Automation: Tue at 7:00 UTC",
+    "Skill Analysis Pipeline: Mon at 7:00 UTC"
   ],
-  "key_files_modified": {
-    "profile/skills.json": "2025-12-18",
-    "profile/experience.json": "2025-12-18",
-    "profile/resume.md": "2025-12-17",
-    "projects/active.json": "2025-12-18",
-    "projects/planned.json": "2025-12-18",
-    "business/BUSINESS_GOALS.md": "2025-12-18",
-    "job-applications/JOB_SEARCH.md": "2025-12-18",
-    "job-applications/applications.json": "2025-12-18",
-    "linkedin/content-ideas.json": "2025-12-20",
-    "REPO_TODO.md": "2025-12-20"
+  "commands": {
+    "claude": [
+      "/assessment",
+      "/generate-post",
+      "/generate-resume",
+      "/log-application",
+      "/prep-interview",
+      "/quick-check",
+      "/update-project"
+    ],
+    "gemini": [
+      "/competitive-analysis",
+      "/market-research",
+      "/research-company",
+      "/salary-research"
+    ]
   }
 }
