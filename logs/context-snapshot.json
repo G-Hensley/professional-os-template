@@ -1,0 +1,356 @@
+{
+  "generated_at": "2025-12-20T23:01:33.291Z",
+  "version": "1.0",
+  "summary": {
+    "owner": "Gavin Hensley",
+    "role": "Full-Stack Software Engineer",
+    "primary_stack": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Tailwind CSS",
+      "Supabase"
+    ],
+    "businesses": [
+      "Codaissance (SaaS products)",
+      "TamperTantrum Labs (AppSec consulting)"
+    ]
+  },
+  "projects": {
+    "counts": {
+      "active": 3,
+      "planned": 5,
+      "completed": 0
+    },
+    "active": [
+      {
+        "name": "Dev Genesis",
+        "type": "GitHub Template",
+        "priority": 10,
+        "status": "In Progress",
+        "tagline": "From idea to coding in 30 minutes. Stop configuring, start building.",
+        "technologies": [
+          "GitHub Actions",
+          "GitHub Issues",
+          "Codex",
+          "Claude Code",
+          "Cursor"
+        ],
+        "due_date": "2025-12-10"
+      },
+      {
+        "name": "TemperedUI",
+        "type": "Design System / Component Library",
+        "priority": 8,
+        "status": "In Progress",
+        "tagline": "Beautiful components that protect by default. Ship secure apps without writing security code.",
+        "technologies": [
+          "Vite",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "PNPM"
+        ],
+        "due_date": "2026-01-16"
+      },
+      {
+        "name": "MindTrace",
+        "type": "SaaS Web Application",
+        "priority": 7,
+        "status": "In Progress",
+        "tagline": "Log student behavior in 30 seconds. Simple, fast, and built for educators who don't have time to waste.",
+        "technologies": [
+          "Next.js",
+          "TypeScript",
+          "React",
+          "Tailwind CSS",
+          "Supabase"
+        ],
+        "due_date": "2026-02-01"
+      }
+    ],
+    "planned": [
+      {
+        "name": "Vibiom",
+        "type": "CLI Tool → Desktop Application → SaaS",
+        "priority": 9,
+        "status": "Blocked",
+        "blocked_by": "Dev Genesis",
+        "tagline": "Multi-agent development that actually works. Built by using itself."
+      },
+      {
+        "name": "DevGauntlet",
+        "type": "SaaS Web Application",
+        "priority": 8,
+        "status": "Not Started",
+        "tagline": "No tutorials. Just challenges. Build like a professional developer, not a student."
+      },
+      {
+        "name": "ScopeCreep",
+        "type": "SaaS Web Application",
+        "priority": 5,
+        "status": "Blocked",
+        "blocked_by": "TemperedUI, DevGauntlet",
+        "tagline": "Automated RLS testing for databases. Catch authorization bugs before they reach production."
+      },
+      {
+        "name": "InstAPI",
+        "type": "SaaS Web Application / Developer Tool",
+        "priority": 5,
+        "status": "Not Started",
+        "tagline": "Mock APIs in seconds. Stop waiting for backend, start building frontend."
+      },
+      {
+        "name": "OpenOrbit",
+        "type": "SaaS Web Application / Social Platform",
+        "priority": 3,
+        "status": "Blocked",
+        "blocked_by": "TemperedUI, ScopeCreep",
+        "tagline": "Build in public, together. A social platform for tech creators sharing projects, not resumes."
+      }
+    ],
+    "completed": []
+  },
+  "skills": {
+    "totals": {
+      "master": 0,
+      "expert": 25,
+      "adept": 41,
+      "apprentice": 3,
+      "novice": 13,
+      "none": 9
+    },
+    "byCategory": {
+      "programming languages": {
+        "total": 10,
+        "byLevel": {
+          "expert": 4,
+          "adept": 5,
+          "novice": 1
+        }
+      },
+      "frameworks & libraries": {
+        "total": 14,
+        "byLevel": {
+          "novice": 4,
+          "expert": 3,
+          "adept": 4,
+          "none": 3
+        }
+      },
+      "apis & protocols": {
+        "total": 7,
+        "byLevel": {
+          "expert": 2,
+          "apprentice": 2,
+          "adept": 3
+        }
+      },
+      "databases": {
+        "total": 4,
+        "byLevel": {
+          "adept": 4
+        }
+      },
+      "cloud & devops": {
+        "total": 7,
+        "byLevel": {
+          "novice": 2,
+          "expert": 1,
+          "adept": 3,
+          "none": 1
+        }
+      },
+      "testing & monitoring": {
+        "total": 9,
+        "byLevel": {
+          "adept": 6,
+          "novice": 3
+        }
+      },
+      "tools": {
+        "total": 10,
+        "byLevel": {
+          "adept": 6,
+          "novice": 1,
+          "expert": 3
+        }
+      },
+      "AI": {
+        "total": 14,
+        "byLevel": {
+          "expert": 3,
+          "adept": 4,
+          "novice": 2,
+          "none": 5
+        }
+      },
+      "other": {
+        "total": 16,
+        "byLevel": {
+          "adept": 6,
+          "expert": 9,
+          "apprentice": 1
+        }
+      }
+    }
+  },
+  "automations": [
+    {
+      "file": "context-snapshot.yml",
+      "name": "Context Snapshot",
+      "schedule": "0 5 * * *",
+      "manual_trigger": true
+    },
+    {
+      "file": "github-activity-log.yml",
+      "name": "GitHub Activity Logging",
+      "schedule": "0 6 * * *",
+      "manual_trigger": true
+    },
+    {
+      "file": "project-status.yml",
+      "name": "Project Status Automation",
+      "schedule": "0 7 * * 2",
+      "manual_trigger": true
+    },
+    {
+      "file": "skill-analysis.yml",
+      "name": "Skill Analysis Pipeline",
+      "schedule": "0 7 * * 1",
+      "manual_trigger": true
+    }
+  ],
+  "recent_activity": {
+    "github": {
+      "days_with_data": 4,
+      "recent_commits": 0,
+      "recent_prs": 0
+    },
+    "skill_analysis": {
+      "date": "2025-12-19T03:21:43.602Z",
+      "detected_skills_count": 22
+    },
+    "project_status": null
+  },
+  "businesses": {
+    "codaissance": {
+      "products": 0
+    },
+    "tampertantrum": {
+      "tagline": "Disrupting Auth Flows and Naptime Schedules",
+      "services": 0
+    }
+  },
+  "key_files_modified": {
+    "profile/skills.json": "2025-12-18",
+    "profile/experience.json": "2025-12-18",
+    "profile/resume.md": "2025-12-17",
+    "projects/active.json": "2025-12-18",
+    "projects/planned.json": "2025-12-18",
+    "business/BUSINESS_GOALS.md": "2025-12-18",
+    "job-applications/JOB_SEARCH.md": "2025-12-18",
+    "job-applications/applications.json": "2025-12-18",
+    "linkedin/content-ideas.json": "2025-12-20",
+    "REPO_TODO.md": "2025-12-20"
+  },
+  "folder_structure": {
+    ".claude": {
+      "commands": {},
+      "settings.local.json": "file"
+    },
+    ".codex": {
+      "commands": {}
+    },
+    ".gemini": {
+      "GEMINI.md": "file",
+      "commands": {}
+    },
+    ".github": {
+      "scripts": {},
+      "workflows": {}
+    },
+    "AI_TOOLS.md": "file",
+    "CLAUDE.md": "file",
+    "CONTEXT.md": "file",
+    "README.md": "file",
+    "REPO_TODO.md": "file",
+    "assessments": {},
+    "automation": {
+      "IDEAS.md": "file",
+      "github-actions": {},
+      "scripts": {}
+    },
+    "business": {
+      "BUSINESS_GOALS.md": "file",
+      "codaissance": {
+        "assets": {}
+      },
+      "tampertantrum-labs": {
+        "assets": {}
+      }
+    },
+    "github": {
+      "README.md": "file"
+    },
+    "ideas": {
+      "IDEA_VALIDATION_REFINEMENT.md": "file",
+      "business": {
+        "codaissance": {},
+        "tampertantrum-labs": {}
+      },
+      "personal": {}
+    },
+    "job-applications": {
+      "JOB_SEARCH.md": "file",
+      "applications.json": "file",
+      "interviews.json": "file"
+    },
+    "learning": {
+      "completed.json": "file",
+      "roadmap.json": "file"
+    },
+    "linkedin": {
+      "METRICS.md": "file",
+      "codaissance-metrics.json": "file",
+      "content-ideas.json": "file",
+      "personal-metrics.json": "file",
+      "profile.json": "file",
+      "tampertantrum-metrics.json": "file"
+    },
+    "logs": {
+      "github-activity": {},
+      "project-status": {},
+      "skill-analysis": {}
+    },
+    "profile": {
+      "RESUME_GENERATION.md": "file",
+      "contact.json": "file",
+      "current-resume.pdf": "file",
+      "education.json": "file",
+      "experience.json": "file",
+      "preferences.json": "file",
+      "resume.md": "file",
+      "resumes": {},
+      "skills.json": "file"
+    },
+    "projects": {
+      "active.json": "file",
+      "completed.json": "file",
+      "planned.json": "file",
+      "planning": {},
+      "specs": {
+        "dev-genesis": {},
+        "mindtrace": {},
+        "tempered-ui": {}
+      }
+    },
+    "tests": {
+      "README.md": "file",
+      "context-snapshot": {},
+      "project-status": {},
+      "skill-analysis": {}
+    }
+  }
+}

@@ -1,0 +1,52 @@
+name: Context Snapshot
+
+on:
+  schedule:
+    # Run daily at 5 AM UTC (before other automations)
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run without writing files'
+        required: false
+        default: 'false'
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  generate-snapshot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate context snapshot
+        env:
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/context-snapshot.js
+
+      - name: Commit and push changes
+        if: ${{ inputs.dry_run != 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Check if there are changes
+          if git diff --quiet logs/context-snapshot*.json 2>/dev/null; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git add logs/context-snapshot*.json
+          git commit -m "Update context snapshot [automated]"
+          git push

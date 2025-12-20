@@ -150,21 +150,12 @@ All P0 tasks have been completed. AI tools configured, data complete.
 
 ## 🟡 P2: Job Search & Context Automation
 
-- [ ] **Context Snapshot Generator**
-  - **Trigger**: Daily or on-demand before AI sessions
-  - **Output**: `/logs/context-snapshot.json`
-  - **Contents**:
-    - Current folder structure (auto-generated tree)
-    - All projects with statuses from `active.json`, `planned.json`, `completed.json`
-    - GitHub Actions workflows and schedules
-    - Skills summary (count by level)
-    - Last modified dates for key files
-    - Stale flags or warnings
-  - **Use Cases**:
-    - Prepend to AI context for accurate repo awareness
-    - Auto-update README.md structure section
-    - Feed into Monthly Assessment generation
-    - Diff against previous snapshot to track changes
+- [x] **Context Snapshot Generator** - COMPLETE
+  - Daily runs at 5 AM UTC (before other automations)
+  - Outputs `/logs/context-snapshot.json` (full) and `/logs/context-snapshot-compact.json` (minimal)
+  - Includes: folder structure, project summaries, skill counts, automation status, key file dates
+  - Local test: `node tests/context-snapshot/run.js`
+  - **Human Action**: Prepend to AI context for accurate repo awareness
 
 - [ ] **Job Posting Monitor**
   - Scrape/monitor target company career pages
@@ -237,6 +228,8 @@ All P0 tasks have been completed. AI tools configured, data complete.
   github-activity/           # ✅ Created - Daily activity logs
   skill-analysis/            # ✅ Created - Weekly skill reports
   project-status/            # ✅ Created - Weekly status reports
+  context-snapshot.json      # ✅ Created - Full context snapshot
+  context-snapshot-compact.json # ✅ Created - Minimal context snapshot
 
 /linkedin/
   content-ideas.json         # ✅ Created - Pillars, calendar, post rules
@@ -260,6 +253,7 @@ All P0 tasks have been completed. AI tools configured, data complete.
 /tests/
   skill-analysis/run.js      # ✅ Created - Local test runner
   project-status/run.js      # ✅ Created - Local test runner
+  context-snapshot/run.js    # ✅ Created - Local test runner
 ```
 
 ---
@@ -301,6 +295,7 @@ All P0 tasks have been completed. AI tools configured, data complete.
 - [x] **Project planning template** - MVP/Post-MVP specs, folder structure
 - [x] **Project specs** - Filled specs for dev-genesis, tempered-ui, mindtrace
 - [x] Expand automation/IDEAS.md
+- [x] **Context Snapshot Generator** - Daily at 5 AM UTC, full and compact versions
 
 ---
 

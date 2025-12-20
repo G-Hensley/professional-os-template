@@ -140,6 +140,7 @@ AI tools with access to this repo can:
 
 | Pipeline | Schedule | What it Does |
 |----------|----------|--------------|
+| Context Snapshot | Daily 5 AM UTC | Generates repo state snapshot → `/logs/context-snapshot.json` |
 | GitHub Activity Log | Daily 6 AM UTC | Pulls commits, PRs, issues → `/logs/github-activity/` |
 | Skill Analysis | Weekly Mon 7 AM UTC | Detects skills from repos, suggests updates → creates PR |
 | Project Status | Weekly Tue 7 AM UTC | Detects stale/completed projects → creates PR |
