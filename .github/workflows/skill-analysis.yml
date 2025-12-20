@@ -36,7 +36,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
-        run: node .github/scripts/skill-analysis.js
+        run: node automation/scripts/skill-analysis.js
 
       - name: Commit analysis report
         run: |

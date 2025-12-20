@@ -66,8 +66,8 @@ Wife's application security consulting business. Gavin provides marketing strate
 
 ## Automation
 - `/automation/` - Automation ideas and documentation
+  - `scripts/` - Automation scripts (context-snapshot.js, skill-analysis.js, project-status.js)
 - `/.github/workflows/` - GitHub Actions pipelines
-- `/.github/scripts/` - Automation scripts (skill-analysis.js, project-status.js)
 - `/logs/` - Automation output
   - `github-activity/` - Daily activity logs (YYYY-MM.json)
   - `skill-analysis/` - Weekly skill reports

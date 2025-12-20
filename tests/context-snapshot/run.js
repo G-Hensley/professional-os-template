@@ -14,7 +14,7 @@ const path = require('path');
 const args = process.argv.slice(2);
 const isLive = args.includes('--live');
 
-const scriptPath = path.join(__dirname, '../../.github/scripts/context-snapshot.js');
+const scriptPath = path.join(__dirname, '../../automation/scripts/context-snapshot.js');
 
 console.log('=== Context Snapshot Local Test ===\n');
 console.log(`Mode: ${isLive ? 'LIVE (will write files)' : 'DRY RUN (no changes)'}\n`);

@@ -33,7 +33,7 @@ jobs:
       - name: Generate context snapshot
         env:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
-        run: node .github/scripts/context-snapshot.js
+        run: node automation/scripts/context-snapshot.js
 
       - name: Commit and push changes
         if: ${{ inputs.dry_run != 'true' }}
