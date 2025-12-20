@@ -1,0 +1,388 @@
+{
+  "note": "Content strategy for LinkedIn automation. Defines pillars, calendar, post structure, and style rules for all three accounts.",
+  "accounts": {
+    "personal": {
+      "handle": "gavinhensley",
+      "url": "https://linkedin.com/in/gavinhensley",
+      "purpose": "Build professional brand, share journey, attract opportunities",
+      "posting_frequency": "3x per week",
+      "pillars": [
+        {
+          "id": "build-in-public",
+          "name": "Build in Public",
+          "description": "Transparent sharing of what I'm building, decisions made, struggles encountered",
+          "weight": 0.35,
+          "content_types": [
+            "Project progress updates",
+            "Technical decisions and why",
+            "Struggles and how I solved them",
+            "Metrics and milestones"
+          ],
+          "example_hooks": [
+            "I've been stuck on this for 3 days.",
+            "Here's what I shipped this week.",
+            "I made a decision that changed everything.",
+            "This bug taught me something important."
+          ]
+        },
+        {
+          "id": "career-journey",
+          "name": "Career Journey",
+          "description": "Authentic sharing of career path, job search, education completion",
+          "weight": 0.25,
+          "content_types": [
+            "Job search insights",
+            "WGU completion story",
+            "Lessons from past roles",
+            "Career pivots and decisions"
+          ],
+          "example_hooks": [
+            "I didn't take the traditional path.",
+            "Here's what 100 job applications taught me.",
+            "I finished my degree while working full-time.",
+            "This rejection changed my approach."
+          ]
+        },
+        {
+          "id": "technical-learning",
+          "name": "Technical Learning",
+          "description": "Share what I'm learning, tools I'm testing, skills I'm developing",
+          "weight": 0.20,
+          "content_types": [
+            "New tools and frameworks",
+            "Learning resources that helped",
+            "Skill development progress",
+            "Technical experiments"
+          ],
+          "example_hooks": [
+            "I finally understand how this works.",
+            "This tool changed my workflow.",
+            "I spent a week learning X. Here's the truth.",
+            "The docs don't tell you this."
+          ]
+        },
+        {
+          "id": "security-perspective",
+          "name": "Security Perspective",
+          "description": "AppSec background informing how I build and think about code",
+          "weight": 0.20,
+          "content_types": [
+            "Security-first development",
+            "Lessons from AppSec work",
+            "How security shapes my code",
+            "Common mistakes I catch"
+          ],
+          "example_hooks": [
+            "My security background changed how I build.",
+            "I found this vulnerability pattern everywhere.",
+            "Most devs miss this security check.",
+            "Here's why I always do X first."
+          ]
+        }
+      ]
+    },
+    "codaissance": {
+      "handle": "codaissance",
+      "url": "https://linkedin.com/company/codaissance",
+      "purpose": "Company brand, product announcements, portfolio showcase",
+      "posting_frequency": "2x per week",
+      "pillars": [
+        {
+          "id": "build-in-public",
+          "name": "Build in Public",
+          "description": "Transparent product development, revenue, decisions",
+          "weight": 0.40
+        },
+        {
+          "id": "technical-deep-dives",
+          "name": "Technical Deep Dives",
+          "description": "Architecture, code quality, testing philosophy",
+          "weight": 0.30
+        },
+        {
+          "id": "product-value",
+          "name": "Product Value",
+          "description": "What products do and why they help",
+          "weight": 0.30
+        }
+      ]
+    },
+    "tampertantrum": {
+      "handle": "tampertantrum-labs",
+      "url": "https://linkedin.com/company/tampertantrum-labs",
+      "purpose": "Thought leadership, client acquisition, security expertise",
+      "posting_frequency": "3x per week",
+      "current_followers": 119,
+      "target_followers": 500,
+      "pillars": [
+        {
+          "id": "technical-howtos",
+          "name": "Technical How-Tos",
+          "description": "Practical security guidance developers can implement immediately",
+          "weight": 0.25
+        },
+        {
+          "id": "appsec-stories",
+          "name": "AppSec Wins/Stories",
+          "description": "Real-world examples that demonstrate expertise",
+          "weight": 0.25
+        },
+        {
+          "id": "dev-tools",
+          "name": "Dev-Friendly Tools",
+          "description": "Tools that fit developer workflows",
+          "weight": 0.20
+        },
+        {
+          "id": "pain-points",
+          "name": "Startup/Dev Pain Points",
+          "description": "Address common challenges, show empathy",
+          "weight": 0.15
+        },
+        {
+          "id": "journey",
+          "name": "Personal Journey/Transparency",
+          "description": "Build trust through authentic business journey sharing",
+          "weight": 0.15
+        }
+      ]
+    }
+  },
+  "calendar": {
+    "note": "Weekly posting schedule by account and pillar focus",
+    "schedule": {
+      "monday": {
+        "personal": {
+          "pillar": "build-in-public",
+          "focus": "Weekly project update, what I'm working on, struggles, progress",
+          "priority": "high"
+        },
+        "codaissance": null,
+        "tampertantrum": {
+          "pillar": "technical-howtos",
+          "focus": "Start the week with actionable security tip",
+          "priority": "high"
+        }
+      },
+      "tuesday": {
+        "personal": null,
+        "codaissance": {
+          "pillar": "build-in-public",
+          "focus": "Product or company update",
+          "priority": "medium"
+        },
+        "tampertantrum": null
+      },
+      "wednesday": {
+        "personal": {
+          "pillar": "technical-learning",
+          "focus": "Something I learned, tool I discovered, insight gained",
+          "priority": "medium"
+        },
+        "codaissance": null,
+        "tampertantrum": {
+          "pillar": "appsec-stories",
+          "focus": "Real example, case study, or security breakdown",
+          "priority": "high"
+        }
+      },
+      "thursday": {
+        "personal": null,
+        "codaissance": {
+          "pillar": "technical-deep-dives",
+          "focus": "Architecture decision, code philosophy, or technical content",
+          "priority": "medium"
+        },
+        "tampertantrum": null
+      },
+      "friday": {
+        "personal": {
+          "pillar": "career-journey",
+          "focus": "End of week reflection, win, milestone, or lesson",
+          "priority": "high"
+        },
+        "codaissance": null,
+        "tampertantrum": {
+          "pillar": "pain-points",
+          "focus": "Relatable dev challenge with security angle",
+          "priority": "medium"
+        }
+      },
+      "saturday": {
+        "personal": null,
+        "codaissance": null,
+        "tampertantrum": null
+      },
+      "sunday": {
+        "personal": null,
+        "codaissance": null,
+        "tampertantrum": null
+      }
+    }
+  },
+  "post_structure": {
+    "note": "Standard structure for LinkedIn posts. Automation should follow this format.",
+    "format": {
+      "hook": {
+        "description": "Opening line that stops the scroll. Must be compelling and specific.",
+        "max_length": 150,
+        "requirements": [
+          "First line appears in feed preview, make it count",
+          "Use curiosity, controversy, or relatability",
+          "Avoid generic openings like 'I'm excited to share'",
+          "No questions as hooks (LinkedIn hides them)"
+        ],
+        "examples": [
+          "I've applied to 47 jobs in 30 days. Here's what actually works.",
+          "This one security check would have saved me 3 days of debugging.",
+          "I almost mass-deleted a production database yesterday."
+        ]
+      },
+      "body": {
+        "description": "Main content delivering value, story, or insight",
+        "structure": "Problem/Context -> Insight/Solution -> Takeaway",
+        "requirements": [
+          "Use short paragraphs (1-3 sentences max)",
+          "Include line breaks for readability",
+          "Be specific with numbers, examples, or details",
+          "One main idea per post"
+        ]
+      },
+      "cta": {
+        "description": "Call to action, engagement prompt or next step",
+        "types": [
+          "Question to prompt comments",
+          "Ask for shares/saves if valuable",
+          "Link to relevant resource (sparingly)",
+          "Invite to follow for more"
+        ],
+        "examples": [
+          "What's one security check you always forget?",
+          "Save this for your next code review.",
+          "Follow for more build-in-public updates."
+        ]
+      },
+      "hashtags": {
+        "count": "3-5 hashtags",
+        "placement": "End of post, after line break",
+        "recommended": {
+          "personal": ["#buildinpublic", "#softwareengineering", "#webdevelopment", "#careergrowth", "#learntocode"],
+          "codaissance": ["#buildinpublic", "#saas", "#indiehacker", "#startup", "#productdevelopment"],
+          "tampertantrum": ["#appsec", "#cybersecurity", "#devsecops", "#webappsecurity", "#securitytips"]
+        }
+      }
+    },
+    "constraints": {
+      "max_words": 150,
+      "max_characters": 1300,
+      "emoji_limit": 3,
+      "emoji_usage": "Sparingly for emphasis, never as bullet points",
+      "forbidden": [
+        "Em dashes (use commas or periods instead)",
+        "Corporate jargon (leverage, synergy, etc.)",
+        "Humble brags disguised as lessons",
+        "Engagement bait ('Comment YES if you agree')",
+        "Excessive exclamation marks",
+        "Starting with 'I'm excited to announce'"
+      ],
+      "tone": {
+        "personal": "Authentic, reflective, humble confidence",
+        "codaissance": "Professional, transparent, technically credible",
+        "tampertantrum": "Friendly expert, empowering, not fear-driven"
+      }
+    }
+  },
+  "content_bank": {
+    "note": "Specific post ideas organized by account and pillar. Feed into automation.",
+    "personal": [
+      {
+        "pillar": "build-in-public",
+        "ideas": [
+          "Weekly Dev Genesis progress update",
+          "Decision to prioritize X project over Y",
+          "Feature I cut and why",
+          "Metric milestone (commits, users, etc.)"
+        ]
+      },
+      {
+        "pillar": "career-journey",
+        "ideas": [
+          "What I learned from APIsec role",
+          "WGU completion reflection",
+          "Job search strategy that's working",
+          "Interview experience (anonymized)"
+        ]
+      },
+      {
+        "pillar": "technical-learning",
+        "ideas": [
+          "Tool that improved my workflow",
+          "Concept that finally clicked",
+          "Resource that was worth the time",
+          "Mistake that taught me something"
+        ]
+      },
+      {
+        "pillar": "security-perspective",
+        "ideas": [
+          "Security check I add to every project",
+          "Common vulnerability I see in reviews",
+          "How AppSec background shapes my code",
+          "Security vs. speed tradeoff I made"
+        ]
+      }
+    ],
+    "codaissance": [
+      {
+        "pillar": "build-in-public",
+        "ideas": [
+          "Monthly revenue/progress update",
+          "Product decision breakdown",
+          "Failure and lesson learned"
+        ]
+      },
+      {
+        "pillar": "technical-deep-dives",
+        "ideas": [
+          "Architecture choice and why",
+          "Testing philosophy",
+          "Security approach in products"
+        ]
+      }
+    ],
+    "tampertantrum": [
+      {
+        "pillar": "technical-howtos",
+        "ideas": [
+          "How to threat model a REST API",
+          "CI pipeline security basics",
+          "JWT security checklist"
+        ]
+      },
+      {
+        "pillar": "appsec-stories",
+        "ideas": [
+          "Bug found in auth logic",
+          "OWASP Top 10 example breakdown",
+          "Real fix in open source project"
+        ]
+      }
+    ]
+  },
+  "automation_notes": {
+    "input_sources": [
+      "logs/github-activity/*.json for what was built this week",
+      "projects/active.json for current project context",
+      "business/*/marketing.json for brand voice and pillars"
+    ],
+    "output_format": "linkedin/drafts/YYYY-MM-DD-{account}-{pillar}.md",
+    "generation_rules": [
+      "Match activity to appropriate pillar",
+      "Follow post_structure format exactly",
+      "Apply account-specific tone",
+      "Include relevant hashtags",
+      "Stay within word/character limits",
+      "Human reviews and posts manually"
+    ]
+  }
+}
