@@ -62,21 +62,25 @@
           ]
         },
         {
-          "id": "security-perspective",
-          "name": "Security Perspective",
-          "description": "AppSec background informing how I build and think about code",
+          "id": "personal-stories",
+          "name": "Personal Stories",
+          "description": "Authentic life experiences that shaped me as a developer and person. The human side of building.",
           "weight": 0.20,
           "content_types": [
-            "Security-first development",
-            "Lessons from AppSec work",
-            "How security shapes my code",
-            "Common mistakes I catch"
+            "Non-linear path into tech",
+            "Lessons from failure",
+            "Moments that changed my perspective",
+            "Balancing work, side projects, and life",
+            "The human side of being a developer",
+            "Vulnerability that builds connection"
           ],
           "example_hooks": [
-            "My security background changed how I build.",
-            "I found this vulnerability pattern everywhere.",
-            "Most devs miss this security check.",
-            "Here's why I always do X first."
+            "I almost quit coding 6 months in. Here's what changed.",
+            "The worst job I ever had taught me the most.",
+            "I didn't start coding until I was [X]. Here's what I wish I knew.",
+            "This failure cost me 3 months. I'd do it again.",
+            "Everyone saw the launch. Nobody saw the 4am debugging sessions.",
+            "I used to think success meant X. Now I know better."
           ]
         }
       ]
@@ -84,26 +88,110 @@
     "codaissance": {
       "handle": "codaissance",
       "url": "https://linkedin.com/company/codaissance",
-      "purpose": "Company brand, product announcements, portfolio showcase",
+      "purpose": "Company brand, product announcements, portfolio showcase, thought leadership on indie building",
       "posting_frequency": "2x per week",
       "pillars": [
         {
           "id": "build-in-public",
           "name": "Build in Public",
-          "description": "Transparent product development, revenue, decisions",
-          "weight": 0.40
+          "description": "Transparent product development, revenue, decisions, failures, and lessons learned",
+          "weight": 0.35,
+          "content_types": [
+            "Weekly/monthly progress updates",
+            "Revenue and metrics transparency",
+            "Product decisions and tradeoffs",
+            "Features we killed and why",
+            "Failures and what we learned"
+          ],
+          "example_hooks": [
+            "Here's what we shipped this week.",
+            "We killed a feature. Here's why.",
+            "Revenue update: $X MRR. Here's what's working.",
+            "This decision cost us a week. Worth it.",
+            "We were wrong about X. Here's what we learned."
+          ]
         },
         {
-          "id": "technical-deep-dives",
-          "name": "Technical Deep Dives",
-          "description": "Architecture, code quality, testing philosophy",
-          "weight": 0.30
+          "id": "craftsmanship",
+          "name": "Craftsmanship & Quality",
+          "description": "Architecture decisions, code quality philosophy, testing approach, why we choose quality over speed",
+          "weight": 0.20,
+          "content_types": [
+            "Architecture decisions and why",
+            "Testing philosophy and approach",
+            "Code quality standards we follow",
+            "Tech stack choices and tradeoffs",
+            "Refactoring decisions"
+          ],
+          "example_hooks": [
+            "We spent 3 days on a feature users will never see.",
+            "Why we chose Supabase over Firebase.",
+            "Our testing philosophy in 4 lines.",
+            "This refactor saved us months of pain.",
+            "The boring tech choice that let us ship faster."
+          ]
         },
         {
-          "id": "product-value",
-          "name": "Product Value",
-          "description": "What products do and why they help",
-          "weight": 0.30
+          "id": "ai-assisted-building",
+          "name": "AI-Assisted Building",
+          "description": "How we use LLMs effectively, automation philosophy, practical AI workflows, honest takes on what works",
+          "weight": 0.20,
+          "content_types": [
+            "Actual AI workflows we use daily",
+            "Automation decisions and philosophy",
+            "LLM prompt patterns that work",
+            "What AI is bad at (honest takes)",
+            "Tools we use: Claude Code, Cursor, Codex",
+            "The 'AI amplifies skill' perspective"
+          ],
+          "example_hooks": [
+            "I automated this. Here's why I wish I hadn't.",
+            "Claude Code wrote 80% of this feature. Here's the 20% it couldn't.",
+            "My AI workflow for shipping faster without cutting corners.",
+            "Stop asking AI to write code. Start asking it to review yours.",
+            "This automation saves me 2 hours a week. Here's how it works.",
+            "AI made me mass-produce mediocrity. Then I changed my approach."
+          ]
+        },
+        {
+          "id": "security-by-default",
+          "name": "Security by Default",
+          "description": "Security baked in from day one, not bolted on. Leverages founder's AppSec background.",
+          "weight": 0.15,
+          "content_types": [
+            "Security decisions in our products",
+            "How AppSec background shapes our code",
+            "Security vs speed tradeoffs we make",
+            "Common security mistakes we catch",
+            "Why 'add security later' fails"
+          ],
+          "example_hooks": [
+            "This is the first thing we build in every product.",
+            "A security decision that cost us a week. No regrets.",
+            "Why 'add auth later' is a trap.",
+            "The security check that saved us from a breach.",
+            "Most devs skip this. We don't."
+          ]
+        },
+        {
+          "id": "product-philosophy",
+          "name": "Product Philosophy",
+          "description": "Anti-VC, anti-dark-patterns, sustainable building. Why we build what we build, how we build.",
+          "weight": 0.10,
+          "content_types": [
+            "Why we're not VC-backed",
+            "Dark patterns we refuse to use",
+            "Sustainable pricing philosophy",
+            "What we say no to",
+            "The indie builder advantage"
+          ],
+          "example_hooks": [
+            "We don't do annual discounts. Here's why.",
+            "VC money would have killed this product.",
+            "What we say no to (and why it matters).",
+            "The feature request we'll never build.",
+            "Why we're building slowly on purpose."
+          ]
         }
       ]
     },
@@ -168,8 +256,8 @@
         "personal": null,
         "codaissance": {
           "pillar": "build-in-public",
-          "focus": "Product or company update",
-          "priority": "medium"
+          "focus": "Product update, metrics, or transparent sharing",
+          "priority": "high"
         },
         "tampertantrum": null
       },
@@ -189,9 +277,10 @@
       "thursday": {
         "personal": null,
         "codaissance": {
-          "pillar": "technical-deep-dives",
-          "focus": "Architecture decision, code philosophy, or technical content",
-          "priority": "medium"
+          "pillar": "craftsmanship",
+          "alt_pillars": ["ai-assisted-building", "security-by-default"],
+          "focus": "Architecture, AI workflow, or security approach. Rotate between technical pillars.",
+          "priority": "high"
         },
         "tampertantrum": null
       },
@@ -323,12 +412,18 @@
         ]
       },
       {
-        "pillar": "security-perspective",
+        "pillar": "personal-stories",
         "ideas": [
-          "Security check I add to every project",
-          "Common vulnerability I see in reviews",
-          "How AppSec background shapes my code",
-          "Security vs. speed tradeoff I made"
+          "How I got into coding (the non-linear path)",
+          "The moment I almost gave up on tech",
+          "What my worst job taught me about what I want",
+          "Balancing full-time work with WGU and side projects",
+          "The failure that shaped how I approach problems now",
+          "What I wish I knew when I started coding",
+          "The 4am debugging session nobody saw",
+          "How becoming a dad changed my perspective on work",
+          "The imposter syndrome moment that still sticks with me",
+          "Why I chose this path over the 'safe' option"
         ]
       }
     ],
@@ -338,15 +433,72 @@
         "ideas": [
           "Monthly revenue/progress update",
           "Product decision breakdown",
-          "Failure and lesson learned"
+          "Failure and lesson learned",
+          "Feature we cut and why",
+          "User feedback that changed our roadmap",
+          "Week-in-review: what shipped, what didn't",
+          "Metrics we track (and ones we ignore)",
+          "The hardest decision we made this month",
+          "Why we're building X before Y",
+          "Milestone celebration with honest reflection"
         ]
       },
       {
-        "pillar": "technical-deep-dives",
+        "pillar": "craftsmanship",
         "ideas": [
           "Architecture choice and why",
-          "Testing philosophy",
-          "Security approach in products"
+          "Testing philosophy breakdown",
+          "Why we chose X database over Y",
+          "Code review standards we enforce",
+          "The refactor that unlocked everything",
+          "Tech debt we're paying down (and why now)",
+          "Our folder structure philosophy",
+          "Type safety decisions in TypeScript",
+          "Why we don't use X (popular thing)",
+          "The 'boring' stack that lets us ship"
+        ]
+      },
+      {
+        "pillar": "ai-assisted-building",
+        "ideas": [
+          "How we use Claude Code in daily workflow",
+          "Automation we built for this repo",
+          "LLM prompt that saved hours",
+          "What Claude/GPT is terrible at",
+          "AI code review workflow",
+          "The automation philosophy: what to automate",
+          "Context management for AI tools",
+          "When to NOT use AI assistance",
+          "AI for planning vs AI for coding",
+          "How we validate AI-generated code",
+          "The 'myself' repo: AI-assisted knowledge base",
+          "Slash commands that accelerate our workflow"
+        ]
+      },
+      {
+        "pillar": "security-by-default",
+        "ideas": [
+          "RLS policies we add to every table",
+          "Auth flow security checklist",
+          "Input validation approach",
+          "Why we sanitize everything (DOMPurify)",
+          "Security headers we always set",
+          "The OWASP Top 10 check we never skip",
+          "How AppSec background shapes product decisions",
+          "Security vs UX tradeoff we made"
+        ]
+      },
+      {
+        "pillar": "product-philosophy",
+        "ideas": [
+          "Why we're bootstrapped (not VC)",
+          "Dark patterns we refuse to implement",
+          "Pricing philosophy: sustainable, not extractive",
+          "Feature requests we say no to",
+          "The anti-persona: who we don't build for",
+          "Why 'move fast break things' is wrong",
+          "Quality over growth metrics",
+          "The long game of brand equity"
         ]
       }
     ],

@@ -113,18 +113,18 @@ All P0 tasks have been completed. AI tools configured, data complete.
 
 ### Phase 3: Content Generation
 
-- [ ] **LinkedIn Post Generation Pipeline**
-  - **Trigger**: Weekly (Monday, after activity log)
-  - **Input**:
-    - `/logs/github-activity/*.json` (what you built)
-    - `/business/*/marketing.json` (brand voice, content pillars)
-    - `/projects/active.json` (project context)
-  - **Process**:
-    - Identify post-worthy activity (shipped features, learning, milestones)
-    - Match to content pillars
-    - Generate 2-3 drafts per account using AI
-  - **Output**: `/linkedin/drafts/YYYY-MM-DD-{account}-{topic}.md`
-  - **Human Action**: Edit and post manually
+- [x] **LinkedIn Post Generation Pipeline** - COMPLETE
+  - Weekly runs Monday at 8 AM UTC (after activity log)
+  - Uses GPT-4o-mini to generate posts based on:
+    - Content pillars and calendar from `/linkedin/content-ideas.json`
+    - GitHub activity from `/logs/github-activity/*.json`
+    - Active projects from `/projects/active.json`
+  - Outputs to `/linkedin/drafts/YYYY-MM-DD/`:
+    - `posts.md` - All posts formatted for copy/paste
+    - `metadata.json` - Full data with image suggestions (screenshot or AI-generated prompts)
+  - Local test: `node tests/linkedin-post-generator/run.js`
+  - Requires `OPENAI_API_KEY` secret in GitHub repo settings
+  - **Human Action**: Review drafts, edit as needed, post manually
 
 - [ ] **Monthly Assessment Generation**
   - **Trigger**: 1st of each month
@@ -152,8 +152,9 @@ All P0 tasks have been completed. AI tools configured, data complete.
 
 - [x] **Context Snapshot Generator** - COMPLETE
   - Daily runs at 5 AM UTC (before other automations)
-  - Outputs `/logs/context-snapshot.json` (full) and `/logs/context-snapshot-compact.json` (minimal)
-  - Includes: folder structure, project summaries, skill counts, automation status, key file dates
+  - Outputs to `/logs/context/` with dated files (`YYYY-MM-DD.json`), `latest.json`, and `latest-compact.json`
+  - Includes: folder tree, profile summary, project details, skill counts, automation schedules, available commands, key files
+  - Historical tracking: dated snapshots allow analyzing repo evolution over time
   - Local test: `node tests/context-snapshot/run.js`
   - **Human Action**: Prepend to AI context for accurate repo awareness
 
@@ -228,12 +229,17 @@ All P0 tasks have been completed. AI tools configured, data complete.
   github-activity/           # ✅ Created - Daily activity logs
   skill-analysis/            # ✅ Created - Weekly skill reports
   project-status/            # ✅ Created - Weekly status reports
-  context-snapshot.json      # ✅ Created - Full context snapshot
-  context-snapshot-compact.json # ✅ Created - Minimal context snapshot
+  context/                   # ✅ Created - Context snapshots
+    YYYY-MM-DD.json          # Dated full snapshots (historical)
+    latest.json              # Most recent full snapshot
+    latest-compact.json      # Most recent compact snapshot
 
 /linkedin/
   content-ideas.json         # ✅ Created - Pillars, calendar, post rules
-  drafts/                    # Pending - Generated post drafts
+  drafts/                    # ✅ Created - Generated post drafts
+    YYYY-MM-DD/              # Week folder (Monday date)
+      posts.md               # All posts formatted for copy/paste
+      metadata.json          # Full data with image suggestions
 
 /job-applications/
   postings/                  # Pending - Saved job postings
@@ -254,6 +260,7 @@ All P0 tasks have been completed. AI tools configured, data complete.
   skill-analysis/run.js      # ✅ Created - Local test runner
   project-status/run.js      # ✅ Created - Local test runner
   context-snapshot/run.js    # ✅ Created - Local test runner
+  linkedin-post-generator/run.js # ✅ Created - Local test runner
 ```
 
 ---
@@ -295,7 +302,8 @@ All P0 tasks have been completed. AI tools configured, data complete.
 - [x] **Project planning template** - MVP/Post-MVP specs, folder structure
 - [x] **Project specs** - Filled specs for dev-genesis, tempered-ui, mindtrace
 - [x] Expand automation/IDEAS.md
-- [x] **Context Snapshot Generator** - Daily at 5 AM UTC, full and compact versions
+- [x] **Context Snapshot Generator** - Daily at 5 AM UTC, dated snapshots with historical tracking
+- [x] **LinkedIn Post Generator** - Weekly Monday at 8 AM UTC, GPT-4o-mini powered drafts with image suggestions
 
 ---
 
