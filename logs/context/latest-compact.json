@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-20T23:15:19.930Z",
+  "generated_at": "2025-12-21T05:02:51.449Z",
   "profile": "Gavin Hensley - Product Engineer / Customer Success Engineer / Deployment Engineer at APIsec",
   "projects": {
     "active": [
@@ -44,6 +44,7 @@
   "automations": [
     "Context Snapshot: Daily at 5:00 UTC",
     "GitHub Activity Logging: Daily at 6:00 UTC",
+    "LinkedIn Post Generator: Mon at 8:00 UTC",
     "Project Status Automation: Tue at 7:00 UTC",
     "Skill Analysis Pipeline: Mon at 7:00 UTC"
   ],
