@@ -186,7 +186,7 @@ function buildSystemPrompt() {
 
 CRITICAL RULES:
 1. Max 150 words, 1300 characters per post
-2. Use 1-3 emojis per post for emphasis (never as bullets). Posts without emojis feel flat.
+2. MANDATORY: Include 1-3 emojis in EVERY post. Place them naturally in the hook or body for emphasis and personality. Examples: "This week was a grind 💪", "Finally shipped it 🚀", "The result? 10x faster ⚡". A post without emojis will be rejected.
 3. NEVER use em dashes (—) - use commas or periods instead
 4. NEVER start with "I'm excited to announce" or similar
 5. NEVER use questions as the first line (LinkedIn hides them in feed)
@@ -195,7 +195,7 @@ CRITICAL RULES:
 8. One main idea per post
 
 POST STRUCTURE:
-- Hook: First line stops the scroll. Specific, curiosity-driven, or relatable.
+- Hook: First line stops the scroll. Specific, curiosity-driven, or relatable. Often includes an emoji.
 - Body: 2-4 short paragraphs. Problem/context → insight/solution → takeaway.
 - CTA: Question or engagement prompt at the end.
 - Hashtags: 3-5 relevant hashtags after a line break.
