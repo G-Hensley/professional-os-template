@@ -39,12 +39,30 @@ function readJSON(relativePath) {
 
 function getWeekDates(offset = 0) {
   const now = new Date();
-  now.setDate(now.getDate() + (offset * 7));
 
-  // Get Monday of the week
-  const day = now.getDay();
-  const diff = now.getDate() - day + (day === 0 ? -6 : 1);
-  const monday = new Date(now.setDate(diff));
+  // Get current day of week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
+  const dayOfWeek = now.getDay();
+
+  // Calculate days until next Monday (or today if it's Monday)
+  // If today is Monday (1), daysUntilMonday = 0
+  // If today is Tuesday (2), daysUntilMonday = 6 (next Monday)
+  // If today is Sunday (0), daysUntilMonday = 1
+  // If today is Saturday (6), daysUntilMonday = 2
+  let daysUntilMonday;
+  if (dayOfWeek === 0) {
+    // Sunday -> next Monday is tomorrow
+    daysUntilMonday = 1;
+  } else if (dayOfWeek === 1) {
+    // Monday -> use today
+    daysUntilMonday = 0;
+  } else {
+    // Tuesday-Saturday -> calculate days until next Monday
+    daysUntilMonday = 8 - dayOfWeek;
+  }
+
+  // Get the target Monday
+  const monday = new Date(now);
+  monday.setDate(now.getDate() + daysUntilMonday + (offset * 7));
   monday.setHours(0, 0, 0, 0);
 
   const sunday = new Date(monday);
