@@ -1,0 +1,320 @@
+{
+  "week_start": "2025-12-15",
+  "week_end": "2025-12-21",
+  "generated_at": "2025-12-21T01:13:18.654Z",
+  "activity_summary": {
+    "total_commits": 311,
+    "active_repos": [
+      "G-Hensley/bug-hunt-vuln-detection",
+      "G-Hensley/myself",
+      "G-Hensley/dev-genesis",
+      "G-Hensley/dev-genesis-readme-stats",
+      "G-Hensley/dev-genesis-standup-generator",
+      "G-Hensley/hubspot-support-automation",
+      "G-Hensley/apisec-informational-detections-report-generator",
+      "G-Hensley/apisec-mcp-demo",
+      "G-Hensley/dev-genesis-project-stats",
+      "G-Hensley/git-msg-generator"
+    ],
+    "repo_details": {
+      "G-Hensley/bug-hunt-vuln-detection": {
+        "commits": 153,
+        "dates": [
+          "2025-12-04T08:00:00Z",
+          "2025-12-03T08:00:00Z",
+          "2025-12-02T08:00:00Z",
+          "2025-12-01T08:00:00Z",
+          "2025-11-30T08:00:00Z",
+          "2025-11-29T08:00:00Z",
+          "2025-11-28T08:00:00Z",
+          "2025-11-27T08:00:00Z",
+          "2025-11-26T08:00:00Z",
+          "2025-11-25T08:00:00Z",
+          "2025-11-24T08:00:00Z",
+          "2025-11-23T08:00:00Z",
+          "2025-11-22T08:00:00Z",
+          "2025-11-21T08:00:00Z",
+          "2025-11-20T08:00:00Z",
+          "2025-11-19T08:00:00Z",
+          "2025-11-18T08:00:00Z"
+        ]
+      },
+      "G-Hensley/myself": {
+        "commits": 79,
+        "dates": [
+          "2025-12-18T08:00:00Z",
+          "2025-12-17T08:00:00Z",
+          "2025-12-16T08:00:00Z",
+          "2025-12-15T08:00:00Z",
+          "2025-12-19T08:00:00Z",
+          "2025-12-18T08:00:00Z",
+          "2025-12-19T08:00:00Z"
+        ]
+      },
+      "G-Hensley/dev-genesis": {
+        "commits": 29,
+        "dates": [
+          "2025-12-05T08:00:00Z",
+          "2025-12-04T08:00:00Z",
+          "2025-11-30T08:00:00Z",
+          "2025-11-29T08:00:00Z",
+          "2025-11-25T08:00:00Z",
+          "2025-11-24T08:00:00Z",
+          "2025-11-23T08:00:00Z"
+        ]
+      },
+      "G-Hensley/dev-genesis-readme-stats": {
+        "commits": 20,
+        "dates": [
+          "2025-12-14T08:00:00Z",
+          "2025-12-11T08:00:00Z",
+          "2025-12-10T08:00:00Z",
+          "2025-12-09T08:00:00Z",
+          "2025-12-08T08:00:00Z",
+          "2025-12-07T08:00:00Z",
+          "2025-12-05T08:00:00Z"
+        ]
+      },
+      "G-Hensley/dev-genesis-standup-generator": {
+        "commits": 10,
+        "dates": [
+          "2025-12-14T08:00:00Z",
+          "2025-12-11T08:00:00Z",
+          "2025-12-10T08:00:00Z"
+        ]
+      },
+      "G-Hensley/hubspot-support-automation": {
+        "commits": 9,
+        "dates": [
+          "2025-12-14T08:00:00Z"
+        ]
+      },
+      "G-Hensley/apisec-informational-detections-report-generator": {
+        "commits": 7,
+        "dates": [
+          "2025-12-02T08:00:00Z",
+          "2025-11-26T08:00:00Z",
+          "2025-11-25T08:00:00Z"
+        ]
+      },
+      "G-Hensley/apisec-mcp-demo": {
+        "commits": 2,
+        "dates": [
+          "2025-12-18T08:00:00Z",
+          "2025-12-18T08:00:00Z"
+        ]
+      },
+      "G-Hensley/dev-genesis-project-stats": {
+        "commits": 1,
+        "dates": [
+          "2025-12-14T08:00:00Z"
+        ]
+      },
+      "G-Hensley/git-msg-generator": {
+        "commits": 1,
+        "dates": [
+          "2025-12-10T08:00:00Z"
+        ]
+      }
+    }
+  },
+  "post_count": 8,
+  "posts": [
+    {
+      "id": "monday-personal-build-in-public",
+      "account": "personal",
+      "day": "Monday",
+      "date": "2025-12-15",
+      "pillar": "Build in Public",
+      "pillar_id": "build-in-public",
+      "content": {
+        "hook": "This week, I tackled some serious bugs in my projects.",
+        "body": "It’s been a week filled with 311 commits across 10 repositories. The highlight? A focused effort on bug-hunt-vuln-detection, which accounted for 153 commits. \n\nDebugging is always a challenge. I encountered a critical issue that threatened to derail progress on Dev Genesis. I decided to prioritize fixing this over other features, ensuring I didn't compromise on quality. \n\nThe result was not only a smoother workflow but also a more robust application ready for users. Remember, sometimes stepping back to fix what’s broken sets the stage for greater advancements.\n\nWhat challenges are you facing in your projects this week?",
+        "cta": "What challenges are you facing in your projects this week?",
+        "hashtags": [
+          "#buildinpublic",
+          "#softwareengineering",
+          "#webdevelopment"
+        ]
+      },
+      "full_post": "This week, I tackled some serious bugs in my projects.\n\nIt’s been a week filled with 311 commits across 10 repositories. The highlight? A focused effort on bug-hunt-vuln-detection, which accounted for 153 commits. \n\nDebugging is always a challenge. I encountered a critical issue that threatened to derail progress on Dev Genesis. I decided to prioritize fixing this over other features, ensuring I didn't compromise on quality. \n\nThe result was not only a smoother workflow but also a more robust application ready for users. Remember, sometimes stepping back to fix what’s broken sets the stage for greater advancements.\n\nWhat challenges are you facing in your projects this week?\n\nWhat challenges are you facing in your projects this week?\n\n#buildinpublic #softwareengineering #webdevelopment",
+      "image": {
+        "type": "screenshot",
+        "description": "A screenshot of the code editor showing bug fixes and commit history.",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "monday-tampertantrum-technical-howtos",
+      "account": "tampertantrum",
+      "day": "Monday",
+      "date": "2025-12-15",
+      "pillar": "Technical How-Tos",
+      "pillar_id": "technical-howtos",
+      "content": {
+        "hook": "Start your week with a simple yet powerful security tip.",
+        "body": "Threat modeling your REST API can enhance your application's security posture significantly. Begin by identifying potential threats like unauthorized access or data exposure. \n\nNext, map out your API endpoints and understand the data flow. This helps you visualize where vulnerabilities might exist. Create a checklist of possible threats, such as SQL injection and CSRF attacks, and prioritize them based on their risk level. \n\nImplementing these steps allows you to proactively address security concerns and fortify your application against potential exploits.",
+        "cta": "What security practices are you implementing this week?",
+        "hashtags": [
+          "#appsec",
+          "#cybersecurity",
+          "#devsecops"
+        ]
+      },
+      "full_post": "Start your week with a simple yet powerful security tip.\n\nThreat modeling your REST API can enhance your application's security posture significantly. Begin by identifying potential threats like unauthorized access or data exposure. \n\nNext, map out your API endpoints and understand the data flow. This helps you visualize where vulnerabilities might exist. Create a checklist of possible threats, such as SQL injection and CSRF attacks, and prioritize them based on their risk level. \n\nImplementing these steps allows you to proactively address security concerns and fortify your application against potential exploits.\n\nWhat security practices are you implementing this week?\n\n#appsec #cybersecurity #devsecops",
+      "image": {
+        "type": "screenshot",
+        "description": "A screenshot of a code editor displaying a threat model diagram for a REST API.",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "tuesday-codaissance-build-in-public",
+      "account": "codaissance",
+      "day": "Tuesday",
+      "date": "2025-12-16",
+      "pillar": "Build in Public",
+      "pillar_id": "build-in-public",
+      "content": {
+        "hook": "This month, we hit a milestone: $10K MRR.",
+        "body": "Transparency is key in our journey. \n\nWith 311 commits and 10 active repositories, our focus on user feedback is shaping our product direction. We prioritized bug-hunt-vuln-detection, resulting in a secure and reliable experience for our users. \n\nOur active projects, like Dev Genesis and TemperedUI, are tailored for developers who need speed and security. As we build, we keep iterating based on what our users tell us, ensuring we deliver real value. \n\nHere’s to continued growth and learning in public!",
+        "cta": "What metrics are you tracking in your product development?",
+        "hashtags": [
+          "#buildinpublic",
+          "#saas",
+          "#indiehacker",
+          "#startup",
+          "#productdevelopment"
+        ]
+      },
+      "full_post": "This month, we hit a milestone: $10K MRR.\n\nTransparency is key in our journey. \n\nWith 311 commits and 10 active repositories, our focus on user feedback is shaping our product direction. We prioritized bug-hunt-vuln-detection, resulting in a secure and reliable experience for our users. \n\nOur active projects, like Dev Genesis and TemperedUI, are tailored for developers who need speed and security. As we build, we keep iterating based on what our users tell us, ensuring we deliver real value. \n\nHere’s to continued growth and learning in public!\n\nWhat metrics are you tracking in your product development?\n\n#buildinpublic #saas #indiehacker #startup #productdevelopment",
+      "image": {
+        "type": "screenshot",
+        "description": "A screenshot of our dashboard showing MRR and commit statistics.",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "wednesday-personal-technical-learning",
+      "account": "personal",
+      "day": "Wednesday",
+      "date": "2025-12-17",
+      "pillar": "Technical Learning",
+      "pillar_id": "technical-learning",
+      "content": {
+        "hook": "This week, I discovered a tool that transformed my approach to coding.",
+        "body": "While diving into my recent projects, I stumbled upon a new debugging tool that streamlined my workflow. \n\nWith 311 commits across 10 repos, particularly in bug-hunt-vuln-detection, I realized how crucial efficient debugging is for maintaining momentum. This tool not only identifies bugs faster but also helps me understand their root causes, reducing the time I spend on fixes. \n\nThe insight I've gained is that the right tools can dramatically enhance productivity and reduce frustration. Investing time in the best resources pays off in the long run.",
+        "cta": "What tools have you found that improved your coding efficiency?",
+        "hashtags": [
+          "#buildinpublic",
+          "#softwareengineering",
+          "#webdevelopment"
+        ]
+      },
+      "full_post": "This week, I discovered a tool that transformed my approach to coding.\n\nWhile diving into my recent projects, I stumbled upon a new debugging tool that streamlined my workflow. \n\nWith 311 commits across 10 repos, particularly in bug-hunt-vuln-detection, I realized how crucial efficient debugging is for maintaining momentum. This tool not only identifies bugs faster but also helps me understand their root causes, reducing the time I spend on fixes. \n\nThe insight I've gained is that the right tools can dramatically enhance productivity and reduce frustration. Investing time in the best resources pays off in the long run.\n\nWhat tools have you found that improved your coding efficiency?\n\n#buildinpublic #softwareengineering #webdevelopment",
+      "image": {
+        "type": "screenshot",
+        "description": "A screenshot of the debugging tool in action, showing code and identified bugs.",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "wednesday-tampertantrum-appsec-stories",
+      "account": "tampertantrum",
+      "day": "Wednesday",
+      "date": "2025-12-17",
+      "pillar": "AppSec Wins/Stories",
+      "pillar_id": "appsec-stories",
+      "content": {
+        "hook": "A single bug in authentication logic led to a major security breakthrough.",
+        "body": "While reviewing one of our projects, we discovered a vulnerability in the authentication flow. This bug allowed unauthorized access to sensitive user data, highlighting a critical gap in our security measures.\n\nAfter identifying the issue, our team implemented a robust fix by enhancing the validation checks and integrating multi-factor authentication. This not only resolved the immediate problem but also strengthened our overall security posture.\n\nThis experience underscores the importance of continuous testing and vigilance in application security. Even small bugs can lead to significant risks if not addressed promptly.",
+        "cta": "Have you experienced a similar security breakthrough? Share your story!",
+        "hashtags": [
+          "#appsec",
+          "#cybersecurity",
+          "#devsecops",
+          "#webappsecurity",
+          "#securitytips"
+        ]
+      },
+      "full_post": "A single bug in authentication logic led to a major security breakthrough.\n\nWhile reviewing one of our projects, we discovered a vulnerability in the authentication flow. This bug allowed unauthorized access to sensitive user data, highlighting a critical gap in our security measures.\n\nAfter identifying the issue, our team implemented a robust fix by enhancing the validation checks and integrating multi-factor authentication. This not only resolved the immediate problem but also strengthened our overall security posture.\n\nThis experience underscores the importance of continuous testing and vigilance in application security. Even small bugs can lead to significant risks if not addressed promptly.\n\nHave you experienced a similar security breakthrough? Share your story!\n\n#appsec #cybersecurity #devsecops #webappsecurity #securitytips",
+      "image": {
+        "type": "screenshot",
+        "description": "A screenshot of the code editor showing the authentication logic before and after the fix.",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "thursday-codaissance-craftsmanship",
+      "account": "codaissance",
+      "day": "Thursday",
+      "date": "2025-12-18",
+      "pillar": "Craftsmanship & Quality",
+      "pillar_id": "craftsmanship",
+      "content": {
+        "hook": "We made a tough call that changed everything for our architecture.",
+        "body": "Choosing the right architecture is crucial for long-term success. Recently, we opted for a microservices approach over a monolithic structure. This decision allows us to scale independently and deploy updates without downtime.\n\nWhile it took extra time upfront to set up, the benefits are clear. Each service can evolve separately, enabling faster iterations and improving our response to changing requirements. Plus, it enhances security by isolating components, reducing the risk of a single point of failure.\n\nQuality over speed is our mantra, and this shift exemplifies that philosophy. We believe investing time in architecture pays off in robustness and agility.",
+        "cta": "What architectural choices have you made that transformed your projects?",
+        "hashtags": [
+          "#buildinpublic",
+          "#saas",
+          "#productdevelopment"
+        ]
+      },
+      "full_post": "We made a tough call that changed everything for our architecture.\n\nChoosing the right architecture is crucial for long-term success. Recently, we opted for a microservices approach over a monolithic structure. This decision allows us to scale independently and deploy updates without downtime.\n\nWhile it took extra time upfront to set up, the benefits are clear. Each service can evolve separately, enabling faster iterations and improving our response to changing requirements. Plus, it enhances security by isolating components, reducing the risk of a single point of failure.\n\nQuality over speed is our mantra, and this shift exemplifies that philosophy. We believe investing time in architecture pays off in robustness and agility.\n\nWhat architectural choices have you made that transformed your projects?\n\n#buildinpublic #saas #productdevelopment",
+      "image": {
+        "type": "screenshot",
+        "description": "Screenshot of architecture diagram showing microservices architecture.",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "friday-personal-career-journey",
+      "account": "personal",
+      "day": "Friday",
+      "date": "2025-12-19",
+      "pillar": "Career Journey",
+      "pillar_id": "career-journey",
+      "content": {
+        "hook": "Reflecting on a week filled with growth and learning.",
+        "body": "This week, I completed 311 commits across 10 repositories. It’s a reminder of how far I’ve come in my career journey.\n\nWorking on projects like Dev Genesis and TemperedUI has sharpened my skills and taught me the value of collaboration. Each commit represents a step toward building something meaningful, and I feel proud of the impact we're making.\n\nThe biggest lesson? Embrace challenges as opportunities for growth. They lead to breakthroughs that advance your skills and confidence.\n\nWhat’s a recent achievement you’re proud of?",
+        "cta": "Share your wins below!",
+        "hashtags": [
+          "#buildinpublic",
+          "#softwareengineering",
+          "#careergrowth"
+        ]
+      },
+      "full_post": "Reflecting on a week filled with growth and learning.\n\nThis week, I completed 311 commits across 10 repositories. It’s a reminder of how far I’ve come in my career journey.\n\nWorking on projects like Dev Genesis and TemperedUI has sharpened my skills and taught me the value of collaboration. Each commit represents a step toward building something meaningful, and I feel proud of the impact we're making.\n\nThe biggest lesson? Embrace challenges as opportunities for growth. They lead to breakthroughs that advance your skills and confidence.\n\nWhat’s a recent achievement you’re proud of?\n\nShare your wins below!\n\n#buildinpublic #softwareengineering #careergrowth",
+      "image": {
+        "type": "screenshot",
+        "description": "A screenshot of a code editor showing lines of code from the week’s commits.",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "friday-tampertantrum-pain-points",
+      "account": "tampertantrum",
+      "day": "Friday",
+      "date": "2025-12-19",
+      "pillar": "Startup/Dev Pain Points",
+      "pillar_id": "pain-points",
+      "content": {
+        "hook": "Every developer has faced the frustration of security vulnerabilities sneaking into their code.",
+        "body": "In the rush to push features and meet deadlines, it's easy to overlook security measures. Just this week, our team made 311 commits across 10 repositories, and I found myself deep in a bug-hunt-vuln-detection project.\n\nThe reality is, many developers grapple with balancing speed and security. It's not just about writing code; it's about ensuring that code is secure from the get-go. That’s where tools like TemperedUI come into play, allowing you to ship secure applications without the need to write complex security code.\n\nPrioritizing security doesn't have to slow you down. By integrating security from the start, you can build faster and safer, giving you peace of mind and enhancing your product's integrity.",
+        "cta": "How do you ensure security in your development process?",
+        "hashtags": [
+          "#appsec",
+          "#cybersecurity",
+          "#devsecops"
+        ]
+      },
+      "full_post": "Every developer has faced the frustration of security vulnerabilities sneaking into their code.\n\nIn the rush to push features and meet deadlines, it's easy to overlook security measures. Just this week, our team made 311 commits across 10 repositories, and I found myself deep in a bug-hunt-vuln-detection project.\n\nThe reality is, many developers grapple with balancing speed and security. It's not just about writing code; it's about ensuring that code is secure from the get-go. That’s where tools like TemperedUI come into play, allowing you to ship secure applications without the need to write complex security code.\n\nPrioritizing security doesn't have to slow you down. By integrating security from the start, you can build faster and safer, giving you peace of mind and enhancing your product's integrity.\n\nHow do you ensure security in your development process?\n\n#appsec #cybersecurity #devsecops",
+      "image": {
+        "type": "screenshot",
+        "description": "A screenshot of a code editor with highlighted security vulnerabilities",
+        "ai_prompt": null
+      }
+    }
+  ]
+}
