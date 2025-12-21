@@ -364,8 +364,8 @@
     "constraints": {
       "max_words": 150,
       "max_characters": 1300,
-      "emoji_count": "1-3 per post",
-      "emoji_usage": "Use for emphasis, personality, and visual breaks. Posts without emojis feel flat. Never use as bullet points.",
+      "emoji_count": "2-3 per post (minimum 2)",
+      "emoji_usage": "Place one in the hook AND one or two in the body. Posts with fewer than 2 emojis feel flat. Never use as bullet points.",
       "forbidden": [
         "Em dashes (use commas or periods instead)",
         "Corporate jargon (leverage, synergy, etc.)",
