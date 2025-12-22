@@ -80,6 +80,9 @@ A structured data repository designed to be consumed by AI tools (Claude Code, C
 | `profile/resume.md` | Current resume |
 | `profile/RESUME_GENERATION.md` | Resume generation instructions |
 | `business/BUSINESS_GOALS.md` | High-level business objectives |
+| `business/codaissance/roadmap.md` | 2026 product roadmap |
+| `business/tampertantrum-labs/roadmap.md` | 2026 consulting roadmap |
+| `learning/roadmap.md` | 2026 learning roadmap |
 
 ## Businesses
 
@@ -124,6 +127,7 @@ myself/
 │   │   ├── marketing.json    # Content pillars, channels
 │   │   ├── goals.md          # SMART goals
 │   │   ├── financials.json   # Revenue tracking
+│   │   ├── roadmap.md        # 2026 product roadmap
 │   │   └── assets/           # Logo files
 │   │
 │   └── tampertantrum-labs/   # AppSec consulting
@@ -134,6 +138,7 @@ myself/
 │       ├── marketing.json    # Content pillars, ideas
 │       ├── goals.md          # SMART goals, financials
 │       ├── financials.json   # Consulting tracking
+│       ├── roadmap.md        # 2026 consulting roadmap
 │       └── assets/           # Logo files
 │
 ├── job-applications/         # Career tracking
@@ -142,7 +147,8 @@ myself/
 │   └── interviews.json       # Interview tracking
 │
 ├── learning/                 # Skill development
-│   ├── roadmap.json          # Learning paths
+│   ├── roadmap.md            # 2026 learning roadmap (skills-based)
+│   ├── roadmap.json          # Learning paths (template)
 │   └── completed.json        # Completed courses
 │
 ├── ideas/                    # Idea capture
