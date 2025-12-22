@@ -50,7 +50,8 @@
     "monetization_strategy": "Open-source",
     "status": "In Progress",
     "priority": 10,
-    "due_date": "2025-12-10",
+    "completion_percentage": 80,
+    "due_date": "2026-01-05",
     "problem": "Starting a new software project wastes hours on repetitive setup tasks—configuring Git, setting up issue templates, configuring AI assistants, establishing workflows, and implementing quality tooling. Developers spend entire afternoons on boilerplate configuration instead of writing code. By the time the repository is properly structured, momentum and excitement have already faded.",
     "solution": "Dev Genesis is a GitHub template repository that handles all project setup automatically. In under 30 minutes, it generates a fully-configured repository with AI planning prompts that create importable GitHub issues, pre-configured support for Claude Code, Cursor, Copilot, and Windsurf, automated security scanning, and professional workflows. Developers go from rough idea to organized, production-ready project structure instantly—then start coding immediately.",
     "target_audience": [
@@ -64,6 +65,35 @@
     "mission_statement": "Dev Genesis exists to eliminate the friction between inspiration and implementation. Every hour spent on repository setup is an hour stolen from actual building. Our mission is to give developers back their time and momentum by automating the tedious configuration work that stands between great ideas and great code, making it possible to go from concept to coding in minutes instead of days.",
     "success_milestone": "10 developers use Dev Genesis to bootstrap a project and report that setup time was reduced to under 30 minutes",
     "tagline": "From idea to coding in 30 minutes. Stop configuring, start building."
+  },
+  "vibiom": {
+    "name": "Vibiom",
+    "repo_url": "https://github.com/G-Hensley/vibiom",
+    "type": "CLI Tool",
+    "description": "Vibiom MVP is a multi-agent AI orchestrator that coordinates 3 specialized agents (Product, Backend, Security) to build production-grade software from specifications. Proves that coordinated AI specialists produce better code than single-agent systems.",
+    "technologies": [
+      "TypeScript",
+      "Node.js",
+      "Commander",
+      "Anthropic SDK",
+      "YAML",
+      "Zod"
+    ],
+    "monetization_strategy": "Open-source MVP, SaaS later",
+    "status": "In Progress",
+    "priority": 9,
+    "blocked_by": "Dev Genesis",
+    "due_date": "2026-02-15",
+    "problem": "Solo developers want to build ambitious products but can't afford full engineering organizations. Existing AI coding tools help write code faster, but they're single-agent assistants—you still do all the architecture, security review, testing, and coordination yourself.",
+    "solution": "Vibiom MVP coordinates 3 specialized agents: Product (specs), Backend (implementation), Security (review). Each agent specializes in one domain, validates previous work, and hands off through structured workflows.",
+    "target_audience": [
+      "Solo developers wanting to build complex products",
+      "Small startups needing rapid prototyping",
+      "Freelance developers scaling output"
+    ],
+    "mission_statement": "Prove that coordinated AI specialists build better software than single AI generalists.",
+    "success_milestone": "Successfully orchestrate 3 agents to build a complete backend API from a specification",
+    "tagline": "Multi-agent development that actually works."
   },
   "tempered-ui": {
     "name": "TemperedUI",
@@ -85,9 +115,10 @@
       "Storybook"
     ],
     "monetization_strategy": "Freemium",
-    "status": "In Progress",
+    "status": "Planned",
     "priority": 8,
-    "due_date": "2026-01-16",
+    "blocked_by": "Vibiom",
+    "due_date": "2026-03-15",
     "problem": "Building secure web applications requires developers to manually implement protection against XSS, CSRF, injection attacks, and other vulnerabilities for every input, form, and link. Security code is repetitive, easy to forget, and constantly needs updating as new attack vectors emerge. Most component libraries prioritize aesthetics over security, leaving developers to bolt on protection themselves—often incorrectly.",
     "solution": "TemperedUI is a React component library where security is built into every component by default. Inputs auto-sanitize, forms include CSRF token management, links prevent tabnabbing, and all components are designed by an application security professional. Developers get beautiful, accessible, Tailwind-styled components that protect against common vulnerabilities automatically—no manual security code required.",
     "target_audience": [
@@ -112,14 +143,15 @@
       "React",
       "Tailwind CSS",
       "Supabase",
+      "TemperedUI",
       "Vitest",
-      "GitHub Actions",
-      "Turborepo"
+      "GitHub Actions"
     ],
     "monetization_strategy": "SaaS Subscription",
-    "status": "In Progress",
+    "status": "Planned",
     "priority": 7,
-    "due_date": "2026-02-01",
+    "blocked_by": "TemperedUI",
+    "due_date": "2026-04-15",
     "problem": "Teachers, therapists, and school counselors need to document student behavioral incidents quickly and accurately, but existing solutions are either too slow (paper notes that get lost), too clunky (spreadsheets), or too complex (enterprise software designed for administrators, not frontline educators). Every minute spent on documentation is a minute away from students.",
     "solution": "MindTrace is built specifically for busy educators who need rapid documentation and easy access to behavioral data. Log an incident in under 30 seconds: select student, choose behavior type and mood, mark if aggressive or sensory-related, add notes, save. Instant search and filtering of historical logs makes it easy to prepare for parent meetings, IEP planning, and intervention tracking.",
     "target_audience": [
