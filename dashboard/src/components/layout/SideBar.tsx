@@ -1,14 +1,8 @@
 function SideBar() {
   return (
-    <div className="w-64 h-full bg-gray-800 text-white">
-      <h2 className="text-2xl font-bold p-4">Sidebar</h2>
-      <ul>
-        <li className="p-4 hover:bg-gray-700">Home</li>
-        <li className="p-4 hover:bg-gray-700">Profile</li>
-        <li className="p-4 hover:bg-gray-700">Settings</li>
-        <li className="p-4 hover:bg-gray-700">Logout</li>
-      </ul>
-    </div>
+    <nav aria-label="Sidebar" className="bg-teal-950">
+      {/* SideBar content goes here */}
+    </nav>
   );
 }
 
