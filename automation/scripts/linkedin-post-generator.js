@@ -43,26 +43,16 @@ function getWeekDates(offset = 0) {
   // Get current day of week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
   const dayOfWeek = now.getDay();
 
-  // Calculate days until next Monday (or today if it's Monday)
-  // If today is Monday (1), daysUntilMonday = 0
-  // If today is Tuesday (2), daysUntilMonday = 6 (next Monday)
-  // If today is Sunday (0), daysUntilMonday = 1
-  // If today is Saturday (6), daysUntilMonday = 2
-  let daysUntilMonday;
-  if (dayOfWeek === 0) {
-    // Sunday -> next Monday is tomorrow
-    daysUntilMonday = 1;
-  } else if (dayOfWeek === 1) {
-    // Monday -> use today
-    daysUntilMonday = 0;
-  } else {
-    // Tuesday-Saturday -> calculate days until next Monday
-    daysUntilMonday = 8 - dayOfWeek;
-  }
+  // Calculate days BACK to this week's Monday (anchor to current week, not next)
+  // If today is Monday (1), daysSinceMonday = 0
+  // If today is Tuesday (2), daysSinceMonday = 1
+  // If today is Sunday (0), daysSinceMonday = 6 (treat as end of previous week)
+  // If today is Saturday (6), daysSinceMonday = 5
+  const daysSinceMonday = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
 
-  // Get the target Monday
+  // Get this week's Monday, then apply offset
   const monday = new Date(now);
-  monday.setDate(now.getDate() + daysUntilMonday + (offset * 7));
+  monday.setDate(now.getDate() - daysSinceMonday + (offset * 7));
   monday.setHours(0, 0, 0, 0);
 
   const sunday = new Date(monday);

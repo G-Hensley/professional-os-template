@@ -186,10 +186,35 @@ function parseSalary(min, max) {
 function matchesKeywords(job) {
   const text = `${job.title} ${job.description}`.toLowerCase();
   const title = job.title.toLowerCase();
+  const location = (job.location || '').toLowerCase();
 
   // Check exclude terms in title only (descriptions often mention management for context)
   for (const term of SEARCH_CONFIG.excludeTerms) {
     if (title.includes(term.toLowerCase())) {
+      return false;
+    }
+  }
+
+  // Check location requirement (must be remote or USA-based)
+  const locationConfig = SEARCH_CONFIG.location.toLowerCase();
+  if (locationConfig === 'remote') {
+    const isRemote = location.includes('remote') ||
+                     location.includes('anywhere') ||
+                     location.includes('worldwide') ||
+                     location.includes('usa') ||
+                     location.includes('united states') ||
+                     location === '';
+    if (!isRemote) {
+      return false;
+    }
+  }
+
+  // Check required terms if specified (at least one must match)
+  if (SEARCH_CONFIG.requiredTerms && SEARCH_CONFIG.requiredTerms.length > 0) {
+    const hasRequired = SEARCH_CONFIG.requiredTerms.some(term =>
+      text.includes(term.toLowerCase())
+    );
+    if (!hasRequired) {
       return false;
     }
   }

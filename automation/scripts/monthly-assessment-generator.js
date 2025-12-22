@@ -132,11 +132,12 @@ function getProjectsData() {
 }
 
 function getJobSearchData() {
-  const applications = readJSON('job-applications/applications.json') || {};
-  const interviews = readJSON('job-applications/interviews.json') || {};
+  const applicationsFile = readJSON('job-applications/applications.json') || {};
+  const interviewsFile = readJSON('job-applications/interviews.json') || {};
 
-  const appList = Object.values(applications);
-  const interviewList = Object.values(interviews);
+  // Access the nested arrays and filter out empty placeholder entries
+  const appList = (applicationsFile.applications || []).filter(app => app.id && app.company);
+  const interviewList = (interviewsFile.interviews || []).filter(interview => interview.id && interview.company);
 
   return {
     total_applications: appList.length,
