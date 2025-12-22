@@ -20,7 +20,7 @@
 }
 
 body {
-  background: var(--color-teal-950);
+  background: radial-gradient(at top left, var(--color-teal-900), var(--color-teal-950) 60%);
 }
 
 @layer utilities {
@@ -31,7 +31,7 @@ body {
   }
 
   .neumorphic {
-    box-shadow:  4px 4px 9px #0b2120, 
-    -4px -4px 9px #153b3a;
+    box-shadow:  3px 3px 12px #0b2120, 
+    -3px -3px 12px #274b49;
   }
 }
