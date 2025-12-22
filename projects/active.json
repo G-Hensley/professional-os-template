@@ -1,4 +1,36 @@
 {
+  "professional-os": {
+    "name": "Professional OS (working title)",
+    "repo_url": "https://github.com/G-Hensley/myself",
+    "type": "Digital Product",
+    "description": "A version-controlled, AI-ready knowledge base framework for developers. Structured repository template that automates resume generation, content creation, skill tracking, and professional knowledge management. Designed to provide consistent context to AI tools (Claude, Copilot, Cursor, etc.) while eliminating repetitive self-explanation.",
+    "technologies": [
+      "GitHub Template",
+      "Node.js",
+      "GitHub Actions",
+      "JSON Schemas",
+      "Markdown",
+      "Claude Code",
+      "Codex",
+      "Gemini CLI"
+    ],
+    "monetization_strategy": "Tiered one-time purchase ($97-$997) with future SaaS upgrade path",
+    "status": "Planning",
+    "priority": 10,
+    "due_date": "2026-01-31",
+    "problem": "Developers juggling employment, side projects, content creation, and job searching constantly re-explain context to AI tools, manually track skills across platforms, and struggle to maintain consistency between LinkedIn, GitHub, resumes, and portfolios. Every new AI conversation starts from zero.",
+    "solution": "A version-controlled knowledge base that serves as the single source of truth for professional identity. AI tools read structured data (skills, experience, projects) and generate tailored outputs automatically. GitHub Actions handle routine updates. The developer stops re-explaining themselves and starts leveraging their accumulated context.",
+    "target_audience": [
+      "Senior developers managing complex professional identities across multiple platforms",
+      "Developers actively job searching who need tailored resumes quickly",
+      "Solo founders building in public who need consistent content across channels",
+      "Freelancers juggling multiple clients and projects who need professional organization",
+      "Developers who use AI tools daily and want them to understand their full context"
+    ],
+    "mission_statement": "Make professional knowledge management work WITH AI instead of fighting it. Stop re-explaining yourself to every new tool, every new conversation, every new application. Your context should compound, not reset.",
+    "success_milestone": "10 paying customers using the framework to generate resumes or content, with at least 3 reporting time savings",
+    "tagline": "Your professional identity, version-controlled. Stop re-explaining yourself to AI."
+  },
   "dev-genesis": {
     "name": "Dev Genesis",
     "repo_url": "https://github.com/G-Hensley/dev-genesis",
