@@ -19,12 +19,15 @@ A structured data repository designed to be consumed by AI tools (Claude Code, C
 
 | Pipeline | Status | Schedule |
 |----------|--------|----------|
+| Daily Date Update | Active | Daily 12:05 AM UTC |
 | Context Snapshot | Active | Daily 5 AM UTC |
 | GitHub Activity Log | Active | Daily 6 AM UTC |
 | Skill Analysis | Active | Weekly Mon 7 AM UTC |
 | Project Status | Active | Weekly Tue 7 AM UTC |
-| LinkedIn Drafts | Planned | Weekly |
-| Weekly Summary | Planned | Sunday |
+| LinkedIn Post Generator | Active | Weekly Mon 8 AM UTC |
+| Job Posting Monitor | Active | Weekly Sun 5 PM UTC |
+| Weekly Summary | Active | Weekly Sun 6 PM UTC |
+| Monthly Assessment | Active | Monthly 1st 9 AM UTC |
 
 ## Quick Start for AI Tools
 

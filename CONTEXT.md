@@ -75,6 +75,7 @@ Wife's application security consulting business. Gavin provides marketing strate
   - `github-activity/` - Daily activity logs (YYYY-MM.json)
   - `skill-analysis/` - Weekly skill reports
   - `project-status/` - Weekly project status reports
+  - `weekly-summary/` - Weekly summary reports (YYYY-MM-DD.json/.md)
 - `/tests/` - Local test runners for automation scripts
 
 ## Root Files
@@ -143,12 +144,15 @@ AI tools with access to this repo can:
 
 | Pipeline | Schedule | What it Does |
 |----------|----------|--------------|
+| Daily Date Update | Daily 12:05 AM UTC | Updates current date in CONTEXT.md for AI tools |
 | Context Snapshot | Daily 5 AM UTC | Generates repo state snapshot → `/logs/context-snapshot.json` |
 | GitHub Activity Log | Daily 6 AM UTC | Pulls commits, PRs, issues → `/logs/github-activity/` |
 | Skill Analysis | Weekly Mon 7 AM UTC | Detects skills from repos, suggests updates → creates PR |
 | Project Status | Weekly Tue 7 AM UTC | Detects stale/completed projects → creates PR |
-| LinkedIn Drafts | Weekly (planned) | Generates post drafts from activity |
-| Weekly Summary | Sunday (planned) | Reports what automations accomplished |
+| LinkedIn Post Generator | Weekly Mon 8 AM UTC | Generates post drafts from activity → `/linkedin/drafts/` |
+| Job Posting Monitor | Weekly Sun 5 PM UTC | Finds matching jobs from free APIs → `/job-applications/opportunities/` |
+| Weekly Summary | Weekly Sun 6 PM UTC | Reports automation results + creates manual todos → GitHub Issue |
+| Monthly Assessment | Monthly 1st 9 AM UTC | Comprehensive self-assessment → `/assessments/` |
 
 ## Human Actions (Cannot Be Automated)
 
