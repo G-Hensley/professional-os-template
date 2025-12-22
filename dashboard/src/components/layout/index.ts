@@ -1,4 +1,3 @@
-export { Sidebar } from './Sidebar';
+export { SideBar } from './SideBar';
 export { TopBar } from './TopBar';
-export { Shell } from './Shell';
 export { Footer } from './Footer';
