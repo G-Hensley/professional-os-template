@@ -20,5 +20,18 @@
 }
 
 body {
-  background: var(--color-charcoal-950);
+  background: var(--color-teal-950);
+}
+
+@layer utilities {
+  .title-gradient {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .neumorphic {
+    box-shadow:  4px 4px 9px #0b2120, 
+    -4px -4px 9px #153b3a;
+  }
 }
