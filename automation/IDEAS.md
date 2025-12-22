@@ -142,31 +142,73 @@ Auto-generate monthly self-assessments.
 
 ---
 
-### Job Posting Monitor
-**Status**: Not Started
-**Complexity**: Medium
+### Job Search Pipeline (3-Stage Automation)
+**Status**: In Progress
+**Complexity**: Medium-High
 **Value**: High
-**Type**: n8n + Gemini API
+**Type**: GitHub Actions + AI APIs
 
-Automatically find and filter job postings matching your criteria.
+Full automated job search pipeline from discovery to application.
+
+#### Stage 1: Job Discovery (Weekly - Sunday)
+**Status**: Building
+**File**: `.github/workflows/job-posting-monitor.yml`
+
+Find and categorize job postings matching criteria.
 
 **Implementation**:
-- n8n workflow runs daily
-- Scrapes/monitors job boards (LinkedIn, Indeed, company career pages)
-- Filters against criteria in `JOB_SEARCH.md`:
-  - Remote required
-  - Salary range
-  - Tech stack match
-  - Role type
-- Calls Gemini API to score and summarize matches
-- Writes new opportunities to `/job-applications/opportunities.json`
-- Sends notification (email/Slack) for high-match roles
+- GitHub Action runs weekly (Sunday evening)
+- Queries free job APIs:
+  - Adzuna API (global aggregator, free tier)
+  - Remotive API (remote-focused, no auth)
+  - Himalayas API (remote jobs, free)
+- Filters against `JOB_SEARCH.md` criteria:
+  - Keywords: react, typescript, full-stack, node.js
+  - Location: remote, US
+  - Salary: $90k+ minimum
+- AI clusters similar jobs into groups (jobs a single resume could cover)
+- Writes to `/job-applications/opportunities/YYYY-MM-DD.json`:
+  - Raw jobs with title, company, description, salary, url
+  - Grouped by resume-type (e.g., "Full-Stack React", "Frontend TS", etc.)
+- Creates GitHub Issue summarizing findings
 
-**Data Sources**:
-- LinkedIn Jobs (via unofficial API or scraping)
-- Indeed RSS feeds
-- Target company career pages
-- Hacker News Who's Hiring
+#### Stage 2: Resume Generation (Weekly - Monday) - FUTURE
+**Status**: Planned
+
+Generate tailored resumes for each job cluster.
+
+**Implementation**:
+- Reads job clusters from Stage 1
+- For each cluster (3-5 groups typically):
+  - AI generates tailored resume emphasizing relevant skills
+  - Outputs to `/job-applications/resumes/YYYY-MM-DD-{cluster}.md`
+- Creates PR with generated resumes for review
+
+#### Stage 3: Auto-Application (Weekly - Tuesday) - FUTURE
+**Status**: Planned (Requires API research)
+
+Automatically apply to jobs using generated resumes.
+
+**Implementation**:
+- Research which job boards have application APIs
+- For jobs with API access:
+  - Submit application with tailored resume
+  - Log to `applications.json`
+- For jobs without API:
+  - Generate application package (resume + cover letter)
+  - Create checklist for manual application
+- Track success rates by cluster type
+
+**Data Sources** (Free APIs):
+- Adzuna API - https://developer.adzuna.com/
+- Remotive API - https://remotive.com/api
+- Himalayas API - https://himalayas.app/jobs/api
+- Arbeitnow API - https://arbeitnow.com/api (Europe/Remote)
+
+**NOT using** (too fragile):
+- LinkedIn scraping (anti-bot detection)
+- Indeed scraping (blocks aggressively)
+- Custom career page scrapers (high maintenance)
 
 ---
 

@@ -1,0 +1,64 @@
+name: Job Posting Monitor
+
+on:
+  schedule:
+    # Run every Sunday at 5 PM UTC (12 PM EST / 1 PM EDT)
+    - cron: '0 17 * * 0'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run without writing files'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  find-jobs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run job posting monitor
+        env:
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+        run: node automation/scripts/job-posting-monitor.js
+
+      - name: Commit results
+        if: ${{ inputs.dry_run != 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add job-applications/opportunities/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update job opportunities [automated]"
+            git push
+          fi
+
+      - name: Create summary issue
+        if: ${{ inputs.dry_run != 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TODAY=$(date -u +%Y-%m-%d)
+          if [ -f "job-applications/opportunities/${TODAY}.md" ]; then
+            BODY=$(cat "job-applications/opportunities/${TODAY}.md")
+            gh issue create \
+              --title "Job Opportunities - ${TODAY}" \
+              --body "${BODY}" \
+              --label "job-search,automated"
+          fi

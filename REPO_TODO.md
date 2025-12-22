@@ -172,11 +172,15 @@ All P0 tasks have been completed. AI tools configured, data complete.
   - Local test: `node tests/context-snapshot/run.js`
   - **Human Action**: Prepend to AI context for accurate repo awareness
 
-- [ ] **Job Posting Monitor**
-  - Scrape/monitor target company career pages
-  - Filter against criteria in `JOB_SEARCH.md`
-  - Write matches to `/job-applications/opportunities.json`
-  - Notify on high-match roles
+- [x] **Job Posting Monitor** - COMPLETE (Stage 1 of Job Pipeline)
+  - Weekly runs Sunday at 5 PM UTC
+  - Queries free job APIs (Remotive, Himalayas, Adzuna with optional key)
+  - Filters against `JOB_SEARCH.md` criteria (salary, remote, tech stack)
+  - Clusters similar jobs by resume type
+  - Writes to `/job-applications/opportunities/YYYY-MM-DD.json` and `.md`
+  - Creates GitHub Issue with summary
+  - Local test: `node tests/job-posting-monitor/run.js`
+  - **Future stages**: Resume generation (Stage 2), Auto-application (Stage 3)
 
 - [ ] **Interview Prep Auto-Generator**
   - Trigger: Calendar event with "interview" created
@@ -260,11 +264,14 @@ All P0 tasks have been completed. AI tools configured, data complete.
       metadata.json          # Full data with image suggestions
 
 /job-applications/
+  opportunities/             # ✅ Created - Auto-discovered jobs
+    YYYY-MM-DD.json          # Daily job data with clusters
+    YYYY-MM-DD.md            # Formatted summary
+    latest.json              # Most recent scan
   postings/                  # Pending - Saved job postings
   resumes/                   # Pending - Generated tailored resumes
   prep/                      # Pending - Interview prep docs
   questions/                 # Pending - Interview question bank
-  opportunities.json         # Pending - Auto-discovered jobs
 
 /assessments/
   YYYY-MM-assessment.md      # ✅ Created - Monthly assessments (via workflow)
@@ -281,6 +288,7 @@ All P0 tasks have been completed. AI tools configured, data complete.
   linkedin-post-generator/run.js # ✅ Created - Local test runner
   monthly-assessment/run.js  # ✅ Created - Local test runner
   weekly-summary/run.js      # ✅ Created - Local test runner
+  job-posting-monitor/run.js # ✅ Created - Local test runner
 ```
 
 ---
@@ -326,6 +334,7 @@ All P0 tasks have been completed. AI tools configured, data complete.
 - [x] **LinkedIn Post Generator** - Weekly Monday at 8 AM UTC, GPT-4o-mini powered drafts with image suggestions
 - [x] **Monthly Assessment Generator** - Monthly 1st at 9 AM UTC, comprehensive report with PR
 - [x] **Weekly Automation Summary** - Sunday at 6 PM UTC, GitHub Issue with accomplishments + manual todos
+- [x] **Job Posting Monitor** - Sunday at 5 PM UTC, queries free APIs, clusters jobs, creates issue
 
 ---
 
