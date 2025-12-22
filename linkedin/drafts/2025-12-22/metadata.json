@@ -1,0 +1,218 @@
+{
+  "week_start": "2025-12-22",
+  "week_end": "2025-12-28",
+  "generated_at": "2025-12-22T08:02:02.423Z",
+  "activity_summary": {
+    "total_commits": 7,
+    "active_repos": [
+      "G-Hensley/myself"
+    ],
+    "repo_details": {
+      "G-Hensley/myself": {
+        "commits": 7,
+        "dates": [
+          "2025-12-21T08:00:00Z"
+        ]
+      }
+    }
+  },
+  "post_count": 8,
+  "posts": [
+    {
+      "id": "monday-personal-build-in-public",
+      "account": "personal",
+      "day": "Monday",
+      "date": "2025-12-22",
+      "pillar": "Build in Public",
+      "pillar_id": "build-in-public",
+      "content": {
+        "hook": "This week was a grind, but progress is happening 💪",
+        "body": "I made 7 commits across my projects, focusing on Dev Genesis and TemperedUI. \n\nIn Dev Genesis, I tackled some tricky integration issues that were slowing us down. By prioritizing user feedback, I streamlined a couple of features to make the experience smoother. \n\nWith TemperedUI, I refined components to enhance security out-of-the-box. It’s all about shipping beautiful, functional code that doesn’t compromise on safety. 🔒",
+        "cta": "What challenges are you working through this week?",
+        "hashtags": [
+          "#buildinpublic",
+          "#softwareengineering",
+          "#webdevelopment"
+        ]
+      },
+      "full_post": "This week was a grind, but progress is happening 💪\n\nI made 7 commits across my projects, focusing on Dev Genesis and TemperedUI. \n\nIn Dev Genesis, I tackled some tricky integration issues that were slowing us down. By prioritizing user feedback, I streamlined a couple of features to make the experience smoother. \n\nWith TemperedUI, I refined components to enhance security out-of-the-box. It’s all about shipping beautiful, functional code that doesn’t compromise on safety. 🔒\n\nWhat challenges are you working through this week?\n\n#buildinpublic #softwareengineering #webdevelopment",
+      "image": {
+        "type": "screenshot",
+        "description": "A screenshot of code commits in a terminal or code editor showing recent activity.",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "monday-tampertantrum-technical-howtos",
+      "account": "tampertantrum",
+      "day": "Monday",
+      "date": "2025-12-22",
+      "pillar": "Technical How-Tos",
+      "pillar_id": "technical-howtos",
+      "content": {
+        "hook": "Start your week strong with a security tip! 🔒",
+        "body": "Today, let's dive into a crucial aspect of API security: threat modeling your REST API.\n\nBegin by identifying the assets within your API. Consider user data, authentication tokens, and any sensitive endpoints. Next, brainstorm potential threats like data leaks, unauthorized access, or even denial of service attacks.\n\nOnce you've mapped out these threats, prioritize them based on their impact and likelihood. This insight will guide your security measures, ensuring you're focusing on the most pressing issues first. Remember, proactive security saves you time and resources down the line! ⚡",
+        "cta": "What security practices are you implementing this week? Share your tips!",
+        "hashtags": [
+          "#appsec",
+          "#cybersecurity",
+          "#devsecops",
+          "#webappsecurity",
+          "#securitytips"
+        ]
+      },
+      "full_post": "Start your week strong with a security tip! 🔒\n\nToday, let's dive into a crucial aspect of API security: threat modeling your REST API.\n\nBegin by identifying the assets within your API. Consider user data, authentication tokens, and any sensitive endpoints. Next, brainstorm potential threats like data leaks, unauthorized access, or even denial of service attacks.\n\nOnce you've mapped out these threats, prioritize them based on their impact and likelihood. This insight will guide your security measures, ensuring you're focusing on the most pressing issues first. Remember, proactive security saves you time and resources down the line! ⚡\n\nWhat security practices are you implementing this week? Share your tips!\n\n#appsec #cybersecurity #devsecops #webappsecurity #securitytips",
+      "image": {
+        "type": "screenshot",
+        "description": "A screenshot of a code editor displaying a threat modeling diagram for a REST API.",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "tuesday-codaissance-build-in-public",
+      "account": "codaissance",
+      "day": "Tuesday",
+      "date": "2025-12-23",
+      "pillar": "Build in Public",
+      "pillar_id": "build-in-public",
+      "content": {
+        "hook": "This month, we achieved a significant milestone 🚀",
+        "body": "We hit $10K in MRR for our Professional OS project, making strides in helping users manage their professional identities more effectively.\n\nOur focus has been on simplifying the onboarding process, resulting in a 30% increase in user engagement. We've listened to feedback and made adjustments that truly resonate with our audience.\n\nEach decision is a step toward refining our product. Transparency in our journey helps build trust and keeps us accountable.\n\nWhat metrics are you tracking to measure success?",
+        "cta": "Share your key numbers and insights below!",
+        "hashtags": [
+          "#buildinpublic",
+          "#saas",
+          "#indiehacker"
+        ]
+      },
+      "full_post": "This month, we achieved a significant milestone 🚀\n\nWe hit $10K in MRR for our Professional OS project, making strides in helping users manage their professional identities more effectively.\n\nOur focus has been on simplifying the onboarding process, resulting in a 30% increase in user engagement. We've listened to feedback and made adjustments that truly resonate with our audience.\n\nEach decision is a step toward refining our product. Transparency in our journey helps build trust and keeps us accountable.\n\nWhat metrics are you tracking to measure success?\n\nShare your key numbers and insights below!\n\n#buildinpublic #saas #indiehacker",
+      "image": {
+        "type": "screenshot",
+        "description": "Dashboard showing monthly revenue metrics.",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "wednesday-personal-technical-learning",
+      "account": "personal",
+      "day": "Wednesday",
+      "date": "2025-12-24",
+      "pillar": "Technical Learning",
+      "pillar_id": "technical-learning",
+      "content": {
+        "hook": "This tool transformed my coding workflow! 🚀",
+        "body": "Recently, I discovered a new code editor that has completely changed how I approach my projects. \n\nWith features like real-time collaboration and built-in debugging, it has streamlined my process immensely. In just a week, I made 7 commits across one repo using this tool! 🔥 \n\nIt's incredible how the right resources can boost productivity and creativity. If you're looking to elevate your development game, I highly recommend giving it a try.",
+        "cta": "What tools have you found that made a significant impact on your workflow?",
+        "hashtags": [
+          "#buildinpublic",
+          "#softwareengineering",
+          "#webdevelopment"
+        ]
+      },
+      "full_post": "This tool transformed my coding workflow! 🚀\n\nRecently, I discovered a new code editor that has completely changed how I approach my projects. \n\nWith features like real-time collaboration and built-in debugging, it has streamlined my process immensely. In just a week, I made 7 commits across one repo using this tool! 🔥 \n\nIt's incredible how the right resources can boost productivity and creativity. If you're looking to elevate your development game, I highly recommend giving it a try.\n\nWhat tools have you found that made a significant impact on your workflow?\n\n#buildinpublic #softwareengineering #webdevelopment",
+      "image": {
+        "type": "screenshot",
+        "description": "A screenshot of the new code editor in action, showcasing its features.",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "wednesday-tampertantrum-appsec-stories",
+      "account": "tampertantrum",
+      "day": "Wednesday",
+      "date": "2025-12-24",
+      "pillar": "AppSec Wins/Stories",
+      "pillar_id": "appsec-stories",
+      "content": {
+        "hook": "Found a critical bug in our auth logic 🔍",
+        "body": "This week, while working on TemperedUI, I stumbled upon a vulnerability in the authentication process. \n\nAfter thorough investigation, I discovered that improper validation allowed users to bypass certain security checks. This could have led to unauthorized access to sensitive data. \n\nThe fix? We implemented stricter validation rules and added comprehensive logging to monitor unusual access patterns. This proactive approach not only secured our app but also enhanced our overall security posture. \n\nIt's a reminder of the importance of continuous security reviews in software development.",
+        "cta": "Have you encountered any unexpected vulnerabilities in your projects?",
+        "hashtags": [
+          "#appsec",
+          "#cybersecurity",
+          "#devsecops"
+        ]
+      },
+      "full_post": "Found a critical bug in our auth logic 🔍\n\nThis week, while working on TemperedUI, I stumbled upon a vulnerability in the authentication process. \n\nAfter thorough investigation, I discovered that improper validation allowed users to bypass certain security checks. This could have led to unauthorized access to sensitive data. \n\nThe fix? We implemented stricter validation rules and added comprehensive logging to monitor unusual access patterns. This proactive approach not only secured our app but also enhanced our overall security posture. \n\nIt's a reminder of the importance of continuous security reviews in software development.\n\nHave you encountered any unexpected vulnerabilities in your projects?\n\n#appsec #cybersecurity #devsecops",
+      "image": {
+        "type": "screenshot",
+        "description": "A screenshot of the code highlighting the authentication logic with annotations showing the vulnerability fix",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "thursday-codaissance-craftsmanship",
+      "account": "codaissance",
+      "day": "Thursday",
+      "date": "2025-12-25",
+      "pillar": "Craftsmanship & Quality",
+      "pillar_id": "craftsmanship",
+      "content": {
+        "hook": "We spent a week refining our architecture for an AI workflow 🤖.",
+        "body": "In the fast-paced world of development, it's easy to prioritize speed over quality. However, our recent focus on a robust architecture for our AI-driven project has proven invaluable.\n\nWe opted for a microservices architecture that allows us to scale independently and manage complexities effectively. This decision not only enhances performance but also simplifies our testing approach, leading to more reliable outcomes.\n\nInvesting time in architecture today means fewer headaches tomorrow. It empowers our team to innovate while maintaining high standards of quality 🚀.",
+        "cta": "What architecture decisions have made the biggest impact in your projects?",
+        "hashtags": [
+          "#buildinpublic",
+          "#saas",
+          "#indiehacker",
+          "#startup",
+          "#productdevelopment"
+        ]
+      },
+      "full_post": "We spent a week refining our architecture for an AI workflow 🤖.\n\nIn the fast-paced world of development, it's easy to prioritize speed over quality. However, our recent focus on a robust architecture for our AI-driven project has proven invaluable.\n\nWe opted for a microservices architecture that allows us to scale independently and manage complexities effectively. This decision not only enhances performance but also simplifies our testing approach, leading to more reliable outcomes.\n\nInvesting time in architecture today means fewer headaches tomorrow. It empowers our team to innovate while maintaining high standards of quality 🚀.\n\nWhat architecture decisions have made the biggest impact in your projects?\n\n#buildinpublic #saas #indiehacker #startup #productdevelopment",
+      "image": {
+        "type": "screenshot",
+        "description": "A screenshot of the architecture diagram for the AI workflow project.",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "friday-personal-career-journey",
+      "account": "personal",
+      "day": "Friday",
+      "date": "2025-12-26",
+      "pillar": "Career Journey",
+      "pillar_id": "career-journey",
+      "content": {
+        "hook": "This week marked a significant milestone for me 🎉",
+        "body": "After months of hard work, I finally completed my degree while juggling a full-time job. The journey was anything but easy, but the lessons learned were invaluable.\n\nTime management became my best friend. I had to prioritize tasks, focus on what truly mattered, and sometimes sacrifice leisure time. Those late-night study sessions were tough, but they taught me resilience.\n\nNow, I’m more equipped than ever to tackle new challenges in my career. This accomplishment isn't just a piece of paper; it's a testament to perseverance and commitment. Remember, every step counts in your journey! 💪",
+        "cta": "What milestones are you celebrating this week?",
+        "hashtags": [
+          "#buildinpublic",
+          "#softwareengineering",
+          "#careergrowth"
+        ]
+      },
+      "full_post": "This week marked a significant milestone for me 🎉\n\nAfter months of hard work, I finally completed my degree while juggling a full-time job. The journey was anything but easy, but the lessons learned were invaluable.\n\nTime management became my best friend. I had to prioritize tasks, focus on what truly mattered, and sometimes sacrifice leisure time. Those late-night study sessions were tough, but they taught me resilience.\n\nNow, I’m more equipped than ever to tackle new challenges in my career. This accomplishment isn't just a piece of paper; it's a testament to perseverance and commitment. Remember, every step counts in your journey! 💪\n\nWhat milestones are you celebrating this week?\n\n#buildinpublic #softwareengineering #careergrowth",
+      "image": {
+        "type": "ai-generated",
+        "description": "A minimalist illustration of a person celebrating graduation with a diploma in hand, surrounded by books and a laptop.",
+        "ai_prompt": "minimalist illustration of a graduate celebrating, holding a diploma, surrounded by books and a laptop, clean/modern style, no text"
+      }
+    },
+    {
+      "id": "friday-tampertantrum-pain-points",
+      "account": "tampertantrum",
+      "day": "Friday",
+      "date": "2025-12-26",
+      "pillar": "Startup/Dev Pain Points",
+      "pillar_id": "pain-points",
+      "content": {
+        "hook": "Ever felt like security is a never-ending race? 🏃‍♂️",
+        "body": "As developers, we juggle countless tasks. But when it comes to security, it often feels like we're always playing catch-up. \n\nWhile building our projects, it's easy to overlook potential vulnerabilities. Yet, integrating security from the start can save us from major headaches later on. \n\nThat’s why we created TemperedUI, a set of beautiful components designed to protect by default. Now, you can focus on shipping secure apps without the extra burden of writing security code. 🔒 \n\nLet's make security a seamless part of our development process.",
+        "cta": "How do you incorporate security in your workflow?",
+        "hashtags": [
+          "#appsec",
+          "#cybersecurity",
+          "#devsecops"
+        ]
+      },
+      "full_post": "Ever felt like security is a never-ending race? 🏃‍♂️\n\nAs developers, we juggle countless tasks. But when it comes to security, it often feels like we're always playing catch-up. \n\nWhile building our projects, it's easy to overlook potential vulnerabilities. Yet, integrating security from the start can save us from major headaches later on. \n\nThat’s why we created TemperedUI, a set of beautiful components designed to protect by default. Now, you can focus on shipping secure apps without the extra burden of writing security code. 🔒 \n\nLet's make security a seamless part of our development process.\n\nHow do you incorporate security in your workflow?\n\n#appsec #cybersecurity #devsecops",
+      "image": {
+        "type": "screenshot",
+        "description": "A screenshot of the TemperedUI components in action, showcasing their design and security features.",
+        "ai_prompt": null
+      }
+    }
+  ]
+}
