@@ -140,18 +140,25 @@ All P0 tasks have been completed. AI tools configured, data complete.
   - Local test: `node tests/monthly-assessment/run.js`
   - **Human Action**: Review and merge PR
 
-### Phase 4: Weekly Summary (NOT a reminder)
+### Phase 4: Weekly Summary - COMPLETE
 
-- [ ] **Weekly Automation Summary**
-  - **Trigger**: Sunday evening
-  - **Purpose**: Report what automations accomplished, not remind you to do things
-  - **Content**:
-    - Skills analysis results (if any changes proposed)
-    - Project status changes detected
-    - Content drafts generated and awaiting review
-    - PRs awaiting merge
-    - Items that genuinely require human input (e.g., LinkedIn metrics entry)
-  - **Output**: GitHub Issue (auto-closes after 7 days)
+- [x] **Weekly Automation Summary** - COMPLETE
+  - Weekly runs Sunday at 6 PM UTC
+  - Reports what automations accomplished:
+    - GitHub activity logged (commits, PRs, issues)
+    - Skill analysis results
+    - Project status overview
+    - LinkedIn drafts generated
+    - Context snapshots created
+  - Creates actionable todos for manual items:
+    - LinkedIn metrics updates (no API available)
+    - Interview outcome updates
+    - Application follow-ups
+    - Skill level verifications
+    - Content review/posting
+  - Creates GitHub Issue with full summary
+  - Local test: `node tests/weekly-summary/run.js`
+  - **Human Action**: Review issue, complete action items
 
 ---
 
@@ -269,6 +276,7 @@ All P0 tasks have been completed. AI tools configured, data complete.
   context-snapshot/run.js    # ✅ Created - Local test runner
   linkedin-post-generator/run.js # ✅ Created - Local test runner
   monthly-assessment/run.js  # ✅ Created - Local test runner
+  weekly-summary/run.js      # ✅ Created - Local test runner
 ```
 
 ---
@@ -312,6 +320,8 @@ All P0 tasks have been completed. AI tools configured, data complete.
 - [x] Expand automation/IDEAS.md
 - [x] **Context Snapshot Generator** - Daily at 5 AM UTC, dated snapshots with historical tracking
 - [x] **LinkedIn Post Generator** - Weekly Monday at 8 AM UTC, GPT-4o-mini powered drafts with image suggestions
+- [x] **Monthly Assessment Generator** - Monthly 1st at 9 AM UTC, comprehensive report with PR
+- [x] **Weekly Automation Summary** - Sunday at 6 PM UTC, GitHub Issue with accomplishments + manual todos
 
 ---
 

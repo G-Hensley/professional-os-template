@@ -1,0 +1,38 @@
+name: Weekly Summary Generator
+
+on:
+  schedule:
+    # Run every Sunday at 6 PM UTC (1 PM EST / 2 PM EDT)
+    - cron: '0 18 * * 0'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run without creating issue'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  generate-summary:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate weekly summary
+        env:
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node automation/scripts/weekly-summary-generator.js
