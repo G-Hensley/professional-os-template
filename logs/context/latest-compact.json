@@ -1,8 +1,9 @@
 {
-  "generated_at": "2025-12-21T05:02:51.449Z",
+  "generated_at": "2025-12-22T05:04:18.130Z",
   "profile": "Gavin Hensley - Product Engineer / Customer Success Engineer / Deployment Engineer at APIsec",
   "projects": {
     "active": [
+      "Professional OS (working title) (P10): Your professional identity, version-controlled. Stop re-explaining yourself to AI.",
       "Dev Genesis (P10): From idea to coding in 30 minutes. Stop configuring, start building.",
       "TemperedUI (P8): Beautiful components that protect by default. Ship secure apps without writing security code.",
       "MindTrace (P7): Log student behavior in 30 seconds. Simple, fast, and built for educators who don't have time to waste."
@@ -43,10 +44,14 @@
   },
   "automations": [
     "Context Snapshot: Daily at 5:00 UTC",
+    "Daily Date Update: Daily at 0:05 UTC",
     "GitHub Activity Logging: Daily at 6:00 UTC",
+    "Job Posting Monitor: Sun at 17:00 UTC",
     "LinkedIn Post Generator: Mon at 8:00 UTC",
+    "Monthly Assessment Generator: Daily at 9:00 UTC",
     "Project Status Automation: Tue at 7:00 UTC",
-    "Skill Analysis Pipeline: Mon at 7:00 UTC"
+    "Skill Analysis Pipeline: Mon at 7:00 UTC",
+    "Weekly Summary Generator: Sun at 18:00 UTC"
   ],
   "commands": {
     "claude": [
