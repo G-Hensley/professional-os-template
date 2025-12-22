@@ -465,6 +465,60 @@ ${context.latest ? `- Latest: ${context.latest}` : ''}
   return { title, body };
 }
 
+// ============================================================
+// LOGGING
+// ============================================================
+
+function saveLogs(weekRange, automationReports, manualTodos, issueContent) {
+  const logsDir = path.join(REPO_ROOT, 'logs/weekly-summary');
+
+  // Ensure directory exists
+  if (!fs.existsSync(logsDir)) {
+    fs.mkdirSync(logsDir, { recursive: true });
+  }
+
+  const dateStr = weekRange.end; // Use Sunday's date as the filename
+
+  // Save JSON data (raw data for trend analysis)
+  const jsonData = {
+    generated_at: new Date().toISOString(),
+    week: {
+      start: weekRange.start,
+      end: weekRange.end,
+      formatted: weekRange.formatted
+    },
+    automation_reports: automationReports,
+    manual_todos: manualTodos,
+    summary: {
+      total_commits: automationReports.github.commits,
+      active_repos: automationReports.github.repos.length,
+      skills_tracked: (automationReports.skills?.detected || 0) + (automationReports.skills?.manual || 0),
+      manual_todo_count: manualTodos.length,
+      manual_todos_by_priority: {
+        high: manualTodos.filter(t => t.priority === 'high').length,
+        medium: manualTodos.filter(t => t.priority === 'medium').length,
+        low: manualTodos.filter(t => t.priority === 'low').length
+      }
+    }
+  };
+
+  const jsonPath = path.join(logsDir, `${dateStr}.json`);
+  fs.writeFileSync(jsonPath, JSON.stringify(jsonData, null, 2));
+  console.log(`  - JSON log: ${jsonPath}`);
+
+  // Save markdown (copy of issue content)
+  const mdPath = path.join(logsDir, `${dateStr}.md`);
+  fs.writeFileSync(mdPath, `# ${issueContent.title}\n\n${issueContent.body}`);
+  console.log(`  - Markdown log: ${mdPath}`);
+
+  // Update latest.json for easy access
+  const latestPath = path.join(logsDir, 'latest.json');
+  fs.writeFileSync(latestPath, JSON.stringify(jsonData, null, 2));
+  console.log(`  - Latest: ${latestPath}`);
+
+  return { jsonPath, mdPath };
+}
+
 async function createGitHubIssue(title, body) {
   return new Promise((resolve, reject) => {
     const data = JSON.stringify({
@@ -548,13 +602,21 @@ async function main() {
 
   // Generate issue content
   console.log('\nGenerating issue content...');
-  const { title, body } = generateIssueContent(weekRange, automationReports, manualTodos);
+  const issueContent = generateIssueContent(weekRange, automationReports, manualTodos);
+
+  // Save logs (always, even in dry run)
+  console.log('\nSaving logs...');
+  if (!DRY_RUN) {
+    saveLogs(weekRange, automationReports, manualTodos, issueContent);
+  } else {
+    console.log('  [DRY RUN] Would save logs to logs/weekly-summary/');
+  }
 
   if (DRY_RUN) {
     console.log('\n[DRY RUN] Would create GitHub Issue:');
-    console.log(`\n--- TITLE ---\n${title}`);
-    console.log(`\n--- BODY (preview) ---\n${body.slice(0, 2000)}`);
-    if (body.length > 2000) {
+    console.log(`\n--- TITLE ---\n${issueContent.title}`);
+    console.log(`\n--- BODY (preview) ---\n${issueContent.body.slice(0, 2000)}`);
+    if (issueContent.body.length > 2000) {
       console.log('\n... (truncated for preview)');
     }
   } else {
@@ -565,7 +627,7 @@ async function main() {
 
     console.log('\nCreating GitHub Issue...');
     try {
-      const issue = await createGitHubIssue(title, body);
+      const issue = await createGitHubIssue(issueContent.title, issueContent.body);
       console.log(`\nIssue created: ${issue.html_url}`);
     } catch (error) {
       console.error('\nFailed to create issue:', error.message);

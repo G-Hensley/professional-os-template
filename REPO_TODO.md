@@ -247,6 +247,10 @@ All P0 tasks have been completed. AI tools configured, data complete.
     YYYY-MM-DD.json          # Dated full snapshots (historical)
     latest.json              # Most recent full snapshot
     latest-compact.json      # Most recent compact snapshot
+  weekly-summary/            # ✅ Created - Weekly summary logs
+    YYYY-MM-DD.json          # Raw data (for trend analysis)
+    YYYY-MM-DD.md            # Markdown copy of issue
+    latest.json              # Most recent summary data
 
 /linkedin/
   content-ideas.json         # ✅ Created - Pillars, calendar, post rules
