@@ -3,8 +3,11 @@ import Link from "next/dist/client/link";
 function SideBar() {
   const links = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
+    { href: "/projects", label: "Projects" },
+    { href: "/automations", label: "Automations" },
+    { href: "/content", label: "Content" },
+    { href: "/jobs", label: "Jobs" },
+    { href: "/profile", label: "Profile" }
   ]
 
   return (
@@ -14,8 +17,8 @@ function SideBar() {
         {links.map(({ href, label }) => (
           <Link 
             key={href} 
-            href={href} 
-            className="p-3 text-orange-400 text-center first:rounded-t-4xl last:rounded-b-4xl hover:bg-teal-900 hover:text-orange-500 transition-colors duration-300 ease-in-out"
+            href={href}
+            className="px-5 py-3 text-orange-400 first:rounded-t-4xl last:rounded-b-4xl hover:bg-teal-900 hover:text-orange-500 transition-colors duration-300 ease-in-out"
           >
             {label}
           </Link>
