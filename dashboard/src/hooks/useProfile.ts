@@ -28,10 +28,13 @@ interface Contact {
   email: string;
   phone?: string;
   location: string;
-  linkedin?: string;
-  github?: string;
+  links: {
+    linkedin?: string;
+    github?: string;
+    portfolio?: string;
+    credly?: string;
+  };
 }
-
 interface ProfileResponse {
   skills: {
     technical: Record<string, Skill[]>;
