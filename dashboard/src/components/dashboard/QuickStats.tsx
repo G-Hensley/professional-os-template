@@ -1,14 +1,18 @@
 'use client';
 
 import { Card } from "@components/ui";
-import { useProjects } from "@/src/hooks";
+import { useProjects, useCurrentWeekPosts, useJobStats } from "@/src/hooks";
 
 function QuickStats() {
   const { data: projects, isLoading } = useProjects();
+  const { data: currentWeekPosts } = useCurrentWeekPosts();
+  const { data: jobStats } = useJobStats();
   
   const stats = [
     { label: 'Active Projects', value: projects?.active.length ?? 0 },
     { label: 'Planned Projects', value: projects?.planned.length ?? 0 },
+    { label: 'Job Applications', value: jobStats?.total ?? 0 },
+    { label: 'LinkedIn Drafts', value: currentWeekPosts?.posts.length ?? 0 }
   ]
 
   return (
