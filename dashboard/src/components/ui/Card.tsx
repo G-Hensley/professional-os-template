@@ -1,4 +1,16 @@
+'use client';
+
+import { motion } from "framer-motion";
+
 function Card({ children, className }: { children: React.ReactNode, className?: string }) {
-  return <div className={`card neumorphic rounded-3xl px-6 py-4 h-fit w-fit flex flex-col gap-2 ${className ?? ''}`}>{children}</div>;
+  return (
+    <motion.div
+      whileHover={{ scaleX: 1.05 }}
+      transition={{ type: "spring", stiffness: 400, damping: 15 }}
+      whileTap={{ scale: 0.95 }}
+      className={`card neumorphic rounded-3xl px-6 py-4 h-fit w-fit flex flex-col gap-2 ${className ?? ''}`}>
+      {children}
+    </motion.div>
+  );
 }
 export { Card };
