@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/dist/client/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -16,6 +17,7 @@ import {
 
 function SideBar() {
   const [isOpen, setIsOpen] = useState(true);
+  const pathname = usePathname();
 
   const links = [
     { href: "/", label: "Home", icon: <Home className="text-orange-300" size={24} /> },
@@ -34,8 +36,9 @@ function SideBar() {
           <Link 
             key={href} 
             href={href}
-            className="px-5 py-3 text-orange-400 first:rounded-t-4xl last:rounded-b-4xl hover:bg-teal-900 
-            hover:text-orange-500 transition-colors duration-300 ease-in-out flex items-center gap-2"
+            className={`px-5 py-3 text-orange-400 first:rounded-t-4xl last:rounded-b-4xl hover:bg-teal-900 
+            hover:text-orange-500 transition-colors duration-300 ease-in-out flex items-center gap-2
+            ${pathname === href ? 'bg-teal-900 text-orange-500' : ''}`}
           >
             {icon}
             <AnimatePresence>
