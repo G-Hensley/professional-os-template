@@ -29,9 +29,9 @@ function SideBar() {
   ]
 
   return (
-    <nav aria-label="Sidebar" className="neumorphic rounded-4xl w-fit relative h-fit">
+    <nav aria-label="Sidebar" className="w-fit relative h-fit flex flex-col gap-4 items-center">
       {/* SideBar content goes here */}
-      <div className="flex flex-col">
+      <div className="flex flex-col neumorphic rounded-4xl">
         {links.map(({ href, label, icon }) => (
           <Link 
             key={href} 
@@ -56,15 +56,16 @@ function SideBar() {
             </AnimatePresence>
           </Link>
         ))}
-        <button
+        
+      </div>
+      <button
           onClick={() => setIsOpen(!isOpen)}
-          className="px-5 py-3 rounded-b-4xl hover:bg-cyan-900 transition-colors duration-300 ease-in-out
+          className="px-4 neumorphic py-4 rounded-full hover:bg-cyan-900 transition-colors duration-300 ease-in-out
           text-cyan-400 hover:text-cyan-500 flex items-center gap-2 cursor-pointer"
           aria-label={isOpen ? "Close sidebar" : "Open sidebar"}
         >
           {isOpen ? <SidebarClose size={24} /> : <SidebarOpen size={24} />}
         </button>
-      </div>
     </nav>
   );
 }

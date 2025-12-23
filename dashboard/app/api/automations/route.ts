@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync, existsSync, statSync } from 'fs';
+import { readdirSync, existsSync, statSync } from 'fs';
 import { join } from 'path';
 import { NextResponse } from 'next/server';
 
@@ -11,68 +11,79 @@ interface AutomationRun {
   summary?: string;
 }
 
-function getLogFiles(subdir: string, type: string): AutomationRun[] {
+function getLogFiles(
+  subdir: string,
+  displayName: string,
+  type: 'daily' | 'weekly' | 'monthly'
+): AutomationRun[] {
   try {
     const logsDir = join(process.cwd(), '..', 'logs', subdir);
     if (!existsSync(logsDir)) return [];
 
     const files = readdirSync(logsDir)
-      .filter(f => f.endsWith('.json') || f.endsWith('.md'))
+      .filter(f => f.endsWith('.json') && !f.includes('README'))
       .map(f => {
         const filePath = join(logsDir, f);
         const stats = statSync(filePath);
         return {
-          name: subdir.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+          name: displayName,
           type,
           timestamp: stats.mtime.toISOString(),
           status: 'success' as const,
           file: `logs/${subdir}/${f}`,
+          filename: f,
         };
       })
       .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
 
-    return files.slice(0, 10); // Last 10 runs
+    // Return only the most recent file per automation type (avoid duplicates like latest.json)
+    return files.slice(0, 1);
   } catch {
     return [];
   }
 }
 
-function getLatestContextSnapshot(): AutomationRun | null {
+function getContextSnapshots(): AutomationRun[] {
   try {
-    const contextPath = join(process.cwd(), '..', 'logs', 'context', 'CONTEXT_SNAPSHOT.md');
-    if (!existsSync(contextPath)) return null;
+    const contextDir = join(process.cwd(), '..', 'logs', 'context');
+    if (!existsSync(contextDir)) return [];
 
-    const stats = statSync(contextPath);
-    return {
-      name: 'Context Snapshot',
-      type: 'daily',
-      timestamp: stats.mtime.toISOString(),
-      status: 'success',
-      file: 'logs/context/CONTEXT_SNAPSHOT.md',
-    };
+    const files = readdirSync(contextDir)
+      // Only get date-based files (YYYY-MM-DD.json), exclude latest.json and compact
+      .filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+      .map(f => {
+        const filePath = join(contextDir, f);
+        const stats = statSync(filePath);
+        return {
+          name: 'Context Snapshot',
+          type: 'daily',
+          timestamp: stats.mtime.toISOString(),
+          status: 'success' as const,
+          file: `logs/context/${f}`,
+        };
+      })
+      .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+
+    return files.slice(0, 5); // Last 5 context snapshots
   } catch {
-    return null;
+    return [];
   }
 }
 
 export async function GET() {
   const runs: AutomationRun[] = [];
 
-  // Context snapshot
-  const contextRun = getLatestContextSnapshot();
-  if (contextRun) runs.push(contextRun);
+  // Context snapshots (daily)
+  runs.push(...getContextSnapshots());
 
-  // Weekly summaries
-  runs.push(...getLogFiles('weekly-summary', 'weekly'));
+  // GitHub activity (daily/monthly)
+  runs.push(...getLogFiles('github-activity', 'GitHub Activity', 'daily'));
 
-  // LinkedIn posts
-  runs.push(...getLogFiles('linkedin-posts', 'weekly'));
+  // Project status
+  runs.push(...getLogFiles('project-status', 'Project Status', 'daily'));
 
-  // Job monitor
-  runs.push(...getLogFiles('job-monitor', 'daily'));
-
-  // Monthly assessments
-  runs.push(...getLogFiles('assessments', 'monthly'));
+  // Skill analysis
+  runs.push(...getLogFiles('skill-analysis', 'Skill Analysis', 'weekly'));
 
   // Sort all by timestamp
   runs.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
@@ -84,24 +95,19 @@ export async function GET() {
       type: 'daily',
     },
     {
-      name: 'Weekly Summary',
-      schedule: 'Sundays @ 8:00 PM',
-      type: 'weekly',
-    },
-    {
-      name: 'LinkedIn Post Generator',
-      schedule: 'Sundays @ 9:00 PM',
-      type: 'weekly',
-    },
-    {
-      name: 'Job Posting Monitor',
-      schedule: 'Daily @ 9:00 AM',
+      name: 'GitHub Activity',
+      schedule: 'Daily',
       type: 'daily',
     },
     {
-      name: 'Monthly Assessment',
-      schedule: '1st of month @ 10:00 AM',
-      type: 'monthly',
+      name: 'Project Status',
+      schedule: 'On demand',
+      type: 'daily',
+    },
+    {
+      name: 'Skill Analysis',
+      schedule: 'Weekly',
+      type: 'weekly',
     },
   ];
 
