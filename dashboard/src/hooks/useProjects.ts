@@ -1,17 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
 import type { Project } from '@/types/project';
 
-async function fetchProjects(): Promise<{
+interface ProjectsResponse {
   active: Project[];
   planned: Project[];
   completed: Project[];
-}> {
-  // TODO: Fetch from actual JSON files
-  return {
-    active: [],
-    planned: [],
-    completed: [],
-  };
+}
+
+async function fetchProjects(): Promise<ProjectsResponse> {
+  const res = await fetch('/api/projects');
+  if (!res.ok) throw new Error('Failed to fetch projects');
+  return res.json();
 }
 
 export function useProjects() {
@@ -25,6 +24,22 @@ export function useActiveProjects() {
   const { data, ...rest } = useProjects();
   return {
     data: data?.active ?? [],
+    ...rest,
+  };
+}
+
+export function usePlannedProjects() {
+  const { data, ...rest } = useProjects();
+  return {
+    data: data?.planned ?? [],
+    ...rest,
+  };
+}
+
+export function useCompletedProjects() {
+  const { data, ...rest } = useProjects();
+  return {
+    data: data?.completed ?? [],
     ...rest,
   };
 }
