@@ -36,9 +36,9 @@ function SideBar() {
           <Link 
             key={href} 
             href={href}
-            className={`px-5 py-3 first:rounded-t-4xl last:rounded-b-4xl hover:bg-teal-900 
+            className={`px-5 py-3 first:rounded-t-4xl last:rounded-b-4xl hover:bg-cyan-900 
             hover:text-orange-500 transition-colors duration-300 ease-in-out flex items-center gap-2
-            ${pathname === href ? 'bg-teal-900 text-orange-500' : 'text-orange-400'}`}
+            ${pathname === href ? 'bg-cyan-900 text-orange-500' : 'text-orange-400'}`}
           >
             {icon}
             <AnimatePresence>
@@ -58,8 +58,8 @@ function SideBar() {
         ))}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="px-5 py-3 rounded-b-4xl hover:bg-teal-900 transition-colors duration-300 ease-in-out
-          text-teal-400 hover:text-teal-500 flex items-center gap-2 cursor-pointer"
+          className="px-5 py-3 rounded-b-4xl hover:bg-cyan-900 transition-colors duration-300 ease-in-out
+          text-cyan-400 hover:text-cyan-500 flex items-center gap-2 cursor-pointer"
           aria-label={isOpen ? "Close sidebar" : "Open sidebar"}
         >
           {isOpen ? <SidebarClose size={24} /> : <SidebarOpen size={24} />}
