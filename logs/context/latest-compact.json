@@ -1,17 +1,17 @@
 {
-  "generated_at": "2025-12-22T05:04:18.130Z",
+  "generated_at": "2025-12-23T05:03:46.228Z",
   "profile": "Gavin Hensley - Product Engineer / Customer Success Engineer / Deployment Engineer at APIsec",
   "projects": {
     "active": [
       "Professional OS (working title) (P10): Your professional identity, version-controlled. Stop re-explaining yourself to AI.",
       "Dev Genesis (P10): From idea to coding in 30 minutes. Stop configuring, start building.",
+      "Vibiom (P9): Multi-agent development that actually works.",
       "TemperedUI (P8): Beautiful components that protect by default. Ship secure apps without writing security code.",
       "MindTrace (P7): Log student behavior in 30 seconds. Simple, fast, and built for educators who don't have time to waste."
     ],
     "planned": [
-      "Vibiom [blocked by: Dev Genesis]",
-      "DevGauntlet",
-      "ScopeCreep [blocked by: TemperedUI, DevGauntlet]",
+      "DevGauntlet [blocked by: TemperedUI]",
+      "ScopeCreep [blocked by: TemperedUI]",
       "InstAPI",
       "OpenOrbit [blocked by: TemperedUI, ScopeCreep]"
     ]
