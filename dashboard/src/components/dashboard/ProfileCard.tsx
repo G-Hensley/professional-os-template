@@ -32,9 +32,12 @@ function ProfileCard() {
           )}
         </div>
       )}
-      <h2 className="text-lg font-bold text-orange-400">{contact?.name}</h2>
+        <div className='flex flex-col'>
+          <h2 className="text-lg font-bold text-orange-400">{contact?.name}</h2>
+          <p className="text-sm text-cyan-200">{contact?.title}</p>
+          <p className="text-sm text-cyan-200">{contact?.recent_employer}</p>
+        </div>
       </div>
-      <p className="text-sm text-cyan-200">{contact?.title}</p>
     </Card>
   );
 }

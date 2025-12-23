@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import type { Project } from '@/types/project';
+import type { Project } from '@src/types/project';
 
 interface ProjectsResponse {
   active: Project[];

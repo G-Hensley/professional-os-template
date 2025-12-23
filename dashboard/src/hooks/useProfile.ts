@@ -25,6 +25,7 @@ interface Education {
 interface Contact {
   name: string;
   title: string;
+  recent_employer: string;
   email: string;
   phone?: string;
   location: string;
