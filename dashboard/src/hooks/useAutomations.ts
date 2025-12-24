@@ -3,16 +3,15 @@ import { useQuery } from '@tanstack/react-query';
 interface Pipeline {
   name: string;
   schedule: string;
-  type: 'daily' | 'weekly' | 'monthly';
+  type: string;
 }
 
 interface AutomationRun {
   name: string;
   type: string;
   timestamp: string;
-  status: 'success' | 'error';
-  file: string;
-  summary?: string;
+  status: 'success' | 'error' | 'running';
+  url: string;
 }
 
 interface AutomationsResponse {

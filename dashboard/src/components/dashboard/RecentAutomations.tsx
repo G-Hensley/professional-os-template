@@ -1,17 +1,15 @@
 'use client';
 
 import { Card } from '../ui/Card';
-import { useRecentAutomations, useAutomations } from "@/src/hooks";
+import { useRecentAutomations } from "@/src/hooks";
 
 function RecentAutomations() {
   const { data: recentAutomations, isLoading, isError } = useRecentAutomations();
-  const { data: allAutomations } = useAutomations();
-  console.log(allAutomations);
   console.log(recentAutomations);
 
   return (
     <Card>
-      <h2 className="text-lg font-bold mb-4 text-orange-400">Recent Automations</h2>
+      <h2 className="text-lg font-bold text-orange-400 text-center">Recent Automations</h2>
       {isLoading ? (
         <p className="text-cyan-200">Loading...</p>
       ) : isError ? (
@@ -21,24 +19,23 @@ function RecentAutomations() {
       ) : (
         <ul className="space-y-2">
           {recentAutomations.map((automation) => (
-            <li key={automation.timestamp} className="p-2 border border-cyan-800 rounded">
-              <div className="flex justify-between items-center">
-                <div>
-                  <p className="font-semibold text-cyan-100">{automation.name}</p>
-                  <p className="text-sm text-cyan-300">{new Date(automation.timestamp).toLocaleString()}</p>
-                </div>
-                <span
-                  className={`px-2 py-1 rounded text-sm ${
-                    automation.status === 'success' ? 'bg-green-600 text-green-100' : 'bg-red-600 text-red-100'
-                  }`}
-                >
-                  {automation.status}
-                </span>
-              </div>
-              {automation.summary && (
-                <p className="mt-1 text-sm text-cyan-200">{automation.summary}</p>
-              )}
-            </li>
+            <a
+              key={automation.url}
+              href={automation.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border rounded border-cyan-700 grid grid-cols-[140px_1fr_30px] gap-2 py-2 px-3 items-center hover:bg-cyan-900/30 transition-colors"
+            >
+              <span className='text-cyan-200 truncate'>{automation.name}</span>
+              <span className='text-orange-400 text-left'>{new Date(automation.timestamp).toLocaleString()}</span>
+              <span className={`w-2 h-2 rounded-full justify-self-end ${
+                automation.status === 'success'
+                  ? 'bg-green-400'
+                  : automation.status === 'running'
+                    ? 'bg-yellow-400 animate-pulse'
+                    : 'bg-red-500'
+              }`}></span>
+            </a>
           ))}
         </ul>
       )}

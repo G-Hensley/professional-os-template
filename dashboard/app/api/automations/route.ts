@@ -1,118 +1,106 @@
-import { readdirSync, existsSync, statSync } from 'fs';
-import { join } from 'path';
 import { NextResponse } from 'next/server';
+
+const GITHUB_OWNER = 'G-Hensley';
+const GITHUB_REPO = 'myself';
+
+interface GitHubWorkflowRun {
+  id: number;
+  name: string;
+  status: string;
+  conclusion: string | null;
+  created_at: string;
+  html_url: string;
+}
+
+interface GitHubApiResponse {
+  workflow_runs: GitHubWorkflowRun[];
+}
 
 interface AutomationRun {
   name: string;
   type: string;
   timestamp: string;
-  status: 'success' | 'error';
-  file: string;
-  summary?: string;
+  status: 'success' | 'error' | 'running';
+  url: string;
 }
 
-function getLogFiles(
-  subdir: string,
-  displayName: string,
-  type: 'daily' | 'weekly' | 'monthly'
-): AutomationRun[] {
-  try {
-    const logsDir = join(process.cwd(), '..', 'logs', subdir);
-    if (!existsSync(logsDir)) return [];
+interface Pipeline {
+  name: string;
+  schedule: string;
+  type: string;
+}
 
-    const files = readdirSync(logsDir)
-      .filter(f => f.endsWith('.json') && !f.includes('README'))
-      .map(f => {
-        const filePath = join(logsDir, f);
-        const stats = statSync(filePath);
-        return {
-          name: displayName,
-          type,
-          timestamp: stats.mtime.toISOString(),
-          status: 'success' as const,
-          file: `logs/${subdir}/${f}`,
-          filename: f,
-        };
-      })
-      .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+// Map workflow names to their schedule info
+const workflowSchedules: Record<string, { schedule: string; type: string }> = {
+  'Context Snapshot': { schedule: 'Daily @ 5:00 AM', type: 'daily' },
+  'GitHub Activity Logging': { schedule: 'Daily @ 6:00 AM', type: 'daily' },
+  'Daily Date Update': { schedule: 'Daily @ 12:30 AM', type: 'daily' },
+  'Project Status Automation': { schedule: 'Daily @ 7:00 AM', type: 'daily' },
+  'Job Posting Monitor': { schedule: 'Daily @ 9:00 AM', type: 'daily' },
+  'LinkedIn Post Generator': { schedule: 'Sundays @ 8:00 AM', type: 'weekly' },
+  'Weekly Summary': { schedule: 'Sundays @ 8:00 PM', type: 'weekly' },
+  'Skill Analysis': { schedule: 'Saturdays @ 10:00 AM', type: 'weekly' },
+  'Monthly Assessment': { schedule: '1st of month @ 10:00 AM', type: 'monthly' },
+};
 
-    // Return only the most recent file per automation type (avoid duplicates like latest.json)
-    return files.slice(0, 1);
-  } catch {
+async function fetchGitHubWorkflowRuns(): Promise<AutomationRun[]> {
+  const token = process.env.GITHUB_TOKEN;
+
+  if (!token) {
+    console.warn('GITHUB_TOKEN not set - cannot fetch workflow runs');
     return [];
   }
-}
 
-function getContextSnapshots(): AutomationRun[] {
   try {
-    const contextDir = join(process.cwd(), '..', 'logs', 'context');
-    if (!existsSync(contextDir)) return [];
+    const response = await fetch(
+      `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/actions/runs?per_page=20`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: 'application/vnd.github.v3+json',
+        },
+        next: { revalidate: 60 }, // Cache for 60 seconds
+      }
+    );
 
-    const files = readdirSync(contextDir)
-      // Only get date-based files (YYYY-MM-DD.json), exclude latest.json and compact
-      .filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
-      .map(f => {
-        const filePath = join(contextDir, f);
-        const stats = statSync(filePath);
-        return {
-          name: 'Context Snapshot',
-          type: 'daily',
-          timestamp: stats.mtime.toISOString(),
-          status: 'success' as const,
-          file: `logs/context/${f}`,
-        };
-      })
-      .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+    if (!response.ok) {
+      console.error('GitHub API error:', response.status, response.statusText);
+      return [];
+    }
 
-    return files.slice(0, 5); // Last 5 context snapshots
-  } catch {
+    const data: GitHubApiResponse = await response.json();
+
+    return data.workflow_runs.map((run) => ({
+      name: run.name,
+      type: workflowSchedules[run.name]?.type ?? 'daily',
+      timestamp: run.created_at,
+      status: run.status === 'in_progress' || run.status === 'queued'
+        ? 'running'
+        : run.conclusion === 'success'
+          ? 'success'
+          : 'error',
+      url: run.html_url,
+    }));
+  } catch (error) {
+    console.error('Failed to fetch GitHub workflow runs:', error);
     return [];
   }
 }
 
 export async function GET() {
-  const runs: AutomationRun[] = [];
+  const runs = await fetchGitHubWorkflowRuns();
 
-  // Context snapshots (daily)
-  runs.push(...getContextSnapshots());
-
-  // GitHub activity (daily/monthly)
-  runs.push(...getLogFiles('github-activity', 'GitHub Activity', 'daily'));
-
-  // Project status
-  runs.push(...getLogFiles('project-status', 'Project Status', 'daily'));
-
-  // Skill analysis
-  runs.push(...getLogFiles('skill-analysis', 'Skill Analysis', 'weekly'));
-
-  // Sort all by timestamp
-  runs.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
-
-  const pipelines = [
-    {
-      name: 'Daily Context Snapshot',
-      schedule: 'Daily @ 6:00 AM',
-      type: 'daily',
-    },
-    {
-      name: 'GitHub Activity',
-      schedule: 'Daily',
-      type: 'daily',
-    },
-    {
-      name: 'Project Status',
-      schedule: 'On demand',
-      type: 'daily',
-    },
-    {
-      name: 'Skill Analysis',
-      schedule: 'Weekly',
-      type: 'weekly',
-    },
-  ];
+  // Build pipelines list from known workflows
+  const pipelines: Pipeline[] = Object.entries(workflowSchedules).map(
+    ([name, info]) => ({
+      name,
+      schedule: info.schedule,
+      type: info.type,
+    })
+  );
 
   return NextResponse.json({
     pipelines,
-    runs: runs.slice(0, 20), // Last 20 runs across all automations
+    runs,
   });
 }
