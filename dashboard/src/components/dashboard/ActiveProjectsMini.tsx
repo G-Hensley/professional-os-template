@@ -18,16 +18,19 @@ function ActiveProjectsMini() {
       ) : activeProjects.length === 0 ? (
         <p className="text-cyan-200">No active projects found.</p>
       ) : (
-        <ul className="space-y-2">
+        <div className="flex flex-col gap-2">
           {activeProjects.map((project) => (
-            <li
+            <a
+              href={project.repo_url}
               key={project.name}
               className="rounded-lg py-2 px-3 hover:bg-cyan-800/30 transition-colors duration-200 neumorphic"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <a href={project.repo_url} target="_blank" rel="noopener noreferrer" className='text-cyan-200 truncate'>{project.name}</a>
-            </li>
+              <span className='text-cyan-200 truncate'>{project.name}</span>
+            </a>
           ))}
-        </ul>
+        </div>
       )}
     </Card>
   )
