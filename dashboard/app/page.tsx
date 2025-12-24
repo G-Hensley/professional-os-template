@@ -1,5 +1,5 @@
 import { Footer, TopBar, SideBar, Shell } from "@components/layout";
-import { ProfileCard, QuickStats, RecentAutomations } from "@/src/components/dashboard";
+import { ProfileCard, QuickStats, RecentAutomations, ActiveProjectsMini } from "@/src/components/dashboard";
 
 export default function Home() {
   return (
@@ -12,6 +12,7 @@ export default function Home() {
           <ProfileCard />
           <QuickStats />
           <RecentAutomations />
+          <ActiveProjectsMini />
         </Shell>
       </section>
       <Footer />

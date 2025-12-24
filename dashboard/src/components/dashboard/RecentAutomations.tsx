@@ -25,7 +25,7 @@ function RecentAutomations() {
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg grid grid-cols-[140px_1fr_30px] gap-2 py-2 px-3 items-center hover:bg-cyan-800/30 transition-colors
-              duration-300 neumorphic"
+              duration-200 neumorphic"
             >
               <span className='text-cyan-200 truncate'>{automation.name}</span>
               <span className='text-orange-400 text-left'>{new Date(automation.timestamp).toLocaleString()}</span>
