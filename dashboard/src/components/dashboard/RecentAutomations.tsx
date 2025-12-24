@@ -24,7 +24,8 @@ function RecentAutomations() {
               href={automation.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="border rounded border-cyan-700 grid grid-cols-[140px_1fr_30px] gap-2 py-2 px-3 items-center hover:bg-cyan-900/30 transition-colors"
+              className="border rounded border-cyan-700 grid grid-cols-[140px_1fr_30px] gap-2 py-2 px-3 items-center hover:bg-cyan-900/30 transition-colors
+              duration-300 hover:border-cyan-500"
             >
               <span className='text-cyan-200 truncate'>{automation.name}</span>
               <span className='text-orange-400 text-left'>{new Date(automation.timestamp).toLocaleString()}</span>
