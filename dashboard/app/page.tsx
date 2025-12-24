@@ -10,9 +10,9 @@ export default function Home() {
         <Shell>
           {/* Main dashboard content goes here */}
           <ProfileCard />
-          <QuickStats />
           <RecentAutomations />
           <ActiveProjectsMini />
+          <QuickStats />
         </Shell>
       </section>
       <Footer />
