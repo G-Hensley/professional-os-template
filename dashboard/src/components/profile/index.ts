@@ -1,3 +1,3 @@
-export { ProfileHeader } from './ProfileHeader';
-export { SkillsGrid } from './SkillsGrid';
-export { SkillBar } from './SkillBar';
+export { ProfileCard } from './ProfileCard';
+// export { SkillsGrid } from './SkillsGrid';
+// export { SkillBar } from './SkillBar';
