@@ -12,6 +12,7 @@ A structured data repository designed to be consumed by AI tools (Claude Code, C
 - **Self-assessment** — Periodic evaluations across technical, business, and career areas
 - **Content creation** — LinkedIn posts, website copy from design systems and brand voice
 - **Automation** — GitHub Actions pipelines that do the work, not just remind you
+- **Dashboard** — Next.js app for visualizing all repo data in one place
 
 ## Automation Philosophy
 
@@ -83,6 +84,7 @@ A structured data repository designed to be consumed by AI tools (Claude Code, C
 | `business/codaissance/roadmap.md` | 2026 product roadmap |
 | `business/tampertantrum-labs/roadmap.md` | 2026 consulting roadmap |
 | `learning/roadmap.md` | 2026 learning roadmap |
+| `dashboard/WIREFRAMES.md` | Dashboard wireframes and component checklist |
 
 ## Businesses
 
@@ -194,12 +196,24 @@ myself/
 │       ├── market-research.toml
 │       └── salary-research.toml
 │
-└── .codex/                   # Codex reference (prompts installed to ~/.codex/prompts/)
-    └── commands/             # Local copies for reference
-        ├── assessment.md
-        ├── job-application.md
-        ├── review-resume.md
-        └── summarize-project.md
+├── .codex/                   # Codex reference (prompts installed to ~/.codex/prompts/)
+│   └── commands/             # Local copies for reference
+│       ├── assessment.md
+│       ├── job-application.md
+│       ├── review-resume.md
+│       └── summarize-project.md
+│
+└── dashboard/                # Next.js dashboard app
+    ├── app/                  # App Router pages
+    │   └── api/              # API routes (projects, profile, jobs, automations, content)
+    ├── src/
+    │   ├── components/       # React components
+    │   │   ├── dashboard/    # Home page cards
+    │   │   ├── layout/       # Shell, Sidebar, TopBar
+    │   │   └── ui/           # Reusable primitives
+    │   └── hooks/            # TanStack Query hooks
+    ├── lib/                  # QueryClient provider
+    └── WIREFRAMES.md         # ASCII wireframes
 ```
 
 </details>

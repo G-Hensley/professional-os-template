@@ -92,6 +92,14 @@ The repository is designed to be consumed by AI tools to assist with generating 
 - **.codex/** - Codex configuration
   - `prompts/` - Prompt templates for Codex
 
+- **dashboard/** - Next.js dashboard app for visualizing repo data
+  - `app/` - App Router pages and API routes
+  - `app/api/` - API routes that read repo JSON files (projects, profile, jobs, automations, content)
+  - `src/components/` - React components (dashboard/, layout/, ui/)
+  - `src/hooks/` - TanStack Query hooks for data fetching
+  - `lib/` - QueryClient provider and utilities
+  - `WIREFRAMES.md` - ASCII wireframes and component checklist
+
 ## Data Conventions
 
 ### Skill Levels

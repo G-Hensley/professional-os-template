@@ -81,6 +81,21 @@ Wife's application security consulting business. Gavin provides marketing strate
   - `weekly-summary/` - Weekly summary reports (YYYY-MM-DD.json/.md)
 - `/tests/` - Local test runners for automation scripts
 
+## Dashboard
+- `/dashboard/` - Next.js dashboard app for visualizing repo data
+  - `app/` - Next.js App Router pages and API routes
+    - `api/projects/` - Returns active, planned, completed projects
+    - `api/profile/` - Returns skills, experience, education, contact
+    - `api/jobs/` - Returns applications, interviews, job monitor opportunities
+    - `api/automations/` - Returns pipelines and run history
+    - `api/content/` - Returns LinkedIn weekly posts and content ideas
+  - `src/components/` - React components organized by feature
+    - `dashboard/` - Home page cards (ProfileCard, QuickStats, RecentAutomations, etc.)
+    - `layout/` - Shell, Sidebar, TopBar, Footer
+    - `ui/` - Reusable primitives (Card, Badge, Button, ProgressBar, Skeleton)
+  - `src/hooks/` - TanStack Query hooks for data fetching
+  - `WIREFRAMES.md` - ASCII wireframes and component checklist
+
 ## Root Files
 - `CLAUDE.md` - Instructions for Claude Code
 - `CONTEXT.md` - This file; explains the repo to humans and AI
