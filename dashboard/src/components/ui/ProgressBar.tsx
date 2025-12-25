@@ -1,9 +1,10 @@
-function ProgressBar() {
+function ProgressBar({ value }: { value: number }) {
   return (
-    <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
+    <div className="w-16 bg-gray-200 rounded-full h-4 dark:bg-orange-200 neumorphic">
       <div
-        className="bg-teal-600 h-4 rounded-full transition-all duration-500 ease-in-out"
-        style={{ width: '50%' }} // Example width, can be dynamic
+        className={`h-4 rounded-full transition-all duration-500 ease-in-out
+          ${value < 50 ? 'bg-red-500' : value < 100 ? 'bg-orange-500' : 'bg-green-500'}`}
+        style={{ width: `${value}%` }} // Example width, can be dynamic
       ></div>
     </div>
   );

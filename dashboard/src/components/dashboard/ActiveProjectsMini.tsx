@@ -2,6 +2,8 @@
 
 import { Card } from '../ui/Card';
 import { useActiveProjects } from "@/src/hooks";
+import { ProgressBar } from '@/src/components/ui';
+import Link from 'next/dist/client/link';
 
 function ActiveProjectsMini() {
   const { data: activeProjects, isLoading, isError } = useActiveProjects();
@@ -23,15 +25,24 @@ function ActiveProjectsMini() {
             <a
               href={project.repo_url}
               key={project.name}
-              className="rounded-lg py-2 px-3 hover:bg-cyan-800/30 transition-colors duration-200 neumorphic"
+              className="rounded-lg py-2 px-3 hover:bg-cyan-800/30 transition-colors duration-200 neumorphic flex items-center
+              justify-between gap-4"
               target="_blank"
               rel="noopener noreferrer"
             >
               <span className='text-cyan-200 truncate'>{project.name}</span>
+              {project.completion_percentage !== undefined ? (
+                <ProgressBar value={project.completion_percentage} />
+              ) : (
+                <span className="font-mono text-orange-400">{project.status}</span>
+              )}
             </a>
           ))}
         </div>
       )}
+      <Link href="/projects" className="text-orange-400 hover:underline text-sm mt-2 font-mono block text-center">
+        View All Projects
+      </Link>
     </Card>
   )
 }

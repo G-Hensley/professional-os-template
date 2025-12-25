@@ -1,5 +1,5 @@
 import { Footer, TopBar, SideBar, Shell } from "@components/layout";
-import { ProfileCard, QuickStats, RecentAutomations, ActiveProjectsMini } from "@/src/components/dashboard";
+import { ProfileCard, QuickStats, RecentAutomations, ActiveProjectsMini, JobSearchStatus } from "@/src/components/dashboard";
 
 export default function Home() {
   return (
@@ -29,6 +29,12 @@ export default function Home() {
           <div data-swapy-slot="stats" className="break-inside-avoid mb-4">
             <div data-swapy-item="stats">
               <QuickStats />
+            </div>
+          </div>
+
+          <div data-swapy-slot="job-search" className="break-inside-avoid mb-4">
+            <div data-swapy-item="job-search">
+              <JobSearchStatus />
             </div>
           </div>
         </Shell>

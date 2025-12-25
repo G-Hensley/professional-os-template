@@ -1,6 +1,7 @@
 export interface Project {
   name: string;
   repo_url: string;
+  completion_percentage?: number;
   type: 'SaaS' | 'Tool' | 'Library' | 'Website';
   description: string;
   technologies: string[];

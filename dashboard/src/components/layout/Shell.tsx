@@ -25,7 +25,7 @@ function Shell({ children }: ShellProps) {
   return (
     <section
       ref={containerRef}
-      className="neumorphic w-full h-full min-h-fit rounded-4xl px-6 py-4 overflow-y-auto
+      className="neumorphic w-full h-full min-h-fit rounded-4xl px-8 py-6 overflow-y-auto
         columns-1 md:columns-2 2xl:columns-3 gap-6 [column-fill:balance]"
     >
       {children}
