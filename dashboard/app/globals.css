@@ -19,8 +19,9 @@
   }
 }
 
-body {
+html, body {
   background: radial-gradient(at top left, var(--color-cyan-900), var(--color-cyan-950) 60%);
+  height: fit-content;
 }
 
 @layer utilities {
@@ -31,7 +32,11 @@ body {
   }
 
   .neumorphic {
-    box-shadow:  3px 3px 12px #0b1821, 
+    box-shadow:  3px 3px 12px #0b1821,
     -3px -3px 12px #273e4b;
+  }
+
+  .overlay {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, transparent 40%)
   }
 }

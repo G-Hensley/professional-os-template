@@ -40,7 +40,11 @@ function ActiveProjectsMini() {
           ))}
         </div>
       )}
-      <Link href="/projects" className="text-orange-400 hover:underline text-sm mt-2 font-mono block text-center">
+      <Link href="/projects" 
+      className="text-orange-400 text-sm mt-2 font-mono block text-center
+        w-fit mx-auto neumorphic px-3 py-1 rounded-4xl transition-all duration-300
+        hover:bg-cyan-900"
+      >
         View All Projects
       </Link>
     </Card>

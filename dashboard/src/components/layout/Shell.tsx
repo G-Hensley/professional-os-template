@@ -1,34 +1,23 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { createSwapy } from "swapy";
-
 interface ShellProps {
   children: React.ReactNode;
 }
 
 function Shell({ children }: ShellProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    const swapy = createSwapy(containerRef.current, {
-      animation: "dynamic",
-    });
-
-    return () => {
-      swapy.destroy();
-    };
-  }, []);
-
   return (
-    <section
-      ref={containerRef}
-      className="neumorphic w-full h-full min-h-fit rounded-4xl px-8 py-6 overflow-y-auto
-        columns-1 md:columns-2 2xl:columns-3 gap-6 [column-fill:balance]"
+    <section className="neumorphic w-fit xl:max-h-[80vh] rounded-4xl
+      overflow-y-scroll scrollbar-thin scrollbar-thumb-cyan-800 scrollbar-track-cyan-900
+      relative"
     >
-      {children}
+      <div className="px-8 py-6 flex flex-wrap gap-6 justify-center">
+        {children}
+      </div>
+      <div
+        className="sticky bottom-0 left-0 right-0 w-full h-36 z-10
+          bg-linear-to-t from-black/50 to-transparent
+          pointer-events-none rounded-b-4xl"
+      />
     </section>
   );
 }
