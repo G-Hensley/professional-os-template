@@ -8,11 +8,29 @@ export default function Home() {
       <section className="h-full flex items-center gap-8 flex-1">
         <SideBar />
         <Shell>
-          {/* Main dashboard content goes here */}
-          <ProfileCard />
-          <RecentAutomations />
-          <ActiveProjectsMini />
-          <QuickStats />
+          <div data-swapy-slot="profile" className="break-inside-avoid mb-4">
+            <div data-swapy-item="profile">
+              <ProfileCard />
+            </div>
+          </div>
+
+          <div data-swapy-slot="automations" className="break-inside-avoid mb-4">
+            <div data-swapy-item="automations">
+              <RecentAutomations />
+            </div>
+          </div>
+
+          <div data-swapy-slot="projects" className="break-inside-avoid mb-4">
+            <div data-swapy-item="projects">
+              <ActiveProjectsMini />
+            </div>
+          </div>
+
+          <div data-swapy-slot="stats" className="break-inside-avoid mb-4">
+            <div data-swapy-item="stats">
+              <QuickStats />
+            </div>
+          </div>
         </Shell>
       </section>
       <Footer />

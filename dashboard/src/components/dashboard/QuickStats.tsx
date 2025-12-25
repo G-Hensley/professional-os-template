@@ -16,14 +16,14 @@ function QuickStats() {
   ]
 
   return (
-    <Card>
+    <Card className="w-fit">
       <h2 className="text-lg font-bold text-orange-400 text-center">Quick Stats</h2>
       {isLoading ? (
         <p className="text-cyan-200">Loading...</p>
       ) : (
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 justify-center items-center">
           {stats.map((stat) => (
-            <div key={stat.label} className="flex justify-between gap-3">
+            <div key={stat.label} className="flex gap-3 justify-between w-3xs border-b border-cyan-600 pb-1 px-1">
               <span className="text-cyan-200">{stat.label}:</span>
               <span className="font-mono text-cyan-100">{stat.value}</span>
             </div>

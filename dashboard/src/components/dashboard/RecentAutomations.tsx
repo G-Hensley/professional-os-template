@@ -8,7 +8,7 @@ function RecentAutomations() {
   console.log(recentAutomations);
 
   return (
-    <Card>
+    <Card className='min-w-sm'>
       <h2 className="text-lg font-bold text-orange-400 text-center">Recent Automations</h2>
       {isLoading ? (
         <p className="text-cyan-200">Loading...</p>

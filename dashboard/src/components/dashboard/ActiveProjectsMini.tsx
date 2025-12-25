@@ -9,7 +9,7 @@ function ActiveProjectsMini() {
   console.log(activeProjects);
 
   return (
-    <Card>
+    <Card className='w-fit'>
       <h2 className="text-lg font-bold text-orange-400 text-center">Active Projects</h2>
       {isLoading ? (
         <p className="text-cyan-200">Loading...</p>

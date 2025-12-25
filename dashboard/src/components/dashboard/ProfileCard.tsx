@@ -11,12 +11,12 @@ function ProfileCard() {
   }
   
   return (
-    <Card>
-      <div className="flex items-center gap-2">
+    <Card className='max-w-md w-fit'>
+      <div className="flex items-center gap-3 justify-center">
         {isLoading ? (
         <p className="text-cyan-200">Loading...</p>
       ) : (
-        <div className="w-20 h-20 relative rounded-full overflow-hidden mx-auto">
+        <div className="w-20 h-20 relative rounded-full overflow-hidden">
           {contact?.links.github ? (
             <Image
               src={contact.links.github + '.png'}
@@ -32,7 +32,7 @@ function ProfileCard() {
           )}
         </div>
       )}
-        <div className='flex flex-col'>
+        <div className='flex flex-col border-l border-orange-400 pl-4'>
           <h2 className="text-lg font-bold text-orange-400">{contact?.name}</h2>
           <p className="text-sm text-cyan-200">{contact?.title}</p>
           <p className="text-sm text-cyan-200">{contact?.recent_employer}</p>
