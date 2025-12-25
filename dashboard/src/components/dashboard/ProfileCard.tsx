@@ -2,6 +2,7 @@
 import { Card } from '../ui/Card';
 import { useContact } from '@/src/hooks';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function ProfileCard() {
   const { data: contact, isLoading } = useContact();
@@ -38,6 +39,12 @@ function ProfileCard() {
           <p className="text-sm text-cyan-200">{contact?.recent_employer}</p>
         </div>
       </div>
+      <Link href="/profile" className="neumorphic px-3 py-1 rounded-4xl w-fit mx-auto
+        text-orange-400 text-sm mt-2 font-mono block text-center transition-all duration-300
+        hover:bg-cyan-900"
+      >
+        View Profile
+      </Link>
     </Card>
   );
 }

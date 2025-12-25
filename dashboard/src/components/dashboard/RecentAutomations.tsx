@@ -2,6 +2,7 @@
 
 import { Card } from '../ui/Card';
 import { useRecentAutomations } from "@/src/hooks";
+import Link from 'next/link';
 
 function RecentAutomations() {
   const { data: recentAutomations, isLoading, isError } = useRecentAutomations();
@@ -40,6 +41,13 @@ function RecentAutomations() {
           ))}
         </ul>
       )}
+      <Link href="/automations" 
+      className="text-orange-400 text-sm mt-2 font-mono block text-center
+        w-fit mx-auto neumorphic px-3 py-1 rounded-4xl transition-all duration-300
+        hover:bg-cyan-900"
+      >
+        View Automations
+      </Link>
     </Card>
   );
 }
