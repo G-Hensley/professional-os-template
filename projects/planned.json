@@ -1,9 +1,104 @@
 {
+  "vibiom": {
+    "name": "Vibiom",
+    "repo_url": "https://github.com/G-Hensley/vibiom",
+    "type": "CLI Tool",
+    "description": "Vibiom MVP is a multi-agent AI orchestrator that coordinates 3 specialized agents (Product, Backend, Security) to build production-grade software from specifications. Proves that coordinated AI specialists produce better code than single-agent systems.",
+    "technologies": [
+      "TypeScript",
+      "Node.js",
+      "Commander",
+      "Anthropic SDK",
+      "YAML",
+      "Zod"
+    ],
+    "monetization_strategy": "Open-source MVP, SaaS later",
+    "status": "Blocked",
+    "priority": 9,
+    "blocked_by": "Dev Genesis",
+    "due_date": "2026-02-28",
+    "problem": "Solo developers want to build ambitious products but can't afford full engineering organizations. Existing AI coding tools help write code faster, but they're single-agent assistants—you still do all the architecture, security review, testing, and coordination yourself.",
+    "solution": "Vibiom MVP coordinates 3 specialized agents: Product (specs), Backend (implementation), Security (review). Each agent specializes in one domain, validates previous work, and hands off through structured workflows.",
+    "target_audience": [
+      "Solo developers wanting to build complex products",
+      "Small startups needing rapid prototyping",
+      "Freelance developers scaling output"
+    ],
+    "mission_statement": "Prove that coordinated AI specialists build better software than single AI generalists.",
+    "success_milestone": "Successfully orchestrate 3 agents to build a complete backend API from a specification",
+    "tagline": "Multi-agent development that actually works.",
+    "spec_folder": "projects/specs/vibiom"
+  },
+  "tempered-ui": {
+    "name": "TemperedUI",
+    "repo_url": "",
+    "type": "Design System / Component Library",
+    "description": "TemperedUI is a security-first React component library that makes secure development effortless and fast. It provides beautiful, accessible components with built-in protection against XSS, CSRF, and injection attacks. Features include auto-sanitizing inputs, secure forms with automatic token management, and safe links that prevent tabnabbing—all styled with Tailwind CSS.",
+    "technologies": [
+      "Vite",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "DOMPurify",
+      "Vitest",
+      "React Testing Library",
+      "Storybook"
+    ],
+    "monetization_strategy": "Freemium (core free, enterprise paid)",
+    "status": "Blocked",
+    "priority": 8,
+    "blocked_by": "Vibiom",
+    "due_date": "2026-04-15",
+    "problem": "Building secure web applications requires developers to manually implement protection against XSS, CSRF, injection attacks, and other vulnerabilities for every input, form, and link. Security code is repetitive, easy to forget, and constantly needs updating as new attack vectors emerge.",
+    "solution": "TemperedUI is a React component library where security is built into every component by default. Inputs auto-sanitize, forms include CSRF token management, links prevent tabnabbing, and all components are designed by an application security professional.",
+    "target_audience": [
+      "Full-stack developers building web applications who want secure components out-of-the-box",
+      "Frontend developers needing accessible, well-designed UI components with built-in security",
+      "Startups and small teams looking to ship secure applications faster without dedicated security experts",
+      "Freelance developers wanting to ensure their applications are secure without extra effort"
+    ],
+    "mission_statement": "TemperedUI exists because security should never be an afterthought developers bolt on manually. Our mission is to make secure development the default path by building React components where protection is built into the foundation.",
+    "success_milestone": "TemperedUI is used in 3 production projects (internal or external) and prevents at least one documented security vulnerability",
+    "tagline": "Beautiful components that protect by default. Ship secure apps without writing security code.",
+    "spec_folder": "projects/specs/tempered-ui"
+  },
+  "mindtrace": {
+    "name": "MindTrace",
+    "repo_url": "",
+    "type": "SaaS Web Application",
+    "description": "MindTrace is a fast, focused web application designed for teachers, therapists, and school counselors to log student behavioral incidents in under 30 seconds. Users select a student, choose the behavior type and mood, mark incidents as aggressive or sensory-related, and add contextual notes—then save.",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+      "Supabase",
+      "TemperedUI",
+      "Vitest"
+    ],
+    "monetization_strategy": "SaaS Subscription",
+    "status": "Blocked",
+    "priority": 7,
+    "blocked_by": "TemperedUI",
+    "due_date": "2026-05-31",
+    "problem": "Teachers, therapists, and school counselors need to document student behavioral incidents quickly and accurately, but existing solutions are either too slow (paper notes that get lost), too clunky (spreadsheets), or too complex (enterprise software designed for administrators, not frontline educators).",
+    "solution": "MindTrace is built specifically for busy educators who need rapid documentation and easy access to behavioral data. Log an incident in under 30 seconds: select student, choose behavior type and mood, mark if aggressive or sensory-related, add notes, save.",
+    "target_audience": [
+      "Teachers managing classroom behavior documentation",
+      "School counselors tracking student behavioral patterns",
+      "Therapists working with children who need incident logging",
+      "Special education coordinators preparing IEP documentation"
+    ],
+    "mission_statement": "MindTrace exists because educators deserve tools as fast as they need to be. Our mission is to give teachers, counselors, and therapists back their time by making behavioral documentation instant and effortless.",
+    "success_milestone": "5 teachers or counselors use MindTrace for 30 days and report it saves them time compared to their previous system",
+    "tagline": "Log student behavior in 30 seconds. Simple, fast, and built for educators who don't have time to waste.",
+    "spec_folder": "projects/specs/mindtrace"
+  },
   "devgauntlet": {
     "name": "DevGauntlet",
     "repo_url": "",
     "type": "SaaS Web Application",
-    "description": "DevGauntlet is a comprehensive professional software engineering training platform where developers build real projects by completing Jira-style tickets—no tutorials, just requirements and automated testing. Starting with backend development (authentication, APIs, databases), DevGauntlet expands across the entire engineering stack: frontend frameworks, mobile development, DevOps practices, AI engineering, desktop applications, and CLI tools.",
+    "description": "DevGauntlet is a comprehensive professional software engineering training platform where developers build real projects by completing Jira-style tickets—no tutorials, just requirements and automated testing. Starting with backend development (authentication, APIs, databases), DevGauntlet expands across the entire engineering stack.",
     "technologies": [
       "Next.js",
       "TypeScript",
@@ -11,32 +106,31 @@
       "Tailwind CSS",
       "TemperedUI",
       "Supabase",
-      "Vitest",
-      "GitHub Actions"
+      "Docker"
     ],
     "monetization_strategy": "Freemium",
     "status": "Blocked",
+    "priority": 6,
     "blocked_by": "TemperedUI",
-    "priority": 8,
-    "due_date": "2026-05-01",
-    "problem": "Most developer education focuses on tutorials that hold your hand through every step, leaving developers unprepared for real work where you get a ticket, research solutions, and ship tested code. Bootcamps teach syntax but not professional workflows. Junior developers struggle to prove they can work independently because they've never practiced taking requirements and delivering working software.",
-    "solution": "DevGauntlet teaches professional development by having you do professional development. You receive Jira-style tickets with requirements and acceptance criteria. You research, implement, and test your solution. Automated testing validates your work. Your completed projects prove you can work professionally from day one. Learn TDD, BDD/DDD, Docker, Kubernetes, CI/CD, and Agile workflows by doing what professional engineers do.",
+    "due_date": "2026-07-01",
+    "problem": "Most developer education focuses on tutorials that hold your hand through every step, leaving developers unprepared for real work where you get a ticket, research solutions, and ship tested code. Junior developers struggle to prove they can work independently because they've never practiced taking requirements and delivering working software.",
+    "solution": "DevGauntlet teaches professional development by having you do professional development. You receive Jira-style tickets with requirements and acceptance criteria. You research, implement, and test your solution. Automated testing validates your work.",
     "target_audience": [
       "Self-taught developers wanting to learn professional workflows",
       "Bootcamp graduates needing to prove they can work independently",
       "Junior developers preparing for their first engineering role",
-      "Career changers building a portfolio of real project work",
-      "Developers wanting to expand into new domains (backend, DevOps, AI)"
+      "Career changers building a portfolio of real project work"
     ],
-    "mission_statement": "DevGauntlet exists because tutorials don't prepare you for real work. Our mission is to train developers the way they'll actually work—by taking tickets, researching solutions, writing tested code, and shipping. No hand-holding, no step-by-step guides, just the challenge and the tools to figure it out.",
+    "mission_statement": "DevGauntlet exists because tutorials don't prepare you for real work. Our mission is to train developers the way they'll actually work—by taking tickets, researching solutions, writing tested code, and shipping.",
     "success_milestone": "15 developers sign up and complete at least one full backend project challenge (MVP phase)",
-    "tagline": "No tutorials. Just challenges. Build like a professional developer, not a student."
+    "tagline": "No tutorials. Just challenges. Build like a professional developer, not a student.",
+    "spec_folder": "projects/specs/devgauntlet"
   },
   "scopecreep": {
     "name": "ScopeCreep",
     "repo_url": "",
     "type": "SaaS Web Application",
-    "description": "ScopeCreep is an automated testing platform for PostgreSQL Row-Level Security (RLS) policies. Similar to APIsec's approach for API security testing, ScopeCreep continuously validates that database access controls work as intended by testing RLS policies against realistic user scenarios. It identifies misconfigurations, permission escalations, and data leaks before they reach production.",
+    "description": "ScopeCreep is an automated testing platform for PostgreSQL Row-Level Security (RLS) policies. Similar to APIsec's approach for API security testing, ScopeCreep continuously validates that database access controls work as intended by testing RLS policies against realistic user scenarios.",
     "technologies": [
       "Next.js",
       "TypeScript",
@@ -48,21 +142,21 @@
     ],
     "monetization_strategy": "Freemium",
     "status": "Blocked",
-    "blocked_by": "TemperedUI",
     "priority": 5,
-    "due_date": "2026-06-01",
-    "problem": "Row-Level Security in PostgreSQL is powerful but notoriously difficult to test correctly. Developers define RLS policies assuming they work, but misconfigurations often go undetected until a data breach occurs. Manual testing is tedious and incomplete. There's no automated way to validate that RLS policies actually enforce the access patterns you intended.",
-    "solution": "ScopeCreep automates RLS policy testing. Developers define expected access patterns (user A should see their own data, admin B should see everything, user C should see nothing), and ScopeCreep automatically generates test cases, runs them against your database, and alerts on violations. Continuous testing catches regressions when policies change.",
+    "blocked_by": "TemperedUI",
+    "due_date": "2026-08-01",
+    "problem": "Row-Level Security in PostgreSQL is powerful but notoriously difficult to test correctly. Developers define RLS policies assuming they work, but misconfigurations often go undetected until a data breach occurs. Manual testing is tedious and incomplete.",
+    "solution": "ScopeCreep automates RLS policy testing. Developers define expected access patterns (user A should see their own data, admin B should see everything, user C should see nothing), and ScopeCreep automatically generates test cases, runs them against your database, and alerts on violations.",
     "target_audience": [
       "Backend developers using PostgreSQL RLS for multi-tenant applications",
       "Security engineers auditing database access controls",
       "Startups using Supabase who rely heavily on RLS",
-      "Development teams needing to validate access controls in CI/CD",
-      "Compliance-focused organizations requiring proof of access control testing"
+      "Development teams needing to validate access controls in CI/CD"
     ],
-    "mission_statement": "ScopeCreep exists because database authorization is too critical to test manually. Our mission is to bring the same rigor of API security testing to row-level security—automatically validating that your database access controls actually work before misconfigurations become breaches.",
+    "mission_statement": "ScopeCreep exists because database authorization is too critical to test manually. Our mission is to bring the same rigor of API security testing to row-level security.",
     "success_milestone": "3 companies pilot ScopeCreep and identify at least one RLS misconfiguration they weren't aware of",
-    "tagline": "Automated RLS testing for databases. Catch authorization bugs before they reach production."
+    "tagline": "Automated RLS testing for databases. Catch authorization bugs before they reach production.",
+    "spec_folder": "projects/specs/scopecreep"
   },
   "openorbit": {
     "name": "OpenOrbit",
@@ -75,26 +169,25 @@
       "React",
       "Tailwind CSS",
       "Supabase",
-      "TemperedUI",
-      "ScopeCreep"
+      "TemperedUI"
     ],
     "monetization_strategy": "Freemium",
     "status": "Blocked",
-    "blocked_by": "TemperedUI, ScopeCreep",
     "priority": 3,
-    "due_date": "2026-07-01",
-    "problem": "LinkedIn is resume-focused—your profile is about where you worked, not what you're building. Twitter/X is noisy and not structured for project updates. There's no dedicated platform for tech professionals to share their building journey in a structured way that connects them with collaborators and builds reputation through work, not credentials.",
-    "solution": "OpenOrbit makes 'building in public' the core social experience. Users create project profiles with milestones, get feedback from the community, find collaborators, and showcase their building process. Projects can be shared externally, building reputation through transparent progress rather than polished portfolios. Connect with people through what you're creating rather than where you work.",
+    "blocked_by": "TemperedUI, ScopeCreep",
+    "due_date": "2026-10-01",
+    "problem": "LinkedIn is resume-focused—your profile is about where you worked, not what you're building. Twitter/X is noisy and not structured for project updates. There's no dedicated platform for tech professionals to share their building journey in a structured way.",
+    "solution": "OpenOrbit makes 'building in public' the core social experience. Users create project profiles with milestones, get feedback from the community, find collaborators, and showcase their building process.",
     "target_audience": [
       "Indie hackers and solo developers building in public",
       "Designers sharing their design process and getting feedback",
       "Security researchers documenting their work",
-      "Open-source maintainers engaging with their community",
-      "Tech creators who want to be known for what they build, not where they work"
+      "Open-source maintainers engaging with their community"
     ],
-    "mission_statement": "OpenOrbit exists because your best work isn't a resume bullet—it's what you're building right now. Our mission is to create a social platform where tech professionals connect through active projects, not past credentials. We believe reputation should come from transparent progress and real work, not polished portfolios and job titles.",
+    "mission_statement": "OpenOrbit exists because your best work isn't a resume bullet—it's what you're building right now. Our mission is to create a social platform where tech professionals connect through active projects, not past credentials.",
     "success_milestone": "100 users create accounts and post at least 3 project updates each, with measurable engagement (comments/feedback) on their posts",
-    "tagline": "Build in public, together. A social platform for tech creators sharing projects, not resumes."
+    "tagline": "Build in public, together. A social platform for tech creators sharing projects, not resumes.",
+    "spec_folder": "projects/specs/openorbit"
   },
   "instapi": {
     "name": "InstAPI",
@@ -110,9 +203,10 @@
     ],
     "monetization_strategy": "Freemium",
     "status": "Not Started",
-    "priority": 5,
+    "priority": 4,
+    "due_date": "2026-09-01",
     "problem": "Frontend developers often block on backend APIs that aren't ready yet. Setting up mock servers is tedious. Existing tools like JSON Server require local setup. There's friction between needing an API to build against and waiting for the real backend to be ready.",
-    "solution": "InstAPI lets you define API endpoints and response schemas in a web UI, then instantly generates a hosted mock API you can call from your frontend. No local setup, no code, just define and use. Great for prototyping, demos, and unblocking frontend development.",
+    "solution": "InstAPI lets you define API endpoints and response schemas in a web UI, then instantly generates a hosted mock API you can call from your frontend. No local setup, no code, just define and use.",
     "target_audience": [
       "Frontend developers needing mock APIs for development",
       "Full-stack developers prototyping before building real backends",
@@ -121,6 +215,7 @@
     ],
     "mission_statement": "InstAPI exists to unblock frontend development. Our mission is to eliminate the wait for backend APIs by letting developers instantly create the mock APIs they need to keep building.",
     "success_milestone": "50 developers use InstAPI to create mock APIs for their projects",
-    "tagline": "Mock APIs in seconds. Stop waiting for backend, start building frontend."
+    "tagline": "Mock APIs in seconds. Stop waiting for backend, start building frontend.",
+    "spec_folder": "projects/specs/instapi"
   }
 }

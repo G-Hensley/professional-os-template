@@ -1,6 +1,6 @@
 {
   "professional-os": {
-    "name": "Professional OS (working title)",
+    "name": "Professional OS",
     "repo_url": "https://github.com/G-Hensley/myself",
     "type": "Digital Product",
     "description": "A version-controlled, AI-ready knowledge base framework for developers. Structured repository template that automates resume generation, content creation, skill tracking, and professional knowledge management. Designed to provide consistent context to AI tools (Claude, Copilot, Cursor, etc.) while eliminating repetitive self-explanation.",
@@ -10,13 +10,15 @@
       "GitHub Actions",
       "JSON Schemas",
       "Markdown",
-      "Claude Code",
-      "Codex",
-      "Gemini CLI"
+      "Next.js",
+      "TypeScript",
+      "TanStack Query",
+      "Tailwind CSS"
     ],
-    "monetization_strategy": "Tiered one-time purchase ($97-$997) with future SaaS upgrade path",
-    "status": "Planning",
+    "monetization_strategy": "Tiered one-time purchase ($97-$997) with SaaS dashboard upgrade path ($12-$24/mo)",
+    "status": "In Progress",
     "priority": 10,
+    "completion_percentage": 85,
     "due_date": "2026-01-31",
     "problem": "Developers juggling employment, side projects, content creation, and job searching constantly re-explain context to AI tools, manually track skills across platforms, and struggle to maintain consistency between LinkedIn, GitHub, resumes, and portfolios. Every new AI conversation starts from zero.",
     "solution": "A version-controlled knowledge base that serves as the single source of truth for professional identity. AI tools read structured data (skills, experience, projects) and generate tailored outputs automatically. GitHub Actions handle routine updates. The developer stops re-explaining themselves and starts leveraging their accumulated context.",
@@ -28,141 +30,38 @@
       "Developers who use AI tools daily and want them to understand their full context"
     ],
     "mission_statement": "Make professional knowledge management work WITH AI instead of fighting it. Stop re-explaining yourself to every new tool, every new conversation, every new application. Your context should compound, not reset.",
-    "success_milestone": "10 paying customers using the framework to generate resumes or content, with at least 3 reporting time savings",
-    "tagline": "Your professional identity, version-controlled. Stop re-explaining yourself to AI."
+    "success_milestone": "25 sales in first month, 10 customers generate a resume or use commands, <10% refund rate",
+    "tagline": "Your professional identity, version-controlled. Stop re-explaining yourself to AI.",
+    "spec_folder": "projects/specs/professional-os"
   },
   "dev-genesis": {
     "name": "Dev Genesis",
     "repo_url": "https://github.com/G-Hensley/dev-genesis",
     "type": "GitHub Template",
-    "description": "Dev Genesis is a GitHub template repository that transforms rough project ideas into organized, production-ready repositories in under 30 minutes. It includes AI-assisted planning prompts that generate importable GitHub issues, pre-configured support for Claude Code, Cursor, Copilot, and Windsurf, automated security scanning, issue templates, PR workflows, and quality tooling. Tech-stack agnostic with best practices built-in, Dev Genesis eliminates hours of project setup so developers can start coding immediately.",
+    "description": "Dev Genesis is a GitHub template repository that transforms rough project ideas into organized, production-ready repositories in under 30 minutes. It includes AI-assisted planning prompts that generate importable GitHub issues, pre-configured support for Claude Code, Cursor, Copilot, and Windsurf, automated security scanning, issue templates, PR workflows, and quality tooling.",
     "technologies": [
       "GitHub Actions",
       "GitHub Issues",
-      "Codex",
-      "Claude Code",
-      "Cursor",
-      "Windsurf",
-      "GitHub Copilot",
       "Bash",
-      "GitHub Probot"
+      "YAML",
+      "Markdown"
     ],
-    "monetization_strategy": "Open-source",
+    "monetization_strategy": "Open-source (brand building)",
     "status": "In Progress",
     "priority": 10,
     "completion_percentage": 80,
-    "due_date": "2026-01-05",
-    "problem": "Starting a new software project wastes hours on repetitive setup tasks—configuring Git, setting up issue templates, configuring AI assistants, establishing workflows, and implementing quality tooling. Developers spend entire afternoons on boilerplate configuration instead of writing code. By the time the repository is properly structured, momentum and excitement have already faded.",
-    "solution": "Dev Genesis is a GitHub template repository that handles all project setup automatically. In under 30 minutes, it generates a fully-configured repository with AI planning prompts that create importable GitHub issues, pre-configured support for Claude Code, Cursor, Copilot, and Windsurf, automated security scanning, and professional workflows. Developers go from rough idea to organized, production-ready project structure instantly—then start coding immediately.",
+    "due_date": "2026-01-19",
+    "problem": "Starting a new software project wastes hours on repetitive setup tasks—configuring Git, setting up issue templates, configuring AI assistants, establishing workflows, and implementing quality tooling. Developers spend entire afternoons on boilerplate configuration instead of writing code.",
+    "solution": "Dev Genesis is a GitHub template repository that handles all project setup automatically. In under 30 minutes, it generates a fully-configured repository with AI planning prompts that create importable GitHub issues, pre-configured support for Claude Code, Cursor, Copilot, and Windsurf, automated security scanning, and professional workflows.",
     "target_audience": [
       "Solo developers wanting to launch projects quickly without tedious setup",
       "Tech leads at startups needing to bootstrap new repositories for rapid prototyping",
       "Freelance developers juggling multiple projects who need to save time on setup",
-      "Open-source maintainers looking to standardize project structures across repositories",
-      "Development agencies aiming to streamline project kickoffs for client work",
-      "Hobbyist programmers eager to turn ideas into code without friction"
+      "Open-source maintainers looking to standardize project structures across repositories"
     ],
-    "mission_statement": "Dev Genesis exists to eliminate the friction between inspiration and implementation. Every hour spent on repository setup is an hour stolen from actual building. Our mission is to give developers back their time and momentum by automating the tedious configuration work that stands between great ideas and great code, making it possible to go from concept to coding in minutes instead of days.",
+    "mission_statement": "Dev Genesis exists to eliminate the friction between inspiration and implementation. Every hour spent on repository setup is an hour stolen from actual building.",
     "success_milestone": "10 developers use Dev Genesis to bootstrap a project and report that setup time was reduced to under 30 minutes",
-    "tagline": "From idea to coding in 30 minutes. Stop configuring, start building."
-  },
-  "vibiom": {
-    "name": "Vibiom",
-    "repo_url": "https://github.com/G-Hensley/vibiom",
-    "type": "CLI Tool",
-    "description": "Vibiom MVP is a multi-agent AI orchestrator that coordinates 3 specialized agents (Product, Backend, Security) to build production-grade software from specifications. Proves that coordinated AI specialists produce better code than single-agent systems.",
-    "technologies": [
-      "TypeScript",
-      "Node.js",
-      "Commander",
-      "Anthropic SDK",
-      "YAML",
-      "Zod"
-    ],
-    "monetization_strategy": "Open-source MVP, SaaS later",
-    "status": "In Progress",
-    "priority": 9,
-    "blocked_by": "Dev Genesis",
-    "due_date": "2026-02-15",
-    "problem": "Solo developers want to build ambitious products but can't afford full engineering organizations. Existing AI coding tools help write code faster, but they're single-agent assistants—you still do all the architecture, security review, testing, and coordination yourself.",
-    "solution": "Vibiom MVP coordinates 3 specialized agents: Product (specs), Backend (implementation), Security (review). Each agent specializes in one domain, validates previous work, and hands off through structured workflows.",
-    "target_audience": [
-      "Solo developers wanting to build complex products",
-      "Small startups needing rapid prototyping",
-      "Freelance developers scaling output"
-    ],
-    "mission_statement": "Prove that coordinated AI specialists build better software than single AI generalists.",
-    "success_milestone": "Successfully orchestrate 3 agents to build a complete backend API from a specification",
-    "tagline": "Multi-agent development that actually works."
-  },
-  "tempered-ui": {
-    "name": "TemperedUI",
-    "repo_url": "",
-    "type": "Design System / Component Library",
-    "description": "TemperedUI is a security-first React component library that makes secure development effortless and fast. It provides beautiful, accessible components with built-in protection against XSS, CSRF, and injection attacks. Features include auto-sanitizing inputs, secure forms with automatic token management, and safe links that prevent tabnabbing—all styled with Tailwind CSS. Built by an application security professional, TemperedUI eliminates the need to write security code manually for common UI patterns.",
-    "technologies": [
-      "Vite",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "PNPM",
-      "DOMPurify",
-      "CSRF Token Handling",
-      "ESLint",
-      "Prettier",
-      "Vitest",
-      "React Testing Library",
-      "Storybook"
-    ],
-    "monetization_strategy": "Freemium",
-    "status": "Planned",
-    "priority": 8,
-    "blocked_by": "Vibiom",
-    "due_date": "2026-03-15",
-    "problem": "Building secure web applications requires developers to manually implement protection against XSS, CSRF, injection attacks, and other vulnerabilities for every input, form, and link. Security code is repetitive, easy to forget, and constantly needs updating as new attack vectors emerge. Most component libraries prioritize aesthetics over security, leaving developers to bolt on protection themselves—often incorrectly.",
-    "solution": "TemperedUI is a React component library where security is built into every component by default. Inputs auto-sanitize, forms include CSRF token management, links prevent tabnabbing, and all components are designed by an application security professional. Developers get beautiful, accessible, Tailwind-styled components that protect against common vulnerabilities automatically—no manual security code required.",
-    "target_audience": [
-      "Full-stack developers building web applications who want secure components out-of-the-box",
-      "Frontend developers needing accessible, well-designed UI components with built-in security",
-      "Startups and small teams looking to ship secure applications faster without dedicated security experts",
-      "Freelance developers wanting to ensure their applications are secure without extra effort",
-      "Development agencies aiming to deliver secure, production-ready applications to clients quickly"
-    ],
-    "mission_statement": "TemperedUI exists because security should never be an afterthought developers bolt on manually. Our mission is to make secure development the default path by building React components where protection is built into the foundation—not a feature you remember to add. We believe beautiful, accessible interfaces and robust security aren't competing priorities; they're inseparable standards that every application deserves.",
-    "success_milestone": "TemperedUI is used in 3 production projects (internal or external) and prevents at least one documented security vulnerability",
-    "tagline": "Beautiful components that protect by default. Ship secure apps without writing security code."
-  },
-  "mindtrace": {
-    "name": "MindTrace",
-    "repo_url": "",
-    "type": "SaaS Web Application",
-    "description": "MindTrace is a fast, focused web application designed for teachers, therapists, and school counselors to log student behavioral incidents in under 30 seconds. Users select a student, choose the behavior type and mood, mark incidents as aggressive or sensory-related, and add contextual notes—then save. The system enables instant search and filtering of historical logs, eliminating lost paper notes and clunky spreadsheets.",
-    "technologies": [
-      "Next.js",
-      "TypeScript",
-      "React",
-      "Tailwind CSS",
-      "Supabase",
-      "TemperedUI",
-      "Vitest",
-      "GitHub Actions"
-    ],
-    "monetization_strategy": "SaaS Subscription",
-    "status": "Planned",
-    "priority": 7,
-    "blocked_by": "TemperedUI",
-    "due_date": "2026-04-15",
-    "problem": "Teachers, therapists, and school counselors need to document student behavioral incidents quickly and accurately, but existing solutions are either too slow (paper notes that get lost), too clunky (spreadsheets), or too complex (enterprise software designed for administrators, not frontline educators). Every minute spent on documentation is a minute away from students.",
-    "solution": "MindTrace is built specifically for busy educators who need rapid documentation and easy access to behavioral data. Log an incident in under 30 seconds: select student, choose behavior type and mood, mark if aggressive or sensory-related, add notes, save. Instant search and filtering of historical logs makes it easy to prepare for parent meetings, IEP planning, and intervention tracking.",
-    "target_audience": [
-      "Teachers managing classroom behavior documentation",
-      "School counselors tracking student behavioral patterns",
-      "Therapists working with children who need incident logging",
-      "Special education coordinators preparing IEP documentation",
-      "School administrators needing behavioral data for intervention planning"
-    ],
-    "mission_statement": "MindTrace exists because educators deserve tools as fast as they need to be. Our mission is to give teachers, counselors, and therapists back their time by making behavioral documentation instant and effortless—so they can focus on what matters: their students.",
-    "success_milestone": "5 teachers or counselors use MindTrace for 30 days and report it saves them time compared to their previous system",
-    "tagline": "Log student behavior in 30 seconds. Simple, fast, and built for educators who don't have time to waste."
+    "tagline": "From idea to coding in 30 minutes. Stop configuring, start building.",
+    "spec_folder": "projects/specs/dev-genesis"
   }
 }
