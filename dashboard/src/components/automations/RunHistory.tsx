@@ -32,19 +32,19 @@ function RunHistory({ filterByPipeline }: RunHistoryProps) {
 
   return (
     <section aria-labelledby="run-history-heading">
-      <Card className="w-full">
+      <Card className="w-xl h-96 overflow-y-auto">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
           <h2 id="run-history-heading" className="text-lg font-bold text-orange-400">
             {filterByPipeline ? `${filterByPipeline} History` : 'Recent Runs'}
           </h2>
-          <div className="flex gap-1">
+          <div className="flex">
             {filters.map((f) => (
               <button
                 key={f.value}
                 onClick={() => setStatusFilter(f.value)}
-                className={`px-3 py-1 text-xs rounded transition-colors cursor-pointer ${
+                className={`px-3 py-1 text-xs first:rounded-l-md last:rounded-r-md transition-colors cursor-pointer ${
                   statusFilter === f.value
-                    ? 'bg-cyan-600 text-white'
+                    ? 'bg-cyan-800 text-white'
                     : 'bg-slate-700 text-cyan-300 hover:bg-slate-600'
                 }`}
                 aria-pressed={statusFilter === f.value}

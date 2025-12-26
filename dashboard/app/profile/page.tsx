@@ -8,7 +8,7 @@ export default function ProfilePage() {
       <section className="h-full flex items-center gap-8 flex-1">
         <SideBar />
         <Shell>
-          <div className="break-inside-avoid mb-6">
+          <div className="break-inside-avoid">
             <ProfileCard />
           </div>
           <div className="break-inside-avoid">

@@ -44,7 +44,7 @@ function AutomationPipelines({ onViewHistory }: AutomationPipelinesProps) {
 
   return (
     <section aria-labelledby="pipelines-heading">
-      <Card className="w-full">
+      <Card className="w-full h-96 overflow-y-auto">
         <h2 id="pipelines-heading" className="text-lg font-bold text-orange-400 mb-4">
           Automation Pipelines
         </h2>

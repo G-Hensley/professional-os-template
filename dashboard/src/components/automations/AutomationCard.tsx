@@ -89,12 +89,12 @@ function AutomationCard({ pipeline, runs, onViewLatest, onViewHistory }: Automat
         <div className="flex items-center gap-4">
           {lastRun && (
             <p className={`text-sm ${getStatusColor(lastRun.status)}`}>
-              Last: {getStatusIcon(lastRun.status)} {lastRun.label}
+              Last Run: {getStatusIcon(lastRun.status)} {lastRun.label}
             </p>
           )}
         </div>
       </div>
-      <div className="flex gap-2 mt-3">
+      <div className="flex gap-2 mt-1">
         {onViewLatest && (
           <button
             onClick={onViewLatest}
