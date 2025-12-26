@@ -59,19 +59,20 @@ function SkillsGrid() {
   };
 
   return (
-    <Card className="w-full" aria-labelledby="skills-heading">
+    <Card className="w-full max-h-84 overflow-y-auto" aria-labelledby="skills-heading">
       <div className="flex items-center justify-between mb-4">
         <h2 id="skills-heading" className="text-lg font-bold text-orange-400">
           Skills
         </h2>
-        <div className="flex gap-1">
+        <div className="flex">
           {(['all', 'gaps', 'top'] as FilterType[]).map((f) => (
             <button
               key={f}
               onClick={() => setFilter(f)}
-              className={`px-3 py-1 text-xs rounded capitalize transition-colors ${
+              className={`px-3 py-1 text-xs first:rounded-l-md last:rounded-r-md capitalize transition-colors
+                cursor-pointer ${
                 filter === f
-                  ? 'bg-cyan-600 text-white'
+                  ? 'bg-cyan-800 text-white'
                   : 'bg-slate-700 text-cyan-300 hover:bg-slate-600'
               }`}
             >
@@ -104,7 +105,8 @@ function SkillsGrid() {
 
                 return (
                   <div key={category}>
-                    <h3 className="text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-3">
+                    <h3 className="text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-3
+                    text-center border-b pb-1">
                       {displayName}
                     </h3>
                     <div className="space-y-2">
