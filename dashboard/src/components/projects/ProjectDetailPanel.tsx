@@ -53,11 +53,12 @@ function ProjectDetailPanel({ project, onClose }: ProjectDetailPanelProps) {
   return (
     <div className="fixed inset-0 z-50 flex justify-end">
       <div
-        className="absolute inset-0 bg-black/50"
+        className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"
         onClick={onClose}
         aria-hidden="true"
       />
-      <div className="relative w-full max-w-md bg-slate-800 h-full overflow-y-auto p-6 shadow-xl">
+      <div className="relative w-full max-w-md bg-cyan-950/40 h-full overflow-y-auto p-6 
+        shadow-xl backdrop-blur-xs">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold text-orange-400">{project.name}</h2>
           <button
@@ -86,10 +87,6 @@ function ProjectDetailPanel({ project, onClose }: ProjectDetailPanelProps) {
               <div>
                 <span className="text-xs text-gray-400 uppercase">Type</span>
                 <p className="text-cyan-200">{project.type}</p>
-              </div>
-              <div>
-                <span className="text-xs text-gray-400 uppercase">Progress</span>
-                <p className="text-cyan-200">~{project.completion_percentage}%</p>
               </div>
             {project.completion_percentage !== undefined && (
               <div>
