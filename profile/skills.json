@@ -1,5 +1,5 @@
 {
-  "skill levels":
+  "skill_levels":
   {
     "none": "I have no experience or knowledge of this skill.",
     "novice": "I have a basic understanding of this skill and can perform simple tasks with guidance.",
@@ -8,7 +8,7 @@
     "expert": "I have an advanced understanding of this skill and can perform complex tasks and mentor others.",
     "master": "I have a comprehensive and authoritative understanding of this skill and am recognized as an expert in the field."
   },
-  "programming languages": {
+  "programming_languages": {
     "JavaScript": "expert",
     "TypeScript": "expert",
     "Python": "adept",
@@ -20,7 +20,7 @@
     "C#": "novice",
     "C": "adept"
   },
-  "frameworks & libraries": {
+  "frameworks_and_libraries": {
     "Angular": "novice",
     "React": "expert",
     "Next.js": "expert",
@@ -36,7 +36,7 @@
     "Electron": "none",
     "React Native": "novice"
   },
-  "apis & protocols": {
+  "apis_and_protocols": {
     "REST APIs": "expert",
     "GraphQL": "apprentice",
     "WebSockets": "apprentice",
@@ -51,7 +51,7 @@
     "MongoDB": "adept",
     "Supabase": "adept"
   },
-  "cloud & devops": {
+  "cloud_and_devops": {
     "AWS": "novice",
     "Vercel": "expert",
     "Heroku": "novice",

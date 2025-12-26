@@ -1,3 +1,3 @@
 export { ProfileCard } from './ProfileCard';
-// export { SkillsGrid } from './SkillsGrid';
-// export { SkillBar } from './SkillBar';
+export { SkillsGrid } from './SkillsGrid';
+export { SkillBar } from './SkillBar';

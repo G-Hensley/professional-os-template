@@ -1,5 +1,5 @@
 import { TopBar, Footer, SideBar, Shell } from "@/src/components/layout";
-import { ProfileCard } from "@/src/components/profile";
+import { ProfileCard, SkillsGrid } from "@/src/components/profile";
 
 export default function ProfilePage() {
   return (
@@ -10,6 +10,9 @@ export default function ProfilePage() {
         <Shell>
           <div className="break-inside-avoid mb-6">
             <ProfileCard />
+          </div>
+          <div className="break-inside-avoid">
+            <SkillsGrid />
           </div>
         </Shell>
       </section>

@@ -1,9 +1,27 @@
 import { useQuery } from '@tanstack/react-query';
 
-interface Skill {
-  name: string;
-  level: 'none' | 'novice' | 'apprentice' | 'adept' | 'expert' | 'master';
-  category: string;
+type SkillLevel = 'none' | 'novice' | 'apprentice' | 'adept' | 'expert' | 'master';
+
+interface SkillLevelDescriptions {
+  none: string;
+  novice: string;
+  apprentice: string;
+  adept: string;
+  expert: string;
+  master: string;
+}
+
+interface SkillsData {
+  skill_levels: SkillLevelDescriptions;
+  programming_languages: Record<string, SkillLevel>;
+  frameworks_and_libraries: Record<string, SkillLevel>;
+  apis_and_protocols: Record<string, SkillLevel>;
+  databases: Record<string, SkillLevel>;
+  cloud_and_devops: Record<string, SkillLevel>;
+  'testing & monitoring': Record<string, SkillLevel>;
+  tools: Record<string, SkillLevel>;
+  AI: Record<string, SkillLevel>;
+  other: Record<string, SkillLevel>;
 }
 
 interface Experience {
@@ -42,10 +60,7 @@ interface Contact {
   };
 }
 interface ProfileResponse {
-  skills: {
-    technical: Record<string, Skill[]>;
-    soft: Skill[];
-  };
+  skills: SkillsData;
   experience: Experience[];
   education: Education[];
   contact: Contact;
