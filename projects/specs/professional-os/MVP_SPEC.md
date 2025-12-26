@@ -43,48 +43,63 @@ The Minimum Viable Product is what we need to ship by January 31, 2026 to valida
 
 ---
 
-## Post-MVP (After Launch Validation)
+## Phase 2: Dashboard (April 2026)
 
-### Enhanced Automation
+The hosted dashboard is a key differentiator that enables recurring revenue. This is planned for post-MVP launch.
+
+### Local Dashboard (Template Buyers Get This)
+- [ ] Next.js App Router dashboard
+- [ ] Profile visualization
+- [ ] Project status cards
+- [ ] Job search tracking UI
+- [ ] Automation run history
+- [ ] Works offline via local JSON reads
+
+### Hosted Dashboard (Subscription Service)
+- [ ] GitHub OAuth authentication
+- [ ] Connect any Professional OS repo
+- [ ] Real-time data via GitHub API
+- [ ] User accounts in Supabase
+- [ ] Tiered access (Free, Pro, Automation Pro)
+- [ ] Custom subdomains (yourname.professional-os.app)
+
+### Dashboard Technical Requirements
+- [ ] Swap file reads for GitHub API calls
+- [ ] Environment-based data source switching
+- [ ] Rate limiting and caching for GitHub API
+- [ ] User preference storage in Supabase
+
+---
+
+## Phase 3: Advanced Automation (July 2026)
+
+These features justify the Automation Pro subscription tier.
+
+### Job Search Automation
+- [ ] Automated job posting monitor
+- [ ] Auto-apply to matching jobs (configurable rules)
+- [ ] Application response tracking
+- [ ] Interview calendar triggers
+- [ ] Daily opportunity digest emails
+
+### Content Automation
+- [ ] LinkedIn post generation from activity
+- [ ] Weekly summary auto-generation
 - [ ] Skill analysis from GitHub activity
-- [ ] Project status detection
-- [ ] Weekly summary generation
-
-### Content Features
-- [ ] LinkedIn post generation command
-- [ ] Content strategy templates
-- [ ] Content calendar structure
-
-### Business Features
-- [ ] Multi-business documentation structure
-- [ ] Business strategy templates
-- [ ] Financial tracking schemas
-
-### Job Search Features
-- [ ] Application tracking
-- [ ] Interview prep command
-- [ ] Interview notes structure
-
-### Advanced AI Commands
-- [ ] `/generate-post` - LinkedIn content from activity
-- [ ] `/prep-interview` - Interview preparation
-- [ ] `/quick-check` - Fast status check
-- [ ] `/update-project` - Project status updates
 
 ---
 
 ## What We Explicitly EXCLUDE from MVP
 
-### Too Complex for Launch
-- Real-time sync with external platforms
-- Web dashboard
-- Mobile app
-- Team features
+### Deferred to Dashboard Phase
+- Hosted dashboard (local only in MVP)
+- GitHub integration for data fetching
+- User accounts and authentication
 
-### Keep as Competitive Moat
+### Keep as Subscription Features
 - Automated job posting monitoring
+- Auto-apply to jobs
 - Application response tracking
-- Email integration
 - Interview calendar triggers
 
 ### Nice but Not Essential
@@ -92,6 +107,7 @@ The Minimum Viable Product is what we need to ship by January 31, 2026 to valida
 - GitHub profile sync
 - Certification announcement flow
 - LinkedIn metrics browser extension
+- Mobile app
 
 ---
 
@@ -104,6 +120,7 @@ The MVP is successful if:
 3. **People Like:** At least 5 unsolicited positive testimonials
 4. **Refunds Low:** Less than 10% refund rate
 5. **Can Improve:** Clear feedback on what to add next
+6. **Dashboard Interest:** At least 20% express interest in hosted dashboard
 
 ---
 
@@ -129,6 +146,13 @@ The MVP is successful if:
 - GitHub Actions only (no external services)
 - All scripts in Node.js (no additional runtime)
 - Graceful failure (never breaks the repo)
+
+### Dashboard (Local Only for MVP)
+- Next.js 15 with App Router
+- TanStack Query for data fetching
+- Tailwind CSS for styling
+- Reads from local JSON files
+- No authentication required locally
 
 ---
 
@@ -157,3 +181,31 @@ The MVP is successful if:
 - [ ] Launch content blitz
 - [ ] Monitor and respond
 - [ ] Celebrate first sales
+
+---
+
+## Dashboard Phase Checklist (April 2026)
+
+### Week 1: Infrastructure
+- [ ] Set up Supabase project
+- [ ] Configure GitHub OAuth
+- [ ] Create user schema
+- [ ] Set up Vercel project
+
+### Week 2: API Conversion
+- [ ] Create GitHub API service
+- [ ] Convert dashboard routes to use GitHub API
+- [ ] Add environment-based data source
+- [ ] Implement caching layer
+
+### Week 3: User Features
+- [ ] User registration/login flow
+- [ ] Repo connection flow
+- [ ] Subscription tier logic
+- [ ] Custom subdomain setup
+
+### Week 4: Launch
+- [ ] Beta test with early template buyers
+- [ ] Set up Lemon Squeezy subscriptions
+- [ ] Soft launch dashboard
+- [ ] Monitor and iterate
