@@ -1,6 +1,7 @@
 import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join } from 'path';
 import { NextResponse } from 'next/server';
+import { repoPath } from '@/lib/repo-path';
 
 interface LinkedInPost {
   day: string;
@@ -19,7 +20,7 @@ interface WeeklyPosts {
 
 function getWeeklyPosts(): WeeklyPosts[] {
   try {
-    const logsDir = join(process.cwd(), '..', 'logs', 'linkedin-posts');
+    const logsDir = repoPath('logs', 'linkedin-posts');
     if (!existsSync(logsDir)) return [];
 
     const files = readdirSync(logsDir)
@@ -50,7 +51,7 @@ function getWeeklyPosts(): WeeklyPosts[] {
 
 function getContentIdeas() {
   try {
-    const ideasPath = join(process.cwd(), '..', 'linkedin', 'content-ideas.json');
+    const ideasPath = repoPath('linkedin', 'content-ideas.json');
     if (!existsSync(ideasPath)) return [];
     return JSON.parse(readFileSync(ideasPath, 'utf-8'));
   } catch {

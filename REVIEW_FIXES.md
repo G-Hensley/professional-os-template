@@ -17,32 +17,33 @@ All issues from the original review have been resolved.
 - **Issue**: `requiredTerms` and `location` in `SEARCH_CONFIG` were unused
 - **Fix**: Now enforces location check (lines 198-211) and validates `requiredTerms` if specified (lines 213-218)
 
+### 4. Dashboard API Schedule Mismatch ✅ FIXED
+- **File**: `dashboard/app/api/automations/route.ts`
+- **Issue**: Hardcoded pipeline schedules didn't match actual workflow files
+- **Fix**: Created `dashboard/lib/workflow-parser.ts` that reads schedules dynamically from `.github/workflows/*.yml` files
+
+### 5. Dashboard API Path Fragility ✅ FIXED
+- **Files**: `dashboard/app/api/*/route.ts`
+- **Issue**: Used `join(process.cwd(), '..', relativePath)` which assumed specific directory structure
+- **Fix**: Created `dashboard/lib/repo-path.ts` utility that:
+  - Uses `REPO_ROOT` env var if set (for production/Vercel)
+  - Falls back to detecting repo root based on presence of `CLAUDE.md`
+  - All API routes now use `repoPath()` for consistent path resolution
+
 ---
 
-## Open Issues (From Comprehensive Review)
+## Open Issues
 
-### 4. Dashboard API Schedule Mismatch ⚠️ OPEN
-- **File**: `dashboard/app/api/automations/route.ts`
-- **Issue**: Hardcoded pipeline schedules don't match actual workflow files
-- **Example**: Says "Daily @ 9:00 AM" but actual workflows run at different times
-- **Fix**: Read schedules dynamically from workflow files or create a single source of truth
-
-### 5. Missing Dashboard Pages ⚠️ OPEN
+### 6. Missing Dashboard Pages ⚠️ OPEN
 - **Status**: Home + Profile pages done, others not implemented
 - **Missing**: Projects, Automations, Content, Jobs pages
 - **Impact**: Dashboard is ~30% complete
 - **Wireframes**: See `dashboard/WIREFRAMES.md` for planned layouts
 
-### 6. Empty Data Files ℹ️ LOW PRIORITY
+### 7. Empty Data Files ℹ️ LOW PRIORITY
 - **Files**: `linkedin/*-metrics.json` (all 0 bytes)
 - **File**: `projects/completed.json` (empty - no shipped projects yet)
 - **Note**: LinkedIn metrics documented as manual entry. Completed projects will populate as you ship.
-
-### 7. Dashboard API Path Fragility ⚠️ OPEN
-- **Files**: `dashboard/app/api/*/route.ts`
-- **Issue**: Uses `join(process.cwd(), '..', relativePath)` which assumes specific directory structure
-- **Risk**: May break if deployed to Vercel or dashboard is moved
-- **Fix**: Use environment variable `REPO_ROOT` or detect root dynamically
 
 ---
 
@@ -51,5 +52,4 @@ All issues from the original review have been resolved.
 - Add fixture tests for each script's parsing/filtering to prevent silent regressions
 - Add unit tests for date calculations in linkedin-post-generator.js
 - Add integration tests with mock API responses for job-posting-monitor.js
-- Create `lib/readRepo.ts` utility with proper path resolution for dashboard APIs
 - Add TypeScript types/schemas for all JSON data files

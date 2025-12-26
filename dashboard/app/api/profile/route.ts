@@ -1,10 +1,10 @@
 import { readFileSync } from 'fs';
-import { join } from 'path';
 import { NextResponse } from 'next/server';
+import { repoPath } from '@/lib/repo-path';
 
 function readJSON(relativePath: string) {
   try {
-    const fullPath = join(process.cwd(), '..', relativePath);
+    const fullPath = repoPath(relativePath);
     return JSON.parse(readFileSync(fullPath, 'utf-8'));
   } catch {
     return null;

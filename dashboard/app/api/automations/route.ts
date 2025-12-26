@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { getWorkflowSchedules, getWorkflowScheduleMap } from '@/lib/workflow-parser';
 
 const GITHUB_OWNER = 'G-Hensley';
 const GITHUB_REPO = 'myself';
@@ -30,19 +31,6 @@ interface Pipeline {
   type: string;
 }
 
-// Map workflow names to their schedule info
-const workflowSchedules: Record<string, { schedule: string; type: string }> = {
-  'Context Snapshot': { schedule: 'Daily @ 5:00 AM', type: 'daily' },
-  'GitHub Activity Logging': { schedule: 'Daily @ 6:00 AM', type: 'daily' },
-  'Daily Date Update': { schedule: 'Daily @ 12:30 AM', type: 'daily' },
-  'Project Status Automation': { schedule: 'Daily @ 7:00 AM', type: 'daily' },
-  'Job Posting Monitor': { schedule: 'Daily @ 9:00 AM', type: 'daily' },
-  'LinkedIn Post Generator': { schedule: 'Sundays @ 8:00 AM', type: 'weekly' },
-  'Weekly Summary': { schedule: 'Sundays @ 8:00 PM', type: 'weekly' },
-  'Skill Analysis': { schedule: 'Saturdays @ 10:00 AM', type: 'weekly' },
-  'Monthly Assessment': { schedule: '1st of month @ 10:00 AM', type: 'monthly' },
-};
-
 async function fetchGitHubWorkflowRuns(): Promise<AutomationRun[]> {
   const token = process.env.GITHUB_TOKEN;
 
@@ -50,6 +38,9 @@ async function fetchGitHubWorkflowRuns(): Promise<AutomationRun[]> {
     console.warn('GITHUB_TOKEN not set - cannot fetch workflow runs');
     return [];
   }
+
+  // Get schedule map dynamically from workflow files
+  const workflowSchedules = getWorkflowScheduleMap();
 
   try {
     const response = await fetch(
@@ -90,14 +81,13 @@ async function fetchGitHubWorkflowRuns(): Promise<AutomationRun[]> {
 export async function GET() {
   const runs = await fetchGitHubWorkflowRuns();
 
-  // Build pipelines list from known workflows
-  const pipelines: Pipeline[] = Object.entries(workflowSchedules).map(
-    ([name, info]) => ({
-      name,
-      schedule: info.schedule,
-      type: info.type,
-    })
-  );
+  // Build pipelines list dynamically from workflow files
+  const workflows = getWorkflowSchedules();
+  const pipelines: Pipeline[] = workflows.map((workflow) => ({
+    name: workflow.name,
+    schedule: workflow.schedule,
+    type: workflow.type,
+  }));
 
   return NextResponse.json({
     pipelines,
