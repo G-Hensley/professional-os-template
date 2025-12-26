@@ -643,13 +643,18 @@ Auto badge:   #EC4899  (Pink - automation pro)
 - [x] `ActiveProjectsMini` - Condensed project list
 
 ### Projects
-- [ ] `ProjectsTable` - Full project listing
-- [ ] `ProjectFilters` - Status/priority filters
-- [ ] `ProjectDetailPanel` - Slide-out details
+- [x] `ProjectsTable` - Full project listing
+- [x] `ProjectFilters` - Status/priority filters
+- [x] `ProjectDetailPanel` - Slide-out details
+- [x] `ProjectRow` - Table row component
+- [x] `ProjectsTableSkeleton` - Loading skeleton
 
 ### Automations
 - [x] `AutomationCard` - Pipeline info + last run
-- [ ] `RunHistory` - Timeline of runs
+- [x] `AutomationPipelines` - Container for pipeline cards
+- [x] `RunHistory` - Timeline of runs
+- [x] `RunHistoryRow` - Individual run row
+- [x] `RunHistorySkeleton` - Loading skeleton
 - [ ] `ArtifactViewer` - View generated files
 - [ ] `RunAutomationButton` - Pro feature
 
@@ -710,8 +715,8 @@ Auto badge:   #EC4899  (Pink - automation pro)
 - [x] Sidebar navigation
 - [x] Home page with cards
 - [x] Profile page with skills
-- [ ] Projects page
-- [ ] Automations page
+- [x] Projects page
+- [x] Automations page
 - [ ] Content page
 - [ ] Jobs page
 
