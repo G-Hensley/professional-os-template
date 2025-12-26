@@ -6,86 +6,146 @@ The Minimum Viable Product is what we need to ship by January 31, 2026 to valida
 
 ---
 
+## Current Progress Summary
+
+```
+TEMPLATE MVP:     ████████████████████░░░░  ~85% Complete
+LOCAL DASHBOARD:  ████████████░░░░░░░░░░░░  ~50% Complete
+HOSTED DASHBOARD: ░░░░░░░░░░░░░░░░░░░░░░░░  Not Started (Phase 2)
+AUTOMATION PRO:   ░░░░░░░░░░░░░░░░░░░░░░░░  Not Started (Phase 3)
+```
+
+---
+
 ## MVP Scope (Must Have for Launch)
 
 ### Repository Structure
-- [ ] Clean, well-organized folder structure
-- [ ] Clear README with setup instructions
-- [ ] CONTEXT.md explaining the system
-- [ ] CLAUDE.md for AI tool configuration
+- [x] Clean, well-organized folder structure
+- [x] Clear README with setup instructions
+- [x] CONTEXT.md explaining the system (auto-updated daily)
+- [x] CLAUDE.md for AI tool configuration
 
 ### Profile Data (JSON Schemas)
-- [ ] `skills.json` - Skills with proficiency levels
-- [ ] `experience.json` - Work history with descriptions
-- [ ] `education.json` - Degrees and certifications
-- [ ] `contact.json` - Contact information
-- [ ] `preferences.json` - Work preferences, coding style
+- [x] `skills.json` - Skills with 6-tier proficiency levels
+- [x] `experience.json` - Work history with descriptions
+- [x] `education.json` - Degrees and certifications
+- [x] `contact.json` - Contact information
+- [x] `preferences.json` - Work preferences, coding style
 
 ### Project Tracking
-- [ ] `projects/active.json` - Current projects
-- [ ] `projects/planned.json` - Future projects
-- [ ] `projects/completed.json` - Shipped projects
-- [ ] Basic schema with required fields
+- [x] `projects/active.json` - Current projects
+- [x] `projects/planned.json` - Future projects
+- [x] `projects/completed.json` - Shipped projects
+- [x] Project schema with required fields (name, repo_url, type, description, technologies, monetization_strategy, status, problem, solution, target_audience, mission_statement)
 
 ### AI Commands (Claude Code)
-- [ ] `/generate-resume` - Generate tailored resume from job description
-- [ ] `/assessment` - Generate periodic self-assessment
+- [x] `/generate-resume` - Generate tailored resume from job description
+- [x] `/assessment` - Generate periodic self-assessment
+- [x] `/generate-post` - Generate LinkedIn posts
+- [x] `/log-application` - Log job applications
+- [x] `/prep-interview` - Interview preparation
+- [x] `/update-project` - Update project status
+- [x] `/quick-check` - Quick status check
 
 ### Documentation
-- [ ] Setup guide (step-by-step)
-- [ ] Schema documentation
-- [ ] Customization guide
+- [x] README.md with overview
+- [x] CLAUDE.md with AI instructions
+- [ ] Setup guide (step-by-step for new users)
+- [ ] Schema documentation (field definitions, examples)
+- [ ] Customization guide (how to adapt for personal use)
 - [ ] FAQ
 
-### Basic Automation
-- [ ] Daily date update (CONTEXT.md stays current)
-- [ ] Context snapshot (optional but nice)
+### Basic Automation (GitHub Actions)
+- [x] Daily date update (CONTEXT.md stays current)
+- [x] Context snapshot (daily repo state capture)
+- [x] Weekly summary generation
+- [x] LinkedIn post generator
+- [x] Job posting monitor
+- [x] Monthly assessment
+- [x] Project status updates
+- [x] Skill analysis from GitHub activity
+- [x] GitHub activity logging
 
 ---
 
-## Phase 2: Dashboard (April 2026)
+## Phase 2: Local Dashboard (Current Focus)
 
-The hosted dashboard is a key differentiator that enables recurring revenue. This is planned for post-MVP launch.
+The local dashboard runs via `npm run dev` and works offline. This ships with the template.
 
-### Local Dashboard (Template Buyers Get This)
-- [ ] Next.js App Router dashboard
-- [ ] Profile visualization
-- [ ] Project status cards
-- [ ] Job search tracking UI
-- [ ] Automation run history
-- [ ] Works offline via local JSON reads
+### Completed
+- [x] Next.js 15 App Router setup
+- [x] TanStack Query integration
+- [x] Sidebar navigation
+- [x] Home page with dashboard cards
+- [x] Profile page with skills visualization
+- [x] SkillsGrid component with filtering
+- [x] ProfileCard component
+- [x] API routes for all data sources:
+  - [x] `/api/profile` - Profile data
+  - [x] `/api/projects` - Project tracking
+  - [x] `/api/automations` - Workflow runs + schedules
+  - [x] `/api/jobs` - Job applications
+  - [x] `/api/content` - LinkedIn drafts
 
-### Hosted Dashboard (Subscription Service)
-- [ ] GitHub OAuth authentication
-- [ ] Connect any Professional OS repo
-- [ ] Real-time data via GitHub API
-- [ ] User accounts in Supabase
-- [ ] Tiered access (Free, Pro, Automation Pro)
-- [ ] Custom subdomains (yourname.professional-os.app)
+### Remaining (Local Dashboard)
+- [ ] Projects page (table with filters, detail panel)
+- [ ] Automations page (pipeline list, run history)
+- [ ] Content page (week selector, post drafts with copy)
+- [ ] Jobs page (application funnel, opportunities table)
+- [ ] Dark/light mode toggle
+- [ ] Mobile responsive layout
 
-### Dashboard Technical Requirements
-- [ ] Swap file reads for GitHub API calls
+---
+
+## Phase 3: Hosted Dashboard (April 2026)
+
+The hosted dashboard is a subscription service at `professional-os.app`.
+
+### Infrastructure
+- [ ] Supabase setup (users, repos, subscription_tier)
+- [ ] GitHub OAuth integration
+- [ ] Vercel deployment
+- [ ] Lemon Squeezy subscription webhooks
+
+### API Conversion
+- [ ] GitHub API service for repo data fetching
 - [ ] Environment-based data source switching
-- [ ] Rate limiting and caching for GitHub API
-- [ ] User preference storage in Supabase
+- [ ] Rate limiting and caching layer
+- [ ] Fallback to cached data
+
+### User Features
+- [ ] Sign in with GitHub flow
+- [ ] Repository selection and validation
+- [ ] Plan selection (Free, Pro, Automation Pro)
+- [ ] Settings page (repo, subscription, subdomain, notifications)
+- [ ] Custom subdomain (yourname.professional-os.app)
+
+### Feature Gates
+- [ ] Free tier limitations (public repos, 7-day history, branded)
+- [ ] Pro tier unlocks (private repos, full features, custom subdomain)
+- [ ] Upgrade prompts throughout dashboard
 
 ---
 
-## Phase 3: Advanced Automation (July 2026)
+## Phase 4: Automation Pro (July 2026)
 
-These features justify the Automation Pro subscription tier.
+These features justify the $19/mo Automation Pro subscription.
 
-### Job Search Automation
-- [ ] Automated job posting monitor
-- [ ] Auto-apply to matching jobs (configurable rules)
-- [ ] Application response tracking
-- [ ] Interview calendar triggers
+### Auto-Apply System
+- [ ] Auto-apply rules engine (salary, location, keywords)
+- [ ] Auto-apply queue UI with approve/skip
+- [ ] Application tracking integration
+- [ ] Success analytics dashboard
+
+### Notifications
 - [ ] Daily opportunity digest emails
+- [ ] New job match alerts
+- [ ] Auto-apply confirmation emails
 
-### Content Automation
-- [ ] LinkedIn post generation from activity
-- [ ] Weekly summary auto-generation
-- [ ] Skill analysis from GitHub activity
+### Advanced Analytics
+- [ ] Auto-apply success rate tracking
+- [ ] Response rate trends
+- [ ] Interview conversion metrics
 
 ---
 
@@ -97,10 +157,9 @@ These features justify the Automation Pro subscription tier.
 - User accounts and authentication
 
 ### Keep as Subscription Features
-- Automated job posting monitoring
 - Auto-apply to jobs
-- Application response tracking
-- Interview calendar triggers
+- Daily digest emails
+- Application analytics
 
 ### Nice but Not Essential
 - Portfolio site generation
@@ -156,28 +215,53 @@ The MVP is successful if:
 
 ---
 
-## MVP Checklist
+## Pre-Launch Checklist
 
-### Week 1 (Jan 6-12)
-- [ ] Sanitize current repo (remove personal data, job automation)
+### Content Preparation
+- [ ] Sanitize current repo (remove personal data references)
+- [ ] Create example/placeholder data for template
 - [ ] Write setup documentation
 - [ ] Create schema documentation
-- [ ] Test `/generate-resume` command
+- [ ] Record demo video
+- [ ] Prepare launch content (LinkedIn posts, tweets)
 
-### Week 2 (Jan 13-19)
+### Technical Validation
+- [x] Test `/generate-resume` command
+- [x] Test `/assessment` command
+- [x] Test all automation workflows
+- [ ] Test fresh clone setup process
+- [ ] Verify dashboard works with placeholder data
+
+### Launch Infrastructure
 - [ ] Create landing page
 - [ ] Set up payment (Lemon Squeezy)
-- [ ] Build email list
-- [ ] Prepare launch content
+- [ ] Build email list (lead magnet)
+- [ ] Set up analytics (Plausible/Fathom)
 
-### Week 3 (Jan 20-26)
+---
+
+## Launch Week Timeline (January 2026)
+
+### Week 1 (Jan 6-12): Polish
+- [ ] Complete remaining local dashboard pages
+- [ ] Finalize documentation
+- [ ] Create template version with placeholder data
+- [ ] Record setup walkthrough video
+
+### Week 2 (Jan 13-19): Launch Prep
+- [ ] Landing page live
+- [ ] Payment integration complete
+- [ ] Email sequence ready
+- [ ] Social content scheduled
+
+### Week 3 (Jan 20-26): Soft Launch
 - [ ] Soft launch to email list
 - [ ] Collect initial feedback
 - [ ] Fix critical issues
-- [ ] Prepare launch announcements
+- [ ] Gather testimonials
 
-### Week 4 (Jan 27-31)
-- [ ] Public launch
+### Week 4 (Jan 27-31): Public Launch
+- [ ] Public launch announcement
 - [ ] Launch content blitz
 - [ ] Monitor and respond
 - [ ] Celebrate first sales
@@ -209,3 +293,24 @@ The MVP is successful if:
 - [ ] Set up Lemon Squeezy subscriptions
 - [ ] Soft launch dashboard
 - [ ] Monitor and iterate
+
+---
+
+## Remaining Work Summary
+
+### High Priority (Before MVP Launch)
+1. Complete local dashboard pages (Projects, Automations, Content, Jobs)
+2. Write setup documentation for new users
+3. Create template version with placeholder data
+4. Build landing page and payment integration
+
+### Medium Priority (Nice to Have for Launch)
+1. Schema documentation with examples
+2. Customization guide
+3. FAQ document
+4. Demo video
+
+### Post-Launch (Phase 2+)
+1. Hosted dashboard infrastructure
+2. Subscription system
+3. Auto-apply features
