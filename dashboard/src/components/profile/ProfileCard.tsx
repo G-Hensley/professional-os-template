@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { Card, Skeleton } from '@/src/components/ui';
 import { useContact } from '@/src/hooks';
 
@@ -69,25 +68,38 @@ function ProfileCard() {
           </p>
             <a
               href={`mailto:${contact?.email}`}
-              className="text-cyan-300 hover:underline"
+              className="text-cyan-300 hover:underline w-fit"
             >
               {contact?.email}
             </a>
             <div className="flex items-center gap-2">
+            {contact?.links.linkedin && (
               <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href={contact?.links.linkedin} 
-              className="text-cyan-300 hover:underline">
-              LinkedIn
-            </a>
-            <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href={contact?.links.github} 
-              className="text-cyan-300 hover:underline">
-              GitHub
-            </a>
+                target='_blank'
+                rel='noopener noreferrer'
+                href={contact?.links.linkedin} 
+                className="text-cyan-300 hover:underline border-r border-cyan-300 pr-2">
+                LinkedIn
+              </a>
+            )}
+            {contact?.links.github && (
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href={contact?.links.github} 
+                className="text-cyan-300 hover:underline border-r border-cyan-300 pr-2">
+                GitHub
+              </a>
+            )}
+            {contact?.links.portfolio && (
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href={contact?.links.portfolio} 
+                className="text-cyan-300 hover:underline">
+                Portfolio
+              </a>
+            )}
             </div>
           </div>
         </div>
