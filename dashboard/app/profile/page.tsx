@@ -1,4 +1,5 @@
 import { TopBar, Footer, SideBar, Shell } from "@/src/components/layout";
+import { ProfileCard } from "@/src/components/profile";
 
 export default function ProfilePage() {
   return (
@@ -8,6 +9,7 @@ export default function ProfilePage() {
         <SideBar />
         <Shell>
           <div className="break-inside-avoid mb-6">
+            <ProfileCard />
           </div>
         </Shell>
       </section>

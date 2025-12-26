@@ -28,7 +28,12 @@ interface Contact {
   recent_employer: string;
   email: string;
   phone?: string;
-  location: string;
+  location: {
+    city: string;
+    state?: string;
+    timezone: string;
+    remote_only?: boolean;
+  }
   links: {
     linkedin?: string;
     github?: string;
