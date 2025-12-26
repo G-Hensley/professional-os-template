@@ -45,6 +45,41 @@ All issues from the original review have been resolved.
 - **File**: `projects/completed.json` (empty - no shipped projects yet)
 - **Note**: LinkedIn metrics documented as manual entry. Completed projects will populate as you ship.
 
+### 8. Dashboard Jobs API Path + Schema Mismatch ⚠️ OPEN
+- **Files**: `dashboard/app/api/jobs/route.ts`, `automation/scripts/job-posting-monitor.js`
+- **Issue**: Dashboard reads `logs/job-monitor/*.json` and expects `monitorResults.jobs`, but the job monitor writes to `job-applications/opportunities/` and uses `all_jobs`
+- **Impact**: Jobs dashboard will show no opportunities even when the monitor runs
+
+### 9. Dashboard Content API Path + Schema Mismatch ⚠️ OPEN
+- **Files**: `dashboard/app/api/content/route.ts`, `automation/scripts/linkedin-post-generator.js`
+- **Issue**: Dashboard reads `logs/linkedin-posts/*.json` and expects `posts[].content/hashtags`, but generator writes to `linkedin/drafts/<week>/metadata.json` with a different schema
+- **Impact**: Content dashboard will appear empty even when drafts are generated
+
+### 10. Context Snapshot Job Search Counts Incorrect ✅ FIXED
+- **File**: `automation/scripts/context-snapshot.js`
+- **Issue**: Uses `Object.values` on wrapper objects and doesn't filter placeholder entries in `job-applications/*.json`
+- **Fix**: Now reads `applicationsFile.applications` / `interviewsFile.interviews` and filters empty placeholders (lines 310-327)
+
+### 11. Dashboard Job Stats Field/Status Mismatch ⚠️ OPEN
+- **File**: `dashboard/src/hooks/useJobs.ts`
+- **Issue**: UI types expect `applied_date` and `offered` status, but schema uses `date_applied` and `offer`
+- **Impact**: Job stats can be inaccurate and TypeScript types don't reflect real data
+
+### 12. Dashboard Project Type Mismatch ⚠️ OPEN
+- **File**: `dashboard/src/types/project.ts`
+- **Issue**: Project types/status/priority/target_audience don't match JSON schema (string unions vs actual values, `target_audience` is an array, `priority` is numeric)
+- **Impact**: Dashboard typing and derived logic can be incorrect
+
+### 13. Weekly Summary Logs Not Persisted ✅ FIXED
+- **Files**: `.github/workflows/weekly-summary.yml`
+- **Issue**: Generator writes logs to `logs/weekly-summary/`, but workflow had `contents: read` and no commit step
+- **Fix**: Changed to `contents: write` and added commit/push step for `logs/weekly-summary/`
+
+### 14. Tests README Out of Date ✅ FIXED
+- **File**: `tests/README.md`
+- **Issue**: Listed only two test folders, but repo now has multiple test suites
+- **Fix**: Updated to document all 7 test suites with usage examples
+
 ---
 
 ## Future Hardening (Optional)

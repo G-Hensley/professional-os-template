@@ -298,8 +298,8 @@ function getBusinessSummary() {
 
 // Get job search status
 function getJobSearchStatus() {
-  const applications = readJSON('job-applications/applications.json');
-  const interviews = readJSON('job-applications/interviews.json');
+  const applicationsFile = readJSON('job-applications/applications.json');
+  const interviewsFile = readJSON('job-applications/interviews.json');
 
   const status = {
     total_applications: 0,
@@ -307,8 +307,9 @@ function getJobSearchStatus() {
     recent_interviews: 0
   };
 
-  if (applications) {
-    const apps = Array.isArray(applications) ? applications : Object.values(applications);
+  if (applicationsFile) {
+    // Access the nested applications array and filter out empty placeholders
+    const apps = (applicationsFile.applications || []).filter(app => app.id && app.company);
     status.total_applications = apps.length;
 
     for (const app of apps) {
@@ -317,8 +318,9 @@ function getJobSearchStatus() {
     }
   }
 
-  if (interviews) {
-    const ints = Array.isArray(interviews) ? interviews : Object.values(interviews);
+  if (interviewsFile) {
+    // Access the nested interviews array and filter out empty placeholders
+    const ints = (interviewsFile.interviews || []).filter(i => i.id && i.company);
     // Count interviews in last 30 days
     const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
     status.recent_interviews = ints.filter(i => new Date(i.date) >= thirtyDaysAgo).length;
