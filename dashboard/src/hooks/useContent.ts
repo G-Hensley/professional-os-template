@@ -5,6 +5,7 @@ interface LinkedInPost {
   theme: string;
   content: string;
   hashtags: string[];
+  imageSuggestion?: string;
   imagePrompt?: string;
 }
 

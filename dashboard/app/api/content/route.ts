@@ -8,6 +8,7 @@ interface LinkedInPost {
   theme: string;
   content: string;
   hashtags: string[];
+  imageSuggestion?: string;
   imagePrompt?: string;
 }
 
@@ -18,28 +19,47 @@ interface WeeklyPosts {
   generatedAt: string;
 }
 
+interface RawPost {
+  day: string;
+  pillar: string;
+  account: string;
+  full_post: string;
+  content: {
+    hashtags: string[];
+  };
+  image?: {
+    type?: string;
+    description?: string;
+    ai_prompt?: string | null;
+  };
+}
+
 function getWeeklyPosts(): WeeklyPosts[] {
   try {
-    const logsDir = repoPath('logs', 'linkedin-posts');
-    if (!existsSync(logsDir)) return [];
+    const draftsDir = repoPath('linkedin', 'drafts');
+    if (!existsSync(draftsDir)) return [];
 
-    const files = readdirSync(logsDir)
-      .filter(f => f.endsWith('.json'))
+    const weekFolders = readdirSync(draftsDir)
+      .filter(f => {
+        const folderPath = join(draftsDir, f);
+        return existsSync(join(folderPath, 'metadata.json'));
+      })
       .sort()
       .reverse();
 
-    return files.slice(0, 8).map(f => {
-      const filePath = join(logsDir, f);
-      const data = JSON.parse(readFileSync(filePath, 'utf-8'));
+    return weekFolders.slice(0, 8).map(folder => {
+      const metadataPath = join(draftsDir, folder, 'metadata.json');
+      const data = JSON.parse(readFileSync(metadataPath, 'utf-8'));
       return {
         weekStart: data.week_start || '',
         weekEnd: data.week_end || '',
-        posts: (data.posts || []).map((p: Record<string, unknown>) => ({
+        posts: (data.posts || []).map((p: RawPost) => ({
           day: p.day || '',
-          theme: p.theme || '',
-          content: p.content || '',
-          hashtags: p.hashtags || [],
-          imagePrompt: p.image_prompt || '',
+          theme: `${p.pillar || ''} (${p.account || ''})`,
+          content: p.full_post || '',
+          hashtags: p.content?.hashtags?.map((h: string) => h.replace(/^#/, '')) || [],
+          imageSuggestion: p.image?.description || '',
+          imagePrompt: p.image?.ai_prompt || '',
         })),
         generatedAt: data.generated_at || '',
       };
