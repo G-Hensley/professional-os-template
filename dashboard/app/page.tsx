@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowUpRight, GitBranch, LayoutDashboard, Sparkles, Database, Cpu } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -21,23 +22,31 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/dashboard"
-                  className="rounded-full border border-orange-300/80 bg-orange-400 px-5 py-2 text-sm font-semibold text-slate-900 transition-colors hover:bg-orange-300"
+                  className="btn-primary text-sm"
                 >
+                  <LayoutDashboard className="h-4 w-4" aria-hidden="true" />
                   Launch Dashboard
                 </Link>
-                <button className="rounded-full border border-cyan-300/50 bg-cyan-950/40 px-5 py-2 text-sm text-cyan-100 transition-colors hover:bg-cyan-900/60">
+                <button className="btn-secondary text-sm">
+                  <GitBranch className="h-4 w-4" aria-hidden="true" />
                   View the Template
                 </button>
               </div>
             </div>
             <div className="grid w-full max-w-md gap-4">
               <div className="surface-2 rounded-3xl p-5">
-                <p className="text-xs uppercase tracking-[0.3em] text-muted">Status</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-muted flex items-center gap-2">
+                  <Sparkles className="h-3.5 w-3.5 text-cyan-200" aria-hidden="true" />
+                  Status
+                </p>
                 <p className="mt-2 text-2xl font-semibold text-strong">Context synced</p>
                 <p className="text-sm text-muted">Skills, projects, and content in one repo</p>
               </div>
               <div className="surface-2 rounded-3xl p-5">
-                <p className="text-xs uppercase tracking-[0.3em] text-muted">Focus</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-muted flex items-center gap-2">
+                  <ArrowUpRight className="h-3.5 w-3.5 text-cyan-200" aria-hidden="true" />
+                  Focus
+                </p>
                 <p className="mt-2 text-2xl font-semibold text-strong">Generate + Apply</p>
                 <p className="text-sm text-muted">Resumes, posts, and prep in minutes</p>
               </div>
@@ -50,18 +59,24 @@ export default function HomePage() {
             {
               title: "Single Source of Truth",
               body: "Skills, experience, projects, and content live in structured files that AI can read.",
+              icon: Database,
             },
             {
               title: "AI-Native Outputs",
               body: "Generate resumes, LinkedIn posts, and interview prep directly from your data.",
+              icon: Sparkles,
             },
             {
               title: "Hosted Dashboard",
               body: "Connect your repo and visualize everything with automation history and analytics.",
+              icon: Cpu,
             },
           ].map((card) => (
             <div key={card.title} className="surface-2 rounded-3xl p-6">
-              <h3 className="text-lg font-semibold text-strong">{card.title}</h3>
+              <div className="flex items-center gap-2 text-cyan-200">
+                <card.icon className="h-4 w-4" aria-hidden="true" />
+                <h3 className="text-lg font-semibold text-strong">{card.title}</h3>
+              </div>
               <p className="mt-2 text-sm text-muted">{card.body}</p>
               <div className="mt-6 h-1 w-10 rounded-full bg-orange-400/70" />
             </div>
@@ -80,9 +95,18 @@ export default function HomePage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <span className="chip text-xs font-mono text-cyan-200">GitHub Template</span>
-              <span className="chip text-xs font-mono text-cyan-200">AI Commands</span>
-              <span className="chip text-xs font-mono text-cyan-200">Automation Pro</span>
+              <span className="chip text-xs font-mono text-cyan-200">
+                <GitBranch className="h-3.5 w-3.5" aria-hidden="true" />
+                GitHub Template
+              </span>
+              <span className="chip text-xs font-mono text-cyan-200">
+                <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+                AI Commands
+              </span>
+              <span className="chip text-xs font-mono text-cyan-200">
+                <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                Automation Pro
+              </span>
             </div>
           </div>
         </section>

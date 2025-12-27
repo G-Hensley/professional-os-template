@@ -48,9 +48,9 @@ function ProjectsTable() {
 
   return (
     <>
-      <Card className="w-4xl min-w-sm" aria-labelledby="projects-heading">
+      <Card className="w-full" aria-labelledby="projects-heading">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
-          <h2 id="projects-heading" className="text-lg font-bold text-orange-400">
+          <h2 id="projects-heading" className="text-lg font-semibold text-accent-strong">
             Projects
           </h2>
           <ProjectFilters
@@ -68,12 +68,12 @@ function ProjectsTable() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-slate-700 text-left">
-                    <th className="py-2 pr-4 text-cyan-400 font-semibold">Name</th>
-                    <th className="py-2 pr-4 text-cyan-400 font-semibold">Status</th>
-                    <th className="py-2 pr-4 text-cyan-400 font-semibold">Priority</th>
-                    <th className="py-2 pr-4 text-cyan-400 font-semibold">Blocked By</th>
-                    <th className="py-2 text-cyan-400 font-semibold">Due Date</th>
+                  <tr className="border-b border-cyan-800/40 text-left">
+                    <th className="py-2 pr-4 text-cyan-200 font-semibold">Name</th>
+                    <th className="py-2 pr-4 text-cyan-200 font-semibold">Status</th>
+                    <th className="py-2 pr-4 text-cyan-200 font-semibold">Priority</th>
+                    <th className="py-2 pr-4 text-cyan-200 font-semibold">Blocked By</th>
+                    <th className="py-2 text-cyan-200 font-semibold">Due Date</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -87,7 +87,7 @@ function ProjectsTable() {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-gray-400 mt-4">
+            <p className="text-xs text-muted mt-4">
               Showing {filteredProjects.length} of {allProjects.length} projects
             </p>
           </>

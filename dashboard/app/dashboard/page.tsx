@@ -1,4 +1,5 @@
 import { Footer, TopBar, SideBar } from "@components/layout";
+import { FolderKanban, LayoutDashboard, Briefcase, FileText, Workflow } from "lucide-react";
 import { ProfileCard, QuickStats, RecentAutomations, ActiveProjectsMini, JobSearchStatus } from "@/src/components/dashboard";
 
 export default function DashboardPage() {
@@ -12,7 +13,8 @@ export default function DashboardPage() {
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
               <div className="space-y-3">
                 <p className="section-eyebrow text-muted">Personal OS</p>
-                <h1 className="text-3xl lg:text-4xl font-semibold title-gradient">
+                <h1 className="text-3xl lg:text-4xl font-semibold title-gradient flex items-center gap-3">
+                  <LayoutDashboard className="h-6 w-6 text-orange-300" aria-hidden="true" />
                   Dashboard
                 </h1>
                 <p className="text-muted max-w-xl">
@@ -20,13 +22,24 @@ export default function DashboardPage() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-3 items-center">
-                <span className="chip text-xs font-mono text-cyan-200">Automations Live</span>
-                <span className="chip text-xs font-mono text-cyan-200">Content Pipeline</span>
-                <span className="chip text-xs font-mono text-cyan-200">Hiring Mode</span>
+                <span className="chip text-xs font-mono text-cyan-200">
+                  <Workflow className="h-3.5 w-3.5" aria-hidden="true" />
+                  Automations Live
+                </span>
+                <span className="chip text-xs font-mono text-cyan-200">
+                  <FileText className="h-3.5 w-3.5" aria-hidden="true" />
+                  Content Pipeline
+                </span>
+                <span className="chip text-xs font-mono text-cyan-200">
+                  <Briefcase className="h-3.5 w-3.5" aria-hidden="true" />
+                  Hiring Mode
+                </span>
                 <button className="btn-primary text-sm">
+                  <FolderKanban className="h-4 w-4" aria-hidden="true" />
                   Open Projects
                 </button>
                 <button className="btn-secondary text-sm">
+                  <Workflow className="h-4 w-4" aria-hidden="true" />
                   View Automations
                 </button>
               </div>

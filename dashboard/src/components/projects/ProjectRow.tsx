@@ -53,7 +53,7 @@ function ProjectRow({ project, onClick }: ProjectRowProps) {
   return (
     <tr
       onClick={onClick}
-      className="border-b border-slate-700/50 hover:bg-slate-700/30 cursor-pointer transition-colors"
+      className="border-b border-cyan-900/40 hover:bg-cyan-900/30 cursor-pointer transition-colors interactive"
     >
       <td className="py-3 pr-4 text-cyan-200 font-medium">
         {project.name}
@@ -64,10 +64,10 @@ function ProjectRow({ project, onClick }: ProjectRowProps) {
       <td className={`py-3 pr-4 ${getPriorityColor(project.priority)}`}>
         {getPriorityLabel(project.priority)}
       </td>
-      <td className="py-3 pr-4 text-gray-400">
+      <td className="py-3 pr-4 text-muted">
         {project.blocked_by || '—'}
       </td>
-      <td className="py-3 text-gray-400">
+      <td className="py-3 text-muted">
         {project.due_date || '—'}
       </td>
     </tr>

@@ -1,11 +1,12 @@
 'use client';
 
+import React from "react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/dist/client/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Home,
+  LayoutDashboard,
   FolderKanban,
   Workflow,
   FileText,
@@ -20,12 +21,12 @@ function SideBar() {
   const pathname = usePathname();
 
   const links = [
-    { href: "/", label: "Dashboard", icon: <Home className="text-orange-300" size={24} /> },
-    { href: "/projects", label: "Projects", icon: <FolderKanban className="text-orange-300" size={24} /> },
-    { href: "/automations", label: "Automations", icon: <Workflow className="text-orange-300" size={24} /> },
-    { href: "/content", label: "Content", icon: <FileText className="text-orange-300" size={24} /> },
-    { href: "/jobs", label: "Jobs", icon: <Briefcase className="text-orange-300" size={24} /> },
-    { href: "/profile", label: "Profile", icon: <User className="text-orange-300" size={24} /> }
+    { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+    { href: "/projects", label: "Projects", icon: FolderKanban },
+    { href: "/automations", label: "Automations", icon: Workflow },
+    { href: "/content", label: "Content", icon: FileText },
+    { href: "/jobs", label: "Jobs", icon: Briefcase },
+    { href: "/profile", label: "Profile", icon: User }
   ]
 
   return (
@@ -36,11 +37,11 @@ function SideBar() {
           <Link 
             key={href} 
             href={href}
-            className={`px-5 py-3 first:rounded-t-4xl last:rounded-b-4xl hover:bg-cyan-900/60
+            className={`px-5 py-3 first:rounded-t-4xl last:rounded-b-4xl hover:bg-cyan-950/60
             hover:text-orange-500 transition-colors duration-300 ease-in-out flex items-center gap-2 interactive
-            ${pathname === href ? 'bg-cyan-900/70 text-orange-500 relative before:absolute before:left-1 before:top-2 before:bottom-2 before:w-1 before:rounded-full before:bg-orange-400' : 'text-orange-300'}`}
+            ${pathname === href ? 'bg-cyan-900/70 text-orange-500 relative' : 'text-orange-300'} group`}
           >
-            {icon}
+            {React.createElement(icon, { size: 24, className: `${pathname === href ? 'text-orange-500' : 'text-orange-300'} group-hover:text-orange-500` })}
             <AnimatePresence>
               {isOpen && (
                 <motion.span
