@@ -659,9 +659,10 @@ Auto badge:   #EC4899  (Pink - automation pro)
 - [ ] `RunAutomationButton` - Pro feature
 
 ### Content
-- [ ] `WeekSelector` - Navigate weeks
-- [ ] `PostDraft` - Single post with copy actions
-- [ ] `PostList` - Week's posts
+- [x] `WeekSelector` - Navigate weeks
+- [x] `PostDraft` - Single post with copy actions
+- [x] `PostList` - Week's posts
+- [x] `PostListSkeleton` - Loading skeleton
 
 ### Jobs
 - [ ] `JobStats` - Application funnel
@@ -717,7 +718,7 @@ Auto badge:   #EC4899  (Pink - automation pro)
 - [x] Profile page with skills
 - [x] Projects page
 - [x] Automations page
-- [ ] Content page
+- [x] Content page
 - [ ] Jobs page
 
 ### Phase 2: Hosted Infrastructure (April 2026)
