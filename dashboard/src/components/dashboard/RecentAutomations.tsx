@@ -15,7 +15,7 @@ function AutomationsListSkeleton() {
       {[1, 2, 3].map((i) => (
         <div
           key={i}
-          className="rounded-lg grid grid-cols-[140px_1fr_30px] gap-2 py-2 px-3 items-center neumorphic"
+          className="rounded-lg grid grid-cols-[140px_1fr_30px] gap-2 py-2 px-3 items-center surface-3"
         >
           <Skeleton width="w-28" height="h-5" />
           <Skeleton width="w-32" height="h-4" />
@@ -42,7 +42,7 @@ function RecentAutomations() {
   const { data: recentAutomations, isLoading, isError } = useRecentAutomations();
 
   return (
-    <Card className="min-w-sm" aria-labelledby="recent-automations-heading">
+    <Card className="w-fit" aria-labelledby="recent-automations-heading">
       <h2
         id="recent-automations-heading"
         className="text-lg font-bold text-orange-400 text-center"
@@ -66,7 +66,7 @@ function RecentAutomations() {
                 href={automation.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg grid grid-cols-[140px_1fr_30px] gap-2 py-2 px-3 items-center hover:bg-cyan-800/30 transition-colors duration-200 neumorphic"
+                className="rounded-lg grid grid-cols-[140px_1fr_30px] gap-2 py-2 px-3 items-center hover:bg-cyan-800/30 transition-colors duration-200 surface-3 interactive hover:border-cyan-400/60"
                 aria-label={`${automation.name}, ${getStatusLabel(automation.status)}, ${new Date(automation.timestamp).toLocaleString()} (opens in new tab)`}
               >
                 <span className="text-cyan-200 truncate">{automation.name}</span>
@@ -91,7 +91,7 @@ function RecentAutomations() {
 
       <Link
         href="/automations"
-        className="text-orange-400 text-sm mt-2 font-mono block text-center w-fit mx-auto neumorphic px-3 py-1 rounded-4xl transition-all duration-300 hover:bg-cyan-900"
+        className="btn-secondary text-sm mt-2 font-mono block text-center w-fit mx-auto"
         aria-label="View all automations"
       >
         View Automations

@@ -6,10 +6,10 @@ function TopBar() {
   return (
     <motion.nav 
       aria-label="TopBar" 
-      className="w-fit mx-auto py-2 px-6 fixed rounded-4xl neumorphic left-1/2
+      className="w-fit mx-auto py-2 px-6 fixed rounded-4xl surface-1 accent-glow left-1/2
       -translate-x-1/2 top-2"
-      whileHover={{ scaleX: 1.1 }}
-      transition={{ type: "spring", stiffness: 400, damping: 15 }}
+      whileHover={{ y: -2 }}
+      transition={{ type: "spring", stiffness: 280, damping: 16 }}
       whileTap={{ scale: 0.95 }}
     >
       {/* TopBar content goes here */}

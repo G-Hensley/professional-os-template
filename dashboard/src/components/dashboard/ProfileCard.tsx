@@ -27,7 +27,7 @@ function ProfileCard() {
   const { data: contact, isLoading } = useContact();
 
   return (
-    <Card className="max-w-md w-fit" aria-labelledby="profile-heading">
+    <Card className="w-fit" aria-labelledby="profile-heading">
       {isLoading ? (
         <ProfileCardSkeleton />
       ) : (
@@ -66,7 +66,7 @@ function ProfileCard() {
 
       <Link
         href="/profile"
-        className="neumorphic px-3 py-1 rounded-4xl w-fit mx-auto text-orange-400 text-sm mt-2 font-mono block text-center transition-all duration-300 hover:bg-cyan-900"
+        className="btn-secondary text-sm mt-2 font-mono block text-center w-fit mx-auto"
         aria-label="View full profile"
       >
         View Profile

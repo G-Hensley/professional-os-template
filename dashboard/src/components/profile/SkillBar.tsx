@@ -32,7 +32,7 @@ function SkillBar({ name, level }: SkillBarProps) {
       <span className="text-cyan-200 text-sm w-36 min-w-36 truncate" title={name}>
         {name}
       </span>
-      <div className="flex-1 min-w-24 h-2 bg-slate-700 rounded-full overflow-hidden neumorphic">
+      <div className="flex-1 min-w-24 h-2 bg-slate-950/70 border border-cyan-800/40 rounded-full overflow-hidden">
         <div
           className={`h-full rounded-full transition-all ${colorClass}`}
           style={{ width: `${progress}%` }}

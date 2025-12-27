@@ -6,7 +6,7 @@ interface ShellProps {
 
 function Shell({ children }: ShellProps) {
   return (
-    <section className="neumorphic w-fit xl:max-h-[75vh] rounded-4xl
+    <section className="surface-1 w-full max-w-6xl xl:max-h-[75vh] rounded-4xl
       overflow-y-scroll scrollbar-thin scrollbar-thumb-cyan-800 scrollbar-track-cyan-900
       relative mx-auto"
     >

@@ -54,7 +54,8 @@ function QuickStats() {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="flex gap-3 justify-between w-3xs border-b border-cyan-600 pb-1 px-1"
+              className="flex gap-3 justify-between w-3xs border-b border-cyan-600 pb-1 px-1
+                last:border-0 last:pb-0"
             >
               <dt className="text-cyan-200">{stat.label}:</dt>
               <dd className="font-mono text-cyan-100">{stat.value}</dd>

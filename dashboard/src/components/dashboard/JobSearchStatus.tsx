@@ -65,7 +65,7 @@ function JobSearchStatus() {
 
       <Link
         href="/jobs"
-        className="neumorphic px-3 py-1 rounded-4xl w-fit mx-auto text-orange-400 text-sm mt-2 font-mono block text-center transition-all duration-300 hover:bg-cyan-900"
+        className="btn-secondary text-sm mt-2 font-mono block text-center w-fit mx-auto"
         aria-label="View job dashboard"
       >
         View Job Dashboard

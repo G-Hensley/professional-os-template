@@ -15,7 +15,7 @@ function ProjectListSkeleton() {
       {[1, 2, 3].map((i) => (
         <div
           key={i}
-          className="rounded-lg py-2 px-3 neumorphic flex items-center justify-between gap-4"
+          className="rounded-lg py-2 px-3 surface-3 flex items-center justify-between gap-4"
         >
           <Skeleton width="w-24" height="h-5" />
           <Skeleton width="w-16" height="h-4" rounded />
@@ -52,7 +52,7 @@ function ActiveProjectsMini() {
             <li key={project.name}>
               <a
                 href={project.repo_url}
-                className="rounded-lg py-2 px-3 hover:bg-cyan-800/30 transition-colors duration-200 neumorphic flex items-center justify-between gap-4"
+                className="rounded-lg py-2 px-3 hover:bg-cyan-800/30 transition-colors duration-200 surface-3 flex items-center justify-between gap-4 interactive hover:border-cyan-400/60"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${project.name}${project.completion_percentage !== undefined ? `, ${project.completion_percentage}% complete` : `, status: ${project.status}`} (opens in new tab)`}
@@ -71,7 +71,7 @@ function ActiveProjectsMini() {
 
       <Link
         href="/projects"
-        className="text-orange-400 text-sm mt-2 font-mono block text-center w-fit mx-auto neumorphic px-3 py-1 rounded-4xl transition-all duration-300 hover:bg-cyan-900"
+        className="btn-secondary text-sm mt-2 font-mono block text-center w-fit mx-auto"
         aria-label="View all projects"
       >
         View All Projects
