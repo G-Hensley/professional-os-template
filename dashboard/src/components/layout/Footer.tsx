@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer className="footer border-t border-cyan-900 w-fit mx-auto px-8 rounded-t-2xl mt-auto">
-      <div className="text-center text-sm text-gray-500 py-2">
+    <footer className="footer w-fit mx-auto mt-auto">
+      <div className="surface-2 rounded-full px-6 py-2 text-center text-xs text-muted border border-cyan-900/50">
         &copy; {new Date().getFullYear()} Personal OS. All rights reserved.
       </div>
     </footer>

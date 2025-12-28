@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { Card, Skeleton } from '@/src/components/ui';
+import { Mail, MapPin, Github, Linkedin, Globe } from 'lucide-react';
 import { useContact } from '@/src/hooks';
 
 function ProfileCardSkeleton() {
@@ -26,12 +27,12 @@ function ProfileCard() {
   const { data: contact, isLoading } = useContact();
 
   return (
-    <Card className="max-w-md w-fit" aria-labelledby="profile-heading">
+    <Card className="w-full h-fit" aria-labelledby="profile-heading">
       {isLoading ? (
         <ProfileCardSkeleton />
       ) : (
-        <div className='flex flex-col gap-2'>
-          <div className="flex items-center gap-3 justify-center">
+        <div className="flex flex-col gap-4">
+          <div className="flex items-start gap-4">
             <div className="w-20 h-20 relative rounded-full overflow-hidden shrink-0">
               {contact?.links.github ? (
                 <Image
@@ -51,55 +52,67 @@ function ProfileCard() {
                 </div>
               )}
             </div>
-            <div className="flex flex-col border-l border-orange-400 pl-4">
+            <div className="flex flex-col gap-1 border-l border-orange-400/70 pl-4">
               <h2
                 id="profile-heading"
-                className="text-lg font-bold text-orange-400"
+                className="text-lg font-semibold text-accent-strong"
               >
                 {contact?.name}
               </h2>
-              <p className="text-sm text-cyan-200">{contact?.title}</p>
-              <p className="text-sm text-cyan-200">{contact?.recent_employer}</p>
+              <div className="flex flex-col gap-1 text-sm text-cyan-200">
+                <span>
+                  {contact?.title}
+                </span>
+                <span className="text-cyan-200/80">{contact?.recent_employer}</span>
+              </div>
             </div>
           </div>
-          <div className='flex flex-col'>
-            <p className='text-cyan-200'>
-            {contact?.location.city}, {contact?.location.state} {contact?.location.remote_only ? '(Remote Only)' : ''}
-          </p>
+          <div className="flex flex-col gap-2">
+            <p className="text-cyan-200 flex items-center gap-2">
+              <MapPin className="h-3.5 w-3.5 text-cyan-300/70" aria-hidden="true" />
+              {contact?.location.city}, {contact?.location.state} {contact?.location.remote_only ? '(Remote Only)' : ''}
+            </p>
             <a
               href={`mailto:${contact?.email}`}
-              className="text-cyan-300 hover:underline w-fit"
+              className="text-cyan-200 hover:text-cyan-100 interactive flex items-center gap-2 w-fit"
             >
+              <Mail className="h-3.5 w-3.5 text-cyan-300/70" aria-hidden="true" />
               {contact?.email}
             </a>
-            <div className="flex items-center gap-2">
-            {contact?.links.linkedin && (
-              <a
-                target='_blank'
-                rel='noopener noreferrer'
-                href={contact?.links.linkedin} 
-                className="text-cyan-300 hover:underline border-r border-cyan-300 pr-2">
-                LinkedIn
-              </a>
-            )}
-            {contact?.links.github && (
-              <a
-                target='_blank'
-                rel='noopener noreferrer'
-                href={contact?.links.github} 
-                className="text-cyan-300 hover:underline border-r border-cyan-300 pr-2">
-                GitHub
-              </a>
-            )}
-            {contact?.links.portfolio && (
-              <a
-                target='_blank'
-                rel='noopener noreferrer'
-                href={contact?.links.portfolio} 
-                className="text-cyan-300 hover:underline">
-                Portfolio
-              </a>
-            )}
+            <div className="flex flex-wrap gap-2">
+              {contact?.links.linkedin && (
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={contact?.links.linkedin}
+                  className="btn-secondary text-xs"
+                >
+                  <Linkedin className="h-3.5 w-3.5" aria-hidden="true" />
+                  LinkedIn
+                </a>
+              )}
+              {contact?.links.github && (
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={contact?.links.github}
+                  className="btn-secondary text-xs"
+                >
+                  <Github className="h-3.5 w-3.5" aria-hidden="true" />
+                  GitHub
+                </a>
+              )}
+              {contact?.links.portfolio && (
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={contact?.links.portfolio}
+                  className="btn-secondary text-xs"
+                >
+                  <Globe className="h-3.5 w-3.5" aria-hidden="true" />
+                  Portfolio
+                </a>
+              )}
             </div>
           </div>
         </div>

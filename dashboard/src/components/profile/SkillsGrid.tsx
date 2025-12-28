@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Card, Skeleton } from '@/src/components/ui';
+import { Card, Skeleton, Tabs } from '@/src/components/ui';
+import { Sparkles, AlertTriangle, Trophy } from 'lucide-react';
 import { useSkills } from '@/src/hooks';
 import { SkillBar, LEVEL_ORDER, type SkillLevel } from './SkillBar';
 
@@ -58,71 +59,69 @@ function SkillsGrid() {
     );
   };
 
+  const filterOptions = [
+    { value: 'all', label: 'All', icon: <Sparkles className="h-3.5 w-3.5" aria-hidden="true" /> },
+    { value: 'gaps', label: 'Gaps', icon: <AlertTriangle className="h-3.5 w-3.5" aria-hidden="true" /> },
+    { value: 'top', label: 'Top', icon: <Trophy className="h-3.5 w-3.5" aria-hidden="true" /> },
+  ];
+
   return (
-    <Card className="w-full max-h-84 overflow-y-auto" aria-labelledby="skills-heading">
-      <div className="flex items-center justify-between mb-4">
-        <h2 id="skills-heading" className="text-lg font-bold text-orange-400">
-          Skills
-        </h2>
-        <div className="flex">
-          {(['all', 'gaps', 'top'] as FilterType[]).map((f) => (
-            <button
-              key={f}
-              onClick={() => setFilter(f)}
-              className={`px-3 py-1 text-xs first:rounded-l-md last:rounded-r-md capitalize transition-colors
-                cursor-pointer ${
-                filter === f
-                  ? 'bg-cyan-800 text-white'
-                  : 'bg-slate-700 text-cyan-300 hover:bg-slate-600'
-              }`}
-            >
-              {f}
-            </button>
-          ))}
+    <Card className="w-full h-112 scroll-fade" aria-labelledby="skills-heading">
+      <div className="flex h-full flex-col">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+          <h2 id="skills-heading" className="text-lg font-semibold text-accent-strong">
+            Skills
+          </h2>
+          <Tabs
+            value={filter}
+            options={filterOptions}
+            onChange={(value) => setFilter(value as FilterType)}
+          />
+        </div>
+
+        <div className="flex-1 overflow-y-auto pr-1 pb-8">
+          {isLoading ? (
+            <SkillsGridSkeleton />
+          ) : (
+            <div className="space-y-6">
+              {skills &&
+                Object.entries(skills)
+                  .filter(([key]) => key !== 'skill_levels')
+                  .map(([category, categorySkills]) => {
+                    const skillsArray = Object.entries(
+                      categorySkills as Record<string, SkillLevel>
+                    ).map(([name, level]) => ({ name, level }));
+
+                    const filtered = filterSkills(skillsArray);
+                    const sorted = sortByLevel(filtered);
+
+                    if (sorted.length === 0) return null;
+
+                    const displayName = category
+                      .replace(/_/g, ' ')
+                      .replace(/and/g, '&');
+
+                    return (
+                      <div key={category}>
+                        <h3 className="text-sm font-semibold text-cyan-200 uppercase tracking-wide mb-3 border-b border-cyan-900/40 pb-1">
+                          {displayName}
+                        </h3>
+                        <div className="space-y-2">
+                          {sorted.map((skill) => (
+                            <SkillBar
+                              key={skill.name}
+                              name={skill.name}
+                              level={skill.level}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
+            </div>
+          )}
         </div>
       </div>
-
-      {isLoading ? (
-        <SkillsGridSkeleton />
-      ) : (
-        <div className="space-y-6">
-          {skills &&
-            Object.entries(skills)
-              .filter(([key]) => key !== 'skill_levels')
-              .map(([category, categorySkills]) => {
-                const skillsArray = Object.entries(
-                  categorySkills as Record<string, SkillLevel>
-                ).map(([name, level]) => ({ name, level }));
-
-                const filtered = filterSkills(skillsArray);
-                const sorted = sortByLevel(filtered);
-
-                if (sorted.length === 0) return null;
-
-                const displayName = category
-                  .replace(/_/g, ' ')
-                  .replace(/and/g, '&');
-
-                return (
-                  <div key={category}>
-                    <h3 className="text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-3
-                    text-center border-b pb-1">
-                      {displayName}
-                    </h3>
-                    <div className="space-y-2">
-                      {sorted.map((skill) => (
-                        <SkillBar
-                          key={skill.name}
-                          name={skill.name}
-                          level={skill.level}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                );
-              })}
-        </div>
-      )}
     </Card>
   );
 }

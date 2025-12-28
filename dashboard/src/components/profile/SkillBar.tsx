@@ -5,7 +5,7 @@ export type SkillLevel = 'none' | 'novice' | 'apprentice' | 'adept' | 'expert' |
 const LEVEL_ORDER: SkillLevel[] = ['none', 'novice', 'apprentice', 'adept', 'expert', 'master'];
 
 const LEVEL_COLORS: Record<SkillLevel, string> = {
-  none: 'bg-gray-600',
+  none: 'bg-slate-700',
   novice: 'bg-red-500',
   apprentice: 'bg-orange-500',
   adept: 'bg-yellow-500',
@@ -28,7 +28,7 @@ function SkillBar({ name, level }: SkillBarProps) {
   const colorClass = LEVEL_COLORS[level];
 
   return (
-    <div className="flex items-center gap-3 w-full border-b border-slate-700 pb-2 last:border-0 last:pb-0">
+    <div className="flex items-center gap-3 w-full border-b border-cyan-900/40 pb-2 last:border-0 last:pb-0">
       <span className="text-cyan-200 text-sm w-36 min-w-36 truncate" title={name}>
         {name}
       </span>
@@ -39,7 +39,7 @@ function SkillBar({ name, level }: SkillBarProps) {
         />
       </div>
       <span className={`text-xs w-20 min-w-20 text-right capitalize
-        ${level === 'none' ? 'text-gray-400' : 
+        ${level === 'none' ? 'text-muted' :
         level === 'novice' ? 'text-red-400' :
         level === 'apprentice' ? 'text-orange-400' :
         level === 'adept' ? 'text-yellow-400' :
