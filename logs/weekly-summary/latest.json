@@ -1,0 +1,89 @@
+{
+  "generated_at": "2025-12-28T18:07:30.125Z",
+  "week": {
+    "start": "2025-12-22",
+    "end": "2025-12-28",
+    "formatted": "Dec 22 - Dec 28, 2025"
+  },
+  "automation_reports": {
+    "github": {
+      "commits": 80,
+      "repos": [
+        "myself"
+      ],
+      "prs": 0,
+      "issues": 0
+    },
+    "skills": {
+      "detected": 22,
+      "manual": 36,
+      "decayWarnings": 23,
+      "suggestions": 5,
+      "generatedAt": "2025-12-19T03:21:43.602Z"
+    },
+    "projects": {
+      "activeCounts": 2,
+      "plannedCount": 7,
+      "completedCount": 0,
+      "staleProjects": []
+    },
+    "linkedinDrafts": {
+      "folders": [
+        "2025-12-22"
+      ],
+      "hasNew": true
+    },
+    "context": {
+      "count": 11,
+      "latest": "latest.json"
+    }
+  },
+  "manual_todos": [
+    {
+      "category": "LinkedIn",
+      "task": "Update Personal LinkedIn metrics",
+      "reason": "No metrics entries found",
+      "priority": "medium",
+      "howTo": "Go to LinkedIn Analytics, copy metrics into JSON file"
+    },
+    {
+      "category": "LinkedIn",
+      "task": "Update Codaissance LinkedIn metrics",
+      "reason": "No metrics entries found",
+      "priority": "medium",
+      "howTo": "Go to LinkedIn Analytics, copy metrics into JSON file"
+    },
+    {
+      "category": "LinkedIn",
+      "task": "Update TamperTantrum Labs LinkedIn metrics",
+      "reason": "No metrics entries found",
+      "priority": "medium",
+      "howTo": "Go to LinkedIn Analytics, copy metrics into JSON file"
+    },
+    {
+      "category": "Profile",
+      "task": "Review 5 skill level suggestion(s)",
+      "reason": "Skill analysis detected usage patterns to verify",
+      "priority": "low",
+      "howTo": "Review suggestions in logs/skill-analysis/latest-analysis.json"
+    },
+    {
+      "category": "Content",
+      "task": "Review and post LinkedIn drafts",
+      "reason": "1 draft folder(s) generated this week",
+      "priority": "medium",
+      "howTo": "Review linkedin/drafts/, edit as needed, post to LinkedIn"
+    }
+  ],
+  "summary": {
+    "total_commits": 80,
+    "active_repos": 1,
+    "skills_tracked": 58,
+    "manual_todo_count": 5,
+    "manual_todos_by_priority": {
+      "high": 0,
+      "medium": 4,
+      "low": 1
+    }
+  }
+}
