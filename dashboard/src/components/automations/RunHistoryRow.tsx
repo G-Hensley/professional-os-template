@@ -24,7 +24,7 @@ function getStatusColor(status: AutomationRun['status']): string {
     case 'running':
       return 'text-yellow-400';
     default:
-      return 'text-gray-400';
+      return 'text-muted';
   }
 }
 
@@ -55,11 +55,11 @@ function RunHistoryRow({ run }: RunHistoryRowProps) {
   const { date, time } = formatTimestamp(run.timestamp);
 
   return (
-    <tr className="border-b border-slate-700/50 hover:bg-slate-700/30 transition-colors">
-      <td className="py-3 pr-4 text-gray-400 text-sm">
+    <tr className="border-b border-cyan-900/40 hover:bg-cyan-800/30 odd:bg-cyan-900/20 transition-colors interactive">
+      <td className="py-3 pr-4 text-muted text-sm pl-2">
         {date}
       </td>
-      <td className="py-3 pr-4 text-gray-400 text-sm">
+      <td className="py-3 pr-4 text-muted text-sm">
         {time}
       </td>
       <td className="py-3 pr-4 text-cyan-200 font-medium">
@@ -73,7 +73,7 @@ function RunHistoryRow({ run }: RunHistoryRowProps) {
           href={run.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs text-cyan-400 hover:text-cyan-300 underline"
+          className="text-xs text-cyan-200 hover:text-cyan-100 underline interactive pr-2"
           aria-label={`View log for ${run.name} run on ${date}`}
         >
           View Log

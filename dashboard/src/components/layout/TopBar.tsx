@@ -7,7 +7,7 @@ function TopBar() {
     <motion.nav 
       aria-label="TopBar" 
       className="w-fit mx-auto py-2 px-6 fixed rounded-4xl surface-1 accent-glow left-1/2
-      -translate-x-1/2 top-2"
+      -translate-x-1/2 top-2 z-50"
       whileHover={{ y: -2 }}
       transition={{ type: "spring", stiffness: 280, damping: 16 }}
       whileTap={{ scale: 0.95 }}

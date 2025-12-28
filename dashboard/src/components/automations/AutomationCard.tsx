@@ -1,6 +1,7 @@
 'use client';
 
 import { Card } from '@/src/components/ui';
+import { Clock, History, Play } from 'lucide-react';
 
 interface Pipeline {
   name: string;
@@ -82,7 +83,8 @@ function AutomationCard({ pipeline, runs, onViewLatest, onViewHistory }: Automat
           >
             {pipeline.name}
           </h3>
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-muted flex items-center gap-2">
+            <Clock className="h-3.5 w-3.5 text-cyan-300/70" aria-hidden="true" />
             Runs: {pipeline.schedule}
           </p>
         </div>
@@ -98,18 +100,20 @@ function AutomationCard({ pipeline, runs, onViewLatest, onViewHistory }: Automat
         {onViewLatest && (
           <button
             onClick={onViewLatest}
-            className="px-3 py-1 text-xs bg-slate-700 text-cyan-300 rounded hover:bg-slate-600 transition-colors cursor-pointer"
+            className="btn-secondary text-xs"
             aria-label={`View latest run for ${pipeline.name}`}
           >
+            <Play className="h-3.5 w-3.5" aria-hidden="true" />
             View Latest
           </button>
         )}
         {onViewHistory && (
           <button
             onClick={onViewHistory}
-            className="px-3 py-1 text-xs bg-slate-700 text-cyan-300 rounded hover:bg-slate-600 transition-colors cursor-pointer"
+            className="btn-secondary text-xs"
             aria-label={`View run history for ${pipeline.name}`}
           >
+            <History className="h-3.5 w-3.5" aria-hidden="true" />
             View History
           </button>
         )}

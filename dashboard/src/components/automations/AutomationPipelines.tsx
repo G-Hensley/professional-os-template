@@ -8,7 +8,7 @@ function AutomationPipelinesSkeleton() {
   return (
     <div role="status" aria-label="Loading pipelines" className="space-y-4">
       {[1, 2, 3, 4].map((i) => (
-        <div key={i} className="p-4 bg-slate-800 rounded-lg space-y-3">
+        <div key={i} className="p-4 surface-3 rounded-lg space-y-3">
           <div className="flex justify-between">
             <Skeleton width="w-48" height="h-5" />
             <Skeleton width="w-24" height="h-5" />
@@ -44,28 +44,31 @@ function AutomationPipelines({ onViewHistory }: AutomationPipelinesProps) {
 
   return (
     <section aria-labelledby="pipelines-heading">
-      <Card className="w-full h-96 overflow-y-auto">
-        <h2 id="pipelines-heading" className="text-lg font-bold text-orange-400 mb-4">
-          Automation Pipelines
-        </h2>
-
-        {isLoading ? (
-          <AutomationPipelinesSkeleton />
-        ) : pipelines.length === 0 ? (
-          <p className="text-gray-400 text-sm">No automation pipelines configured.</p>
-        ) : (
-          <div className="space-y-4">
-            {pipelines.map((pipeline) => (
-              <AutomationCard
-                key={pipeline.name}
-                pipeline={pipeline}
-                runs={runs}
-                onViewLatest={() => handleViewLatest(pipeline.name)}
-                onViewHistory={onViewHistory ? () => onViewHistory(pipeline.name) : undefined}
-              />
-            ))}
+      <Card className="w-full h-104 scroll-fade">
+        <div className="flex h-full flex-col">
+          <h2 id="pipelines-heading" className="text-lg font-semibold text-accent-strong mb-4">
+            Automation Pipelines
+          </h2>
+          <div className="flex-1 overflow-y-auto pr-1 pb-8 pt-1">
+            {isLoading ? (
+              <AutomationPipelinesSkeleton />
+            ) : pipelines.length === 0 ? (
+              <p className="text-muted text-sm">No automation pipelines configured.</p>
+            ) : (
+              <div className="space-y-4">
+                {pipelines.map((pipeline) => (
+                  <AutomationCard
+                    key={pipeline.name}
+                    pipeline={pipeline}
+                    runs={runs}
+                    onViewLatest={() => handleViewLatest(pipeline.name)}
+                    onViewHistory={onViewHistory ? () => onViewHistory(pipeline.name) : undefined}
+                  />
+                ))}
+              </div>
+            )}
           </div>
-        )}
+        </div>
       </Card>
     </section>
   );
