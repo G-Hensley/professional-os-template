@@ -6,7 +6,7 @@ function PostListSkeleton() {
   return (
     <div role="status" aria-label="Loading posts" className="space-y-4">
       {[1, 2, 3].map((i) => (
-        <div key={i} className="p-4 bg-slate-800 rounded-lg space-y-3">
+        <div key={i} className="p-4 surface-3 rounded-lg space-y-3">
           <Skeleton width="w-48" height="h-5" />
           <div className="space-y-2">
             <Skeleton width="w-full" height="h-4" />

@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 function SideBar() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
   const links = [

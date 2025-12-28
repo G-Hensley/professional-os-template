@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Card } from '@/src/components/ui';
+import { Clipboard, Image as ImageIcon, Sparkles } from 'lucide-react';
 
 interface LinkedInPost {
   day: string;
@@ -48,47 +49,53 @@ function PostDraft({ post }: PostDraftProps) {
       <div className="mb-3">
         <h3
           id={`post-${post.day.toLowerCase()}`}
-          className="text-cyan-200 font-medium"
+          className="text-cyan-200 font-medium flex items-center gap-2"
         >
+          <Sparkles className="h-4 w-4 text-cyan-300/70" aria-hidden="true" />
           {post.day} - {post.theme}
         </h3>
       </div>
 
       <div className="mb-4">
-        <p className="text-gray-300 text-sm whitespace-pre-wrap leading-relaxed">
+        <p className="text-cyan-100/90 text-sm whitespace-pre-wrap leading-relaxed">
           {post.content}
         </p>
       </div>
 
       {(hasImageSuggestion || hasImagePrompt) && (
-        <div className="mb-4 p-3 bg-slate-700/50 rounded">
-          <p className="text-xs text-cyan-400 font-medium mb-2">Image</p>
+        <div className="mb-4 p-3 surface-3 rounded-lg">
+          <p className="text-xs text-cyan-200 font-medium mb-2 flex items-center gap-2">
+            <ImageIcon className="h-3.5 w-3.5 text-cyan-300/70" aria-hidden="true" />
+            Image
+          </p>
           {hasImageSuggestion && (
-            <p className="text-gray-300 text-sm">{post.imageSuggestion}</p>
+            <p className="text-cyan-100/90 text-sm">{post.imageSuggestion}</p>
           )}
           {hasImagePrompt && (
             <div className="mt-2">
-              <p className="text-xs text-gray-400 mb-1">AI Prompt:</p>
-              <p className="text-gray-400 text-sm italic">{post.imagePrompt}</p>
+              <p className="text-xs text-muted mb-1">AI Prompt:</p>
+              <p className="text-muted text-sm italic">{post.imagePrompt}</p>
             </div>
           )}
         </div>
       )}
 
-      <div className="flex flex-wrap gap-2 pt-3 border-t border-slate-700">
+      <div className="flex flex-wrap gap-2 pt-3 border-t border-cyan-900/40">
         <button
           onClick={handleCopyPost}
-          className="px-3 py-1 text-xs bg-slate-700 text-cyan-300 rounded hover:bg-slate-600 transition-colors cursor-pointer"
+          className="btn-secondary text-xs"
           aria-label={`Copy ${post.day} post`}
         >
+          <Clipboard className="h-3.5 w-3.5" aria-hidden="true" />
           {copied ? '✓ Copied!' : 'Copy Post'}
         </button>
         {hasImagePrompt && (
           <button
             onClick={handleCopyImagePrompt}
-            className="px-3 py-1 text-xs bg-slate-700 text-cyan-300 rounded hover:bg-slate-600 transition-colors cursor-pointer"
+            className="btn-secondary text-xs"
             aria-label={`Copy ${post.day} image prompt`}
           >
+            <ImageIcon className="h-3.5 w-3.5" aria-hidden="true" />
             {copiedImagePrompt ? '✓ Copied!' : 'Copy Image Prompt'}
           </button>
         )}

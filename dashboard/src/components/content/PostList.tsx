@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Card } from '@/src/components/ui';
+import { CalendarRange } from 'lucide-react';
 import { useWeeklyPosts } from '@/src/hooks';
 import { WeekSelector } from './WeekSelector';
 import { PostDraft } from './PostDraft';
@@ -29,42 +30,47 @@ function PostList() {
 
   return (
     <section aria-labelledby="content-heading">
-      <Card className="w-full">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
-          <h2 id="content-heading" className="text-lg font-bold text-orange-400">
-            LinkedIn Drafts
-          </h2>
-          {!isLoading && weeklyPosts.length > 0 && (
-            <WeekSelector
-              currentWeekStart={currentWeek?.weekStart ?? ''}
-              currentWeekEnd={currentWeek?.weekEnd ?? ''}
-              onPrevious={handlePrevious}
-              onNext={handleNext}
-              hasPrevious={hasPrevious}
-              hasNext={hasNext}
-            />
-          )}
-        </div>
-
-        {isLoading ? (
-          <PostListSkeleton />
-        ) : !currentWeek || currentWeek.posts.length === 0 ? (
-          <p className="text-gray-400 text-sm">
-            No posts generated for this week. Run the LinkedIn Post Generator automation to create drafts.
-          </p>
-        ) : (
-          <div className="space-y-4">
-            {currentWeek.posts.map((post, index) => (
-              <PostDraft key={`${currentWeek.weekStart}-${post.day}-${post.theme}-${index}`} post={post} />
-            ))}
+      <Card className="w-full h-112 scroll-fade">
+        <div className="flex h-full flex-col">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+            <h2 id="content-heading" className="text-lg font-semibold text-accent-strong flex items-center gap-2">
+              <CalendarRange className="h-4 w-4 text-cyan-200" aria-hidden="true" />
+              LinkedIn Drafts
+            </h2>
+            {!isLoading && weeklyPosts.length > 0 && (
+              <WeekSelector
+                currentWeekStart={currentWeek?.weekStart ?? ''}
+                currentWeekEnd={currentWeek?.weekEnd ?? ''}
+                onPrevious={handlePrevious}
+                onNext={handleNext}
+                hasPrevious={hasPrevious}
+                hasNext={hasNext}
+              />
+            )}
           </div>
-        )}
 
-        {currentWeek?.generatedAt && (
-          <p className="text-xs text-gray-500 mt-4">
-            Generated: {new Date(currentWeek.generatedAt).toLocaleString()}
-          </p>
-        )}
+          <div className="flex-1 overflow-y-auto pr-1 pb-8 pt-1">
+            {isLoading ? (
+              <PostListSkeleton />
+            ) : !currentWeek || currentWeek.posts.length === 0 ? (
+              <p className="text-muted text-sm">
+                No posts generated for this week. Run the LinkedIn Post Generator automation to create drafts.
+              </p>
+            ) : (
+              <div className="space-y-4">
+                {currentWeek.posts.map((post, index) => (
+                  <PostDraft key={`${currentWeek.weekStart}-${post.day}-${post.theme}-${index}`} post={post} />
+                ))}
+              </div>
+            )}
+
+            {currentWeek?.generatedAt && (
+              <p className="text-xs text-muted mt-4">
+                Generated: {new Date(currentWeek.generatedAt).toLocaleString()}
+              </p>
+            )}
+          </div>
+        </div>
       </Card>
     </section>
   );
