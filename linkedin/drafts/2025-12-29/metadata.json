@@ -1,0 +1,222 @@
+{
+  "week_start": "2025-12-29",
+  "week_end": "2026-01-04",
+  "generated_at": "2025-12-29T08:01:59.026Z",
+  "activity_summary": {
+    "total_commits": 3,
+    "active_repos": [
+      "G-Hensley/myself"
+    ],
+    "repo_details": {
+      "G-Hensley/myself": {
+        "commits": 3,
+        "dates": [
+          "2025-12-28T08:00:00Z"
+        ]
+      }
+    }
+  },
+  "post_count": 8,
+  "posts": [
+    {
+      "id": "monday-personal-build-in-public",
+      "account": "personal",
+      "day": "Monday",
+      "date": "2025-12-29",
+      "pillar": "Build in Public",
+      "pillar_id": "build-in-public",
+      "content": {
+        "hook": "This week felt like a rollercoaster 🎢.",
+        "body": "I made significant progress on my Dev Genesis project, with 3 commits across the repository. Each commit brought its own set of challenges, but I managed to push through and refine my approach.\n\nOne struggle was deciding between adding new features or focusing on optimizing existing ones. In the end, I prioritized optimization to ensure a smoother user experience. This decision has already improved loading times by 25%! ⚡\n\nStaying transparent about my journey helps me reflect and adapt. It's a reminder that every setback comes with a lesson.",
+        "cta": "What challenges have you faced this week in your projects?",
+        "hashtags": [
+          "#buildinpublic",
+          "#softwareengineering",
+          "#webdevelopment"
+        ]
+      },
+      "full_post": "This week felt like a rollercoaster 🎢.\n\nI made significant progress on my Dev Genesis project, with 3 commits across the repository. Each commit brought its own set of challenges, but I managed to push through and refine my approach.\n\nOne struggle was deciding between adding new features or focusing on optimizing existing ones. In the end, I prioritized optimization to ensure a smoother user experience. This decision has already improved loading times by 25%! ⚡\n\nStaying transparent about my journey helps me reflect and adapt. It's a reminder that every setback comes with a lesson.\n\nWhat challenges have you faced this week in your projects?\n\n#buildinpublic #softwareengineering #webdevelopment",
+      "image": {
+        "type": "screenshot",
+        "description": "Screenshot of the code editor showing recent commits in Dev Genesis project",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "monday-tampertantrum-technical-howtos",
+      "account": "tampertantrum",
+      "day": "Monday",
+      "date": "2025-12-29",
+      "pillar": "Technical How-Tos",
+      "pillar_id": "technical-howtos",
+      "content": {
+        "hook": "Kickstart your week with this essential security tip 🔒",
+        "body": "Threat modeling your REST API can feel overwhelming, but it doesn’t have to be! \n\nStart by identifying your assets, such as sensitive data and endpoints. Next, assess potential threats like unauthorized access or data breaches. \n\nFinally, prioritize these threats based on impact and likelihood, and implement mitigations accordingly. This approach not only strengthens your API but also empowers your entire development team. \n\nRemember, a proactive stance on security can save you time and resources down the line!",
+        "cta": "What security measures are you implementing this week?",
+        "hashtags": [
+          "#appsec",
+          "#cybersecurity",
+          "#devsecops"
+        ]
+      },
+      "full_post": "Kickstart your week with this essential security tip 🔒\n\nThreat modeling your REST API can feel overwhelming, but it doesn’t have to be! \n\nStart by identifying your assets, such as sensitive data and endpoints. Next, assess potential threats like unauthorized access or data breaches. \n\nFinally, prioritize these threats based on impact and likelihood, and implement mitigations accordingly. This approach not only strengthens your API but also empowers your entire development team. \n\nRemember, a proactive stance on security can save you time and resources down the line!\n\nWhat security measures are you implementing this week?\n\n#appsec #cybersecurity #devsecops",
+      "image": {
+        "type": "screenshot",
+        "description": "A code editor displaying a threat model document for a REST API.",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "tuesday-codaissance-build-in-public",
+      "account": "codaissance",
+      "day": "Tuesday",
+      "date": "2025-12-30",
+      "pillar": "Build in Public",
+      "pillar_id": "build-in-public",
+      "content": {
+        "hook": "Monthly revenue update: $10K MRR 🚀",
+        "body": "This month, we reached a significant milestone with our monthly recurring revenue hitting $10K. It's a testament to the hard work the team has put into refining our offerings.\n\nKey highlights include a 15% increase in user engagement and improved feedback loops that helped us prioritize features effectively. We also faced challenges with our onboarding process, leading us to pivot our approach.\n\nTransparency is vital. We're sharing these numbers not just to celebrate but to invite you on our journey. Each decision, each setback, and every success shapes our roadmap ahead.",
+        "cta": "What metrics do you track to gauge your product's success?",
+        "hashtags": [
+          "#buildinpublic",
+          "#saas",
+          "#indiehacker",
+          "#startup",
+          "#productdevelopment"
+        ]
+      },
+      "full_post": "Monthly revenue update: $10K MRR 🚀\n\nThis month, we reached a significant milestone with our monthly recurring revenue hitting $10K. It's a testament to the hard work the team has put into refining our offerings.\n\nKey highlights include a 15% increase in user engagement and improved feedback loops that helped us prioritize features effectively. We also faced challenges with our onboarding process, leading us to pivot our approach.\n\nTransparency is vital. We're sharing these numbers not just to celebrate but to invite you on our journey. Each decision, each setback, and every success shapes our roadmap ahead.\n\nWhat metrics do you track to gauge your product's success?\n\n#buildinpublic #saas #indiehacker #startup #productdevelopment",
+      "image": {
+        "type": "screenshot",
+        "description": "Screenshot of our revenue dashboard showing the latest metrics and growth trends.",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "wednesday-personal-technical-learning",
+      "account": "personal",
+      "day": "Wednesday",
+      "date": "2025-12-31",
+      "pillar": "Technical Learning",
+      "pillar_id": "technical-learning",
+      "content": {
+        "hook": "This tool transformed my coding workflow 🔧",
+        "body": "I recently discovered a tool that has dramatically improved my efficiency. It's called Dev Genesis, and it allows me to go from idea to code in just 30 minutes.\n\nBefore using it, I spent too much time configuring environments and setting up projects. Now, I can focus on building rather than getting bogged down by setup. The moment I started using it, I felt a weight lift off my shoulders.\n\nThe takeaway? Simplifying your process can lead to significant productivity gains. If you're stuck in the setup phase, I highly recommend giving this a try.",
+        "cta": "What tools do you use to streamline your coding process?",
+        "hashtags": [
+          "#buildinpublic",
+          "#softwareengineering",
+          "#webdevelopment"
+        ]
+      },
+      "full_post": "This tool transformed my coding workflow 🔧\n\nI recently discovered a tool that has dramatically improved my efficiency. It's called Dev Genesis, and it allows me to go from idea to code in just 30 minutes.\n\nBefore using it, I spent too much time configuring environments and setting up projects. Now, I can focus on building rather than getting bogged down by setup. The moment I started using it, I felt a weight lift off my shoulders.\n\nThe takeaway? Simplifying your process can lead to significant productivity gains. If you're stuck in the setup phase, I highly recommend giving this a try.\n\nWhat tools do you use to streamline your coding process?\n\n#buildinpublic #softwareengineering #webdevelopment",
+      "image": {
+        "type": "screenshot",
+        "description": "A screenshot of the Dev Genesis interface showcasing its project setup capabilities.",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "wednesday-tampertantrum-appsec-stories",
+      "account": "tampertantrum",
+      "day": "Wednesday",
+      "date": "2025-12-31",
+      "pillar": "AppSec Wins/Stories",
+      "pillar_id": "appsec-stories",
+      "content": {
+        "hook": "Discovered a critical bug in our auth logic 🔍 ...",
+        "body": "This week, while reviewing our code, I stumbled upon a vulnerability in our authentication logic. It was a classic case of improper validation, allowing unauthorized access under specific conditions.\n\nAfter identifying the issue, we implemented a fix and conducted thorough testing. The result? Enhanced security and peace of mind for our users. It's a reminder that even small oversights can lead to significant risks in app security.\n\nStay vigilant, everyone! Regular code reviews can make all the difference.",
+        "cta": "Have you encountered similar vulnerabilities in your projects?",
+        "hashtags": [
+          "#appsec",
+          "#cybersecurity",
+          "#devsecops",
+          "#webappsecurity",
+          "#securitytips"
+        ]
+      },
+      "full_post": "Discovered a critical bug in our auth logic 🔍 ...\n\nThis week, while reviewing our code, I stumbled upon a vulnerability in our authentication logic. It was a classic case of improper validation, allowing unauthorized access under specific conditions.\n\nAfter identifying the issue, we implemented a fix and conducted thorough testing. The result? Enhanced security and peace of mind for our users. It's a reminder that even small oversights can lead to significant risks in app security.\n\nStay vigilant, everyone! Regular code reviews can make all the difference.\n\nHave you encountered similar vulnerabilities in your projects?\n\n#appsec #cybersecurity #devsecops #webappsecurity #securitytips",
+      "image": {
+        "type": "screenshot",
+        "description": "A screenshot of the code with the identified vulnerability and the fix applied.",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "thursday-codaissance-craftsmanship",
+      "account": "codaissance",
+      "day": "Thursday",
+      "date": "2026-01-01",
+      "pillar": "Craftsmanship & Quality",
+      "pillar_id": "craftsmanship",
+      "content": {
+        "hook": "We dedicated a week to refining our architecture decisions 🔍",
+        "body": "In the fast-paced world of software development, choosing the right architecture can make or break a project. At Codaissance, we prioritize quality and scalability over speed, ensuring every decision adds real value.\n\nFor our Professional OS project, we opted for a microservices architecture. This choice allows us to build features independently, enhancing our development speed in the long run. Each service can evolve without impacting the entire system, which is crucial for maintaining performance as we scale.\n\nInvesting time upfront in solid architecture pays dividends later. The result? A more resilient product that adapts to user needs seamlessly. Let's embrace quality in our craft! 💪",
+        "cta": "How do you approach architecture decisions in your projects?",
+        "hashtags": [
+          "#buildinpublic",
+          "#saas",
+          "#indiehacker",
+          "#startup",
+          "#productdevelopment"
+        ]
+      },
+      "full_post": "We dedicated a week to refining our architecture decisions 🔍\n\nIn the fast-paced world of software development, choosing the right architecture can make or break a project. At Codaissance, we prioritize quality and scalability over speed, ensuring every decision adds real value.\n\nFor our Professional OS project, we opted for a microservices architecture. This choice allows us to build features independently, enhancing our development speed in the long run. Each service can evolve without impacting the entire system, which is crucial for maintaining performance as we scale.\n\nInvesting time upfront in solid architecture pays dividends later. The result? A more resilient product that adapts to user needs seamlessly. Let's embrace quality in our craft! 💪\n\nHow do you approach architecture decisions in your projects?\n\n#buildinpublic #saas #indiehacker #startup #productdevelopment",
+      "image": {
+        "type": "ai-generated",
+        "description": "A clean, modern illustration of microservices architecture with interconnected services and data flow.",
+        "ai_prompt": "An isometric, minimalist illustration of microservices architecture, showing interconnected services and data flow, with a modern color palette, no text"
+      }
+    },
+    {
+      "id": "friday-personal-career-journey",
+      "account": "personal",
+      "day": "Friday",
+      "date": "2026-01-02",
+      "pillar": "Career Journey",
+      "pillar_id": "career-journey",
+      "content": {
+        "hook": "This week was all about reflection 🧠 ...",
+        "body": "I completed my degree while juggling a full-time job, and this week, I took a moment to celebrate that achievement. \n\nWorking on my Professional OS project has taught me the value of persistence and adaptability. It’s not just about finishing a task, but understanding the journey that leads to growth. \n\nEach commit I made this week was a step forward, not just in coding but in my personal development. These small wins accumulate, and they remind me why I embarked on this path. \n\nNever underestimate the power of progress, no matter how small it seems.",
+        "cta": "What small win are you celebrating this week?",
+        "hashtags": [
+          "#buildinpublic",
+          "#softwareengineering",
+          "#webdevelopment",
+          "#careergrowth",
+          "#learntocode"
+        ]
+      },
+      "full_post": "This week was all about reflection 🧠 ...\n\nI completed my degree while juggling a full-time job, and this week, I took a moment to celebrate that achievement. \n\nWorking on my Professional OS project has taught me the value of persistence and adaptability. It’s not just about finishing a task, but understanding the journey that leads to growth. \n\nEach commit I made this week was a step forward, not just in coding but in my personal development. These small wins accumulate, and they remind me why I embarked on this path. \n\nNever underestimate the power of progress, no matter how small it seems.\n\nWhat small win are you celebrating this week?\n\n#buildinpublic #softwareengineering #webdevelopment #careergrowth #learntocode",
+      "image": {
+        "type": "screenshot",
+        "description": "Screenshot of code commits in a code editor showing progress.",
+        "ai_prompt": null
+      }
+    },
+    {
+      "id": "friday-tampertantrum-pain-points",
+      "account": "tampertantrum",
+      "day": "Friday",
+      "date": "2026-01-02",
+      "pillar": "Startup/Dev Pain Points",
+      "pillar_id": "pain-points",
+      "content": {
+        "hook": "Every developer has faced it, the dreaded security audit 😩",
+        "body": "It can feel overwhelming when your code faces scrutiny, especially during a security review. \n\nYou think you’ve covered everything, but then vulnerabilities pop up like unwelcome guests. The pressure is on to fix issues quickly while still delivering quality features. \n\nHere’s a tip: integrate security measures early in your dev process. It saves time and stress later on. By adopting a DevSecOps mindset, you can build with security in mind from the start. 🔐 \n\nRemember, it’s not just about meeting compliance, it’s about protecting your users and your reputation.",
+        "cta": "What strategies do you use to keep security front of mind during development?",
+        "hashtags": [
+          "#appsec",
+          "#cybersecurity",
+          "#devsecops"
+        ]
+      },
+      "full_post": "Every developer has faced it, the dreaded security audit 😩\n\nIt can feel overwhelming when your code faces scrutiny, especially during a security review. \n\nYou think you’ve covered everything, but then vulnerabilities pop up like unwelcome guests. The pressure is on to fix issues quickly while still delivering quality features. \n\nHere’s a tip: integrate security measures early in your dev process. It saves time and stress later on. By adopting a DevSecOps mindset, you can build with security in mind from the start. 🔐 \n\nRemember, it’s not just about meeting compliance, it’s about protecting your users and your reputation.\n\nWhat strategies do you use to keep security front of mind during development?\n\n#appsec #cybersecurity #devsecops",
+      "image": {
+        "type": "screenshot",
+        "description": "A screenshot of a code editor showing a security vulnerability highlighted in the code.",
+        "ai_prompt": null
+      }
+    }
+  ]
+}
