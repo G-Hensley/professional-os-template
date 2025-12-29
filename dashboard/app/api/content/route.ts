@@ -3,6 +3,14 @@ import { join } from 'path';
 import { NextResponse } from 'next/server';
 import { repoPath } from '@/lib/repo-path';
 
+// TODO: Phase 2 (Hosted Dashboard - April 2026)
+// - Add Supabase auth with GitHub OAuth to get user's access token
+// - Store user's connected repo in Supabase (users table: github_repo, access_token)
+// - Fetch linkedin/drafts/ and linkedin/content-ideas.json from user's GitHub repo
+// - Use GitHub Trees API to list draft folders, then fetch metadata.json for each
+// - Switch between local/GitHub based on NEXT_PUBLIC_DATA_SOURCE env var
+// - Add caching layer to avoid GitHub API rate limits
+
 interface LinkedInPost {
   day: string;
   theme: string;

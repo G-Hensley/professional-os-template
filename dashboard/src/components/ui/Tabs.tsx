@@ -2,20 +2,20 @@
 
 import { cn } from '@/src/lib/utils';
 
-interface TabOption {
-  value: string;
+interface TabOption<T extends string = string> {
+  value: T;
   label: string;
   icon?: React.ReactNode;
 }
 
-interface TabsProps {
-  value: string;
-  options: TabOption[];
-  onChange: (value: string) => void;
+interface TabsProps<T extends string = string> {
+  value: T;
+  options: TabOption<T>[];
+  onChange: (value: T) => void;
   className?: string;
 }
 
-function Tabs({ value, options, onChange, className }: TabsProps) {
+function Tabs<T extends string = string>({ value, options, onChange, className }: TabsProps<T>) {
   return (
     <div role="tablist" className={cn('flex flex-wrap gap-2', className)}>
       {options.map((option) => {
