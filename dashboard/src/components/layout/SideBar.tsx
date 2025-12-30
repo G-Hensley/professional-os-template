@@ -3,7 +3,7 @@
 import React from "react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import Link from "next/dist/client/link";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   LayoutDashboard,
@@ -37,6 +37,8 @@ function SideBar() {
           <Link 
             key={href} 
             href={href}
+            aria-label={label}
+            aria-current={pathname === href ? "page" : undefined}
             className={`px-5 py-3 first:rounded-t-4xl last:rounded-b-4xl hover:bg-cyan-950/60
             hover:text-orange-500 transition-colors duration-300 ease-in-out flex items-center gap-2 interactive
             ${pathname === href ? 'bg-cyan-900/70 text-orange-500 relative' : 'text-orange-300'} group`}

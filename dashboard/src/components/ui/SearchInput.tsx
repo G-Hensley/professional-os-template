@@ -17,6 +17,7 @@ function SearchInput({ value, onChange, placeholder = 'Search...', className }: 
       <input
         type="text"
         placeholder={placeholder}
+        aria-label={placeholder}
         value={value}
         onChange={(event) => onChange(event.target.value)}
         className="w-full rounded-full border border-cyan-800/40 bg-slate-950/70 py-1.5 pl-9 pr-3 text-sm text-cyan-100 placeholder:text-cyan-400/70 transition-colors focus:border-cyan-400/70 focus:outline-none"

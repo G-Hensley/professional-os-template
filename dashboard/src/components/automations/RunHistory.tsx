@@ -10,9 +10,10 @@ type FilterType = 'all' | 'success' | 'error';
 
 interface RunHistoryProps {
   filterByPipeline?: string;
+  onClearFilter?: () => void;
 }
 
-function RunHistory({ filterByPipeline }: RunHistoryProps) {
+function RunHistory({ filterByPipeline, onClearFilter }: RunHistoryProps) {
   const { data: runs, isLoading } = useAutomationRuns();
   const [statusFilter, setStatusFilter] = useState<FilterType>('all');
 
@@ -38,7 +39,18 @@ function RunHistory({ filterByPipeline }: RunHistoryProps) {
             <h2 id="run-history-heading" className="text-lg font-semibold text-accent-strong">
               {filterByPipeline ? `${filterByPipeline} History` : 'Recent Runs'}
             </h2>
-            <Tabs value={statusFilter} options={filters} onChange={(value) => setStatusFilter(value as FilterType)} />
+            <div className="flex items-center gap-2 flex-wrap">
+              {filterByPipeline && onClearFilter && (
+                <button
+                  type="button"
+                  onClick={onClearFilter}
+                  className="btn-secondary text-xs"
+                >
+                  Clear Filter
+                </button>
+              )}
+              <Tabs value={statusFilter} options={filters} onChange={(value) => setStatusFilter(value as FilterType)} />
+            </div>
           </div>
 
           <div className="flex-1 overflow-y-auto pr-1 pb-8">

@@ -43,9 +43,18 @@ function getStatusColor(status: AutomationRun['status']): string {
   }
 }
 
-function formatLastRun(runs: AutomationRun[], pipelineName: string): { label: string; status: AutomationRun['status'] } | null {
-  const lastRun = runs.find((run) => run.name === pipelineName);
-  if (!lastRun) return null;
+function formatLastRun(
+  runs: AutomationRun[],
+  pipelineName: string
+): { label: string; status: AutomationRun['status'] } | null {
+  const matchingRuns = runs.filter((run) => run.name === pipelineName);
+  if (matchingRuns.length === 0) return null;
+
+  const lastRun = matchingRuns.reduce((latest, run) => {
+    return new Date(run.timestamp).getTime() > new Date(latest.timestamp).getTime()
+      ? run
+      : latest;
+  }, matchingRuns[0]);
 
   const date = new Date(lastRun.timestamp);
   const now = new Date();

@@ -73,7 +73,7 @@ function ProjectsTable() {
                     <th className="py-2 pr-4 text-cyan-200 font-semibold">Status</th>
                     <th className="py-2 pr-4 text-cyan-200 font-semibold">Priority</th>
                     <th className="py-2 pr-4 text-cyan-200 font-semibold">Blocked By</th>
-                    <th className="py-2 text-cyan-200 font-semibold">Due Date</th>
+                    <th className="py-2 text-cyan-200 font-semibold">Next Action</th>
                   </tr>
                 </thead>
                 <tbody>

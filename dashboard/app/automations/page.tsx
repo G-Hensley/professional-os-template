@@ -1,8 +1,13 @@
+'use client';
+
 import { TopBar, SideBar, Footer } from "@/src/components/layout";
+import { useState } from "react";
 import { AutomationPipelines, RunHistory } from "@/src/components/automations";
 import { Activity, Workflow, Gauge } from "lucide-react";
 
 export default function AutomationsPage() {
+  const [selectedPipeline, setSelectedPipeline] = useState<string | undefined>(undefined);
+
   return (
     <main className="flex flex-col min-h-screen px-6 relative pt-24 pb-10 gap-8 text-strong">
       <TopBar />
@@ -35,8 +40,11 @@ export default function AutomationsPage() {
           </header>
 
           <section className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
-            <AutomationPipelines />
-            <RunHistory />
+            <AutomationPipelines onViewHistory={(pipeline) => setSelectedPipeline(pipeline)} />
+            <RunHistory
+              filterByPipeline={selectedPipeline}
+              onClearFilter={() => setSelectedPipeline(undefined)}
+            />
           </section>
         </div>
       </section>

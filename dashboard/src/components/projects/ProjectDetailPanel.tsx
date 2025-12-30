@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import type { Project } from '@/src/types/project';
 
 function getStatusColor(status: Project['status']): string {
@@ -50,8 +51,28 @@ interface ProjectDetailPanelProps {
 }
 
 function ProjectDetailPanel({ project, onClose }: ProjectDetailPanelProps) {
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const previousActiveRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    previousActiveRef.current = document.activeElement as HTMLElement | null;
+    closeButtonRef.current?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      previousActiveRef.current?.focus();
+    };
+  }, [onClose]);
+
   return (
-    <div className="fixed inset-0 z-50 flex justify-end">
+    <div className="fixed inset-0 z-50 flex justify-end" role="dialog" aria-modal="true" aria-labelledby="project-detail-heading">
       <div
         className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"
         onClick={onClose}
@@ -59,9 +80,12 @@ function ProjectDetailPanel({ project, onClose }: ProjectDetailPanelProps) {
       />
       <div className="relative w-full max-w-md surface-1-opaque h-full overflow-y-auto p-6">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-bold text-orange-400">{project.name}</h2>
+          <h2 id="project-detail-heading" className="text-xl font-bold text-orange-400">
+            {project.name}
+          </h2>
           <button
             onClick={onClose}
+            ref={closeButtonRef}
             className="text-cyan-200 hover:text-cyan-100 text-2xl interactive"
             aria-label="Close panel"
           >
@@ -122,6 +146,18 @@ function ProjectDetailPanel({ project, onClose }: ProjectDetailPanelProps) {
           </div>
 
           <div>
+            <span className="text-xs text-muted uppercase">Target Audience</span>
+            <p className="text-cyan-200 text-sm mt-1">
+              {project.target_audience.length ? project.target_audience.join(', ') : '—'}
+            </p>
+          </div>
+
+          <div>
+            <span className="text-xs text-muted uppercase">Monetization</span>
+            <p className="text-cyan-200 text-sm mt-1">{project.monetization_strategy}</p>
+          </div>
+
+          <div>
             <span className="text-xs text-muted uppercase">Tech Stack</span>
             <div className="flex flex-wrap gap-2 mt-2">
               {project.technologies.map((tech) => (
@@ -151,6 +187,16 @@ function ProjectDetailPanel({ project, onClose }: ProjectDetailPanelProps) {
                 className="btn-secondary text-sm"
               >
                 Open in GitHub
+              </a>
+            )}
+            {project.repo_url && (
+              <a
+                href={project.repo_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary text-sm"
+              >
+                Edit in Repo
               </a>
             )}
           </div>

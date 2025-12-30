@@ -20,6 +20,7 @@ interface PostDraftProps {
 function PostDraft({ post }: PostDraftProps) {
   const [copied, setCopied] = useState(false);
   const [copiedImagePrompt, setCopiedImagePrompt] = useState(false);
+  const [copiedHashtags, setCopiedHashtags] = useState(false);
 
   const handleCopyPost = async () => {
     try {
@@ -41,8 +42,19 @@ function PostDraft({ post }: PostDraftProps) {
     }
   };
 
+  const handleCopyHashtags = async () => {
+    try {
+      await navigator.clipboard.writeText(post.hashtags.join(' '));
+      setCopiedHashtags(true);
+      setTimeout(() => setCopiedHashtags(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy hashtags:', err);
+    }
+  };
+
   const hasImageSuggestion = post.imageSuggestion && post.imageSuggestion.trim() !== '';
   const hasImagePrompt = post.imagePrompt && post.imagePrompt.trim() !== '';
+  const hasHashtags = post.hashtags && post.hashtags.length > 0;
 
   return (
     <Card className="w-full" aria-labelledby={`post-${post.day.toLowerCase()}`}>
@@ -61,6 +73,13 @@ function PostDraft({ post }: PostDraftProps) {
           {post.content}
         </p>
       </div>
+
+      {hasHashtags && (
+        <div className="mb-4 p-3 surface-3 rounded-lg">
+          <p className="text-xs text-cyan-200 font-medium mb-2">Hashtags</p>
+          <p className="text-cyan-100/90 text-sm">{post.hashtags.join(' ')}</p>
+        </div>
+      )}
 
       {(hasImageSuggestion || hasImagePrompt) && (
         <div className="mb-4 p-3 surface-3 rounded-lg">
@@ -89,6 +108,16 @@ function PostDraft({ post }: PostDraftProps) {
           <Clipboard className="h-3.5 w-3.5" aria-hidden="true" />
           {copied ? '✓ Copied!' : 'Copy Post'}
         </button>
+        {hasHashtags && (
+          <button
+            onClick={handleCopyHashtags}
+            className="btn-secondary text-xs"
+            aria-label={`Copy ${post.day} hashtags`}
+          >
+            <Clipboard className="h-3.5 w-3.5" aria-hidden="true" />
+            {copiedHashtags ? '✓ Copied!' : 'Copy Hashtags'}
+          </button>
+        )}
         {hasImagePrompt && (
           <button
             onClick={handleCopyImagePrompt}

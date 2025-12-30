@@ -53,6 +53,15 @@ function ProjectRow({ project, onClick }: ProjectRowProps) {
   return (
     <tr
       onClick={onClick}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          onClick();
+        }
+      }}
+      role="button"
+      tabIndex={0}
+      aria-label={`View details for ${project.name}`}
       className="border-b border-cyan-900/40 hover:bg-cyan-900/30 cursor-pointer transition-colors interactive"
     >
       <td className="py-3 pr-4 text-cyan-200 font-medium">
@@ -68,7 +77,7 @@ function ProjectRow({ project, onClick }: ProjectRowProps) {
         {project.blocked_by || '—'}
       </td>
       <td className="py-3 text-muted">
-        {project.due_date || '—'}
+        {project.success_milestone || project.due_date || '—'}
       </td>
     </tr>
   );

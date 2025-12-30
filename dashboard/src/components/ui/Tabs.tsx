@@ -17,16 +17,15 @@ interface TabsProps<T extends string = string> {
 
 function Tabs<T extends string = string>({ value, options, onChange, className }: TabsProps<T>) {
   return (
-    <div role="tablist" className={cn('flex flex-wrap gap-2', className)}>
+    <div role="group" aria-label="Filter options" className={cn('flex flex-wrap gap-2', className)}>
       {options.map((option) => {
         const isActive = option.value === value;
 
         return (
           <button
             key={option.value}
-            role="tab"
             type="button"
-            aria-selected={isActive}
+            aria-pressed={isActive}
             onClick={() => onChange(option.value)}
             className={cn(
               'px-3 py-1 text-xs rounded-full border interactive flex items-center gap-2',

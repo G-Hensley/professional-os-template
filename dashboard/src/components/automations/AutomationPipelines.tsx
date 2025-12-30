@@ -36,8 +36,16 @@ function AutomationPipelines({ onViewHistory }: AutomationPipelinesProps) {
   const isLoading = pipelinesLoading || runsLoading;
 
   const handleViewLatest = (pipelineName: string) => {
-    const latestRun = runs.find((run) => run.name === pipelineName);
-    if (latestRun?.url) {
+    const matchingRuns = runs.filter((run) => run.name === pipelineName);
+    if (matchingRuns.length === 0) return;
+
+    const latestRun = matchingRuns.reduce((latest, run) => {
+      return new Date(run.timestamp).getTime() > new Date(latest.timestamp).getTime()
+        ? run
+        : latest;
+    }, matchingRuns[0]);
+
+    if (latestRun.url) {
       window.open(latestRun.url, '_blank', 'noopener,noreferrer');
     }
   };
