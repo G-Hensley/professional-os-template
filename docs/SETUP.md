@@ -5,8 +5,6 @@ Get your Professional OS repository up and running in under 30 minutes.
 ## Prerequisites
 
 - **Git** installed ([download](https://git-scm.com/downloads))
-- **Node.js 18+** installed ([download](https://nodejs.org/))
-- **pnpm** installed (`npm install -g pnpm`)
 - A **GitHub account** ([sign up](https://github.com/join))
 - An AI coding tool (Claude Code, Cursor, Copilot, or Windsurf)
 
@@ -35,50 +33,16 @@ git remote set-url origin https://github.com/YOUR_USERNAME/my-professional-os.gi
 
 ---
 
-## Step 2: Clone & Install
+## Step 2: Clone Your Repository
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/your-repo-name.git
-cd your-repo-name/dashboard
-pnpm install
+cd your-repo-name
 ```
 
 ---
 
-## Step 3: Configure Environment
-
-```bash
-cp .env.example .env
-```
-
-Add your GitHub token to `.env`:
-
-```env
-GITHUB_TOKEN=ghp_your_token_here
-```
-
-<details>
-<summary>How to create a GitHub token</summary>
-
-1. Go to GitHub Settings > Developer Settings > Personal Access Tokens > Tokens (classic)
-2. Generate new token with `repo` and `workflow` scopes
-3. Copy the token and paste it in your `.env` file
-
-</details>
-
----
-
-## Step 4: Run the Dashboard
-
-```bash
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) - you should see the dashboard with template data.
-
----
-
-## Step 5: Replace Template Data
+## Step 3: Replace Template Data
 
 See the [Customization Guide](./CUSTOMIZATION.md) for detailed instructions.
 
@@ -93,7 +57,19 @@ See the [Customization Guide](./CUSTOMIZATION.md) for detailed instructions.
 
 ---
 
-## Step 6: Enable Automations (Optional)
+## Step 4: Connect to the Dashboard
+
+Visit [professional-os.app](https://professional-os.app) and connect your GitHub repository:
+
+1. Sign in with GitHub OAuth
+2. Select your Professional OS repository
+3. View your profile, projects, and job applications
+
+The dashboard reads directly from your repo - any changes you commit will be reflected automatically.
+
+---
+
+## Step 5: Enable Automations (Optional)
 
 <details>
 <summary>Available GitHub Actions workflows</summary>
@@ -115,7 +91,7 @@ See the [Customization Guide](./CUSTOMIZATION.md) for detailed instructions.
 
 ---
 
-## Step 7: Use AI Commands
+## Step 6: Use AI Commands
 
 <details>
 <summary>Available slash commands</summary>
@@ -144,23 +120,18 @@ See the [Customization Guide](./CUSTOMIZATION.md) for detailed instructions.
 ## Troubleshooting
 
 <details>
-<summary>Dashboard won't start</summary>
+<summary>JSON validation errors</summary>
+
+Validate your JSON files:
 
 ```bash
-cd dashboard
-rm -rf node_modules pnpm-lock.yaml
-pnpm install
-pnpm dev
+cat profile/skills.json | python -m json.tool
 ```
 
-</details>
-
-<details>
-<summary>API routes return empty data</summary>
-
-- Check that your JSON files are valid (no trailing commas, proper quotes)
-- Validate JSON: `cat profile/skills.json | python -m json.tool`
-- Check terminal for error messages
+Common errors:
+- Trailing commas (not allowed in JSON)
+- Missing quotes around strings
+- Unescaped special characters
 
 </details>
 

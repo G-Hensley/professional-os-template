@@ -22,12 +22,7 @@ cd your-repo-name
 
 # 3. Update your profile
 # Edit: profile/contact.json, profile/skills.json, profile/experience.json
-
-# 4. Run the dashboard
-cd dashboard && pnpm install && pnpm dev
 ```
-
-Open [localhost:3000](http://localhost:3000) to see your data visualized.
 
 **Full setup guide:** [`docs/SETUP.md`](docs/SETUP.md)
 
@@ -53,13 +48,13 @@ Open [localhost:3000](http://localhost:3000) to see your data visualized.
 | Weekly Summary | Sundays | Progress report across all areas |
 | Monthly Assessment | 1st of month | Comprehensive self-assessment |
 
-### Dashboard (Next.js)
+### Dashboard (Hosted)
 
-Local web app that visualizes:
-- Profile and skills with proficiency levels
-- Active/planned/completed projects
-- Job applications and interview pipeline
-- Automation run history
+Visualize your data at [professional-os.app](https://professional-os.app):
+- Connect your repo via GitHub OAuth
+- View profile, skills, projects, and job applications
+- Track automation history
+- Free tier available, Pro features for subscribers
 
 ## Repository Structure
 
@@ -72,7 +67,6 @@ professional-os/
 ├── linkedin/          # Profile data, content ideas, metrics
 ├── learning/          # Skill roadmap and completed courses
 ├── logs/              # Automation outputs
-├── dashboard/         # Next.js visualization app
 ├── .github/workflows/ # Automation pipelines
 └── .claude/commands/  # AI slash commands
 ```

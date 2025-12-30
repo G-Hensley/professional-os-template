@@ -70,11 +70,6 @@ The repository is designed to be consumed by AI tools to assist with generating 
 - **.claude/** - Claude Code configuration
   - `commands/` - Slash commands (e.g., `/generate-resume`)
 
-- **dashboard/** - Next.js dashboard app for visualizing repo data
-  - `app/` - App Router pages and API routes
-  - `src/components/` - React components
-  - `src/hooks/` - TanStack Query hooks for data fetching
-
 - **docs/** - Documentation
   - `SETUP.md` - Getting started guide
   - `SCHEMA.md` - JSON field definitions
@@ -112,7 +107,7 @@ Optional fields: priority, due_date, success_milestone, tagline, blocked_by
 1. Update `profile/` files with your information
 2. Customize `business/` with your business data
 3. Add projects to `projects/active.json`
-4. Run the dashboard: `cd dashboard && pnpm dev`
+4. Connect to the dashboard at [professional-os.app](https://professional-os.app)
 5. Use slash commands like `/generate-resume` to leverage AI automation
 
 See `docs/SETUP.md` for detailed setup instructions.

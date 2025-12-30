@@ -11,7 +11,7 @@ How to replace the template data with your own professional information.
 3. Fill in `profile/experience.json` with work history
 4. Update `CLAUDE.md` with your context
 
-The dashboard will automatically display your data once the JSON files are valid.
+Your data will be visible at [professional-os.app](https://professional-os.app) once connected.
 
 ---
 
@@ -287,11 +287,7 @@ Keep it concise but comprehensive. AI tools read this file to understand context
 After updating files, verify they're valid JSON:
 
 ```bash
-# Check a single file
 cat profile/skills.json | python -m json.tool
-
-# Or run the dashboard
-cd dashboard && pnpm dev
 ```
 
 Common JSON errors:
@@ -304,7 +300,6 @@ Common JSON errors:
 ## What NOT to Customize
 
 - `.github/workflows/` - Keep automation intact
-- `dashboard/` - Leave the app code alone
 - `docs/` - Reference documentation
 - Schema structure - Keep required fields
 
@@ -314,7 +309,7 @@ Common JSON errors:
 
 After customizing your data:
 
-1. Run `pnpm dev` in the dashboard folder to verify everything works
-2. Try `/generate-resume` with a job posting to test resume generation
-3. Use `/quick-check` to see a status overview
-4. Commit your changes to start version-controlling your professional data
+1. Commit and push your changes
+2. Connect to [professional-os.app](https://professional-os.app) to view your data
+3. Try `/generate-resume` with a job posting to test resume generation
+4. Use `/quick-check` to see a status overview
