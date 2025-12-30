@@ -7,8 +7,7 @@ A brief status check on key metrics and priorities. Lighter than a full assessme
 Quickly scan these files:
 - `projects/active.json` - Current project statuses
 - `job-applications/applications.json` - Recent applications
-- `business/codaissance/goals.md` - Business goals
-- `business/tampertantrum-labs/goals.md` - TTL goals
+- `business/my-saas/goals.md` - Business goals
 - `business/BUSINESS_GOALS.md` - High-level objectives
 
 ## Instructions
@@ -44,9 +43,9 @@ Keep it concise - aim for a quick read (under 2 minutes):
 # Quick Check - YYYY-MM-DD
 
 ## Projects
-- Dev Genesis: In Progress (due 2025-12-10) - on track
-- TemperedUI: In Progress - needs attention (no commits 5 days)
-- MindTrace: In Progress - on track
+- Project A: In Progress (due 2025-03-15) - on track
+- Project B: In Progress - needs attention (no commits 5 days)
+- Project C: In Progress - on track
 
 ## Job Search
 - Applications (7d): 2 | (30d): 8
@@ -54,16 +53,16 @@ Keep it concise - aim for a quick read (under 2 minutes):
 
 ## Goals
 - Revenue: $0 / $1000 (0%) - at risk
-- Ship 3 products: 0/3 - on track if Dev Genesis ships this month
+- Ship 3 products: 0/3 - on track if Project A ships this month
 
 ## This Week
-Focus: Ship Dev Genesis v1.0
+Focus: Ship Project A v1.0
 Blocker: None identified
 
 ## Quick Wins
-- [ ] Update Dev Genesis README
+- [ ] Update Project A README
 - [ ] Log pending application responses
-- [ ] Schedule 30 min for MindTrace planning
+- [ ] Schedule 30 min for Project B planning
 ```
 
 ## Usage

@@ -1,6 +1,6 @@
 # Generate LinkedIn Post
 
-Generate a LinkedIn post draft for one of the three accounts.
+Generate a LinkedIn post draft.
 
 ## Context Files
 
@@ -8,24 +8,17 @@ Read based on the account specified:
 
 **Personal Account:**
 - `linkedin/profile.json` - Account details and voice
-- `projects/active.json` - What I'm building
+- `projects/active.json` - What you're building
 - `profile/experience.json` - Professional context
 
-**Codaissance Account:**
-- `business/codaissance/brand.json` - Brand voice and messaging
-- `business/codaissance/marketing.json` - Content pillars and themes
-- `business/codaissance/personas.json` - Target audience
-- `business/codaissance/design-system.json` - Brand style
-
-**TamperTantrum Labs Account:**
-- `business/tampertantrum-labs/brand.json` - Brand voice (if exists)
-- `business/tampertantrum-labs/marketing.json` - Content pillars and themes
-- `business/tampertantrum-labs/personas.json` - Target audience
-- `business/tampertantrum-labs/design-system.json` - Brand style
+**Business Account (optional):**
+- `business/my-saas/marketing.json` - Content pillars and themes
+- `business/my-saas/personas.json` - Target audience
+- `business/my-saas/design-system.json` - Brand style
 
 ## Instructions
 
-1. **Identify the account** from user input (personal, codaissance, ttl)
+1. **Identify the account** from user input (personal or business)
 
 2. **Understand the topic**:
    - User may provide a specific topic
@@ -51,8 +44,8 @@ Read based on the account specified:
 ```
 /generate-post
 
-Account: codaissance
-Topic: Just shipped a new feature for Dev Genesis
+Account: personal
+Topic: Just shipped a new feature for my project
 Tone: excited but professional
 ```
 

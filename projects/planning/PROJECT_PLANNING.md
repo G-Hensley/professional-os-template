@@ -215,7 +215,7 @@ Add to `projects/active.json` or `projects/planned.json`:
 {
   "project-key": {
     "name": "Project Name",
-    "repo_url": "https://github.com/G-Hensley/repo-name",
+    "repo_url": "https://github.com/yourusername/repo-name",
     "type": "SaaS Web Application",
     "description": "2-3 sentence description covering what it does and key features.",
     "technologies": ["Tech1", "Tech2", "Tech3"],
@@ -270,6 +270,4 @@ Add to `projects/active.json` or `projects/planned.json`:
 ## Examples
 
 See existing projects for reference:
-- `projects/specs/dev-genesis/` - GitHub Template example
-- `projects/specs/tempered-ui/` - Component Library example
-- `projects/specs/mindtrace/` - SaaS Application example
+- `projects/specs/my-saas-app/` - SaaS Application example

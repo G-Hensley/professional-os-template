@@ -30,7 +30,7 @@ Automatically log GitHub activity across all repos to build a historical record.
 
 **What it does**:
 - Runs daily at 6 AM UTC
-- Uses GitHub GraphQL API to pull commits, PRs, issues for user `G-Hensley`
+- Uses GitHub GraphQL API to pull commits, PRs, issues for repo owner
 - Writes to `/logs/github-activity/YYYY-MM.json`
 - Supports manual trigger with daily/weekly/backfill modes
 - Calculates monthly summary aggregations
@@ -60,7 +60,7 @@ Generate weekly LinkedIn post drafts for all three accounts.
   - `/logs/github-activity/` (recent work)
   - `/business/*/marketing.json` (brand voice, themes)
   - `/linkedin/content-calendar.json` (scheduled topics)
-- Calls Claude API to generate 3 drafts (personal, Codaissance, TamperTantrum Labs)
+- Calls Claude API to generate drafts (personal, business)
 - Writes to `/linkedin/drafts/YYYY-MM-DD-{account}.md`
 - You review, edit, and post manually
 

@@ -16,11 +16,11 @@ For code editing, file creation, and complex multi-file changes, defer to Claude
 
 ## Repository Purpose
 
-This is a comprehensive personal and business knowledge base for Gavin Hensley, serving as the single source of truth for:
+This is a comprehensive personal and business knowledge base serving as the single source of truth for:
 
 - **Professional profile** - Skills, experience, education, resume data
-- **Business operations** - Codaissance (product studio) and TamperTantrum Labs (AppSec consulting)
-- **Project management** - SaaS products across planning, active, and completed stages
+- **Business operations** - Your business strategy, personas, marketing
+- **Project management** - Products across planning, active, and completed stages
 - **Job search** - Applications, interviews, target roles
 - **Social presence** - LinkedIn metrics, content planning
 
@@ -32,13 +32,11 @@ This is a comprehensive personal and business knowledge base for Gavin Hensley, 
 - `/profile/skills.json` - Match skills to job requirements
 
 ### When researching competitors:
-- `/business/tampertantrum-labs/competitors.json` - Existing competitor analysis
-- `/business/codaissance/strategy.json` - Codaissance positioning
-- `/business/tampertantrum-labs/strategy.json` - TTL positioning
+- `/business/my-saas/strategy.json` - Your positioning
+- `/business/my-saas/personas.json` - Target clients
 
 ### When researching market trends:
-- `/business/codaissance/personas.json` - Target audience needs
-- `/business/tampertantrum-labs/personas.json` - TTL target clients
+- `/business/my-saas/personas.json` - Target audience needs
 - `/projects/planned.json` - Products being considered
 
 ### When preparing for interviews:
@@ -49,12 +47,11 @@ This is a comprehensive personal and business knowledge base for Gavin Hensley, 
 ## Repository Structure
 
 ```
-myself/
+professional-os/
 ├── profile/              # Skills, experience, education, contact, resume
 ├── projects/             # active.json, planned.json, completed.json
 ├── business/
-│   ├── codaissance/      # Product studio (strategy, personas, brand, marketing)
-│   └── tampertantrum-labs/  # AppSec consulting (strategy, personas, competitors)
+│   └── my-saas/          # Business (strategy, personas, marketing)
 ├── job-applications/     # Applications, interviews, job search strategy
 ├── learning/             # Skill development roadmaps
 ├── linkedin/             # Profile data, metrics, content ideas
@@ -94,12 +91,12 @@ myself/
 
 ## Key Context
 
-- **Owner**: Gavin Hensley - Full-Stack Software Engineer
-- **Education**: B.S. in Software Engineering (WGU 2025)
-- **Current role**: Product Engineer / Customer Success Engineer at APIsec
+- **Owner**: Your Name - Full-Stack Software Engineer
+- **Education**: Your degree and school
+- **Current role**: Your current role
 - **Tech stack**: React, Next.js, TypeScript, Node.js, Tailwind CSS, PostgreSQL/Supabase
-- **Location**: Portsmouth, OH (remote work required)
-- **Goal**: Build Codaissance SaaS products to replace employment income
+- **Location**: Your location (remote work preferences)
+- **Goal**: Your professional goals
 
 ## What NOT to Use Gemini For
 
@@ -115,5 +112,5 @@ When completing research tasks:
 1. **Be concise** - Summarize findings, don't dump raw data
 2. **Be actionable** - Include specific next steps or recommendations
 3. **Cite sources** - Include URLs for important claims
-4. **Match context** - Relate findings back to Gavin's goals and situation
+4. **Match context** - Relate findings back to your goals and situation
 5. **Suggest file updates** - If research should update a file, note which one

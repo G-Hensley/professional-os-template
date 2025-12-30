@@ -40,7 +40,8 @@ jobs:
           GITHUB_ACTOR: ${{ github.actor }}
         run: |
           # Configuration
-          USERNAME="G-Hensley"
+          # Set your GitHub username here
+          USERNAME="${{ github.repository_owner }}"
           TODAY=$(date -u +%Y-%m-%d)
           MONTH=$(date -u +%Y-%m)
           LOG_FILE="logs/github-activity/${MONTH}.json"
