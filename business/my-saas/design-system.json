@@ -1,0 +1,65 @@
+{
+  "brand": {
+    "name": "My SaaS",
+    "tagline": "Your tagline here"
+  },
+  "colors": {
+    "primary": {
+      "name": "Brand Blue",
+      "hex": "#3B82F6",
+      "usage": "Primary actions, links, brand elements"
+    },
+    "secondary": {
+      "name": "Slate",
+      "hex": "#64748B",
+      "usage": "Secondary text, borders"
+    },
+    "accent": {
+      "name": "Emerald",
+      "hex": "#10B981",
+      "usage": "Success states, positive indicators"
+    },
+    "background": {
+      "light": "#FFFFFF",
+      "dark": "#0F172A"
+    },
+    "text": {
+      "primary": "#1E293B",
+      "secondary": "#64748B",
+      "muted": "#94A3B8"
+    }
+  },
+  "typography": {
+    "font_family": {
+      "heading": "Inter",
+      "body": "Inter",
+      "mono": "JetBrains Mono"
+    },
+    "sizes": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "lg": "1.125rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem"
+    }
+  },
+  "spacing": {
+    "unit": "0.25rem",
+    "scale": [0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24]
+  },
+  "border_radius": {
+    "sm": "0.25rem",
+    "md": "0.375rem",
+    "lg": "0.5rem",
+    "xl": "0.75rem",
+    "full": "9999px"
+  },
+  "tone_of_voice": {
+    "personality": ["Friendly", "Professional", "Clear"],
+    "do": ["Be concise", "Use plain language", "Be helpful"],
+    "dont": ["Use jargon", "Be condescending", "Over-promise"]
+  }
+}

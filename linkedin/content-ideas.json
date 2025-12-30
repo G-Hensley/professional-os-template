@@ -1,404 +1,96 @@
 {
-  "note": "Content strategy for LinkedIn automation. Defines pillars, calendar, post structure, and style rules for all three accounts.",
+  "note": "Content strategy for LinkedIn. Defines pillars, calendar, post structure, and style rules.",
   "accounts": {
     "personal": {
-      "handle": "gavinhensley",
-      "url": "https://linkedin.com/in/gavinhensley",
+      "handle": "yourhandle",
+      "url": "https://linkedin.com/in/yourprofile",
       "purpose": "Build professional brand, share journey, attract opportunities",
       "posting_frequency": "3x per week",
       "pillars": [
         {
           "id": "build-in-public",
           "name": "Build in Public",
-          "description": "Transparent sharing of what I'm building, decisions made, struggles encountered",
+          "description": "Transparent sharing of what you're building",
           "weight": 0.35,
           "content_types": [
             "Project progress updates",
             "Technical decisions and why",
-            "Struggles and how I solved them",
+            "Struggles and solutions",
             "Metrics and milestones"
-          ],
-          "example_hooks": [
-            "I've been stuck on this for 3 days.",
-            "Here's what I shipped this week.",
-            "I made a decision that changed everything.",
-            "This bug taught me something important."
           ]
         },
         {
           "id": "career-journey",
           "name": "Career Journey",
-          "description": "Authentic sharing of career path, job search, education completion",
+          "description": "Authentic sharing of career path and lessons",
           "weight": 0.25,
           "content_types": [
             "Job search insights",
-            "WGU completion story",
             "Lessons from past roles",
             "Career pivots and decisions"
-          ],
-          "example_hooks": [
-            "I didn't take the traditional path.",
-            "Here's what 100 job applications taught me.",
-            "I finished my degree while working full-time.",
-            "This rejection changed my approach."
           ]
         },
         {
           "id": "technical-learning",
           "name": "Technical Learning",
-          "description": "Share what I'm learning, tools I'm testing, skills I'm developing",
+          "description": "Share what you're learning",
           "weight": 0.20,
           "content_types": [
             "New tools and frameworks",
-            "Learning resources that helped",
-            "Skill development progress",
+            "Learning resources",
             "Technical experiments"
-          ],
-          "example_hooks": [
-            "I finally understand how this works.",
-            "This tool changed my workflow.",
-            "I spent a week learning X. Here's the truth.",
-            "The docs don't tell you this."
           ]
         },
         {
           "id": "personal-stories",
           "name": "Personal Stories",
-          "description": "Authentic life experiences that shaped me as a developer and person. The human side of building.",
+          "description": "Authentic experiences that build connection",
           "weight": 0.20,
           "content_types": [
-            "Non-linear path into tech",
             "Lessons from failure",
-            "Moments that changed my perspective",
-            "Balancing work, side projects, and life",
-            "The human side of being a developer",
-            "Vulnerability that builds connection"
-          ],
-          "example_hooks": [
-            "I almost quit coding 6 months in. Here's what changed.",
-            "The worst job I ever had taught me the most.",
-            "I didn't start coding until I was [X]. Here's what I wish I knew.",
-            "This failure cost me 3 months. I'd do it again.",
-            "Everyone saw the launch. Nobody saw the 4am debugging sessions.",
-            "I used to think success meant X. Now I know better."
+            "Moments that changed perspective",
+            "The human side of being a developer"
           ]
-        }
-      ]
-    },
-    "codaissance": {
-      "handle": "codaissance",
-      "url": "https://linkedin.com/company/codaissance",
-      "purpose": "Company brand, product announcements, portfolio showcase, thought leadership on indie building",
-      "posting_frequency": "2x per week",
-      "pillars": [
-        {
-          "id": "build-in-public",
-          "name": "Build in Public",
-          "description": "Transparent product development, revenue, decisions, failures, and lessons learned",
-          "weight": 0.35,
-          "content_types": [
-            "Weekly/monthly progress updates",
-            "Revenue and metrics transparency",
-            "Product decisions and tradeoffs",
-            "Features we killed and why",
-            "Failures and what we learned"
-          ],
-          "example_hooks": [
-            "Here's what we shipped this week.",
-            "We killed a feature. Here's why.",
-            "Revenue update: $X MRR. Here's what's working.",
-            "This decision cost us a week. Worth it.",
-            "We were wrong about X. Here's what we learned."
-          ]
-        },
-        {
-          "id": "craftsmanship",
-          "name": "Craftsmanship & Quality",
-          "description": "Architecture decisions, code quality philosophy, testing approach, why we choose quality over speed",
-          "weight": 0.20,
-          "content_types": [
-            "Architecture decisions and why",
-            "Testing philosophy and approach",
-            "Code quality standards we follow",
-            "Tech stack choices and tradeoffs",
-            "Refactoring decisions"
-          ],
-          "example_hooks": [
-            "We spent 3 days on a feature users will never see.",
-            "Why we chose Supabase over Firebase.",
-            "Our testing philosophy in 4 lines.",
-            "This refactor saved us months of pain.",
-            "The boring tech choice that let us ship faster."
-          ]
-        },
-        {
-          "id": "ai-assisted-building",
-          "name": "AI-Assisted Building",
-          "description": "How we use LLMs effectively, automation philosophy, practical AI workflows, honest takes on what works",
-          "weight": 0.20,
-          "content_types": [
-            "Actual AI workflows we use daily",
-            "Automation decisions and philosophy",
-            "LLM prompt patterns that work",
-            "What AI is bad at (honest takes)",
-            "Tools we use: Claude Code, Cursor, Codex",
-            "The 'AI amplifies skill' perspective"
-          ],
-          "example_hooks": [
-            "I automated this. Here's why I wish I hadn't.",
-            "Claude Code wrote 80% of this feature. Here's the 20% it couldn't.",
-            "My AI workflow for shipping faster without cutting corners.",
-            "Stop asking AI to write code. Start asking it to review yours.",
-            "This automation saves me 2 hours a week. Here's how it works.",
-            "AI made me mass-produce mediocrity. Then I changed my approach."
-          ]
-        },
-        {
-          "id": "security-by-default",
-          "name": "Security by Default",
-          "description": "Security baked in from day one, not bolted on. Leverages founder's AppSec background.",
-          "weight": 0.15,
-          "content_types": [
-            "Security decisions in our products",
-            "How AppSec background shapes our code",
-            "Security vs speed tradeoffs we make",
-            "Common security mistakes we catch",
-            "Why 'add security later' fails"
-          ],
-          "example_hooks": [
-            "This is the first thing we build in every product.",
-            "A security decision that cost us a week. No regrets.",
-            "Why 'add auth later' is a trap.",
-            "The security check that saved us from a breach.",
-            "Most devs skip this. We don't."
-          ]
-        },
-        {
-          "id": "product-philosophy",
-          "name": "Product Philosophy",
-          "description": "Anti-VC, anti-dark-patterns, sustainable building. Why we build what we build, how we build.",
-          "weight": 0.10,
-          "content_types": [
-            "Why we're not VC-backed",
-            "Dark patterns we refuse to use",
-            "Sustainable pricing philosophy",
-            "What we say no to",
-            "The indie builder advantage"
-          ],
-          "example_hooks": [
-            "We don't do annual discounts. Here's why.",
-            "VC money would have killed this product.",
-            "What we say no to (and why it matters).",
-            "The feature request we'll never build.",
-            "Why we're building slowly on purpose."
-          ]
-        }
-      ]
-    },
-    "tampertantrum": {
-      "handle": "tampertantrum-labs",
-      "url": "https://linkedin.com/company/tampertantrum-labs",
-      "purpose": "Thought leadership, client acquisition, security expertise",
-      "posting_frequency": "3x per week",
-      "current_followers": 119,
-      "target_followers": 500,
-      "pillars": [
-        {
-          "id": "technical-howtos",
-          "name": "Technical How-Tos",
-          "description": "Practical security guidance developers can implement immediately",
-          "weight": 0.25
-        },
-        {
-          "id": "appsec-stories",
-          "name": "AppSec Wins/Stories",
-          "description": "Real-world examples that demonstrate expertise",
-          "weight": 0.25
-        },
-        {
-          "id": "dev-tools",
-          "name": "Dev-Friendly Tools",
-          "description": "Tools that fit developer workflows",
-          "weight": 0.20
-        },
-        {
-          "id": "pain-points",
-          "name": "Startup/Dev Pain Points",
-          "description": "Address common challenges, show empathy",
-          "weight": 0.15
-        },
-        {
-          "id": "journey",
-          "name": "Personal Journey/Transparency",
-          "description": "Build trust through authentic business journey sharing",
-          "weight": 0.15
         }
       ]
     }
   },
   "calendar": {
-    "note": "Weekly posting schedule by account and pillar focus",
+    "note": "Weekly posting schedule",
     "schedule": {
-      "monday": {
-        "personal": {
-          "pillar": "build-in-public",
-          "focus": "Weekly project update, what I'm working on, struggles, progress",
-          "priority": "high"
-        },
-        "codaissance": null,
-        "tampertantrum": {
-          "pillar": "technical-howtos",
-          "focus": "Start the week with actionable security tip",
-          "priority": "high"
-        }
-      },
-      "tuesday": {
-        "personal": null,
-        "codaissance": {
-          "pillar": "build-in-public",
-          "focus": "Product update, metrics, or transparent sharing",
-          "priority": "high"
-        },
-        "tampertantrum": null
-      },
-      "wednesday": {
-        "personal": {
-          "pillar": "technical-learning",
-          "focus": "Something I learned, tool I discovered, insight gained",
-          "priority": "medium"
-        },
-        "codaissance": null,
-        "tampertantrum": {
-          "pillar": "appsec-stories",
-          "focus": "Real example, case study, or security breakdown",
-          "priority": "high"
-        }
-      },
-      "thursday": {
-        "personal": null,
-        "codaissance": {
-          "pillar": "craftsmanship",
-          "alt_pillars": ["ai-assisted-building", "security-by-default"],
-          "focus": "Architecture, AI workflow, or security approach. Rotate between technical pillars.",
-          "priority": "high"
-        },
-        "tampertantrum": null
-      },
-      "friday": {
-        "personal": {
-          "pillar": "career-journey",
-          "focus": "End of week reflection, win, milestone, or lesson",
-          "priority": "high"
-        },
-        "codaissance": null,
-        "tampertantrum": {
-          "pillar": "pain-points",
-          "focus": "Relatable dev challenge with security angle",
-          "priority": "medium"
-        }
-      },
-      "saturday": {
-        "personal": null,
-        "codaissance": null,
-        "tampertantrum": null
-      },
-      "sunday": {
-        "personal": null,
-        "codaissance": null,
-        "tampertantrum": null
-      }
+      "monday": { "pillar": "build-in-public", "focus": "Weekly project update" },
+      "wednesday": { "pillar": "technical-learning", "focus": "Something learned" },
+      "friday": { "pillar": "career-journey", "focus": "End of week reflection" }
     }
   },
   "post_structure": {
-    "note": "Standard structure for LinkedIn posts. Automation should follow this format.",
     "format": {
-      "hook": {
-        "description": "Opening line that stops the scroll. Must be compelling and specific.",
-        "max_length": 150,
-        "requirements": [
-          "First line appears in feed preview, make it count",
-          "Use curiosity, controversy, or relatability",
-          "Avoid generic openings like 'I'm excited to share'",
-          "No questions as hooks (LinkedIn hides them)"
-        ],
-        "examples": [
-          "I've applied to 47 jobs in 30 days. Here's what actually works.",
-          "This one security check would have saved me 3 days of debugging.",
-          "I almost mass-deleted a production database yesterday."
-        ]
-      },
-      "body": {
-        "description": "Main content delivering value, story, or insight",
-        "structure": "Problem/Context -> Insight/Solution -> Takeaway",
-        "requirements": [
-          "Use short paragraphs (1-3 sentences max)",
-          "Include line breaks for readability",
-          "Be specific with numbers, examples, or details",
-          "One main idea per post"
-        ]
-      },
-      "cta": {
-        "description": "Call to action, engagement prompt or next step",
-        "types": [
-          "Question to prompt comments",
-          "Ask for shares/saves if valuable",
-          "Link to relevant resource (sparingly)",
-          "Invite to follow for more"
-        ],
-        "examples": [
-          "What's one security check you always forget?",
-          "Save this for your next code review.",
-          "Follow for more build-in-public updates."
-        ]
-      },
-      "hashtags": {
-        "count": "3-5 hashtags",
-        "placement": "End of post, after line break",
-        "recommended": {
-          "personal": ["#buildinpublic", "#softwareengineering", "#webdevelopment", "#careergrowth", "#learntocode"],
-          "codaissance": ["#buildinpublic", "#saas", "#indiehacker", "#startup", "#productdevelopment"],
-          "tampertantrum": ["#appsec", "#cybersecurity", "#devsecops", "#webappsecurity", "#securitytips"]
-        }
-      }
+      "hook": "Opening line that stops the scroll",
+      "body": "Main content with value or insight",
+      "cta": "Call to action or engagement prompt"
     },
     "constraints": {
       "max_words": 150,
       "max_characters": 1300,
-      "emoji_count": "2-3 per post (minimum 2)",
-      "emoji_usage": "Place one in the hook AND one or two in the body. Posts with fewer than 2 emojis feel flat. Never use as bullet points.",
-      "forbidden": [
-        "Em dashes (use commas or periods instead)",
-        "Corporate jargon (leverage, synergy, etc.)",
-        "Humble brags disguised as lessons",
-        "Engagement bait ('Comment YES if you agree')",
-        "Excessive exclamation marks",
-        "Starting with 'I'm excited to announce'"
-      ],
-      "tone": {
-        "personal": "Authentic, reflective, humble confidence",
-        "codaissance": "Professional, transparent, technically credible",
-        "tampertantrum": "Friendly expert, empowering, not fear-driven"
-      }
+      "hashtags": "3-5 per post"
     }
   },
   "content_bank": {
-    "note": "Specific post ideas organized by account and pillar. Feed into automation.",
     "personal": [
       {
         "pillar": "build-in-public",
         "ideas": [
-          "Weekly Dev Genesis progress update",
-          "Decision to prioritize X project over Y",
+          "Weekly project progress update",
+          "Decision to prioritize X over Y",
           "Feature I cut and why",
-          "Metric milestone (commits, users, etc.)"
+          "Milestone reached"
         ]
       },
       {
         "pillar": "career-journey",
         "ideas": [
-          "What I learned from APIsec role",
-          "WGU completion reflection",
-          "Job search strategy that's working",
+          "What I learned from current role",
+          "Job search strategy that works",
           "Interview experience (anonymized)"
         ]
       },
@@ -407,134 +99,9 @@
         "ideas": [
           "Tool that improved my workflow",
           "Concept that finally clicked",
-          "Resource that was worth the time",
-          "Mistake that taught me something"
-        ]
-      },
-      {
-        "pillar": "personal-stories",
-        "ideas": [
-          "How I got into coding (the non-linear path)",
-          "The moment I almost gave up on tech",
-          "What my worst job taught me about what I want",
-          "Balancing full-time work with WGU and side projects",
-          "The failure that shaped how I approach problems now",
-          "What I wish I knew when I started coding",
-          "The 4am debugging session nobody saw",
-          "How becoming a dad changed my perspective on work",
-          "The imposter syndrome moment that still sticks with me",
-          "Why I chose this path over the 'safe' option"
+          "Resource worth sharing"
         ]
       }
-    ],
-    "codaissance": [
-      {
-        "pillar": "build-in-public",
-        "ideas": [
-          "Monthly revenue/progress update",
-          "Product decision breakdown",
-          "Failure and lesson learned",
-          "Feature we cut and why",
-          "User feedback that changed our roadmap",
-          "Week-in-review: what shipped, what didn't",
-          "Metrics we track (and ones we ignore)",
-          "The hardest decision we made this month",
-          "Why we're building X before Y",
-          "Milestone celebration with honest reflection"
-        ]
-      },
-      {
-        "pillar": "craftsmanship",
-        "ideas": [
-          "Architecture choice and why",
-          "Testing philosophy breakdown",
-          "Why we chose X database over Y",
-          "Code review standards we enforce",
-          "The refactor that unlocked everything",
-          "Tech debt we're paying down (and why now)",
-          "Our folder structure philosophy",
-          "Type safety decisions in TypeScript",
-          "Why we don't use X (popular thing)",
-          "The 'boring' stack that lets us ship"
-        ]
-      },
-      {
-        "pillar": "ai-assisted-building",
-        "ideas": [
-          "How we use Claude Code in daily workflow",
-          "Automation we built for this repo",
-          "LLM prompt that saved hours",
-          "What Claude/GPT is terrible at",
-          "AI code review workflow",
-          "The automation philosophy: what to automate",
-          "Context management for AI tools",
-          "When to NOT use AI assistance",
-          "AI for planning vs AI for coding",
-          "How we validate AI-generated code",
-          "The 'myself' repo: AI-assisted knowledge base",
-          "Slash commands that accelerate our workflow"
-        ]
-      },
-      {
-        "pillar": "security-by-default",
-        "ideas": [
-          "RLS policies we add to every table",
-          "Auth flow security checklist",
-          "Input validation approach",
-          "Why we sanitize everything (DOMPurify)",
-          "Security headers we always set",
-          "The OWASP Top 10 check we never skip",
-          "How AppSec background shapes product decisions",
-          "Security vs UX tradeoff we made"
-        ]
-      },
-      {
-        "pillar": "product-philosophy",
-        "ideas": [
-          "Why we're bootstrapped (not VC)",
-          "Dark patterns we refuse to implement",
-          "Pricing philosophy: sustainable, not extractive",
-          "Feature requests we say no to",
-          "The anti-persona: who we don't build for",
-          "Why 'move fast break things' is wrong",
-          "Quality over growth metrics",
-          "The long game of brand equity"
-        ]
-      }
-    ],
-    "tampertantrum": [
-      {
-        "pillar": "technical-howtos",
-        "ideas": [
-          "How to threat model a REST API",
-          "CI pipeline security basics",
-          "JWT security checklist"
-        ]
-      },
-      {
-        "pillar": "appsec-stories",
-        "ideas": [
-          "Bug found in auth logic",
-          "OWASP Top 10 example breakdown",
-          "Real fix in open source project"
-        ]
-      }
-    ]
-  },
-  "automation_notes": {
-    "input_sources": [
-      "logs/github-activity/*.json for what was built this week",
-      "projects/active.json for current project context",
-      "business/*/marketing.json for brand voice and pillars"
-    ],
-    "output_format": "linkedin/drafts/YYYY-MM-DD-{account}-{pillar}.md",
-    "generation_rules": [
-      "Match activity to appropriate pillar",
-      "Follow post_structure format exactly",
-      "Apply account-specific tone",
-      "Include relevant hashtags",
-      "Stay within word/character limits",
-      "Human reviews and posts manually"
     ]
   }
 }

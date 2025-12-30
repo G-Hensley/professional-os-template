@@ -1,29 +1,29 @@
 {
   "applications": [
     {
-      "id": "",
-      "company": "",
-      "role": "",
-      "url": "",
-      "source": "linkedin|wellfound|hn|direct|referral|other",
-      "date_applied": "YYYY-MM-DD",
-      "status": "applied|screening|interviewing|offer|rejected|withdrawn|ghosted",
+      "id": "example-1",
+      "company": "Example Tech Co",
+      "role": "Senior Frontend Engineer",
+      "url": "https://example.com/jobs/123",
+      "source": "linkedin",
+      "date_applied": "2024-12-15",
+      "status": "interviewing",
       "salary_range": {
-        "min": null,
-        "max": null,
+        "min": 120000,
+        "max": 150000,
         "currency": "USD"
       },
-      "location": "remote|hybrid|onsite",
-      "job_description_summary": "",
-      "why_interested": "",
-      "skills_match": [],
-      "skills_gap": [],
-      "resume_version": "",
-      "cover_letter": false,
+      "location": "remote",
+      "job_description_summary": "Build and maintain React applications for enterprise clients",
+      "why_interested": "Great tech stack, remote-first culture, interesting product",
+      "skills_match": ["React", "TypeScript", "Node.js"],
+      "skills_gap": ["GraphQL"],
+      "resume_version": "v1-frontend-focused",
+      "cover_letter": true,
       "referral": null,
-      "notes": "",
-      "follow_up_date": null,
-      "last_updated": "YYYY-MM-DD",
+      "notes": "Had initial call with recruiter, technical interview scheduled",
+      "follow_up_date": "2024-12-20",
+      "last_updated": "2024-12-16",
       "outcome": null
     }
   ]

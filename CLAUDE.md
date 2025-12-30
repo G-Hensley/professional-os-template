@@ -6,12 +6,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a comprehensive personal and business knowledge base serving as the single source of truth for:
 
-- **Professional profile** - Skills, experience, education, resume data for Gavin Hensley
-- **Business operations** - Planning, marketing, and strategies for Codaissance (SaaS/software business) and TamperTantrum Labs (wife's business with marketing/planning support)
-- **Project management** - Tracking SaaS products and projects across planning, active development, and completed stages
-- **Learning & growth** - Roadmaps for skill development, project planning, and marketing strategies
-- **Job search** - Tracking job applications and application status
-- **Social/professional presence** - Post metrics from LinkedIn (personal and business accounts), content to add to GitHub, personal portfolio site, and LinkedIn profile
+- **Professional profile** - Skills, experience, education, resume data
+- **Business operations** - Planning, marketing, and strategies for your business
+- **Project management** - Tracking products and projects across planning, active development, and completed stages
+- **Learning & growth** - Roadmaps for skill development and project planning
+- **Job search** - Tracking job applications and interview status
+- **Social/professional presence** - LinkedIn metrics, content ideas, and GitHub profile
 
 The repository is designed to be consumed by AI tools to assist with generating tailored resumes, project specs, business strategies, learning roadmaps, marketing plans, and tracking career/social metrics.
 
@@ -31,44 +31,26 @@ The repository is designed to be consumed by AI tools to assist with generating 
   - `planned.json` - Projects in planning stages or blocked
   - `completed.json` - Finished projects
   - `planning/` - Project planning templates and docs
+  - `specs/` - Detailed project specifications
 
 - **business/** - Business-specific data
-  - `BUSINESS_GOALS.md` - High-level business objectives across both businesses
-  - `codaissance/` - Codaissance product studio
-    - `strategy.json` - Business model, positioning, mission, competitive landscape
-    - `personas.json` - Target audience personas (Daniel, Mia, Alex, Patricia) + anti-personas
-    - `brand.json` - Voice, tone, key messages, trust-building sequence
-    - `design-system.json` - Colors, typography, image generation specs, website design tokens
-    - `marketing.json` - Content pillars, channels, persona-targeted content
-    - `goals.md` - SMART goals for revenue, products, audience, brand
-    - `financials.json` - Revenue/expense tracking with milestones
-    - `assets/` - Logo files and brand assets
-  - `tampertantrum-labs/` - TamperTantrum Labs AppSec consulting
-    - `strategy.json` - Mission, vision, values, brand story, services, SaaS product ideas
-    - `personas.json` - 7 target personas (Solo Sam, Scaling Sara, etc.)
-    - `competitors.json` - Competitive analysis with differentiation
-    - `design-system.json` - Full color palette (Tamper Red, etc.), typography, tone of voice
-    - `marketing.json` - Content pillars, content ideas, lead generation
-    - `goals.md` - SMART goals (short-term, medium-term), financial targets
-    - `financials.json` - Consulting financials tracking
-    - `assets/` - Logo files and brand assets
+  - `BUSINESS_GOALS.md` - High-level business objectives
+  - `my-saas/` - Example business folder with strategy, personas, marketing, etc.
 
 - **job-applications/** - Career tracking
   - `JOB_SEARCH.md` - Target roles, salary requirements, preferences, dealbreakers
   - `applications.json` - Job applications submitted
-  - `interviews.json` - Interview tracking and prep (includes Granola notes)
+  - `interviews.json` - Interview tracking and prep
 
 - **learning/** - Skill development
   - `roadmap.json` - Skills to learn and learning paths
   - `completed.json` - Completed learning and courses
 
 - **linkedin/** - Social presence tracking
-  - `profile.json` - LinkedIn profile data (personal + company pages)
-  - `METRICS.md` - Metrics tracking guide and schemas
+  - `profile.json` - LinkedIn profile data
+  - `METRICS.md` - Metrics tracking guide
   - `content-ideas.json` - Post ideas and content calendar
-  - `personal-metrics.json` - Personal account metrics
-  - `codaissance-metrics.json` - Codaissance page metrics
-  - `tampertantrum-metrics.json` - TamperTantrum Labs page metrics
+  - `personal-metrics.json` - Account metrics snapshots
 
 - **github/** - GitHub presence
   - `README.md` - GitHub profile README to keep in sync
@@ -76,29 +58,27 @@ The repository is designed to be consumed by AI tools to assist with generating 
 - **ideas/** - Idea capture and validation
   - `IDEA_VALIDATION_REFINEMENT.md` - Framework for validating ideas
   - `personal/` - Personal project ideas
-  - `business/codaissance/` - Codaissance product ideas
-  - `business/tampertantrum-labs/` - TamperTantrum Labs ideas
+  - `business/` - Business product ideas
 
 - **assessments/** - Periodic self-assessments generated by AI tools
 
-- **automation/** - Automation scripts and workflows
-  - `IDEAS.md` - Automation roadmap and ideas
-  - `github-actions/` - GitHub Action workflows
-  - `scripts/` - Helper scripts
+- **logs/** - Automated logs from GitHub Actions
+  - `context/` - Daily context snapshots
+  - `github-activity/` - Activity summaries
+  - `weekly-summary/` - Weekly reports
 
 - **.claude/** - Claude Code configuration
-  - `commands/` - Slash commands (e.g., `/assessment`)
-
-- **.codex/** - Codex configuration
-  - `prompts/` - Prompt templates for Codex
+  - `commands/` - Slash commands (e.g., `/generate-resume`)
 
 - **dashboard/** - Next.js dashboard app for visualizing repo data
   - `app/` - App Router pages and API routes
-  - `app/api/` - API routes that read repo JSON files (projects, profile, jobs, automations, content)
-  - `src/components/` - React components (dashboard/, layout/, ui/)
+  - `src/components/` - React components
   - `src/hooks/` - TanStack Query hooks for data fetching
-  - `lib/` - QueryClient provider and utilities
-  - `WIREFRAMES.md` - ASCII wireframes and component checklist
+
+- **docs/** - Documentation
+  - `SETUP.md` - Getting started guide
+  - `SCHEMA.md` - JSON field definitions
+  - `CUSTOMIZATION.md` - How to customize with your data
 
 ## Data Conventions
 
@@ -120,9 +100,19 @@ Optional fields: priority, due_date, success_milestone, tagline, blocked_by
 
 ## Key Context
 
-- Owner: Gavin Hensley - Full-Stack Software Engineer, B.S. in Software Engineering (WGU 2025)
-- Current role: Product Engineer / Customer Success Engineer at APIsec ($70k)
+- Owner: Your Name - Full-Stack Software Engineer
+- Current role: Your current role
 - Primary tech stack: React, Next.js, TypeScript, Node.js, Tailwind CSS, PostgreSQL/Supabase
-- Learning style: Hands-on project-based learning, official documentation, building without tutorials
-- Location: Portsmouth, OH (remote work required)
-- Goal: Build Codaissance SaaS products to eventually replace employment income
+- Learning style: Hands-on project-based learning, official documentation
+- Location: Your location (remote work preferences)
+- Goal: Your professional goals
+
+## Getting Started
+
+1. Update `profile/` files with your information
+2. Customize `business/` with your business data
+3. Add projects to `projects/active.json`
+4. Run the dashboard: `cd dashboard && pnpm dev`
+5. Use slash commands like `/generate-resume` to leverage AI automation
+
+See `docs/SETUP.md` for detailed setup instructions.

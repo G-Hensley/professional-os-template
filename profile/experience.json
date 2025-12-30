@@ -1,150 +1,56 @@
 {
-  "APIsec":
-  {
-    "role": "Product Engineer / Customer Success Engineer / Deployment Engineer",
-    "start_date": "2025-10-13",
+  "Current Company": {
+    "role": "Software Engineer",
+    "start_date": "2024-01-15",
     "end_date": "Present",
     "location": "Remote",
     "job_type": "Full-time",
-    "salary": 70000,
+    "salary": 85000,
     "salary_currency": "USD",
     "responsibilities": [
-      "Develop custom scripts and integrations for clients to utilize APIsec's API Security Platform effectively.",
-      "Assist clients in deploying and configuring APIsec's platform within their environments, ensuring seamless integration with existing systems.",
-      "Provide technical support and troubleshooting assistance to clients, addressing any issues related to deployment and usage of the platform.",
-      "Collaborate with the product and engineering teams to relay client feedback, suggestions, and feature requests for continuous improvement of the platform.",
-      "Create and maintain technical documentation and guides to assist clients in understanding and utilizing the platform's features.",
-      "Conduct training sessions and webinars for clients to educate them on best practices for API security and effective use of the platform.",
-      "Create demo videos and sample projects to showcase the capabilities of APIsec's platform to potential and existing clients.",
-      "Stay updated with the latest trends and advancements in API security to provide informed recommendations to clients.",
-      "Participate in client meetings and calls to understand their requirements and provide tailored solutions using APIsec's platform.",
-      "Work closely with the sales and marketing teams to support client acquisition and retention efforts through technical expertise.",
-      "Utilize tools such as Git, Asana, HubSpot, and Notion to manage projects, track client interactions, and document processes.",
-      "Create Asana tasks and Notion documentation to streamline internal workflows and enhance team collaboration.",
-      "Build Asana templates for recurring processes to improve efficiency and consistency across projects.",
-      "Leverage AI tools like ChatGPT, Claude, Claude Code, HubSpot Breeze, and GitHub Copilot to enhance productivity and deliver high-quality solutions to clients.",
-      "Script custom authentication flows for customers utilizing Postman and Burp Suite to test and validate API security configurations.",
-      "Provide guidance to entire company of customer issue patterns and resolutions based on direct customer interactions."
+      "Develop and maintain web applications using React, TypeScript, and Node.js",
+      "Collaborate with cross-functional teams to design and implement new features",
+      "Write unit and integration tests to ensure code quality",
+      "Participate in code reviews and provide constructive feedback",
+      "Debug and resolve production issues in a timely manner"
     ],
     "performance_metrics": [
-      "Handle 77% of all customer support tickets.",
-      "Achieve on average a <1 day turn around time for customer tenant requests.",
-      "Created 15+ custom reports for clients to provide insights and track API security metrics."
+      "Reduced API response time by 40% through query optimization",
+      "Maintained 95% code coverage across all modules"
     ]
   },
-  "Codaissance":
-  {
-    "role": "Founder / Full-Stack Software Engineer",
-    "start_date": "2025-08-01",
-    "end_date": "Present",
-    "location": "Remote",
-    "job_type": "self-employed",
-    "responsibilities": [
-      "Build SaaS applications from scratch using modern web technologies such as React, Next.js, Node.js, Express, Tailwind CSS, and PostgreSQL.",
-      "Design and implement RESTful APIs to support front-end functionality and ensure seamless data flow between client and server.",
-      "Utilize cloud platforms like Vercel and AWS for deploying and hosting applications, ensuring scalability and reliability.",
-      "Implement user authentication and authorization mechanisms using OAuth 2.0 and JWT to secure application data and user sessions.",
-      "Optimize application performance through efficient database design and query optimization in PostgreSQL.",
-      "Incorporate AI technologies such as ChatGPT, GitHub Copilot, and OpenAI API to enhance application features and improve user experience.",
-      "Manage version control and collaboration using Git and GitHub, following best practices for code management.",
-      "Create comprehensive documentation and user guides to facilitate application usage and maintenance.",
-      "Continuously research and experiment with new technologies and frameworks to stay updated with industry trends and improve development processes."
-    ],
-    "performance_metrics": [
-      "n/a"
-    ]
-  },
-  "TamperTantrum Labs": {
-    "role": "Co-Founder / Full-Stack Software Engineer",
-    "start_date": "2025-07-12",
-    "end_date": "Present",
-    "location": "Remote",
-    "job_type": "contract",
-    "responsibilities": [
-      "Collaborate with the founder to conceptualize and develop innovative software products that address market needs.",
-      "Design and implement full-stack solutions using technologies such as React, Next.js, Node.js, Express, Tailwind CSS, and PostgreSQL.",
-      "Create and maintain RESTful APIs to facilitate communication between front-end and back-end components.",
-      "Leverage cloud services like Vercel and AWS for application deployment, ensuring high availability and performance.",
-      "Implement robust user authentication and authorization systems using OAuth 2.0 and JWT standards.",
-      "Optimize database schemas and queries in PostgreSQL to enhance application efficiency and responsiveness.",
-      "Integrate AI tools such as ChatGPT, GitHub Copilot, and OpenAI API to add intelligent features and improve user engagement.",
-      "Utilize Git and GitHub for version control and collaborative development, adhering to best practices for code quality and management.",
-      "Develop comprehensive documentation and user manuals to support application usage and future development."
-    ],
-    "performance_metrics": [
-      "n/a"
-    ]
-  },
-  "BuiltInPublic": {
-    "role": "Full-Stack Software Engineer",
-    "start_date": "2025-04-13",
-    "end_date": "2025-11-28",
-    "location": "Remote",
-    "job_type": "freelance",
-    "responsibilities": [
-      "Collaborate with a cross-functional team to develop and enhance BuiltInPublic, a platform for developers to share their coding journey publicly.",
-      "Design and implement front-end components using React, TypeScript, and TailwindCSS to create a responsive and user-friendly interface.",
-      "Develop backend functionality and manage database interactions using Supabase, ensuring data integrity and security.",
-      "Implement data fetching and state management using React Query to optimize application performance.",
-      "Participate in architecture discussions and technical planning to contribute to the overall development strategy.",
-      "Work closely with UI/UX designers to ensure a cohesive and visually appealing user experience.",
-      "Review code contributions and provide feedback to maintain high code quality standards.",
-      "Maintain and update GitHub documentation, including the README and internal wiki, to support developer onboarding and collaboration.",
-      "Contribute to CI/CD pipelines to streamline the development and deployment process.",
-      "Offer suggestions to enhance usability and user experience based on user feedback and design principles.",
-      "Engage in various aspects of the application, including front-end, back-end, database, authentication, and DevOps, to ensure a well-rounded development approach."
-    ],
-   "technologies": [
-      "React",
-      "TypeScript",
-      "TailwindCSS",
-      "Tanstack Query",
-      "Supabase",
-      "React Query",
-      "GitHub",
-      "Docker",
-      "CI/CD"
-    ],
-    "performance_metrics": [
-      "Successfully launched the BuiltInPublic platform, enabling developers to share their coding journeys and projects publicly.",
-      "Improved application performance by optimizing data fetching and state management using React Query, resulting in a smoother user experience.",
-      "Enhanced code quality through active participation in code reviews and adherence to best practices, leading to a more maintainable codebase.",
-      "Contributed to the development of key features and functionalities that increased user engagement and satisfaction on the platform."
-    ],
-    "project_url": "https://builtinpublic.tech",
-    "salary": 0,
-    "salary_currency": "USD"
-  },
-  "Concentrix": {
-    "role": "Senior Software Support Engineer",
-    "first_start_date": "2021-09-10",
-    "first_end_date": "2022-04-15",
-    "second_start_date": "2023-07-19",
-    "second_end_date": "2024-10-01",
+  "Previous Startup": {
+    "role": "Junior Developer",
+    "start_date": "2022-06-01",
+    "end_date": "2023-12-31",
     "location": "Remote",
     "job_type": "Full-time",
+    "salary": 65000,
+    "salary_currency": "USD",
     "responsibilities": [
-      "Provided high-level support for Apple’s SaaS services and hardware ecosystem, working closely with engineering teams to report, reproduce, and escalate software issues.",
-      "Diagnosed and documented software bugs in iOS/macOS platforms and SaaS tools like iCloud and Apple ID, improving case resolution and engineering turnaround time.",
-      "Conducted device testing, system reinstalls, and error validation across iPads, Macs, and iPhones.",
-      "Managed 1,000+ end-user cases end-to-end, maintaining a 95%+ satisfaction rate via personalized email and phone follow-ups."
+      "Built responsive front-end components using React and CSS",
+      "Integrated third-party APIs for payment processing and authentication",
+      "Assisted in database design and optimization",
+      "Created technical documentation for internal processes"
     ],
     "performance_metrics": [
-      "Progressed from Tier 1 to Tier 2 Support"
+      "Successfully launched 3 major features within deadlines",
+      "Received positive feedback from senior engineers on code quality"
+    ]
+  },
+  "Freelance": {
+    "role": "Freelance Web Developer",
+    "start_date": "2021-01-01",
+    "end_date": "2022-05-31",
+    "location": "Remote",
+    "job_type": "Freelance",
+    "responsibilities": [
+      "Designed and developed websites for small businesses",
+      "Managed client relationships and project timelines",
+      "Implemented SEO best practices to improve site visibility"
     ],
-    "skills": [
-      "iOS",
-      "Software as a Service (SaaS)",
-      "Technical Support",
-      "Bug Tracking",
-      "Hardware Diagnostics",
-      "macOS",
-      "iOS/macOS Troubleshooting",
-      "Customer Support",
-      "Issue Escalation",
-      "Device Testing"
-    ],
-    "salary": 40000,
-    "salary_currency": "USD"
+    "performance_metrics": [
+      "Completed 12 client projects with 100% satisfaction rate"
+    ]
   }
 }

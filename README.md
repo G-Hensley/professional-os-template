@@ -1,6 +1,6 @@
-# myself
+# Professional OS
 
-Personal and business knowledge base — the single source of truth for professional profile, businesses, projects, and growth tracking.
+Personal and business knowledge base — a version-controlled, AI-ready framework for managing your professional identity.
 
 ## What This Is
 
@@ -14,31 +14,28 @@ A structured data repository designed to be consumed by AI tools (Claude Code, C
 - **Automation** — GitHub Actions pipelines that do the work, not just remind you
 - **Dashboard** — Next.js app for visualizing all repo data in one place
 
+## Quick Start
+
+1. Clone or use this template
+2. Update `profile/` files with your information
+3. Run the dashboard: `cd dashboard && pnpm install && pnpm dev`
+4. Use slash commands like `/generate-resume` to leverage AI automation
+
+See [`docs/SETUP.md`](docs/SETUP.md) for detailed instructions.
+
 ## Automation Philosophy
 
-**If it can be automated, it should be automated.** See [`REPO_TODO.md`](REPO_TODO.md) for the full automation pipeline.
+**If it can be automated, it should be automated.**
 
-| Pipeline | Status | Schedule |
-|----------|--------|----------|
-| Daily Date Update | Active | Daily 12:05 AM UTC |
-| Context Snapshot | Active | Daily 5 AM UTC |
-| GitHub Activity Log | Active | Daily 6 AM UTC |
-| Skill Analysis | Active | Weekly Mon 7 AM UTC |
-| Project Status | Active | Weekly Tue 7 AM UTC |
-| LinkedIn Post Generator | Active | Weekly Mon 8 AM UTC |
-| Job Posting Monitor | Active | Weekly Sun 5 PM UTC |
-| Weekly Summary | Active | Weekly Sun 6 PM UTC |
-| Monthly Assessment | Active | Monthly 1st 9 AM UTC |
-
-## Quick Start for AI Tools
-
-| Tool | Config File | Best For |
-|------|-------------|----------|
-| Claude Code | `CLAUDE.md` | Code editing, file changes, slash commands |
-| Gemini CLI | `.gemini/GEMINI.md` | Research, web search, summarization |
-| Codex | `.codex/commands/` | Quick tasks, focused prompts |
-
-**See [`AI_TOOLS.md`](AI_TOOLS.md) for detailed guidance on when to use each tool.**
+| Pipeline | Schedule |
+|----------|----------|
+| Daily Date Update | Daily 12:05 AM UTC |
+| Context Snapshot | Daily 5 AM UTC |
+| GitHub Activity Log | Daily 6 AM UTC |
+| Skill Analysis | Weekly Mon 7 AM UTC |
+| Project Status | Weekly Tue 7 AM UTC |
+| Weekly Summary | Weekly Sun 6 PM UTC |
+| Monthly Assessment | Monthly 1st 9 AM UTC |
 
 ## Available Commands
 
@@ -46,7 +43,7 @@ A structured data repository designed to be consumed by AI tools (Claude Code, C
 
 | Command | Description |
 |---------|-------------|
-| `/assessment` | Run a comprehensive self-assessment across all areas |
+| `/assessment` | Run a comprehensive self-assessment |
 | `/log-application` | Log a new job application |
 | `/generate-resume` | Create a tailored resume from a job posting |
 | `/generate-post` | Create a LinkedIn post draft |
@@ -54,53 +51,24 @@ A structured data repository designed to be consumed by AI tools (Claude Code, C
 | `/prep-interview` | Generate interview preparation notes |
 | `/quick-check` | Brief status check on key metrics |
 
-### Gemini CLI (`/.gemini/commands/`)
-
-| Command | Description |
-|---------|-------------|
-| `/research-company` | Research a company for job application |
-| `/competitive-analysis` | Analyze competitors for a product |
-| `/market-research` | Research market trends and opportunities |
-| `/salary-research` | Research salary ranges for a role |
-
-### Codex CLI (`~/.codex/prompts/`)
-
-| Command | Description |
-|---------|-------------|
-| `/prompts:assessment` | Run a self-assessment |
-| `/prompts:job-application` | Log and analyze a job application |
-| `/prompts:review-resume` | Quick resume review and feedback |
-| `/prompts:summarize-project` | Generate project summary or pitch |
-
 ## Key Files
 
 | File | Purpose |
 |------|---------|
 | `CLAUDE.md` | Instructions for Claude Code |
-| `CONTEXT.md` | Repository overview for humans and AI |
 | `profile/resume.md` | Current resume |
 | `profile/RESUME_GENERATION.md` | Resume generation instructions |
 | `business/BUSINESS_GOALS.md` | High-level business objectives |
-| `business/codaissance/roadmap.md` | 2026 product roadmap |
-| `business/tampertantrum-labs/roadmap.md` | 2026 consulting roadmap |
-| `learning/roadmap.md` | 2026 learning roadmap |
-| `dashboard/WIREFRAMES.md` | Dashboard wireframes and component checklist |
-
-## Businesses
-
-### Codaissance
-Product studio building developer tools and SaaS applications. Files in `business/codaissance/` include strategy, personas, brand voice, design system, marketing, goals, and financials.
-
-### TamperTantrum Labs
-AppSec consulting business. Files in `business/tampertantrum-labs/` include strategy, 7 personas, competitors, design system (with full color palette), marketing, goals, and financials.
+| `docs/SETUP.md` | Getting started guide |
+| `docs/SCHEMA.md` | JSON field definitions |
+| `docs/CUSTOMIZATION.md` | How to customize with your data |
 
 <details>
-<summary><strong>📁 Full Repository Structure</strong></summary>
+<summary><strong>Full Repository Structure</strong></summary>
 
 ```
-myself/
+professional-os/
 ├── CLAUDE.md                 # Claude Code instructions
-├── CONTEXT.md                # Repository overview
 ├── README.md                 # This file
 │
 ├── profile/                  # Professional data
@@ -116,32 +84,19 @@ myself/
 │   ├── active.json           # In development
 │   ├── planned.json          # Planning/blocked
 │   ├── completed.json        # Finished
-│   └── planning/             # Planning templates
+│   ├── planning/             # Planning templates
+│   └── specs/                # Project specifications
 │
 ├── business/                 # Business documentation
 │   ├── BUSINESS_GOALS.md     # High-level objectives
-│   │
-│   ├── codaissance/          # Product studio
-│   │   ├── strategy.json     # Business model, positioning
-│   │   ├── personas.json     # 4 personas + anti-personas
-│   │   ├── brand.json        # Voice, tone, messages
-│   │   ├── design-system.json# Colors, typography, specs
-│   │   ├── marketing.json    # Content pillars, channels
-│   │   ├── goals.md          # SMART goals
-│   │   ├── financials.json   # Revenue tracking
-│   │   ├── roadmap.md        # 2026 product roadmap
-│   │   └── assets/           # Logo files
-│   │
-│   └── tampertantrum-labs/   # AppSec consulting
-│       ├── strategy.json     # Mission, values, services
-│       ├── personas.json     # 7 target personas
-│       ├── competitors.json  # Competitive analysis
-│       ├── design-system.json# Full color palette, fonts
-│       ├── marketing.json    # Content pillars, ideas
-│       ├── goals.md          # SMART goals, financials
-│       ├── financials.json   # Consulting tracking
-│       ├── roadmap.md        # 2026 consulting roadmap
-│       └── assets/           # Logo files
+│   └── my-saas/              # Example business folder
+│       ├── strategy.json     # Business model, positioning
+│       ├── personas.json     # Target audience
+│       ├── marketing.json    # Content pillars, channels
+│       ├── design-system.json# Colors, typography
+│       ├── financials.json   # Revenue tracking
+│       ├── goals.md          # Business goals
+│       └── roadmap.md        # Product roadmap
 │
 ├── job-applications/         # Career tracking
 │   ├── JOB_SEARCH.md         # Target roles, preferences
@@ -149,21 +104,19 @@ myself/
 │   └── interviews.json       # Interview tracking
 │
 ├── learning/                 # Skill development
-│   ├── roadmap.md            # 2026 learning roadmap (skills-based)
-│   ├── roadmap.json          # Learning paths (template)
+│   ├── roadmap.json          # Learning paths
 │   └── completed.json        # Completed courses
 │
 ├── ideas/                    # Idea capture
 │   ├── IDEA_VALIDATION_REFINEMENT.md
 │   ├── personal/ideas.json
-│   └── business/
-│       ├── codaissance/ideas.json
-│       └── tampertantrum-labs/ideas.json
+│   └── business/my-saas/ideas.json
 │
 ├── linkedin/                 # Social presence
-│   ├── profile.json          # 3 account profiles
+│   ├── profile.json          # Profile data
 │   ├── METRICS.md            # Tracking guide
-│   └── *-metrics.json        # Per-account metrics
+│   ├── content-ideas.json    # Content calendar
+│   └── personal-metrics.json # Metrics snapshots
 │
 ├── github/                   # GitHub presence
 │   └── README.md             # Profile README
@@ -171,49 +124,24 @@ myself/
 ├── assessments/              # Self-assessments
 │
 ├── logs/                     # Automation output
-│   └── github-activity/      # Daily activity logs (YYYY-MM.json)
+│   ├── context/              # Daily snapshots
+│   ├── github-activity/      # Activity logs
+│   └── weekly-summary/       # Weekly reports
 │
-├── automation/               # Automation documentation
-│   └── IDEAS.md              # Automation roadmap and ideas
+├── docs/                     # Documentation
+│   ├── SETUP.md              # Getting started
+│   ├── SCHEMA.md             # Field definitions
+│   └── CUSTOMIZATION.md      # Customization guide
 │
 ├── .github/workflows/        # GitHub Actions
-│   └── github-activity-log.yml  # Daily activity logging
 │
 ├── .claude/commands/         # Claude Code commands
-│   ├── assessment.md
-│   ├── log-application.md
-│   ├── generate-resume.md
-│   ├── generate-post.md
-│   ├── update-project.md
-│   ├── prep-interview.md
-│   └── quick-check.md
-│
-├── .gemini/                  # Gemini CLI config
-│   ├── GEMINI.md             # Gemini instructions
-│   └── commands/             # Gemini commands (TOML format)
-│       ├── research-company.toml
-│       ├── competitive-analysis.toml
-│       ├── market-research.toml
-│       └── salary-research.toml
-│
-├── .codex/                   # Codex reference (prompts installed to ~/.codex/prompts/)
-│   └── commands/             # Local copies for reference
-│       ├── assessment.md
-│       ├── job-application.md
-│       ├── review-resume.md
-│       └── summarize-project.md
 │
 └── dashboard/                # Next.js dashboard app
     ├── app/                  # App Router pages
-    │   └── api/              # API routes (projects, profile, jobs, automations, content)
-    ├── src/
-    │   ├── components/       # React components
-    │   │   ├── dashboard/    # Home page cards
-    │   │   ├── layout/       # Shell, Sidebar, TopBar
-    │   │   └── ui/           # Reusable primitives
-    │   └── hooks/            # TanStack Query hooks
-    ├── lib/                  # QueryClient provider
-    └── WIREFRAMES.md         # ASCII wireframes
+    ├── src/components/       # React components
+    ├── src/hooks/            # TanStack Query hooks
+    └── lib/                  # Utilities
 ```
 
 </details>
@@ -222,13 +150,14 @@ myself/
 
 - **Skill levels:** none → novice → apprentice → adept → expert → master
 - **Dates:** `YYYY-MM-DD` format, `"Present"` for ongoing
-- **Assessments:** `YYYY-MM-DD-assessment.md` or `YYYY-MM-DD-{area}-assessment.md`
+- **Assessments:** `YYYY-MM-DD-assessment.md`
 
-## Owner
+## Documentation
 
-**Gavin Hensley** — Full-Stack Software Engineer
-B.S. Software Engineering (WGU 2025) • React/Next.js/TypeScript • Portsmouth, OH (Remote)
+- [`docs/SETUP.md`](docs/SETUP.md) — Getting started guide
+- [`docs/SCHEMA.md`](docs/SCHEMA.md) — JSON field definitions
+- [`docs/CUSTOMIZATION.md`](docs/CUSTOMIZATION.md) — How to customize
 
 ---
 
-*This repository is designed as a personal knowledge base. Feel free to fork and adapt the structure for your own use.*
+*This is a template repository. Fork and customize with your own professional data.*

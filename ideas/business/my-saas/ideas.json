@@ -1,0 +1,18 @@
+{
+  "ideas": [
+    {
+      "name": "Feature Idea",
+      "description": "A potential feature or product idea",
+      "problem": "The problem this would solve",
+      "solution": "How it would solve the problem",
+      "target_audience": "Who would benefit",
+      "effort": "medium",
+      "potential_value": "high",
+      "status": "raw",
+      "validation_report": null,
+      "notes": "",
+      "date_added": "2024-12-15",
+      "date_updated": "2024-12-15"
+    }
+  ]
+}

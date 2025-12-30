@@ -1,0 +1,44 @@
+{
+  "revenue": {
+    "monthly": [],
+    "total": 0
+  },
+  "expenses": {
+    "monthly": {
+      "hosting": 0,
+      "domains": 0,
+      "tools": 0,
+      "marketing": 0
+    }
+  },
+  "metrics": {
+    "mrr": 0,
+    "arr": 0,
+    "customers": 0,
+    "churn_rate": 0,
+    "ltv": 0,
+    "cac": 0
+  },
+  "milestones": [
+    {
+      "name": "First paying customer",
+      "target": 1,
+      "achieved": false
+    },
+    {
+      "name": "$100 MRR",
+      "target": 100,
+      "achieved": false
+    },
+    {
+      "name": "$1,000 MRR",
+      "target": 1000,
+      "achieved": false
+    },
+    {
+      "name": "$10,000 MRR",
+      "target": 10000,
+      "achieved": false
+    }
+  ]
+}

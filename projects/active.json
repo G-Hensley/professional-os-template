@@ -1,67 +1,31 @@
 {
-  "professional-os": {
-    "name": "Professional OS",
-    "repo_url": "https://github.com/G-Hensley/myself",
-    "type": "Digital Product",
-    "description": "A version-controlled, AI-ready knowledge base framework for developers. Structured repository template that automates resume generation, content creation, skill tracking, and professional knowledge management. Designed to provide consistent context to AI tools (Claude, Copilot, Cursor, etc.) while eliminating repetitive self-explanation.",
+  "my-saas-app": {
+    "name": "My SaaS App",
+    "repo_url": "https://github.com/yourusername/my-saas-app",
+    "type": "SaaS",
+    "description": "A tool that helps developers do X faster. Built with Next.js, TypeScript, and Supabase.",
     "technologies": [
-      "GitHub Template",
-      "Node.js",
-      "GitHub Actions",
-      "JSON Schemas",
-      "Markdown",
       "Next.js",
       "TypeScript",
-      "TanStack Query",
-      "Tailwind CSS"
+      "Supabase",
+      "Tailwind CSS",
+      "Vercel"
     ],
-    "monetization_strategy": "Tiered one-time purchase ($97-$997) with SaaS dashboard upgrade path ($12-$24/mo)",
+    "monetization_strategy": "$12/month subscription with free tier",
     "status": "In Progress",
     "priority": 10,
-    "completion_percentage": 85,
-    "due_date": "2026-01-31",
-    "problem": "Developers juggling employment, side projects, content creation, and job searching constantly re-explain context to AI tools, manually track skills across platforms, and struggle to maintain consistency between LinkedIn, GitHub, resumes, and portfolios. Every new AI conversation starts from zero.",
-    "solution": "A version-controlled knowledge base that serves as the single source of truth for professional identity. AI tools read structured data (skills, experience, projects) and generate tailored outputs automatically. GitHub Actions handle routine updates. The developer stops re-explaining themselves and starts leveraging their accumulated context.",
+    "completion_percentage": 60,
+    "due_date": "2025-03-31",
+    "problem": "Developers spend too much time on repetitive task X, which slows down their workflow.",
+    "solution": "An automated tool that handles X in the background, integrating with existing developer workflows.",
     "target_audience": [
-      "Senior developers managing complex professional identities across multiple platforms",
-      "Developers actively job searching who need tailored resumes quickly",
-      "Solo founders building in public who need consistent content across channels",
-      "Freelancers juggling multiple clients and projects who need professional organization",
-      "Developers who use AI tools daily and want them to understand their full context"
+      "Solo developers building side projects",
+      "Small development teams at startups",
+      "Freelancers managing multiple projects"
     ],
-    "mission_statement": "Make professional knowledge management work WITH AI instead of fighting it. Stop re-explaining yourself to every new tool, every new conversation, every new application. Your context should compound, not reset.",
-    "success_milestone": "25 sales in first month, 10 customers generate a resume or use commands, <10% refund rate",
-    "tagline": "Your professional identity, version-controlled. Stop re-explaining yourself to AI.",
-    "spec_folder": "projects/specs/professional-os"
-  },
-  "dev-genesis": {
-    "name": "Dev Genesis",
-    "repo_url": "https://github.com/G-Hensley/dev-genesis",
-    "type": "GitHub Template",
-    "description": "Dev Genesis is a GitHub template repository that transforms rough project ideas into organized, production-ready repositories in under 30 minutes. It includes AI-assisted planning prompts that generate importable GitHub issues, pre-configured support for Claude Code, Cursor, Copilot, and Windsurf, automated security scanning, issue templates, PR workflows, and quality tooling.",
-    "technologies": [
-      "GitHub Actions",
-      "GitHub Issues",
-      "Bash",
-      "YAML",
-      "Markdown"
-    ],
-    "monetization_strategy": "Open-source (brand building)",
-    "status": "In Progress",
-    "priority": 10,
-    "completion_percentage": 80,
-    "due_date": "2026-01-19",
-    "problem": "Starting a new software project wastes hours on repetitive setup tasks—configuring Git, setting up issue templates, configuring AI assistants, establishing workflows, and implementing quality tooling. Developers spend entire afternoons on boilerplate configuration instead of writing code.",
-    "solution": "Dev Genesis is a GitHub template repository that handles all project setup automatically. In under 30 minutes, it generates a fully-configured repository with AI planning prompts that create importable GitHub issues, pre-configured support for Claude Code, Cursor, Copilot, and Windsurf, automated security scanning, and professional workflows.",
-    "target_audience": [
-      "Solo developers wanting to launch projects quickly without tedious setup",
-      "Tech leads at startups needing to bootstrap new repositories for rapid prototyping",
-      "Freelance developers juggling multiple projects who need to save time on setup",
-      "Open-source maintainers looking to standardize project structures across repositories"
-    ],
-    "mission_statement": "Dev Genesis exists to eliminate the friction between inspiration and implementation. Every hour spent on repository setup is an hour stolen from actual building.",
-    "success_milestone": "10 developers use Dev Genesis to bootstrap a project and report that setup time was reduced to under 30 minutes",
-    "tagline": "From idea to coding in 30 minutes. Stop configuring, start building.",
-    "spec_folder": "projects/specs/dev-genesis"
+    "mission_statement": "Make X effortless so developers can focus on building.",
+    "success_milestone": "100 paying customers within 6 months of launch",
+    "tagline": "Stop doing X manually. Let us handle it.",
+    "spec_folder": "projects/specs/my-saas-app"
   }
 }

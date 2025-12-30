@@ -1,6 +1,5 @@
 {
-  "skill_levels":
-  {
+  "skill_levels": {
     "none": "I have no experience or knowledge of this skill.",
     "novice": "I have a basic understanding of this skill and can perform simple tasks with guidance.",
     "apprentice": "I have a moderate understanding of this skill and can perform tasks with some supervision.",
@@ -9,113 +8,57 @@
     "master": "I have a comprehensive and authoritative understanding of this skill and am recognized as an expert in the field."
   },
   "programming_languages": {
-    "JavaScript": "expert",
-    "TypeScript": "expert",
-    "Python": "adept",
+    "JavaScript": "adept",
+    "TypeScript": "adept",
+    "Python": "apprentice",
     "HTML": "expert",
     "CSS": "expert",
-    "SQL": "adept",
-    "Bash": "adept",
-    "Java": "adept",
-    "C#": "novice",
-    "C": "adept"
+    "SQL": "apprentice"
   },
   "frameworks_and_libraries": {
-    "Angular": "novice",
-    "React": "expert",
-    "Next.js": "expert",
-    "Node.js": "adept",
-    "Express": "adept",
-    "Tailwind CSS": "expert",
-    "Redux": "adept",
-    "Prisma": "novice",
-    "Spring Boot": "novice",
-    "Django": "none",
-    "FastAPI": "none",
-    "Framer Motion": "adept",
-    "Electron": "none",
-    "React Native": "novice"
+    "React": "adept",
+    "Next.js": "adept",
+    "Node.js": "apprentice",
+    "Express": "apprentice",
+    "Tailwind CSS": "adept"
   },
   "apis_and_protocols": {
-    "REST APIs": "expert",
-    "GraphQL": "apprentice",
-    "WebSockets": "apprentice",
-    "OAuth 2.0": "adept",
-    "JWT": "adept",
-    "Bcrypt": "adept",
-    "OWASP Security Practices": "expert"
+    "REST APIs": "adept",
+    "GraphQL": "novice",
+    "OAuth 2.0": "apprentice",
+    "JWT": "apprentice"
   },
   "databases": {
-    "PostgreSQL": "adept",
-    "MySQL": "adept",
-    "MongoDB": "adept",
-    "Supabase": "adept"
+    "PostgreSQL": "apprentice",
+    "MongoDB": "apprentice",
+    "Supabase": "apprentice"
   },
   "cloud_and_devops": {
     "AWS": "novice",
-    "Vercel": "expert",
-    "Heroku": "novice",
-    "Docker": "adept",
-    "GitHub Actions": "adept",
-    "CI/CD": "adept",
-    "Kubernetes": "none"
+    "Vercel": "adept",
+    "Docker": "novice",
+    "GitHub Actions": "apprentice",
+    "CI/CD": "apprentice"
   },
-  "testing & monitoring": {
-    "Vitest": "adept",
-    "Jest": "adept",
-    "Postman": "adept",
-    "Lighthouse": "adept",
-    "Google Analytics": "adept",
-    "Burp Suite": "adept",
-    "Cypress": "novice",
-    "Storybook": "novice",
-    "OWASP ZAP": "novice"
+  "testing_and_monitoring": {
+    "Jest": "apprentice",
+    "Vitest": "apprentice",
+    "Postman": "adept"
   },
   "tools": {
     "Git": "adept",
-    "Turborepo": "novice",
-    "Notion": "expert",
-    "ClickUp": "adept",
-    "Trello": "expert",
     "VS Code": "expert",
-    "Figma": "adept",
-    "Asana": "adept",
-    "HubSpot": "adept",
-    "Jira": "adept"
+    "Figma": "apprentice"
   },
   "AI": {
-    "ChatGPT": "expert",
-    "GitHub Copilot": "expert",
-    "Claude": "expert",
-    "Claude Code": "adept",
-    "Codex": "adept",
-    "OpenAI API": "adept",
-    "Groq API": "novice",
-    "Hugging Face": "none",
-    "TensorFlow": "none",
-    "PyTorch": "none",
-    "LangChain": "none",
-    "Chatbot Development": "novice",
-    "AI Model Training": "none",
-    "AI Ethics": "adept"
+    "ChatGPT": "adept",
+    "GitHub Copilot": "adept",
+    "Claude": "adept"
   },
-  "other":
-  {
-    "Design Driven Development": "adept",
-    "Agile Methodologies": "adept",
-    "Project Management": "adept",
-    "UI/UX Principles": "expert",
-    "Accessibility Standards": "expert",
-    "SEO Best Practices": "adept",
-    "GEO Targeting": "apprentice",
-    "Performance Optimization": "adept",
-    "Security Best Practices": "expert",
-    "Technical Writing": "adept",
-    "Client Communication": "expert",
-    "Team Collaboration": "expert",
-    "Time Management": "expert",
+  "other": {
+    "Agile Methodologies": "apprentice",
+    "UI/UX Principles": "adept",
     "Problem-Solving": "expert",
-    "Critical Thinking": "expert",
-    "Adaptability": "expert"
+    "Team Collaboration": "adept"
   }
 }

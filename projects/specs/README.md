@@ -9,15 +9,7 @@ Detailed planning documents for each project. Each folder contains:
 
 ```
 specs/
-├── professional-os/   # AI-ready professional knowledge base (CURRENT)
-├── dev-genesis/       # GitHub Template for project setup
-├── vibiom/            # Multi-agent AI orchestrator CLI
-├── tempered-ui/       # Security-first React component library
-├── mindtrace/         # Student behavior logging SaaS
-├── devgauntlet/       # Professional dev training platform
-├── scopecreep/        # Automated RLS testing for databases
-├── openorbit/         # Build-in-public social platform
-├── instapi/           # Instant mock API generator
+├── my-saas-app/       # Example project spec
 └── {new-project}/     # Create folder when planning new project
 ```
 

@@ -1,0 +1,44 @@
+{
+  "name": "My SaaS",
+  "tagline": "Your product tagline here",
+  "type": "SaaS",
+  "status": "Planning",
+  "mission": "Build tools that solve real problems for your target audience",
+  "vision": "Become the go-to solution for [your niche]",
+  "values": [
+    "Quality over quantity",
+    "User privacy first",
+    "Transparent pricing",
+    "Continuous improvement"
+  ],
+  "positioning": {
+    "category": "Developer Tools",
+    "target_market": "Solo developers and small teams",
+    "differentiators": [
+      "Simple and focused",
+      "Fair pricing",
+      "Great developer experience"
+    ]
+  },
+  "business_model": {
+    "type": "Subscription",
+    "pricing_tiers": [
+      {
+        "name": "Free",
+        "price": 0,
+        "features": ["Basic features", "Community support"]
+      },
+      {
+        "name": "Pro",
+        "price": 12,
+        "billing": "monthly",
+        "features": ["All features", "Priority support", "API access"]
+      }
+    ]
+  },
+  "competitive_landscape": {
+    "direct_competitors": ["Competitor A", "Competitor B"],
+    "indirect_competitors": ["Alternative solution", "Manual process"],
+    "competitive_advantage": "Your unique value proposition"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "content_pillars": [
+    {
+      "name": "Educational",
+      "description": "Teach concepts related to your product's domain",
+      "examples": ["How-to guides", "Best practices", "Tutorials"]
+    },
+    {
+      "name": "Behind the Scenes",
+      "description": "Share your building journey",
+      "examples": ["Development updates", "Lessons learned", "Revenue reports"]
+    },
+    {
+      "name": "Product",
+      "description": "Showcase product features and use cases",
+      "examples": ["Feature announcements", "Use case studies", "Tips and tricks"]
+    }
+  ],
+  "channels": {
+    "primary": [
+      {
+        "name": "Twitter/X",
+        "goal": "Build audience, share updates",
+        "frequency": "Daily"
+      },
+      {
+        "name": "Blog",
+        "goal": "SEO, thought leadership",
+        "frequency": "Weekly"
+      }
+    ],
+    "secondary": [
+      {
+        "name": "LinkedIn",
+        "goal": "Professional network, B2B reach",
+        "frequency": "2-3x per week"
+      },
+      {
+        "name": "Newsletter",
+        "goal": "Direct audience relationship",
+        "frequency": "Weekly"
+      }
+    ]
+  },
+  "lead_generation": {
+    "strategies": [
+      "Free tier with upgrade path",
+      "Content marketing / SEO",
+      "Product Hunt launch",
+      "Community engagement"
+    ]
+  },
+  "content_ideas": [
+    "Launch announcement post",
+    "Tutorial: Getting started with [product]",
+    "Behind the scenes: How we built [feature]",
+    "Comparison: [Product] vs [Competitor]"
+  ]
+}

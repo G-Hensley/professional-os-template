@@ -14,25 +14,25 @@
   "work_environment": {
     "communication": {
       "preferred": "Async",
-      "channels": ["Discord", "Slack", "PRs", "Email"],
+      "channels": ["Slack", "Email", "PRs"],
       "avoids": ["Frequent meetings", "Phone calls"]
     },
     "meetings": {
-      "preference": "Minimal to none",
+      "preference": "Minimal",
       "acceptable": ["Sprint planning", "Architecture discussions", "As-needed syncs"]
     },
     "collaboration_style": "Independent",
     "management_style": {
-      "check_ins": "As-needed",
+      "check_ins": "Weekly",
       "feedback_format": "Written",
       "autonomy": "High"
     }
   },
   "schedule": {
     "timezone": "EST",
-    "location": "Portsmouth, OH",
-    "typical_hours": "8-9 AM to 7 PM",
-    "flexibility": "Flexible with breaks throughout day",
+    "location": "Your City, ST",
+    "typical_hours": "9 AM to 5 PM",
+    "flexibility": "Flexible with core hours",
     "remote_required": true
   },
   "coding_style": {
@@ -53,8 +53,8 @@
   "tools": {
     "editor": "VS Code",
     "terminal": "iTerm2 / native",
-    "ai_assistants": ["Claude Code", "GitHub Copilot", "ChatGPT"],
-    "project_management": ["Notion", "Trello", "Asana"],
+    "ai_assistants": ["Claude Code", "GitHub Copilot"],
+    "project_management": ["Notion", "Trello"],
     "design": "Figma"
   }
 }

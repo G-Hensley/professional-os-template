@@ -1,0 +1,50 @@
+{
+  "target_personas": [
+    {
+      "name": "Solo Developer Dan",
+      "role": "Independent Developer",
+      "company_size": "1 person",
+      "goals": [
+        "Ship products faster",
+        "Reduce time on repetitive tasks",
+        "Focus on building, not configuration"
+      ],
+      "pain_points": [
+        "Limited time and resources",
+        "Overwhelmed by tooling choices",
+        "Needs simple, focused solutions"
+      ],
+      "behavior": "Researches thoroughly before buying, values recommendations from peers",
+      "channels": ["Twitter/X", "Hacker News", "Dev.to", "Reddit"],
+      "budget": "$50-200/month for tools"
+    },
+    {
+      "name": "Startup Sarah",
+      "role": "CTO / Tech Lead",
+      "company_size": "5-20 people",
+      "goals": [
+        "Scale team productivity",
+        "Maintain code quality as team grows",
+        "Make smart tooling investments"
+      ],
+      "pain_points": [
+        "Balancing speed with quality",
+        "Onboarding new developers",
+        "Tool sprawl and integration headaches"
+      ],
+      "behavior": "Evaluates tools for team fit, needs to justify spend to stakeholders",
+      "channels": ["LinkedIn", "Industry newsletters", "Conferences"],
+      "budget": "$500-2000/month for team tools"
+    }
+  ],
+  "anti_personas": [
+    {
+      "name": "Enterprise Ed",
+      "why_not": "Needs enterprise features, compliance, and sales process we can't support yet"
+    },
+    {
+      "name": "Freeloader Fred",
+      "why_not": "Will never pay, consumes support resources, provides no value"
+    }
+  ]
+}

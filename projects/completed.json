@@ -1,1 +1,24 @@
-{}
+{
+  "portfolio-site": {
+    "name": "Portfolio Website",
+    "repo_url": "https://github.com/yourusername/portfolio",
+    "type": "Website",
+    "description": "Personal portfolio website showcasing projects and skills.",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vercel"
+    ],
+    "monetization_strategy": "N/A (personal branding)",
+    "status": "Completed",
+    "completion_percentage": 100,
+    "problem": "Needed a professional online presence to showcase work.",
+    "solution": "Clean, fast portfolio site with project showcase.",
+    "target_audience": [
+      "Potential employers",
+      "Clients"
+    ],
+    "mission_statement": "Present professional identity online."
+  }
+}

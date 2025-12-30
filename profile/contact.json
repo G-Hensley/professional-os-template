@@ -1,19 +1,19 @@
 {
-  "name": "Gavin Hensley",
+  "name": "Your Name",
   "title": "Full-Stack Software Engineer",
-  "phone": "606-939-6944",
-  "email": "gavinhensley@protonmail.com",
-  "recent_employer": "APIsec",
+  "phone": "555-123-4567",
+  "email": "you@example.com",
+  "recent_employer": "Current Company",
   "location": {
-    "city": "Portsmouth",
-    "state": "OH",
+    "city": "Your City",
+    "state": "ST",
     "timezone": "EST",
     "remote_only": true
   },
   "links": {
-    "linkedin": "https://www.linkedin.com/in/g-hensley/",
-    "github": "https://www.github.com/G-Hensley",
-    "portfolio": "https://gavinhensley.dev",
-    "credly": "https://www.credly.com/users/gavin-hensley.ce8f7773"
+    "linkedin": "https://www.linkedin.com/in/yourprofile/",
+    "github": "https://www.github.com/yourusername",
+    "portfolio": "https://yourportfolio.dev",
+    "credly": "https://www.credly.com/users/yourprofile"
   }
 }
