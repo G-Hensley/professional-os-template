@@ -1,0 +1,48 @@
+{
+  "month": "2025-12",
+  "generated_at": "2025-12-30T06:13:19.840Z",
+  "entries": [
+    {
+      "date": "2025-12-30",
+      "logged_at": "2025-12-30T06:13:19.840Z",
+      "mode": "daily",
+      "summary": {
+        "total_commits": 7,
+        "repos_with_commits": 2,
+        "pull_requests_created": 0,
+        "pull_requests_merged": 0,
+        "issues_created": 0,
+        "issues_closed": 0
+      },
+      "commits": [
+        {
+          "repository": "G-Hensley/professional-os-template",
+          "url": "https://github.com/G-Hensley/professional-os-template",
+          "total_commits": 6,
+          "dates": [
+            "2025-12-29T08:00:00Z"
+          ]
+        },
+        {
+          "repository": "G-Hensley/apisec-informational-detections-report-generator",
+          "url": "https://github.com/G-Hensley/apisec-informational-detections-report-generator",
+          "total_commits": 1,
+          "dates": [
+            "2025-12-29T08:00:00Z"
+          ]
+        }
+      ],
+      "pull_requests": [],
+      "issues": []
+    }
+  ],
+  "monthly_summary": {
+    "total_commits": 7,
+    "total_prs_created": 0,
+    "total_prs_merged": 0,
+    "total_issues_created": 0,
+    "total_issues_closed": 0,
+    "active_days": 1,
+    "entries_count": 1
+  }
+}
