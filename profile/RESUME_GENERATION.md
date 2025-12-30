@@ -14,7 +14,7 @@ This document provides instructions for AI tools to generate tailored resumes fr
 ### Full-Stack Software Engineer
 **Primary focus**: React, Next.js, TypeScript, Node.js, PostgreSQL
 **Emphasize**:
-- Full-stack development experience from Codaissance, TamperTantrum Labs, BuiltInPublic
+- Full-stack development experience
 - API development and REST API expertise
 - Cloud deployment (Vercel, AWS)
 - Database design and optimization
@@ -35,20 +35,20 @@ This document provides instructions for AI tools to generate tailored resumes fr
 - Authentication systems (OAuth 2.0, JWT)
 - Cloud infrastructure and DevOps
 
-### Product Engineer / Customer Success Engineer
-**Primary focus**: Technical customer support, integrations, documentation
+### Product Engineer
+**Primary focus**: Technical problem-solving, integrations, documentation
 **Emphasize**:
-- APIsec experience (current role)
-- Custom script development for clients
-- Technical documentation and training
 - Cross-functional collaboration
+- Custom development for specific needs
+- Technical documentation and training
+- Customer-focused solutions
 
 ### DevOps / Platform Engineer
 **Primary focus**: CI/CD, Docker, cloud deployment
 **Emphasize**:
 - GitHub Actions and CI/CD pipelines
 - Docker containerization
-- Vercel and AWS deployment
+- Cloud deployment (Vercel, AWS)
 - Monitoring and testing practices
 
 ## Generation Rules
@@ -65,23 +65,18 @@ This document provides instructions for AI tools to generate tailored resumes fr
 3. Lead with quantifiable metrics when available
 4. Use action verbs: Developed, Implemented, Designed, Optimized, Collaborated
 
-### Metrics to Highlight
-- APIsec: 77% of support tickets, <1 day turnaround, 15+ custom reports
-- Concentrix: 1,000+ cases, 95%+ satisfaction rate, Tier 1 to Tier 2 progression
-
 ### Education & Certifications
-1. B.S. Software Engineering - WGU (2025) always included
+1. Include highest degree
 2. Select 3-4 most relevant certifications for the role
-3. AWS Cloud Practitioner for cloud/DevOps roles
-4. ITIL/Project+ for product/management roles
-5. freeCodeCamp certs for development roles
+3. AWS certifications for cloud/DevOps roles
+4. Project management certs for product/management roles
 
 ### Formatting Guidelines
 - Two pages preferred
 - Clean, minimal design with clear section headers
 - No photos or graphics
 - Consistent date format (Month Year - Present) or (Month Year - Month Year)
-- Location: "Portsmouth, OH (Remote)" or just "Remote"
+- Location: "City, ST (Remote)" or just "Remote"
 - Use horizontal rules or spacing between major sections
 
 ## Resume Structure
@@ -90,23 +85,23 @@ Follow the exact structure from `resume.md`:
 
 ### 1. Header
 ```
-# Gavin Hensley
+# Your Name
 
-606-939-6944 | gavinhensley@protonmail.com | https://www.linkedin.com/in/g-hensley/ | https://www.github.com/G-Hensley
+Phone | email@example.com | LinkedIn URL | GitHub URL
 ```
 
 ### 2. Summary
-50-60 words highlighting role focus, years of experience, and key strengths. Mention B.S. in Software Engineering.
+50-60 words highlighting role focus, years of experience, and key strengths.
 
 ### 3. Technical Skills
 Organize by category on separate lines:
-- **Languages:** JavaScript, TypeScript, Java, Python, HTML5, CSS3, Bash, SQL
-- **Frameworks & Libraries:** React, Next.js, Express, TailwindCSS, Spring Boot
-- **Databases:** PostgreSQL, MySQL, MongoDB, Supabase
-- **APIs & Protocols:** REST APIs, GraphQL, WebSockets, OAuth 2.0, JWT, Bcrypt
-- **Cloud & DevOps:** AWS, Vercel, Heroku, Docker, GitHub Actions, CI/CD
-- **Testing & Monitoring:** Vitest, Jest, Postman, Lighthouse, Google Analytics, Burp Suite
-- **Tools:** Git, Turborepo, Notion, ClickUp, Trello, VS Code, Figma, Asana, HubSpot, Jira
+- **Languages:** JavaScript, TypeScript, Python, HTML5, CSS3, SQL
+- **Frameworks & Libraries:** React, Next.js, Node.js, Express, TailwindCSS
+- **Databases:** PostgreSQL, MongoDB, Supabase
+- **APIs & Protocols:** REST APIs, GraphQL, OAuth 2.0, JWT
+- **Cloud & DevOps:** AWS, Vercel, Docker, GitHub Actions, CI/CD
+- **Testing & Monitoring:** Jest, Vitest, Postman, Lighthouse
+- **Tools:** Git, VS Code, Figma, Notion
 
 ### 4. Work Experience
 Format each role as:
@@ -125,7 +120,7 @@ Format each project as:
 ```
 
 ### 6. Certifications
-Simple bulleted list with certification names (abbreviate issuing org if needed)
+Simple bulleted list with certification names
 
 ### 7. Education
 ```
@@ -136,16 +131,16 @@ Simple bulleted list with certification names (abbreviate issuing org if needed)
 ## Summary Statement Templates
 
 ### Full-Stack Engineer
-"Full-Stack Software Engineer with expertise in React, Next.js, and Node.js. B.S. in Software Engineering with hands-on experience building SaaS applications and integrating APIs. Strong focus on clean architecture, security best practices, and delivering user-centric solutions."
+"Full-Stack Software Engineer with expertise in React, Next.js, and Node.js. Experience building web applications and integrating APIs. Strong focus on clean architecture, best practices, and delivering user-centric solutions."
 
 ### Frontend Engineer
 "Frontend Engineer specializing in React and Next.js with a passion for building accessible, performant user interfaces. Expert in TypeScript, Tailwind CSS, and modern web standards. Committed to clean code, responsive design, and exceptional user experiences."
 
 ### Backend Engineer
-"Backend Engineer with strong experience in Node.js, Express, and PostgreSQL. Skilled in REST API design, authentication systems, and database optimization. AWS certified with a focus on scalable, secure application architecture."
+"Backend Engineer with strong experience in Node.js, Express, and PostgreSQL. Skilled in REST API design, authentication systems, and database optimization. Focus on scalable, secure application architecture."
 
-### Product/Customer Success Engineer
-"Product Engineer with technical expertise in API security and customer success. Experienced in developing custom integrations, creating technical documentation, and providing high-touch support. Strong communicator who bridges technical and business requirements."
+### Product Engineer
+"Product Engineer with technical expertise and customer focus. Experienced in developing solutions, creating technical documentation, and cross-functional collaboration. Strong communicator who bridges technical and business requirements."
 
 ## Tailoring Instructions
 

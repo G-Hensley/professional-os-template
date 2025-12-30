@@ -1,14 +1,13 @@
 # LinkedIn Metrics Tracking
 
-This document defines how LinkedIn metrics should be tracked across all three accounts.
+This document defines how LinkedIn metrics should be tracked.
 
 ## Accounts
 
 | Account | Type | Purpose |
 |---------|------|---------|
-| Personal (g-hensley) | Profile | Job search, networking, thought leadership |
-| Codaissance | Company Page | SaaS business visibility, product updates |
-| TamperTantrum Labs | Company Page | AppSec consulting visibility, industry content |
+| Personal | Profile | Job search, networking, thought leadership |
+| Business (optional) | Company Page | Business visibility, product updates |
 
 ## Metrics Schema
 
@@ -18,7 +17,7 @@ Track in `personal-metrics.json`:
 
 ```json
 {
-  "entries": [
+  "weekly_snapshots": [
     {
       "date": "YYYY-MM-DD",
       "followers": 0,
@@ -41,9 +40,9 @@ Track in `personal-metrics.json`:
 - **Post Impressions**: Content reach
 - **SSI Score**: LinkedIn's Social Selling Index (0-100)
 
-### Company Page Metrics
+### Company Page Metrics (Optional)
 
-Track in `codaissance-metrics.json` and `tampertantrum-metrics.json`:
+If you have a company page, track in a separate metrics file:
 
 ```json
 {
@@ -61,25 +60,15 @@ Track in `codaissance-metrics.json` and `tampertantrum-metrics.json`:
 }
 ```
 
-**Frequency**: Weekly (Mondays)
-
-**Key Metrics**:
-- **Followers**: Page audience size
-- **Page Views**: Traffic to company page
-- **Unique Visitors**: Distinct viewers
-- **Post Impressions**: Content visibility
-- **Engagement Rate**: Likes + comments + shares / impressions
-- **Button Clicks**: CTA effectiveness
-
 ## Post-Level Metrics
 
-For high-performing posts, capture in `content-ideas.json` or a separate `posts/` folder:
+For high-performing posts, capture in `content-ideas.json`:
 
 ```json
 {
   "post_url": "",
   "date_posted": "YYYY-MM-DD",
-  "account": "personal|codaissance|tampertantrum",
+  "account": "personal|business",
   "content_type": "text|image|video|carousel|poll|article",
   "topic": "",
   "impressions": 0,
@@ -112,20 +101,18 @@ For high-performing posts, capture in `content-ideas.json` or a separate `posts/
 - Log metrics weekly in JSON files
 - Update `last_updated` field in profile.json
 
-### Future: Automated (See automation/IDEAS.md)
+### Future: Automated
 - LinkedIn API requires Marketing Developer Platform approval
-- Phantom Buster or similar scraping tools (ToS risk)
 - Browser extension to export analytics
+- Custom automation scripts
 
 ## Growth Targets
 
 | Metric | Current | 3-Month Goal | 6-Month Goal |
 |--------|---------|--------------|--------------|
-| Personal Followers | - | - | - |
-| Personal Connections | - | 500+ | - |
+| Followers | - | - | - |
+| Connections | - | 500+ | - |
 | Profile Views/Week | - | 100+ | - |
-| Codaissance Followers | - | 100 | 500 |
-| TTL Followers | - | 50 | 200 |
 
 *Fill in current values and adjust goals as needed*
 
@@ -134,17 +121,11 @@ For high-performing posts, capture in `content-ideas.json` or a separate `posts/
 ### Personal Account
 - Building in public updates
 - Technical insights and lessons learned
-- Career journey and job search transparency
+- Career journey
 - Engage with dev community
 
-### Codaissance
+### Business Account (if applicable)
 - Product development updates
-- SaaS building journey
+- Company milestones
 - Technical deep dives
-- Launches and milestones
-
-### TamperTantrum Labs
-- API security insights
-- AppSec industry news
-- Consulting wins (anonymized)
-- Thought leadership on security
+- Industry thought leadership

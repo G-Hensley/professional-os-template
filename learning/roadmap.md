@@ -1,96 +1,64 @@
-# Learning Roadmap 2026
+# Learning Roadmap
 
 Learning is **project-driven** - skills are learned as needed for what you're building.
 
-## Current Skill Gaps (based on skills.json)
+## Current Skill Gaps
+
+Review your `skills.json` and identify gaps based on your projects:
 
 | Skill | Current | Target | Needed For |
 |-------|---------|--------|------------|
-| Anthropic SDK | adept (OpenAI) | expert | Vibiom MVP |
-| Multi-agent patterns | none | adept | Vibiom MVP |
-| LangChain | none | apprentice | Vibiom (optional) |
-| Storybook | novice | adept | TemperedUI |
-| Electron | none | apprentice | Vibiom desktop (Post-MVP) |
-| WebSockets | apprentice | adept | OpenOrbit real-time |
-| Kubernetes | none | novice | Production scaling (Q3+) |
+| Skill A | novice | adept | Project 1 |
+| Skill B | none | apprentice | Project 2 |
+| Skill C | apprentice | expert | Current role |
 
-## Q1 2026: Vibiom + Launches
+## Quarterly Learning Goals
+
+### Q1: Current Focus
 
 | Area | Topic | Current → Target | Needed For |
 |------|-------|------------------|------------|
-| **AI/LLM** | Anthropic SDK deep dive | adept → expert | Vibiom agents |
-| | Multi-agent orchestration | none → adept | Vibiom core |
-| | Context window management | novice → adept | Agent handoffs |
-| | Prompt engineering | adept → expert | Agent quality |
-| | Tool use patterns | apprentice → adept | Agent capabilities |
-| **Marketing** | LinkedIn algorithm | adept → expert | 3x/week posting |
-| | Landing page conversion | novice → adept | Professional OS |
-| | Email marketing | none → apprentice | Product launches |
-| **React/Next.js** | Server components | adept → expert | Better architecture |
-| | App router patterns | adept → expert | Modern Next.js |
+| **Core Stack** | Advanced patterns | adept → expert | Main project |
+| **DevOps** | CI/CD pipelines | novice → adept | Automation |
+| **Testing** | Integration tests | apprentice → adept | Quality |
 
-## Q2 2026: TemperedUI + SaaS
+### Q2: Expansion
 
 | Area | Topic | Current → Target | Needed For |
 |------|-------|------------------|------------|
-| **Component Libraries** | Storybook | novice → adept | TemperedUI docs |
-| | Design tokens | novice → adept | TemperedUI theming |
-| | a11y testing | expert → expert | TemperedUI quality |
-| **Security** | DOMPurify patterns | adept → expert | Secure inputs |
-| | CSRF implementation | adept → expert | Secure forms |
-| | Content Security Policy | adept → expert | Component hardening |
-| **Backend** | Docker | adept → expert | Production deploys |
-| | Multi-tenancy (Supabase RLS) | adept → expert | MindTrace, DevGauntlet |
-| | Database optimization | adept → expert | SaaS performance |
+| **New Framework** | Technology X | none → apprentice | New project |
+| **Backend** | Database optimization | adept → expert | Performance |
 
-## Q3+ 2026: Scale & Expansion
+### Q3+: Future
 
 | Area | Topic | Current → Target | Needed For |
 |------|-------|------------------|------------|
-| **DevOps** | Kubernetes basics | none → novice | Future scaling |
-| | Monitoring/observability | novice → adept | Production apps |
-| | CI/CD advanced | adept → expert | Automation |
-| **Real-time** | WebSockets | apprentice → adept | OpenOrbit |
-| **Security Certs** | OSCP/GWAPT evaluation | - | Career + TTL |
-| **AI Advanced** | Additional agent types | - | Vibiom Post-MVP |
+| **Advanced** | Complex topic | novice → adept | Scale |
+| **Certifications** | Relevant cert | - | Career |
 
 ---
 
-## Skills by Product
+## Skills by Project
 
-| Product | You Already Have | Need to Level Up |
+| Project | You Already Have | Need to Level Up |
 |---------|------------------|------------------|
-| **Dev Genesis** | GitHub Actions (adept), Git (adept) | Done |
-| **Professional OS** | - | Marketing, email (new) |
-| **Vibiom MVP** | TypeScript (expert), Node (adept) | Anthropic SDK, multi-agent patterns |
-| **TemperedUI** | React (expert), Tailwind (expert), Security (expert) | Storybook (novice→adept) |
-| **DevGauntlet** | Next.js (expert), Supabase (adept) | Multi-tenancy patterns |
-| **MindTrace** | - | Vibiom builds, you review |
-| **InstAPI** | - | Vibiom builds, you review |
-| **ScopeCreep** | PostgreSQL (adept), RLS knowledge | Vibiom builds, you review |
-| **OpenOrbit** | React (expert), Supabase (adept) | WebSockets (apprentice→adept) |
+| **Project 1** | React, TypeScript | State management |
+| **Project 2** | Node.js, Express | Database patterns |
+| **Project 3** | - | New technology |
 
 ## Strengths to Leverage
 
 Already expert-level (use these as foundations):
-- JavaScript/TypeScript
-- React/Next.js
-- Tailwind CSS
-- REST APIs
-- OWASP Security
-- UI/UX Principles
-- Accessibility Standards
-- Vercel deployment
+- Your strongest skills
+- Technologies you know well
+- Patterns you've mastered
 
 ## Priority Stack
 
 ```
-Q1: Anthropic SDK + Multi-agent  → Vibiom MVP (critical gap)
-Q1: Marketing basics             → Product launches (new skill)
-Q2: Storybook                    → TemperedUI (novice→adept)
-Q2: Multi-tenancy                → SaaS products
-Q3: WebSockets                   → OpenOrbit (apprentice→adept)
-Q3: Certs (optional)             → Career + TTL
+Q1: Priority skill → Project it enables
+Q2: Next skill     → What it unlocks
+Q3: Future skill   → Long-term goal
 ```
 
 ## Learning Philosophy
@@ -99,5 +67,4 @@ Q3: Certs (optional)             → Career + TTL
 - **Just-in-time**: Learn when you need it, not ahead of time
 - **Documentation-first**: Official docs > tutorials
 - **Build to learn**: No passive consumption
-- **Review Vibiom output**: Learn by reviewing AI-built code
-- **Level up, don't start over**: Build on existing expert skills
+- **Level up, don't start over**: Build on existing skills
