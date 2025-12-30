@@ -1,0 +1,228 @@
+{
+  "generated_at": "2025-12-30T05:11:55.093Z",
+  "version": "2.0",
+  "profile": {
+    "name": "Your Name",
+    "location": {
+      "city": "Your City",
+      "state": "ST",
+      "timezone": "EST",
+      "remote_only": true
+    },
+    "email": "you@example.com",
+    "current_role": "Software Engineer at Current Company",
+    "salary": 85000,
+    "education": "Bachelor of Science in Computer Science - State University (2024)"
+  },
+  "projects": {
+    "counts": {
+      "active": 1,
+      "planned": 2,
+      "completed": 1
+    },
+    "active": [
+      {
+        "key": "my-saas-app",
+        "name": "My SaaS App",
+        "type": "SaaS",
+        "priority": 10,
+        "status": "In Progress",
+        "tagline": "Stop doing X manually. Let us handle it.",
+        "repo_url": "https://github.com/yourusername/my-saas-app",
+        "technologies": [
+          "Next.js",
+          "TypeScript",
+          "Supabase",
+          "Tailwind CSS",
+          "Vercel"
+        ],
+        "due_date": "2025-03-31",
+        "success_milestone": "100 paying customers within 6 months of launch"
+      }
+    ],
+    "planned": [
+      {
+        "key": "developer-tool",
+        "name": "Developer Tool",
+        "type": "Open Source",
+        "priority": 5,
+        "status": "Planned",
+        "blocked_by": "Finishing current SaaS project first"
+      },
+      {
+        "key": "mobile-app",
+        "name": "Mobile App",
+        "type": "Mobile App",
+        "priority": 3,
+        "status": "Planned",
+        "blocked_by": "SaaS web app needs to be complete first"
+      }
+    ],
+    "completed": [
+      {
+        "key": "portfolio-site",
+        "name": "Portfolio Website",
+        "type": "Website"
+      }
+    ]
+  },
+  "skills": {
+    "totals": {
+      "master": 0,
+      "expert": 4,
+      "adept": 14,
+      "apprentice": 15,
+      "novice": 3,
+      "none": 0
+    },
+    "top_expert": [
+      "HTML",
+      "CSS",
+      "VS Code",
+      "Problem-Solving"
+    ],
+    "top_adept": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "REST APIs",
+      "Vercel",
+      "Postman",
+      "Git",
+      "ChatGPT"
+    ]
+  },
+  "businesses": {},
+  "job_search": {
+    "total_applications": 1,
+    "by_status": {
+      "interviewing": 1
+    },
+    "recent_interviews": 0
+  },
+  "learning": {
+    "roadmap_items": 4,
+    "completed_items": 1
+  },
+  "automations": [
+    {
+      "name": "Context Snapshot",
+      "schedule": "Daily at 5:00 UTC"
+    },
+    {
+      "name": "Daily Date Update",
+      "schedule": "Daily at 0:05 UTC"
+    },
+    {
+      "name": "GitHub Activity Logging",
+      "schedule": "Daily at 6:00 UTC"
+    },
+    {
+      "name": "Job Posting Monitor",
+      "schedule": "Sun at 17:00 UTC"
+    },
+    {
+      "name": "LinkedIn Post Generator",
+      "schedule": "Mon at 8:00 UTC"
+    },
+    {
+      "name": "Monthly Assessment Generator",
+      "schedule": "Daily at 9:00 UTC"
+    },
+    {
+      "name": "Project Status Automation",
+      "schedule": "Tue at 7:00 UTC"
+    },
+    {
+      "name": "Skill Analysis Pipeline",
+      "schedule": "Mon at 7:00 UTC"
+    },
+    {
+      "name": "Weekly Summary Generator",
+      "schedule": "Sun at 18:00 UTC"
+    }
+  ],
+  "commands": {
+    "claude": [
+      "/assessment",
+      "/generate-post",
+      "/generate-resume",
+      "/log-application",
+      "/prep-interview",
+      "/quick-check",
+      "/update-project"
+    ],
+    "gemini": [
+      "/competitive-analysis",
+      "/market-research",
+      "/research-company",
+      "/salary-research"
+    ],
+    "codex": [
+      "/prompts:assessment",
+      "/prompts:job-application",
+      "/prompts:review-resume",
+      "/prompts:summarize-project"
+    ]
+  },
+  "key_files": [
+    {
+      "path": "profile/skills.json",
+      "desc": "Technical skills with proficiency levels",
+      "modified": "2025-12-30"
+    },
+    {
+      "path": "profile/experience.json",
+      "desc": "Work history",
+      "modified": "2025-12-30"
+    },
+    {
+      "path": "profile/resume.md",
+      "desc": "Current resume",
+      "modified": "2025-12-30"
+    },
+    {
+      "path": "projects/active.json",
+      "desc": "Active projects",
+      "modified": "2025-12-30"
+    },
+    {
+      "path": "projects/planned.json",
+      "desc": "Planned/blocked projects",
+      "modified": "2025-12-30"
+    },
+    {
+      "path": "projects/completed.json",
+      "desc": "Completed projects",
+      "modified": "2025-12-30"
+    },
+    {
+      "path": "business/BUSINESS_GOALS.md",
+      "desc": "High-level business objectives",
+      "modified": "2025-12-30"
+    },
+    {
+      "path": "job-applications/JOB_SEARCH.md",
+      "desc": "Job search criteria and preferences",
+      "modified": "2025-12-30"
+    },
+    {
+      "path": "job-applications/applications.json",
+      "desc": "Job applications submitted",
+      "modified": "2025-12-30"
+    },
+    {
+      "path": "linkedin/content-ideas.json",
+      "desc": "Content pillars and post strategy",
+      "modified": "2025-12-30"
+    },
+    {
+      "path": "learning/roadmap.json",
+      "desc": "Skills to learn",
+      "modified": "2025-12-30"
+    }
+  ],
+  "folder_tree": "myself/\n├── .claude/\n│   └── commands/\n│       ├── assessment.md\n│       ├── generate-post.md\n│       ├── generate-resume.md\n│       ├── log-application.md\n│       ├── prep-interview.md\n│       ├── quick-check.md\n│       └── update-project.md\n├── .codex/\n│   └── commands/\n│       ├── assessment.md\n│       ├── job-application.md\n│       ├── review-resume.md\n│       └── summarize-project.md\n├── .gemini/\n│   ├── commands/\n│   │   ├── competitive-analysis.toml\n│   │   ├── market-research.toml\n│   │   ├── research-company.toml\n│   │   └── salary-research.toml\n│   └── GEMINI.md\n├── .github/\n│   └── workflows/\n│       ├── context-snapshot.yml\n│       ├── daily-date-update.yml\n│       ├── github-activity-log.yml\n│       ├── job-posting-monitor.yml\n│       ├── linkedin-post-generator.yml\n│       ├── monthly-assessment.yml\n│       ├── project-status.yml\n│       ├── skill-analysis.yml\n│       └── weekly-summary.yml\n├── automation/\n│   ├── scripts/\n│   │   ├── context-snapshot.js\n│   │   ├── job-posting-monitor.js\n│   │   ├── linkedin-post-generator.js\n│   │   ├── monthly-assessment-generator.js\n│   │   ├── project-status.js\n│   │   ├── skill-analysis.js\n│   │   └── weekly-summary-generator.js\n│   └── IDEAS.md\n├── business/\n│   ├── my-saas/\n│   │   ├── design-system.json\n│   │   ├── financials.json\n│   │   ├── goals.md\n│   │   ├── marketing.json\n│   │   ├── personas.json\n│   │   ├── roadmap.md\n│   │   └── strategy.json\n│   └── BUSINESS_GOALS.md\n├── docs/\n│   ├── CUSTOMIZATION.md\n│   ├── SCHEMA.md\n│   └── SETUP.md\n├── github/\n│   └── README.md\n├── ideas/\n│   ├── business/\n│   │   └── my-saas/\n│   │       └── ideas.json\n│   ├── personal/\n│   │   └── ideas.json\n│   └── IDEA_VALIDATION_REFINEMENT.md\n├── job-applications/\n│   ├── applications.json\n│   ├── interviews.json\n│   └── JOB_SEARCH.md\n├── learning/\n│   ├── completed.json\n│   ├── roadmap.json\n│   └── roadmap.md\n├── linkedin/\n│   ├── drafts/\n│   │   └── README.md\n│   ├── content-ideas.json\n│   ├── METRICS.md\n│   ├── personal-metrics.json\n│   └── profile.json\n├── logs/\n│   └── README.md\n├── profile/\n│   ├── contact.json\n│   ├── education.json\n│   ├── experience.json\n│   ├── preferences.json\n│   ├── RESUME_GENERATION.md\n│   ├── resume.md\n│   └── skills.json\n├── projects/\n│   ├── planning/\n│   │   └── PROJECT_PLANNING.md\n│   ├── specs/\n│   │   ├── my-saas-app/\n│   │   │   └── README.md\n│   │   └── README.md\n│   ├── active.json\n│   ├── completed.json\n│   └── planned.json\n├── tests/\n│   ├── context-snapshot/\n│   │   └── run.js\n│   ├── job-posting-monitor/\n│   │   └── run.js\n│   ├── linkedin-post-generator/\n│   │   └── run.js\n│   ├── monthly-assessment/\n│   │   └── run.js\n│   ├── project-status/\n│   │   └── run.js\n│   ├── skill-analysis/\n│   │   └── run.js\n│   ├── weekly-summary/\n│   │   └── run.js\n│   └── README.md\n├── CLAUDE.md\n└── README.md"
+}

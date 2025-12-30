@@ -1,0 +1,61 @@
+{
+  "generated_at": "2025-12-30T05:11:55.093Z",
+  "profile": "Your Name - Software Engineer at Current Company",
+  "projects": {
+    "active": [
+      "My SaaS App (P10): Stop doing X manually. Let us handle it."
+    ],
+    "planned": [
+      "Developer Tool [blocked by: Finishing current SaaS project first]",
+      "Mobile App [blocked by: SaaS web app needs to be complete first]"
+    ]
+  },
+  "skills": {
+    "expert": [
+      "HTML",
+      "CSS",
+      "VS Code",
+      "Problem-Solving"
+    ],
+    "adept": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "REST APIs",
+      "Vercel",
+      "Postman",
+      "Git",
+      "ChatGPT"
+    ]
+  },
+  "automations": [
+    "Context Snapshot: Daily at 5:00 UTC",
+    "Daily Date Update: Daily at 0:05 UTC",
+    "GitHub Activity Logging: Daily at 6:00 UTC",
+    "Job Posting Monitor: Sun at 17:00 UTC",
+    "LinkedIn Post Generator: Mon at 8:00 UTC",
+    "Monthly Assessment Generator: Daily at 9:00 UTC",
+    "Project Status Automation: Tue at 7:00 UTC",
+    "Skill Analysis Pipeline: Mon at 7:00 UTC",
+    "Weekly Summary Generator: Sun at 18:00 UTC"
+  ],
+  "commands": {
+    "claude": [
+      "/assessment",
+      "/generate-post",
+      "/generate-resume",
+      "/log-application",
+      "/prep-interview",
+      "/quick-check",
+      "/update-project"
+    ],
+    "gemini": [
+      "/competitive-analysis",
+      "/market-research",
+      "/research-company",
+      "/salary-research"
+    ]
+  }
+}
