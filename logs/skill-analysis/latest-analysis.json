@@ -1,0 +1,241 @@
+{
+  "generated_at": "2026-01-26T07:05:51.469Z",
+  "skills_detected": 14,
+  "manual_only_count": 36,
+  "detected_skills": {
+    "Claude Code": {
+      "last_detected": "2026-01-26T07:05:40.761Z",
+      "detection_source": "config_file",
+      "path": ".claude",
+      "repos": [
+        "myself",
+        "G-Hensley/professional-os-template"
+      ]
+    },
+    "Codex": {
+      "last_detected": "2026-01-26T07:05:40.761Z",
+      "detection_source": "config_file",
+      "path": ".codex",
+      "repos": [
+        "myself",
+        "G-Hensley/professional-os-template"
+      ]
+    },
+    "GitHub Actions": {
+      "last_detected": "2026-01-26T07:05:40.761Z",
+      "detection_source": "config_file",
+      "path": ".github/workflows",
+      "repos": [
+        "myself",
+        "G-Hensley/professional-os-template",
+        "G-Hensley/G-Hensley"
+      ]
+    },
+    "Git": {
+      "last_detected": "2026-01-26T07:05:40.761Z",
+      "detection_source": "config_file",
+      "path": ".git",
+      "repos": [
+        "myself"
+      ]
+    },
+    "JavaScript": {
+      "last_detected": "2026-01-26T07:05:40.761Z",
+      "detection_source": "file_extensions",
+      "file_count": 20,
+      "repos": [
+        "G-Hensley/professional-os-template",
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    "React": {
+      "last_detected": "2026-01-26T07:05:40.761Z",
+      "detection_source": "package.json",
+      "packages": [
+        "react",
+        "react-dom"
+      ],
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    "Next.js": {
+      "last_detected": "2026-01-26T07:05:40.761Z",
+      "detection_source": "package.json",
+      "packages": [
+        "next"
+      ],
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    "Tailwind CSS": {
+      "last_detected": "2026-01-26T07:05:40.761Z",
+      "detection_source": "package.json",
+      "packages": [
+        "tailwindcss"
+      ],
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    "TypeScript": {
+      "last_detected": "2026-01-26T07:05:40.761Z",
+      "detection_source": "file_extensions",
+      "file_count": 150,
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/myself-mcp-server",
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    "CSS": {
+      "last_detected": "2026-01-26T07:05:40.761Z",
+      "detection_source": "file_extensions",
+      "file_count": 3,
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    "Vercel": {
+      "last_detected": "2026-01-26T07:05:40.761Z",
+      "detection_source": "config_file",
+      "path": "vercel.json",
+      "repos": [
+        "G-Hensley/myself-mcp-server"
+      ]
+    },
+    "Framer Motion": {
+      "last_detected": "2026-01-26T07:05:40.761Z",
+      "detection_source": "package.json",
+      "packages": [
+        "framer-motion"
+      ],
+      "repos": [
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    "Supabase": {
+      "last_detected": "2026-01-26T07:05:40.761Z",
+      "detection_source": "package.json",
+      "packages": [
+        "@supabase/supabase-js"
+      ],
+      "repos": [
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    "SQL": {
+      "last_detected": "2026-01-26T07:05:40.761Z",
+      "detection_source": "file_extensions",
+      "file_count": 1,
+      "repos": [
+        "G-Hensley/instapi-landing"
+      ]
+    }
+  },
+  "suggestions": [
+    {
+      "skill": "GitHub Actions",
+      "suggestion": "Used in 3 repos - verify level is accurate",
+      "repos": [
+        "myself",
+        "G-Hensley/professional-os-template",
+        "G-Hensley/G-Hensley"
+      ]
+    },
+    {
+      "skill": "JavaScript",
+      "suggestion": "Used in 4 repos - verify level is accurate",
+      "repos": [
+        "G-Hensley/professional-os-template",
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    {
+      "skill": "React",
+      "suggestion": "Used in 3 repos - verify level is accurate",
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    {
+      "skill": "Next.js",
+      "suggestion": "Used in 3 repos - verify level is accurate",
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    {
+      "skill": "Tailwind CSS",
+      "suggestion": "Used in 3 repos - verify level is accurate",
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    {
+      "skill": "TypeScript",
+      "suggestion": "Used in 4 repos - verify level is accurate",
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/myself-mcp-server",
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    {
+      "skill": "CSS",
+      "suggestion": "Used in 3 repos - verify level is accurate",
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing"
+      ]
+    }
+  ],
+  "skill_decay_warnings": [
+    {
+      "skill": "PostgreSQL",
+      "current_level": "apprentice",
+      "category": "databases",
+      "reason": "Not detected in any repository"
+    },
+    {
+      "skill": "MongoDB",
+      "current_level": "apprentice",
+      "category": "databases",
+      "reason": "Not detected in any repository"
+    },
+    {
+      "skill": "GitHub Copilot",
+      "current_level": "adept",
+      "category": "AI",
+      "reason": "Not detected in any repository"
+    },
+    {
+      "skill": "Claude",
+      "current_level": "adept",
+      "category": "AI",
+      "reason": "Not detected in any repository"
+    }
+  ]
+}
