@@ -1,0 +1,31 @@
+{
+  "month": "2026-02",
+  "generated_at": "2026-02-01T06:24:56.945Z",
+  "entries": [
+    {
+      "date": "2026-02-01",
+      "logged_at": "2026-02-01T06:24:56.945Z",
+      "mode": "daily",
+      "summary": {
+        "total_commits": 0,
+        "repos_with_commits": 0,
+        "pull_requests_created": 0,
+        "pull_requests_merged": 0,
+        "issues_created": 0,
+        "issues_closed": 0
+      },
+      "commits": [],
+      "pull_requests": [],
+      "issues": []
+    }
+  ],
+  "monthly_summary": {
+    "total_commits": 0,
+    "total_prs_created": 0,
+    "total_prs_merged": 0,
+    "total_issues_created": 0,
+    "total_issues_closed": 0,
+    "active_days": 0,
+    "entries_count": 1
+  }
+}
