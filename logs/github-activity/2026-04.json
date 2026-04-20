@@ -1,6 +1,6 @@
 {
   "month": "2026-04",
-  "generated_at": "2026-04-19T06:44:49.591Z",
+  "generated_at": "2026-04-20T06:59:26.181Z",
   "entries": [
     {
       "date": "2026-04-01",
@@ -386,15 +386,58 @@
       ],
       "pull_requests": [],
       "issues": []
+    },
+    {
+      "date": "2026-04-20",
+      "logged_at": "2026-04-20T06:59:26.154Z",
+      "mode": "daily",
+      "summary": {
+        "total_commits": 17,
+        "repos_with_commits": 1,
+        "pull_requests_created": 2,
+        "pull_requests_merged": 2,
+        "issues_created": 0,
+        "issues_closed": 0
+      },
+      "commits": [
+        {
+          "repository": "tampertantrumlabs/mothership",
+          "url": "https://github.com/tampertantrumlabs/mothership",
+          "total_commits": 17,
+          "dates": [
+            "2026-04-20T07:00:00Z",
+            "2026-04-19T07:00:00Z"
+          ]
+        }
+      ],
+      "pull_requests": [
+        {
+          "title": "docs: supervisor sub-spec (T2) — completes Phase I design",
+          "url": "https://github.com/tampertantrumlabs/mothership/pull/2",
+          "state": "MERGED",
+          "repository": "tampertantrumlabs/mothership",
+          "created_at": "2026-04-19T23:09:03Z",
+          "merged_at": "2026-04-20T05:16:58Z"
+        },
+        {
+          "title": "docs: plugin bundle + signing sub-spec (T1)",
+          "url": "https://github.com/tampertantrumlabs/mothership/pull/1",
+          "state": "MERGED",
+          "repository": "tampertantrumlabs/mothership",
+          "created_at": "2026-04-19T18:41:50Z",
+          "merged_at": "2026-04-19T22:48:43Z"
+        }
+      ],
+      "issues": []
     }
   ],
   "monthly_summary": {
-    "total_commits": 28,
-    "total_prs_created": 0,
-    "total_prs_merged": 0,
+    "total_commits": 45,
+    "total_prs_created": 2,
+    "total_prs_merged": 2,
     "total_issues_created": 0,
     "total_issues_closed": 0,
-    "active_days": 9,
-    "entries_count": 19
+    "active_days": 10,
+    "entries_count": 20
   }
 }
