@@ -1,6 +1,6 @@
 {
   "month": "2026-04",
-  "generated_at": "2026-04-22T06:49:37.661Z",
+  "generated_at": "2026-04-23T06:50:29.977Z",
   "entries": [
     {
       "date": "2026-04-01",
@@ -513,15 +513,81 @@
         }
       ],
       "issues": []
+    },
+    {
+      "date": "2026-04-23",
+      "logged_at": "2026-04-23T06:50:29.960Z",
+      "mode": "daily",
+      "summary": {
+        "total_commits": 21,
+        "repos_with_commits": 2,
+        "pull_requests_created": 4,
+        "pull_requests_merged": 3,
+        "issues_created": 0,
+        "issues_closed": 0
+      },
+      "commits": [
+        {
+          "repository": "G-Hensley/gavins-agent-system",
+          "url": "https://github.com/G-Hensley/gavins-agent-system",
+          "total_commits": 19,
+          "dates": [
+            "2026-04-22T07:00:00Z"
+          ]
+        },
+        {
+          "repository": "G-Hensley/apisec-scan-cicd-demo",
+          "url": "https://github.com/G-Hensley/apisec-scan-cicd-demo",
+          "total_commits": 2,
+          "dates": [
+            "2026-04-22T07:00:00Z"
+          ]
+        }
+      ],
+      "pull_requests": [
+        {
+          "title": "fix(install): replace hooks instead of skipping when already configured",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/8",
+          "state": "OPEN",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-22T20:09:06Z",
+          "merged_at": null
+        },
+        {
+          "title": "chore: promote shipped improvements backlog item",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/7",
+          "state": "MERGED",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-22T18:44:45Z",
+          "merged_at": "2026-04-22T19:04:56Z"
+        },
+        {
+          "title": "feat: Dependabot hardening + git push permission (coach carryover)",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/6",
+          "state": "MERGED",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-22T17:29:24Z",
+          "merged_at": "2026-04-22T17:42:28Z"
+        },
+        {
+          "title": "feat: Tier 1 friction fixes (Windows quirks, reference-reading rule, 2 hooks)",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/5",
+          "state": "MERGED",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-22T15:41:50Z",
+          "merged_at": "2026-04-22T16:37:28Z"
+        }
+      ],
+      "issues": []
     }
   ],
   "monthly_summary": {
-    "total_commits": 68,
-    "total_prs_created": 5,
-    "total_prs_merged": 4,
+    "total_commits": 89,
+    "total_prs_created": 9,
+    "total_prs_merged": 7,
     "total_issues_created": 0,
     "total_issues_closed": 0,
-    "active_days": 12,
-    "entries_count": 22
+    "active_days": 13,
+    "entries_count": 23
   }
 }
