@@ -1,6 +1,6 @@
 {
   "month": "2026-04",
-  "generated_at": "2026-04-24T06:51:25.843Z",
+  "generated_at": "2026-04-25T06:40:41.398Z",
   "entries": [
     {
       "date": "2026-04-01",
@@ -595,15 +595,49 @@
       "commits": [],
       "pull_requests": [],
       "issues": []
+    },
+    {
+      "date": "2026-04-25",
+      "logged_at": "2026-04-25T06:40:41.387Z",
+      "mode": "daily",
+      "summary": {
+        "total_commits": 1,
+        "repos_with_commits": 1,
+        "pull_requests_created": 1,
+        "pull_requests_merged": 0,
+        "issues_created": 0,
+        "issues_closed": 0
+      },
+      "commits": [
+        {
+          "repository": "G-Hensley/gavins-agent-system",
+          "url": "https://github.com/G-Hensley/gavins-agent-system",
+          "total_commits": 1,
+          "dates": [
+            "2026-04-24T07:00:00Z"
+          ]
+        }
+      ],
+      "pull_requests": [
+        {
+          "title": "fix(hooks): emit JSON additionalContext so warnings reach Claude",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/9",
+          "state": "OPEN",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-25T01:46:36Z",
+          "merged_at": null
+        }
+      ],
+      "issues": []
     }
   ],
   "monthly_summary": {
-    "total_commits": 89,
-    "total_prs_created": 9,
+    "total_commits": 90,
+    "total_prs_created": 10,
     "total_prs_merged": 7,
     "total_issues_created": 0,
     "total_issues_closed": 0,
-    "active_days": 13,
-    "entries_count": 24
+    "active_days": 14,
+    "entries_count": 25
   }
 }
