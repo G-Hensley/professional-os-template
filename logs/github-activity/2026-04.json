@@ -1,6 +1,6 @@
 {
   "month": "2026-04",
-  "generated_at": "2026-04-25T06:40:41.398Z",
+  "generated_at": "2026-04-26T06:49:01.156Z",
   "entries": [
     {
       "date": "2026-04-01",
@@ -629,15 +629,146 @@
         }
       ],
       "issues": []
+    },
+    {
+      "date": "2026-04-26",
+      "logged_at": "2026-04-26T06:49:01.122Z",
+      "mode": "daily",
+      "summary": {
+        "total_commits": 27,
+        "repos_with_commits": 1,
+        "pull_requests_created": 13,
+        "pull_requests_merged": 13,
+        "issues_created": 0,
+        "issues_closed": 0
+      },
+      "commits": [
+        {
+          "repository": "G-Hensley/gavins-agent-system",
+          "url": "https://github.com/G-Hensley/gavins-agent-system",
+          "total_commits": 27,
+          "dates": [
+            "2026-04-26T07:00:00Z",
+            "2026-04-25T07:00:00Z"
+          ]
+        }
+      ],
+      "pull_requests": [
+        {
+          "title": "fix: re-land TASK-6 (pr-check after-merge handoff) on main",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/22",
+          "state": "MERGED",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-26T06:21:07Z",
+          "merged_at": "2026-04-26T06:21:50Z"
+        },
+        {
+          "title": "feat(skills): pr-check references project-orchestration after merge",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/21",
+          "state": "MERGED",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-26T06:12:50Z",
+          "merged_at": "2026-04-26T06:16:43Z"
+        },
+        {
+          "title": "Expand frontend-design with 16 new reference files",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/20",
+          "state": "MERGED",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-26T06:11:56Z",
+          "merged_at": "2026-04-26T06:16:32Z"
+        },
+        {
+          "title": "feat(skills): project-scaffolding bootstraps docs/TASKS.md",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/19",
+          "state": "MERGED",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-26T06:10:56Z",
+          "merged_at": "2026-04-26T06:12:11Z"
+        },
+        {
+          "title": "chore(tasks): dogfood task-tracking — bootstrap docs/TASKS.md",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/18",
+          "state": "MERGED",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-26T06:03:42Z",
+          "merged_at": "2026-04-26T06:05:13Z"
+        },
+        {
+          "title": "feat(skills): add project-orchestration master pipeline skill",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/17",
+          "state": "MERGED",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-26T05:58:50Z",
+          "merged_at": "2026-04-26T06:00:14Z"
+        },
+        {
+          "title": "feat(agents): split product-manager — add project-manager for ongoing PM",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/16",
+          "state": "MERGED",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-26T05:38:05Z",
+          "merged_at": "2026-04-26T05:55:35Z"
+        },
+        {
+          "title": "feat(skills): add per-task PR rhythm to subagent-driven-development",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/15",
+          "state": "MERGED",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-26T04:45:35Z",
+          "merged_at": "2026-04-26T05:26:30Z"
+        },
+        {
+          "title": "feat(skills): add task-tracking skill for cross-session task state",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/14",
+          "state": "MERGED",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-26T01:13:16Z",
+          "merged_at": "2026-04-26T04:41:35Z"
+        },
+        {
+          "title": "docs(improvements): log five system gaps for review",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/13",
+          "state": "MERGED",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-26T00:52:11Z",
+          "merged_at": "2026-04-26T00:58:01Z"
+        },
+        {
+          "title": "feat(install): genericize gh-account-guard + add prereq-check",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/12",
+          "state": "MERGED",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-26T00:51:18Z",
+          "merged_at": "2026-04-26T01:07:10Z"
+        },
+        {
+          "title": "fix(evals): bump python-dotenv safe-control pin to 1.2.2",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/11",
+          "state": "MERGED",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-25T22:26:51Z",
+          "merged_at": "2026-04-26T00:11:35Z"
+        },
+        {
+          "title": "fix(hooks): emit JSON additionalContext for remaining 3 PostToolUse hooks",
+          "url": "https://github.com/G-Hensley/gavins-agent-system/pull/10",
+          "state": "MERGED",
+          "repository": "G-Hensley/gavins-agent-system",
+          "created_at": "2026-04-25T22:25:14Z",
+          "merged_at": "2026-04-26T00:11:25Z"
+        }
+      ],
+      "issues": []
     }
   ],
   "monthly_summary": {
-    "total_commits": 90,
-    "total_prs_created": 10,
-    "total_prs_merged": 7,
+    "total_commits": 117,
+    "total_prs_created": 23,
+    "total_prs_merged": 20,
     "total_issues_created": 0,
     "total_issues_closed": 0,
-    "active_days": 14,
-    "entries_count": 25
+    "active_days": 15,
+    "entries_count": 26
   }
 }
