@@ -1,0 +1,342 @@
+{
+  "generated_at": "2026-04-27T07:44:40.724Z",
+  "skills_detected": 19,
+  "manual_only_count": 36,
+  "detected_skills": {
+    "Claude Code": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "config_file",
+      "path": ".claude",
+      "repos": [
+        "myself",
+        "G-Hensley/professional-os-template",
+        "G-Hensley/chatbot-template"
+      ]
+    },
+    "Codex": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "config_file",
+      "path": ".codex",
+      "repos": [
+        "myself",
+        "G-Hensley/professional-os-template"
+      ]
+    },
+    "GitHub Actions": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "config_file",
+      "path": ".github/workflows",
+      "repos": [
+        "myself",
+        "G-Hensley/professional-os-template",
+        "G-Hensley/G-Hensley",
+        "G-Hensley/chatbot-template",
+        "tampertantrumlabs/mcp-security-checklist",
+        "G-Hensley/apisec-scan-cicd-demo"
+      ]
+    },
+    "Git": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "config_file",
+      "path": ".git",
+      "repos": [
+        "myself"
+      ]
+    },
+    "JavaScript": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "file_extensions",
+      "file_count": 37,
+      "repos": [
+        "G-Hensley/professional-os-template",
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing",
+        "G-Hensley/chatbot-template",
+        "G-Hensley/Gavins-Agent-System",
+        "G-Hensley/gavins-agent-system"
+      ]
+    },
+    "React": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "package.json",
+      "packages": [
+        "react",
+        "react-dom"
+      ],
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing",
+        "tampertantrumlabs/mcp-security-checklist"
+      ]
+    },
+    "Next.js": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "package.json",
+      "packages": [
+        "next"
+      ],
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    "Tailwind CSS": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "package.json",
+      "packages": [
+        "tailwindcss"
+      ],
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing",
+        "tampertantrumlabs/mcp-security-checklist"
+      ]
+    },
+    "TypeScript": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "file_extensions",
+      "file_count": 170,
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/myself-mcp-server",
+        "G-Hensley/instapi-landing",
+        "G-Hensley/chatbot-template",
+        "tampertantrumlabs/mcp-security-checklist"
+      ]
+    },
+    "CSS": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "file_extensions",
+      "file_count": 5,
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing",
+        "G-Hensley/chatbot-template",
+        "tampertantrumlabs/mcp-security-checklist"
+      ]
+    },
+    "Vercel": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "config_file",
+      "path": "vercel.json",
+      "repos": [
+        "G-Hensley/myself-mcp-server",
+        "tampertantrumlabs/mcp-security-checklist"
+      ]
+    },
+    "Framer Motion": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "package.json",
+      "packages": [
+        "framer-motion"
+      ],
+      "repos": [
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    "Supabase": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "package.json",
+      "packages": [
+        "@supabase/supabase-js"
+      ],
+      "repos": [
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    "SQL": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "file_extensions",
+      "file_count": 1,
+      "repos": [
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    "Vitest": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "package.json",
+      "packages": [
+        "vitest"
+      ],
+      "repos": [
+        "G-Hensley/chatbot-template"
+      ]
+    },
+    "Bash": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "file_extensions",
+      "file_count": 30,
+      "repos": [
+        "G-Hensley/chatbot-template",
+        "G-Hensley/IDOCC-jenkins-scripts",
+        "G-Hensley/Gavins-Agent-System",
+        "G-Hensley/gavins-agent-system"
+      ]
+    },
+    "Python": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "file_extensions",
+      "file_count": 13,
+      "repos": [
+        "G-Hensley/IDOCC-jenkins-scripts",
+        "G-Hensley/job-prep-agent",
+        "G-Hensley/apisec-scan-cicd-demo"
+      ]
+    },
+    "HTML": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "file_extensions",
+      "file_count": 1,
+      "repos": [
+        "tampertantrumlabs/mcp-security-checklist"
+      ]
+    },
+    "Docker": {
+      "last_detected": "2026-04-27T07:44:04.113Z",
+      "detection_source": "config_file",
+      "path": "Dockerfile",
+      "repos": [
+        "G-Hensley/apisec-scan-cicd-demo"
+      ]
+    }
+  },
+  "suggestions": [
+    {
+      "skill": "Claude Code",
+      "suggestion": "Used in 3 repos - verify level is accurate",
+      "repos": [
+        "myself",
+        "G-Hensley/professional-os-template",
+        "G-Hensley/chatbot-template"
+      ]
+    },
+    {
+      "skill": "GitHub Actions",
+      "suggestion": "Used in 6 repos - verify level is accurate",
+      "repos": [
+        "myself",
+        "G-Hensley/professional-os-template",
+        "G-Hensley/G-Hensley",
+        "G-Hensley/chatbot-template",
+        "tampertantrumlabs/mcp-security-checklist",
+        "G-Hensley/apisec-scan-cicd-demo"
+      ]
+    },
+    {
+      "skill": "JavaScript",
+      "suggestion": "Used in 7 repos - verify level is accurate",
+      "repos": [
+        "G-Hensley/professional-os-template",
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing",
+        "G-Hensley/chatbot-template",
+        "G-Hensley/Gavins-Agent-System",
+        "G-Hensley/gavins-agent-system"
+      ]
+    },
+    {
+      "skill": "React",
+      "suggestion": "Used in 4 repos - verify level is accurate",
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing",
+        "tampertantrumlabs/mcp-security-checklist"
+      ]
+    },
+    {
+      "skill": "Next.js",
+      "suggestion": "Used in 3 repos - verify level is accurate",
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing"
+      ]
+    },
+    {
+      "skill": "Tailwind CSS",
+      "suggestion": "Used in 4 repos - verify level is accurate",
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing",
+        "tampertantrumlabs/mcp-security-checklist"
+      ]
+    },
+    {
+      "skill": "TypeScript",
+      "suggestion": "Used in 6 repos - verify level is accurate",
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/myself-mcp-server",
+        "G-Hensley/instapi-landing",
+        "G-Hensley/chatbot-template",
+        "tampertantrumlabs/mcp-security-checklist"
+      ]
+    },
+    {
+      "skill": "CSS",
+      "suggestion": "Used in 5 repos - verify level is accurate",
+      "repos": [
+        "G-Hensley/apisec-informational-detections-report-generator",
+        "G-Hensley/drakes-portfolio",
+        "G-Hensley/instapi-landing",
+        "G-Hensley/chatbot-template",
+        "tampertantrumlabs/mcp-security-checklist"
+      ]
+    },
+    {
+      "skill": "Bash",
+      "suggestion": "Used in 4 repos - verify level is accurate",
+      "repos": [
+        "G-Hensley/chatbot-template",
+        "G-Hensley/IDOCC-jenkins-scripts",
+        "G-Hensley/Gavins-Agent-System",
+        "G-Hensley/gavins-agent-system"
+      ]
+    },
+    {
+      "skill": "Python",
+      "suggestion": "Used in 3 repos - verify level is accurate",
+      "repos": [
+        "G-Hensley/IDOCC-jenkins-scripts",
+        "G-Hensley/job-prep-agent",
+        "G-Hensley/apisec-scan-cicd-demo"
+      ]
+    }
+  ],
+  "skill_decay_warnings": [
+    {
+      "skill": "PostgreSQL",
+      "current_level": "apprentice",
+      "category": "databases",
+      "reason": "Not detected in any repository"
+    },
+    {
+      "skill": "MongoDB",
+      "current_level": "apprentice",
+      "category": "databases",
+      "reason": "Not detected in any repository"
+    },
+    {
+      "skill": "GitHub Copilot",
+      "current_level": "adept",
+      "category": "AI",
+      "reason": "Not detected in any repository"
+    },
+    {
+      "skill": "Claude",
+      "current_level": "adept",
+      "category": "AI",
+      "reason": "Not detected in any repository"
+    }
+  ]
+}
